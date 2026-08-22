@@ -19,7 +19,6 @@ document.querySelectorAll('.js-whatsapp').forEach(link => {
   });
 });
 
-
 // ===== HEADER =====
 const header = document.querySelector('.site-header');
 
@@ -31,7 +30,6 @@ function updateHeader() {
 
 window.addEventListener('scroll', updateHeader);
 updateHeader();
-
 
 // ===== MENU MOBILE =====
 const menuToggle = document.querySelector('.menu-toggle');
@@ -51,7 +49,6 @@ if (menuToggle && nav) {
   });
 }
 
-
 // ===== FAQ =====
 document.querySelectorAll('.faq-item').forEach(item => {
   const button = item.querySelector('button');
@@ -70,29 +67,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }
   });
 });
-
-
-// ===== CARROSSEL =====
-const track = document.querySelector('.psych-track');
-const prev = document.querySelector('.carousel-arrow.prev');
-const next = document.querySelector('.carousel-arrow.next');
-
-if (track) {
-  const scrollCard = direction => {
-    const card = track.querySelector('.psych-card');
-
-    if (!card) return;
-
-    track.scrollBy({
-      left: direction * (card.getBoundingClientRect().width + 34),
-      behavior: 'smooth'
-    });
-  };
-
-  prev?.addEventListener('click', () => scrollCard(-1));
-  next?.addEventListener('click', () => scrollCard(1));
-}
-
 
 // ===== ÍCONES LUCIDE =====
 if (window.lucide) {
