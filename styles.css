@@ -614,7 +614,7 @@ p { margin-top: 0; }
 
 .concerns-grid {
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 16px 20px;
   max-width: 1100px;
   margin: 0 auto 38px;
@@ -793,156 +793,267 @@ p { margin-top: 0; }
 
 .psychologists {
   position: relative;
-  padding: 115px 0 96px;
+
+  padding: 82px 0 76px;
+
   background-image: url("assets/fundo-psicologas.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   overflow: hidden;
 }
 
+
+/* Camada clara sobre o fundo */
+
 .psychologists::before {
   content: "";
+
   position: absolute;
   inset: 0;
+
   background: rgba(var(--rgb-surface), .78);
+
   z-index: 0;
 }
+
+
+/* Mantém o conteúdo acima do fundo */
 
 .psychologists .container {
   position: relative;
   z-index: 1;
 }
 
+
+/* ==================================================
+   TÍTULO E INTRODUÇÃO
+================================================== */
+
 .psychologists .section-intro {
   text-align: center;
-  max-width: 720px;
-  margin: 10px auto 44px;
+
+  max-width: 650px;
+
+  margin: 8px auto 34px;
+
   color: #5f686f;
+
+  font-size: .88rem;
+  line-height: 1.6;
 }
+
+
+/* ==================================================
+   GRID DOS CARDS
+================================================== */
 
 .psych-track {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 32px;
-  max-width: 1080px;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 26px;
+
+  max-width: 900px;
+
   margin: 0 auto;
 }
 
-/* CARD */
+
+/* ==================================================
+   CARD
+================================================== */
 
 .psych-card {
   display: flex;
   flex-direction: column;
+
   min-width: 0;
+
   overflow: hidden;
+
   background: rgba(var(--rgb-white), .94);
+
   border: 1px solid rgba(var(--rgb-gold), .20);
   border-radius: 6px;
-  box-shadow: 0 12px 28px rgba(var(--rgb-navy), .07);
-  transition: transform .35s ease, box-shadow .35s ease;
+
+  box-shadow:
+    0 12px 28px rgba(var(--rgb-navy), .07);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
 }
+
 
 .psych-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 18px 38px rgba(var(--rgb-navy), .11);
+
+  box-shadow:
+    0 18px 38px rgba(var(--rgb-navy), .11);
 }
 
-/* IMAGEM GRANDE */
+
+/* ==================================================
+   IMAGEM
+================================================== */
 
 .psych-image {
   position: relative;
+
   width: 100%;
-  height: 350px;
+  height: 275px;
+
   overflow: hidden;
 }
 
+
 .psych-image img {
+  display: block;
+
   width: 100%;
   height: 100%;
-  display: block;
+
   object-fit: cover;
   object-position: center;
+
   border-radius: 0;
+
   transition: transform .65s ease;
 }
 
-/* Zoom suave da foto */
+
+/* Zoom suave */
 
 .psych-card:hover .psych-image img {
   transform: scale(1.06);
 }
 
-/* Ajuste individual da Carol */
+
+/* Carol */
+
 .psych-card:first-child .psych-image img {
   object-position: center 32%;
 }
 
-/* Ajuste individual da Carolina */
+
+/* Carolina */
+
 .psych-card:nth-child(2) .psych-image img {
   object-position: center 28%;
 }
 
-/* CONTEÚDO */
+
+/* ==================================================
+   CONTEÚDO
+================================================== */
 
 .psych-content {
   display: flex;
   flex-direction: column;
+
   flex: 1;
-  padding: 28px 30px 32px;
+
+  padding: 22px 24px 25px;
 }
+
+
+/* Nome */
 
 .psych-content h3 {
   margin: 0 0 3px;
+
   color: var(--ink-strong);
+
   font-family: var(--font-display);
-  font-size: 2rem;
+
+  font-size: 1.7rem;
   font-weight: 500;
   line-height: 1.1;
 }
 
+
+/* Cargo */
+
 .psych-card .role {
   margin: 0 0 4px;
+
   color: var(--gold);
-  font-size: .76rem;
+
+  font-size: .68rem;
   font-weight: 700;
+  line-height: 1.45;
 }
+
+
+/* Abordagem */
 
 .psych-card .approach {
   margin: 0;
+
   color: var(--purple);
-  font-size: .78rem;
+
+  font-size: .70rem;
   font-weight: 600;
+  line-height: 1.45;
 }
+
+
+/* Linha dourada */
 
 .psych-line {
   display: block;
-  width: 24px;
+
+  width: 22px;
   height: 1px;
-  margin: 17px 0;
+
+  margin: 13px 0;
+
   background: var(--gold);
 }
 
+
+/* Descrição */
+
 .psych-card .psych-description {
-  margin: 0 0 24px;
+  margin: 0 0 18px;
+
   color: #55666f;
-  font-size: .80rem;
+
+  font-size: .70rem;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.65;
 }
+
+
+/* ==================================================
+   LINK
+================================================== */
 
 .psych-card a {
   width: fit-content;
+
   margin-top: auto;
+
   color: var(--purple);
+
   font-family: var(--font-display);
-  font-size: 1.1rem;
+
+  font-size: .95rem;
   font-weight: 700;
-  transition: color .25s ease, transform .25s ease;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
 }
+
 
 .psych-card a:hover {
   color: var(--ink-strong);
+
   transform: translateX(3px);
 }
 
@@ -1503,7 +1614,6 @@ p { margin-top: 0; }
    RESPONSIVE
 ================================================== */
 
-
 /* ==================================================
    HEADER — TABLET E MOBILE
    até 1024px
@@ -1906,7 +2016,186 @@ p { margin-top: 0; }
     height: 540px;
   }
 }
+/* ==================================================
+   CONCERNS — TABLET DEITADO
+================================================== */
 
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  .concerns {
+    padding: 64px 0 72px;
+  }
+
+  .concerns h2 {
+    max-width: 760px;
+    font-size: 2.65rem;
+    line-height: 1;
+  }
+
+  .concerns .gold-line.centered {
+    width: 64px;
+    margin: 22px auto 32px;
+  }
+
+  .concerns-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+
+    max-width: 920px;
+    margin: 0 auto 34px;
+  }
+
+  /* sobrescreve o grid-column do desktop */
+  .concerns-grid article,
+  .concerns-grid article:nth-child(5),
+  .concerns-grid article:nth-child(6),
+  .concerns-grid article:nth-child(7),
+  .concerns-grid article:nth-child(8) {
+    grid-column: auto;
+  }
+
+  .concerns-grid article {
+    min-height: 125px;
+    padding: 16px 12px 15px;
+  }
+
+  .concern-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .concerns-grid svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .concerns-grid span {
+    max-width: 170px;
+    font-size: .80rem;
+  }
+
+  .concerns-message {
+    margin-top: 24px;
+    padding: 20px 30px;
+  }
+
+  .center-highlight {
+    font-size: 1.6rem;
+  }
+}
+/* ==================================================
+   THERAPY — TABLET DEITADO
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  .therapy {
+    grid-template-columns: 54% 46%;
+  }
+
+  .therapy-copy-inner {
+    width: min(calc(100% - 54px), 520px);
+    padding: 76px 0 74px;
+  }
+
+  .therapy-copy .eyebrow {
+    font-size: .72rem;
+    letter-spacing: .22em;
+  }
+
+  .therapy-copy h2 {
+    font-size: clamp(2.45rem, 3.4vw, 2.9rem);
+    line-height: 1.07;
+  }
+
+  .therapy-copy p {
+    font-size: .88rem;
+    line-height: 1.7;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 28px;
+    font-size: 1.2rem;
+  }
+
+  .therapy-copy cite {
+    font-size: .70rem;
+  }
+
+  .therapy-image img {
+    object-position: 60% 12%;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — TABLET DEITADO
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  .psychologists {
+    padding: 86px 0 82px;
+  }
+
+  .psychologists h2 {
+    font-size: 3rem;
+  }
+
+  .psychologists .section-intro {
+    max-width: 650px;
+    margin: 8px auto 34px;
+    font-size: .88rem;
+  }
+
+  .psych-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 920px;
+  }
+
+  .psych-image {
+    height: 285px;
+  }
+
+  .psych-content {
+    padding: 23px 24px 26px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .psych-card .role {
+    font-size: .70rem;
+  }
+
+  .psych-card .approach {
+    font-size: .72rem;
+  }
+
+  .psych-line {
+    margin: 14px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 20px;
+    font-size: .74rem;
+    line-height: 1.65;
+  }
+
+  .psych-card a {
+    font-size: 1rem;
+  }
+}
 
 /* ==================================================
    TABLET EM PÉ
@@ -1980,22 +2269,28 @@ p { margin-top: 0; }
   }
 
   .hero-photo {
-    width: 100%;
-    max-width: 560px;
-    height: 420px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 560px;
+  height: 420px;
+  margin: 0 auto;
 
-    border-radius:
-      46% 46% 16% 18% /
-      30% 30% 12% 14%;
-  }
+  overflow: hidden;
 
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 56% 52%;
-  }
+  border-radius:
+    48% 48% 22% 28% /
+    34% 34% 16% 30%;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+  object-position: 60% 52%;
+
+  border-radius: inherit;
+}
 
   /* FORMAS AO REDOR DA IMAGEM */
 
@@ -2108,19 +2403,287 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
+   CONCERNS — TABLET EM PÉ
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  .concerns {
+    padding: 72px 0 82px;
+  }
+
+  .concerns h2 {
+    max-width: 650px;
+
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  .concerns .gold-line.centered {
+    width: 66px;
+    margin: 24px auto 38px;
+  }
+
+  .concerns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px 24px;
+
+    max-width: 650px;
+    margin: 0 auto 42px;
+  }
+
+  .concerns-grid article,
+  .concerns-grid article:nth-child(5),
+  .concerns-grid article:nth-child(6),
+  .concerns-grid article:nth-child(7),
+  .concerns-grid article:nth-child(8) {
+    grid-column: auto;
+  }
+
+  .concerns-grid article {
+    min-height: 145px;
+    padding: 20px 18px 18px;
+  }
+
+  .concern-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 3px;
+  }
+
+  .concerns-grid svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .concerns-grid article::after {
+    width: 26px;
+    margin: 4px 0 12px;
+  }
+
+  .concerns-grid span {
+    max-width: 220px;
+
+    font-size: .94rem;
+    line-height: 1.45;
+  }
+
+  .concerns-message {
+    max-width: 650px;
+
+    margin: 32px auto 0;
+    padding: 22px 28px;
+  }
+
+  .center-highlight {
+    font-size: 1.75rem;
+  }
+}
+/* FUNDO — mantém a composição da imagem inteira */
+.concerns {
+  background-image: url("assets/fundo-demandas.jpeg");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.concerns::before {
+  background: rgba(var(--rgb-cream), .72);
+}
+
+/* ==================================================
+   THERAPY — TABLET EM PÉ
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  .therapy {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 480px auto;
+
+    width: 100%;
+  }
+
+
+  /* IMAGEM PRIMEIRO */
+
+  .therapy-image {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 100%;
+    height: 480px;
+  }
+
+  .therapy-image img {
+    object-fit: cover;
+    object-position: 60% 18%;
+  }
+
+
+  /* TEXTO DEPOIS */
+
+  .therapy-copy {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .therapy-copy-inner {
+    width: min(calc(100% - 90px), 660px);
+
+    padding: 72px 0 78px;
+  }
+
+  .therapy-copy .eyebrow {
+    font-size: .76rem;
+    letter-spacing: .24em;
+  }
+
+  .therapy-copy h2 {
+    font-size: clamp(3rem, 5vw, 3.5rem);
+    line-height: 1.06;
+  }
+
+  .therapy-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 32px;
+    padding-left: 22px;
+
+    font-size: 1.4rem;
+    line-height: 1.45;
+  }
+
+  .therapy-copy cite {
+    margin-top: 9px;
+    font-size: .76rem;
+  }
+}
+/* ==================================================
+   PSYCHOLOGISTS — TABLET EM PÉ
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  .psychologists {
+    padding: 82px 0 86px;
+
+    background-image: url("assets/fundo-psicologas.jpeg");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .psychologists::before {
+    background: rgba(var(--rgb-surface), .78);
+  }
+
+  .psychologists h2 {
+    font-size: 2.9rem;
+  }
+
+  .psychologists .section-intro {
+    max-width: 600px;
+    margin: 8px auto 34px;
+    font-size: .86rem;
+  }
+
+  .psych-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .psych-card {
+    min-width: 0;
+  }
+
+  .psych-image {
+    height: 260px;
+  }
+
+  .psych-content {
+    padding: 22px 20px 24px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.72rem;
+  }
+
+  .psych-card .role {
+    font-size: .67rem;
+    line-height: 1.45;
+  }
+
+  .psych-card .approach {
+    font-size: .69rem;
+    line-height: 1.45;
+  }
+
+  .psych-line {
+    width: 22px;
+    margin: 13px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 18px;
+
+    font-size: .71rem;
+    line-height: 1.6;
+  }
+
+  .psych-card a {
+    font-size: .96rem;
+  }
+
+  /* Ajusta o enquadramento individual */
+
+  .psych-card:first-child .psych-image img {
+    object-position: center 30%;
+  }
+
+  .psych-card:nth-child(2) .psych-image img {
+    object-position: center 27%;
+  }
+}
+
+/* ==================================================
    CELULAR EM PÉ
 ================================================== */
 
 @media
-  (max-width: 767px)
-  and (orientation: portrait) {
+  (max-width: 767px) and (orientation: portrait) {
 
   /* ---------- HEADER ---------- */
 
   .header-inner {
-    min-height: 70px;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+  min-height: 76px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
   }
 
   .brand img {
@@ -2143,14 +2706,9 @@ p { margin-top: 0; }
   /* ---------- HERO ---------- */
 
   .hero {
-    width: 100%;
-    min-height: 100svh;
-
-    /*
-      Aumentei o topo.
-      Agora existe respiro real entre header e texto.
-    */
-    padding: 104px 0 34px;
+  width: 100%;
+  min-height: 100svh;
+  padding: 104px 0 34px;
   }
 
   .hero-grid {
@@ -2224,7 +2782,7 @@ p { margin-top: 0; }
     justify-content: center;
 
     padding: 0 8px;
-    margin: 0 0 24px;
+    margin: 0 0 30px;
   }
 
   .hero-photo {
@@ -2364,6 +2922,294 @@ p { margin-top: 0; }
   .info-item span {
     font-size: .76rem;
     line-height: 1.55;
+  }
+}
+/* ==================================================
+   CONCERNS — CELULAR EM PÉ
+================================================== */
+
+@media
+  (max-width: 767px)
+  and (orientation: portrait) {
+
+  .concerns {
+    padding: 52px 0 60px;
+  }
+
+  .concerns h2 {
+    max-width: 330px;
+
+    font-size: 2.15rem;
+    line-height: 1.03;
+  }
+
+  .concerns .gold-line.centered {
+    width: 52px;
+    height: 1px;
+
+    margin: 20px auto 30px;
+  }
+
+  .concerns-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto 32px;
+  }
+
+  .concerns-grid article,
+  .concerns-grid article:nth-child(5),
+  .concerns-grid article:nth-child(6),
+  .concerns-grid article:nth-child(7),
+  .concerns-grid article:nth-child(8) {
+    grid-column: auto;
+  }
+
+  .concerns-grid article {
+    min-height: 125px;
+
+    padding: 14px 8px 13px;
+
+    border-radius: 12px;
+  }
+
+  .concern-icon {
+    width: 36px;
+    height: 36px;
+
+    margin-bottom: 2px;
+  }
+
+  .concerns-grid svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .concerns-grid article::after {
+    width: 20px;
+
+    margin: 3px 0 9px;
+  }
+
+  .concerns-grid span {
+    max-width: 135px;
+
+    font-size: .72rem;
+    line-height: 1.4;
+  }
+
+  .concerns-message {
+    max-width: 330px;
+
+    margin: 24px auto 0;
+    padding: 16px 8px;
+  }
+
+  .center-highlight {
+    font-size: 1.42rem;
+    line-height: 1.3;
+  }
+}
+/* FUNDO — mantém a composição parecida com o desktop */
+.concerns {
+  background-image: url("assets/fundo-demandas.jpeg");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.concerns::before {
+  background: rgba(var(--rgb-cream), .72);
+}
+/* ==================================================
+   THERAPY — CELULAR EM PÉ
+================================================== */
+
+@media
+  (max-width: 767px)
+  and (orientation: portrait) {
+
+  .therapy {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto;
+
+    width: 100%;
+  }
+
+
+  /* IMAGEM */
+
+  .therapy-image {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 100%;
+    height: 300px;
+  }
+
+  .therapy-image img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 60% 16%;
+  }
+
+
+  /* TEXTO */
+
+  .therapy-copy {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .therapy-copy-inner {
+    width: calc(100% - 48px);
+
+    padding: 48px 0 54px;
+  }
+
+  .therapy-copy .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: .60rem;
+    letter-spacing: .21em;
+  }
+
+  .therapy-copy h2 {
+    margin-bottom: 24px;
+
+    font-size: 2.2rem;
+    line-height: 1.05;
+  }
+
+  .therapy-copy p {
+    font-size: .84rem;
+    line-height: 1.7;
+  }
+
+  .therapy-copy p + p {
+    margin-top: 20px;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 26px;
+    padding-left: 16px;
+
+    font-size: 1.14rem;
+    line-height: 1.4;
+  }
+
+  .therapy-copy cite {
+    margin-top: 8px;
+
+    font-size: .65rem;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — CELULAR EM PÉ
+================================================== */
+
+@media
+  (max-width: 767px)
+  and (orientation: portrait) {
+
+  .psychologists {
+    padding: 62px 0 68px;
+
+    background-image: url("assets/fundo-psicologas.jpeg");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .psychologists::before {
+    background: rgba(var(--rgb-surface), .78);
+  }
+
+  .psychologists h2 {
+    font-size: 2.35rem;
+    text-align: center;
+  }
+
+  .psychologists .section-intro {
+    max-width: 330px;
+
+    margin: 8px auto 30px;
+
+    font-size: .78rem;
+    line-height: 1.6;
+  }
+
+  .psych-track {
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .psych-card {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .psych-image {
+    height: 280px;
+  }
+
+  .psych-content {
+    padding: 24px 22px 26px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.85rem;
+  }
+
+  .psych-card .role {
+    font-size: .70rem;
+  }
+
+  .psych-card .approach {
+    font-size: .72rem;
+  }
+
+  .psych-line {
+    margin: 14px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 20px;
+
+    font-size: .75rem;
+    line-height: 1.7;
+  }
+
+  .psych-card a {
+    font-size: 1rem;
+  }
+
+  .psych-card:first-child .psych-image img {
+    object-position: center 30%;
+  }
+
+  .psych-card:nth-child(2) .psych-image img {
+    object-position: center 27%;
   }
 }
 
@@ -2521,34 +3367,30 @@ p { margin-top: 0; }
     justify-content: center;
   }
 
-  .hero-photo {
-    width: 100%;
-    max-width: 340px;
-    height: 235px;
+ .hero-photo {
+  width: 100%;
+  max-width: 340px;
+  height: 235px;
 
-    margin: 0;
+  margin: 0;
 
-    /*
-      Muito menos agressivo no lado da mulher.
-    */
-    border-radius:
-      45% 45% 12% 18% /
-      30% 30% 8% 20%;
-  }
+  overflow: hidden;
 
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
+  border-radius:
+    48% 48% 22% 28% /
+    34% 34% 16% 30%;
+}
 
-    object-fit: cover;
+.hero-photo img {
+  width: 100%;
+  height: 100%;
 
-    /*
-      desloca o enquadramento para a direita
-      e preserva a mulher.
-    */
-    object-position: 68% center;
-  }
+  display: block;
+  object-fit: cover;
+  object-position: 68% center;
 
+  border-radius: inherit;
+}
 
   /* ---------- FORMAS ---------- */
 
@@ -2634,5 +3476,253 @@ p { margin-top: 0; }
 
     font-size: .64rem;
     line-height: 1.45;
+  }
+}
+
+/* ==================================================
+   CONCERNS — CELULAR DEITADO
+================================================== */
+
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+
+  .concerns {
+    padding: 42px 0 48px;
+  }
+
+  .concerns h2 {
+    max-width: 600px;
+
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .concerns .gold-line.centered {
+    width: 50px;
+    height: 1px;
+
+    margin: 17px auto 24px;
+  }
+
+  .concerns-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    max-width: 780px;
+    margin: 0 auto 26px;
+  }
+
+  .concerns-grid article,
+  .concerns-grid article:nth-child(5),
+  .concerns-grid article:nth-child(6),
+  .concerns-grid article:nth-child(7),
+  .concerns-grid article:nth-child(8) {
+    grid-column: auto;
+  }
+
+  .concerns-grid article {
+    min-height: 105px;
+
+    padding: 11px 7px 10px;
+
+    border-radius: 11px;
+  }
+
+  .concern-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .concerns-grid svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .concerns-grid article::after {
+    width: 18px;
+    margin: 2px 0 7px;
+  }
+
+  .concerns-grid span {
+    max-width: 140px;
+
+    font-size: .66rem;
+    line-height: 1.35;
+  }
+
+  .concerns-message {
+    margin: 18px auto 0;
+    padding: 12px 20px;
+  }
+
+  .center-highlight {
+    font-size: 1.25rem;
+  }
+}
+
+/* ==================================================
+   THERAPY — CELULAR DEITADO
+================================================== */
+
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+
+  .therapy {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, .44fr)
+      minmax(0, .56fr);
+
+    align-items: stretch;
+  }
+
+
+  /* IMAGEM */
+
+  .therapy-image {
+    grid-column: 1;
+    grid-row: 1;
+
+    min-height: 390px;
+    height: 100%;
+  }
+
+  .therapy-image img {
+    object-fit: cover;
+    object-position: 60% 16%;
+  }
+
+
+  /* TEXTO */
+
+  .therapy-copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .therapy-copy-inner {
+    width: calc(100% - 34px);
+
+    padding: 30px 0 32px;
+  }
+
+  .therapy-copy .eyebrow {
+    margin-bottom: 8px;
+
+    font-size: .46rem;
+    letter-spacing: .18em;
+  }
+
+  .therapy-copy h2 {
+    margin-bottom: 14px;
+
+    font-size: 1.55rem;
+    line-height: 1.03;
+  }
+
+  .therapy-copy p {
+    margin-bottom: 10px;
+
+    font-size: .65rem;
+    line-height: 1.5;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 14px;
+    padding-left: 10px;
+
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+  .therapy-copy cite {
+    margin-top: 4px;
+
+    font-size: .52rem;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — CELULAR DEITADO
+================================================== */
+
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+
+  .psychologists {
+    padding: 44px 0 50px;
+  }
+
+  .psychologists h2 {
+    font-size: 2.05rem;
+  }
+
+  .psychologists .section-intro {
+    max-width: 520px;
+
+    margin: 6px auto 24px;
+
+    font-size: .68rem;
+    line-height: 1.5;
+  }
+
+  .psych-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .psych-image {
+    height: 190px;
+  }
+
+  .psych-content {
+    padding: 16px 16px 18px;
+  }
+
+  .psych-content h3 {
+    margin-bottom: 2px;
+    font-size: 1.4rem;
+  }
+
+  .psych-card .role {
+    margin-bottom: 2px;
+    font-size: .56rem;
+  }
+
+  .psych-card .approach {
+    font-size: .58rem;
+  }
+
+  .psych-line {
+    width: 18px;
+    margin: 9px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 12px;
+
+    font-size: .57rem;
+    line-height: 1.5;
+  }
+
+  .psych-card a {
+    font-size: .78rem;
+  }
+
+  .psych-card:first-child .psych-image img {
+    object-position: center 30%;
+  }
+
+  .psych-card:nth-child(2) .psych-image img {
+    object-position: center 27%;
   }
 }
