@@ -2960,20 +2960,20 @@ p { margin-top: 0; }
     min-width: 0;
   }
 
-  .process-step h3 {
-    margin: 0 0 10px;
+ .process-step h3 {
+  margin: 0 0 11px;
 
-    font-size: 1.7rem;
-    line-height: 1.15;
+  font-size: 1.9rem;
+  line-height: 1.15;
   }
 
   .process-step p {
-    max-width: 460px;
+  max-width: 470px;
 
-    margin: 0;
+  margin: 0;
 
-    font-size: .90rem;
-    line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.72;
   }
 
 
@@ -3739,23 +3739,24 @@ p { margin-top: 0; }
   ================================= */
 
   .process-step > div {
-    min-width: 0;
-  }
+  min-height: 105px;
+  padding: 18px 15px;
+  gap: 8px;
+}
 
   .process-step h3 {
-    margin: 0 0 8px;
+  margin: 0 0 9px;
 
-    font-size: 1.35rem;
-    line-height: 1.15;
+  font-size: 1.50rem;
+  line-height: 1.15;
   }
 
   .process-step p {
-    max-width: none;
+  max-width: none;
+  margin: 0;
 
-    margin: 0;
-
-    font-size: .72rem;
-    line-height: 1.6;
+  font-size: .79rem;
+  line-height: 1.62;
   }
 
 
