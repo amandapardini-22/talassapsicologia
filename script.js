@@ -72,3 +72,207 @@ document.querySelectorAll('.faq-item').forEach(item => {
 if (window.lucide) {
   window.lucide.createIcons();
 }
+
+/* ==================================================
+   CARROSSEL — COMO FUNCIONA
+================================================== */
+
+const processGrid = document.querySelector(".process-grid");
+const processSteps = document.querySelectorAll(".process-step");
+
+const processPrev = document.querySelector(".process-prev");
+const processNext = document.querySelector(".process-next");
+
+const processPortrait = window.matchMedia(
+  "(max-width: 1024px) and (orientation: portrait)"
+);
+
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
+
+let processIndex = 0;
+let processTimer;
+
+
+/* ==================================================
+   IR PARA ETAPA
+================================================== */
+
+function goToProcessStep(index) {
+
+  if (!processGrid || !processSteps[index]) {
+    return;
+  }
+
+  processIndex = index;
+
+  processGrid.scrollTo({
+    left: processSteps[index].offsetLeft,
+    behavior: "smooth"
+  });
+}
+
+
+/* ==================================================
+   PRÓXIMA ETAPA
+   01 → 02 → 03 → 01
+================================================== */
+
+function nextProcessStep() {
+
+  processIndex =
+    (processIndex + 1) % processSteps.length;
+
+  goToProcessStep(processIndex);
+}
+
+
+/* ==================================================
+   ETAPA ANTERIOR
+================================================== */
+
+function previousProcessStep() {
+
+  processIndex =
+    (processIndex - 1 + processSteps.length)
+    % processSteps.length;
+
+  goToProcessStep(processIndex);
+}
+
+
+/* ==================================================
+   AUTOPLAY
+================================================== */
+
+function startProcessCarousel() {
+
+  clearInterval(processTimer);
+
+  if (
+    !processPortrait.matches ||
+    reduceMotion.matches ||
+    processSteps.length < 2
+  ) {
+    return;
+  }
+
+  processTimer = setInterval(
+    nextProcessStep,
+    4500
+  );
+}
+
+
+/* ==================================================
+   REINICIA O AUTOPLAY
+================================================== */
+
+function restartProcessCarousel() {
+
+  clearInterval(processTimer);
+
+  startProcessCarousel();
+}
+
+
+/* ==================================================
+   SETA DIREITA
+================================================== */
+
+if (processNext) {
+
+  processNext.addEventListener("click", () => {
+
+    nextProcessStep();
+
+    restartProcessCarousel();
+  });
+}
+
+
+/* ==================================================
+   SETA ESQUERDA
+================================================== */
+
+if (processPrev) {
+
+  processPrev.addEventListener("click", () => {
+
+    previousProcessStep();
+
+    restartProcessCarousel();
+  });
+}
+
+
+/* ==================================================
+   ATUALIZA ÍNDICE APÓS ARRASTAR
+================================================== */
+
+let processScrollTimer;
+
+if (processGrid) {
+
+  processGrid.addEventListener("scroll", () => {
+
+    clearTimeout(processScrollTimer);
+
+    processScrollTimer = setTimeout(() => {
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      processSteps.forEach((step, index) => {
+
+        const distance = Math.abs(
+          processGrid.scrollLeft -
+          step.offsetLeft
+        );
+
+        if (distance < closestDistance) {
+
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      processIndex = closestIndex;
+
+    }, 120);
+  });
+}
+
+
+/* ==================================================
+   CONFIGURAÇÃO RESPONSIVA
+================================================== */
+
+function setupProcessCarousel() {
+
+  clearInterval(processTimer);
+
+  processIndex = 0;
+
+  if (!processPortrait.matches) {
+
+    if (processGrid) {
+      processGrid.scrollLeft = 0;
+    }
+
+    return;
+  }
+
+  goToProcessStep(0);
+
+  startProcessCarousel();
+}
+
+
+setupProcessCarousel();
+
+processPortrait.addEventListener(
+  "change",
+  setupProcessCarousel
+);
