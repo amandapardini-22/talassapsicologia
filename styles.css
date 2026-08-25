@@ -1525,7 +1525,7 @@ p { margin-top: 0; }
 /* LOGO / MARCA */
 
 .footer-brand img {
-  width: 200px;
+  width: 230px;
   height: 155px;
   object-fit: contain;
   object-position: left center;
@@ -2570,8 +2570,9 @@ p { margin-top: 0; }
   /* LOGO */
 
   .footer-brand img {
-    width: 130px;
-    height: auto;
+  width: 150px;
+  height: auto;
+
 
     margin: 0 0 18px;
   }
@@ -3715,7 +3716,7 @@ p { margin-top: 0; }
   /* LOGO */
 
   .footer-brand img {
-    width: 145px;
+    width: 165px;
     height: auto;
 
     margin: 0 0 18px;
@@ -4981,7 +4982,7 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-brand img {
-    width: 120px;
+    width: 135px;
     height: auto;
 
     margin: 0 0 16px;
@@ -6076,7 +6077,7 @@ p { margin-top: 0; }
   /* MARCA */
 
   .footer-brand img {
-    width: 104px;
+    width: 120px;
     height: auto;
 
     margin: 0 0 11px;
