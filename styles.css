@@ -2350,6 +2350,82 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
+   PRACTICAL — TABLET DEITADO
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  .practical {
+    padding: 76px 0 82px;
+  }
+
+  .practical-box {
+    grid-template-columns:
+      minmax(0, 1.18fr)
+      minmax(0, .82fr);
+
+    gap: 30px;
+
+    padding: 34px 34px;
+
+    border-radius: 17px;
+  }
+
+  .practical h2 {
+    font-size: 2.45rem;
+    margin-bottom: 26px;
+  }
+
+  .practical-info dl {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 0 34px;
+  }
+
+  .practical-info dl div {
+    gap: 14px;
+    padding: 11px 0;
+  }
+
+  .practical-info dt {
+    font-size: .76rem;
+  }
+
+  .practical-info dd {
+    font-size: .78rem;
+  }
+
+  .next-step {
+    padding: 28px;
+  }
+
+  .next-step h2 {
+    font-size: 2.15rem;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+    font-size: .82rem;
+    line-height: 1.65;
+  }
+
+  .next-step .btn {
+    min-height: 48px;
+    padding: 0 22px;
+    font-size: .80rem;
+  }
+
+  .next-step .privacy-note {
+    margin-top: 10px;
+    font-size: .68rem;
+    text-align: left;
+  }
+}
+
+/* ==================================================
    TABLET EM PÉ
    deixa o HERO com lógica parecida com o celular
 ================================================== */
@@ -3057,6 +3133,131 @@ p { margin-top: 0; }
   }
 }
 
+/* ==================================================
+   PRACTICAL — TABLET EM PÉ
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  .practical {
+    padding: 78px 0 86px;
+
+    background-image: url("assets/fundo-demandas.jpeg");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .practical-box {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    max-width: 680px;
+
+    padding: 38px 40px;
+
+    border-radius: 18px;
+  }
+
+  .practical-info .eyebrow {
+    font-size: .72rem;
+  }
+
+  .practical h2 {
+    font-size: 2.65rem;
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+  }
+
+  .practical-info dl {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 0 34px;
+  }
+
+  .practical-info dl div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 13px 0;
+  }
+
+  .practical-info dt {
+    font-size: .80rem;
+    line-height: 1.5;
+  }
+
+  .practical-info dd {
+    max-width: 145px;
+
+    font-size: .82rem;
+    line-height: 1.5;
+
+    text-align: right;
+  }
+
+
+  /* CTA */
+
+  .next-step {
+    width: 100%;
+
+    padding: 32px 34px;
+
+    border-radius: 14px;
+  }
+
+  .next-step .eyebrow {
+    font-size: .70rem;
+  }
+
+  .next-step h2 {
+    max-width: 480px;
+
+    font-size: 2.45rem;
+    line-height: 1.05;
+
+    margin-bottom: 16px;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+    max-width: 540px;
+
+    font-size: .88rem;
+    line-height: 1.7;
+  }
+
+  .next-step .btn {
+    width: auto;
+
+    min-height: 52px;
+
+    margin-top: 10px;
+    padding: 0 28px;
+
+    font-size: .84rem;
+  }
+
+  .next-step .privacy-note {
+    width: auto;
+
+    margin: 11px 0 0;
+    padding: 0;
+
+    text-align: left;
+
+    font-size: .70rem;
+  }
+}
 
 /* ==================================================
    CELULAR EM PÉ
@@ -3826,6 +4027,161 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
+   PRACTICAL — CELULAR EM PÉ
+================================================== */
+
+@media
+  (max-width: 767px)
+  and (orientation: portrait) {
+
+  .practical {
+    padding: 48px 0 54px;
+
+    background-image: url("assets/fundo-demandas.jpeg");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+
+  /* CAIXA PRINCIPAL */
+
+  .practical-box {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    width: calc(100% - 28px);
+    max-width: 350px;
+
+    margin: 0 auto;
+
+    padding: 22px 18px;
+
+    border-radius: 14px;
+  }
+
+
+  /* =========================
+     INFORMAÇÕES
+  ========================= */
+
+  .practical-info {
+    min-width: 0;
+  }
+
+  .practical-info .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: .54rem;
+    letter-spacing: .19em;
+  }
+
+  .practical h2 {
+    max-width: 260px;
+
+    margin-bottom: 21px;
+
+    font-size: 1.90rem;
+    line-height: 1.04;
+  }
+
+  .practical-info dl {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .practical-info dl div {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 2px;
+
+    padding: 8px 0;
+
+    border-bottom:
+      1px solid rgba(var(--rgb-navy), .08);
+  }
+
+  .practical-info dt {
+    font-size: .61rem;
+    line-height: 1.35;
+  }
+
+  .practical-info dd {
+    margin: 0;
+
+    font-size: .70rem;
+    line-height: 1.4;
+
+    text-align: left;
+  }
+
+
+  /* =========================
+     PRÓXIMO PASSO
+  ========================= */
+
+  .next-step {
+    width: 100%;
+
+    padding: 21px 18px 22px;
+
+    border-radius: 12px;
+  }
+
+  .next-step .eyebrow {
+    margin-bottom: 11px;
+
+    font-size: .53rem;
+    letter-spacing: .18em;
+  }
+
+  .next-step h2 {
+    max-width: 250px;
+
+    margin-bottom: 12px;
+
+    font-size: 1.72rem;
+    line-height: 1.05;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+    margin-bottom: 15px;
+
+    font-size: .69rem;
+    line-height: 1.55;
+  }
+
+  .next-step .btn {
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-top: 2px;
+    padding: 0 12px;
+
+    font-size: .68rem;
+  }
+
+  .next-step .privacy-note {
+    width: 100%;
+
+    margin: 8px 0 0;
+    padding: 0;
+
+    text-align: center;
+
+    font-size: .57rem;
+    line-height: 1.4;
+  }
+}
+
+/* ==================================================
    CELULAR DEITADO
 
    Usa a altura para diferenciar de tablet.
@@ -4418,5 +4774,130 @@ p { margin-top: 0; }
     display: block;
 
     font-size: 1.45rem;
+  }
+}
+
+/* ==================================================
+   PRACTICAL — CELULAR DEITADO
+================================================== */
+
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+
+  .practical {
+    padding: 38px 0 44px;
+  }
+
+
+  /* CAIXA PRINCIPAL */
+
+  .practical-box {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    width: calc(100% - 48px);
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 20px 22px;
+
+    border-radius: 13px;
+  }
+
+
+  /* =========================
+     INFORMAÇÕES
+  ========================= */
+
+  .practical-info .eyebrow {
+    margin-bottom: 7px;
+
+    font-size: .46rem;
+  }
+
+  .practical h2 {
+    margin-bottom: 15px;
+
+    font-size: 1.65rem;
+    line-height: 1.05;
+  }
+
+  .practical-info dl {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 0 24px;
+  }
+
+  .practical-info dl div {
+    gap: 9px;
+
+    padding: 6px 0;
+  }
+
+  .practical-info dt {
+    font-size: .55rem;
+  }
+
+  .practical-info dd {
+    font-size: .59rem;
+    line-height: 1.35;
+  }
+
+
+  /* =========================
+     PRÓXIMO PASSO
+  ========================= */
+
+  .next-step {
+    padding: 16px 18px;
+  }
+
+  .next-step .eyebrow {
+    margin-bottom: 6px;
+
+    font-size: .45rem;
+  }
+
+  .next-step h2 {
+    max-width: none;
+
+    margin-bottom: 8px;
+
+    font-size: 1.42rem;
+    line-height: 1.04;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+    max-width: 540px;
+
+    margin-bottom: 10px;
+
+    font-size: .58rem;
+    line-height: 1.45;
+  }
+
+  .next-step .btn {
+    width: auto;
+
+    min-height: 36px;
+
+    padding: 0 14px;
+
+    font-size: .58rem;
+  }
+
+  .next-step .privacy-note {
+    width: auto;
+
+    margin: 6px 0 0;
+    padding: 0;
+
+    text-align: left;
+
+    font-size: .49rem;
   }
 }
