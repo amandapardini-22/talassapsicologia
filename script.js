@@ -1,5 +1,5 @@
 // ===== CONFIGURAÇÃO WHATSAPP =====
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '551140407979';
 const WHATSAPP_MESSAGE = 'Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia.';
 
 function buildWhatsAppUrl() {
