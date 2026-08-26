@@ -1,23 +1,160 @@
-// ===== CONFIGURAÇÃO WHATSAPP =====
-const WHATSAPP_NUMBER = '551140407979';
-const WHATSAPP_MESSAGE = 'Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia.';
+/* ==================================================
+   MODAL — ESCOLHER PSICÓLOGA
+================================================== */
 
-function buildWhatsAppUrl() {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const whatsappModal =
+  document.getElementById("whatsappModal");
+
+const whatsappButtons =
+  document.querySelectorAll(".js-whatsapp");
+
+const whatsappClose =
+  document.querySelector(".whatsapp-modal-close");
+
+const whatsappOverlay =
+  document.querySelector(".whatsapp-modal-overlay");
+
+
+/* ==================================================
+   WHATSAPP DAS PSICÓLOGAS
+================================================== */
+
+const whatsappCarol =
+  "551140407979";
+
+const whatsappCarolina =
+  "5511913678621";
+
+
+/* ==================================================
+   MENSAGEM INICIAL
+================================================== */
+
+const whatsappMessage =
+  encodeURIComponent(
+    "Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia."
+  );
+
+
+/* ==================================================
+   LINKS DAS PSICÓLOGAS
+================================================== */
+
+const carolLink =
+  document.querySelector(".whatsapp-carol");
+
+const carolinaLink =
+  document.querySelector(".whatsapp-carolina");
+
+
+if (carolLink) {
+  carolLink.href =
+    `https://wa.me/${whatsappCarol}?text=${whatsappMessage}`;
 }
 
-document.querySelectorAll('.js-whatsapp').forEach(link => {
-  link.href = buildWhatsAppUrl();
 
-  link.addEventListener('click', () => {
-    window.dataLayer = window.dataLayer || [];
+if (carolinaLink) {
+  carolinaLink.href =
+    `https://wa.me/${whatsappCarolina}?text=${whatsappMessage}`;
+}
+
+
+/* ==================================================
+   ABRIR MODAL
+================================================== */
+
+whatsappButtons.forEach((button) => {
+
+  button.addEventListener("click", (event) => {
+
+    event.preventDefault();
+
+
+    /* Rastreamento */
+
+    window.dataLayer =
+      window.dataLayer || [];
 
     window.dataLayer.push({
-      event: 'whatsapp_click',
-      location: link.textContent.trim()
+      event: "whatsapp_click",
+      location: button.textContent.trim()
     });
+
+
+    /* Abre o modal */
+
+    if (!whatsappModal) {
+      return;
+    }
+
+    whatsappModal.classList.add("open");
+
+    whatsappModal.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
   });
+
 });
+
+
+/* ==================================================
+   FECHAR MODAL
+================================================== */
+
+function closeWhatsappModal() {
+
+  if (!whatsappModal) {
+    return;
+  }
+
+  whatsappModal.classList.remove("open");
+
+  whatsappModal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+}
+
+
+if (whatsappClose) {
+
+  whatsappClose.addEventListener(
+    "click",
+    closeWhatsappModal
+  );
+
+}
+
+
+if (whatsappOverlay) {
+
+  whatsappOverlay.addEventListener(
+    "click",
+    closeWhatsappModal
+  );
+
+}
+
+
+/* Fecha usando ESC */
+
+document.addEventListener("keydown", (event) => {
+
+  if (
+    event.key === "Escape" &&
+    whatsappModal &&
+    whatsappModal.classList.contains("open")
+  ) {
+
+    closeWhatsappModal();
+
+  }
+
+});
+
 
 // ===== HEADER =====
 const header = document.querySelector('.site-header');
