@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#inicio" class="brand" aria-label="Talassa Clínica de Psicologia">
-        <img src="assets/logo-talassa-2.png" alt="Talassa Clínica de Psicologia" />
+        <img src="assets/logo-talassa.png" alt="Talassa Clínica de Psicologia" />
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -24,14 +24,17 @@
       </button>
 
       <nav class="main-nav" aria-label="Navegação principal">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Demandas</a>
-      <a href="#psicoterapia">Psicoterapia</a>
-      <a href="#psicologas">Psicólogas</a>
-      <a href="#duvidas">Dúvidas</a>
-      <a href="#contato">Contato</a>
-      <a class="btn btn-header js-whatsapp" href="#" target="_blank" rel="noopener">Agendar conversa</a>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#psicoterapia">Psicoterapia</a>
+        <a href="#psicologas">Psicólogas</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
       </nav>
+
+      <a class="btn btn-header js-whatsapp" href="#" target="_blank" rel="noopener">
+       Agendar conversa
+      </a>
     </div>
   </header>
 <main>
@@ -45,16 +48,28 @@
           Um mergulho na psique e no autoconhecimento.
         </h1>
         <span class="gold-line"></span>
-<a class="btn btn-primary js-whatsapp" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <!--<p class="lead">A psicoterapia pode ajudar você a lidar com emoções, conflitos e padrões que se repetem, promovendo mais autoconhecimento, clareza e bem-estar.</p>-->
+        <a class="btn btn-primary js-whatsapp" href="#" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
         <p class="privacy-note">🔒&nbsp; Conversas confidenciais e sigilosas</p>
       </div>
 
       <div class="hero-visual" aria-label="Momento de contemplação à beira-mar">
-        <span class="hero-shape-main"></span>
-        <span class="hero-shape-secondary"></span>
+        <span class="hero-shape hero-shape-main"></span>
+        <span class="hero-shape hero-shape-secondary"></span>
+
+        <div class="hero-dots hero-dots-top">
+          <span></span>
+          <span></span>
+        </div>
 
         <div class="hero-photo">
           <img src="assets/hero.png" alt="Mulher contemplando o mar">
+        </div>
+
+        <div class="hero-dots hero-dots-bottom">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -110,7 +125,7 @@
   </div>
 </section>
 
-  <section class="concerns" id="sobre">
+    <section class="concerns section" id="sobre">
   <div class="container concerns-container">
     <h2>Talvez você esteja passando por...</h2>
     <span class="gold-line centered"></span>
@@ -166,9 +181,8 @@
       </article>
     </div>
     <div class="concerns-message">
-      <p class="center-highlight">O que você sente merece ser acolhido com cuidado e sem julgamentos.</p>
-    </div>
-  </div>
+  <p class="center-highlight">O que você sente merece ser acolhido com cuidado e sem julgamentos.</p>
+</div>
 </section>
 
     <section class="therapy" id="psicoterapia">
@@ -182,11 +196,12 @@
         </div>
       </div>
       <div class="therapy-image">
-        <img src="assets/psicoterapia.png" alt="Mulher sentada em ambiente acolhedor" />
+        <img src="assets/psicoterapia.png" alt="Livros, vaso e vela em ambiente acolhedor" />
+        <span class="therapy-gold-line"></span>
       </div>
     </section>
 
-   <section class="psychologists" id="psicologas">
+   <section class="psychologists section" id="psicologas">
   <div class="container">
     <h2>Nossas Psicólogas</h2>
 
@@ -194,7 +209,8 @@
       Duas profissionais, um mesmo propósito: caminhar ao seu lado com escuta sensível e ética.
     </p>
 
-    <div class="psych-track">
+    <div class="psych-carousel" data-carousel>
+      <div class="psych-track">
 
         <article class="psych-card">
           <div class="psych-image">
@@ -203,16 +219,16 @@
 
           <div class="psych-content">
             <h3>Carol Lobo</h3>
-            <p class="role">Psicóloga Clínica • CRP/SP 06/231320</p>
+            <p class="role">Psicóloga Clínica | CRP/SP 06/231320</p>
             <p class="approach">Psicologia Analítica (Junguiana)</p>
 
             <span class="psych-line"></span>
 
             <p class="psych-description">
-              Atende mulheres que enfrentam ansiedade, luto, tristeza, conflitos nos relacionamentos e padrões que parecem se repetir. Na terapia, investiga junto à paciente o que sustenta esses sofrimentos e quais caminhos podem ser construídos a partir dessa compreensão.
+              Psicóloga clínica com atuação em Psicologia Analítica, acreditando na importância de um espaço acolhedor e profundo para que você possa se conhecer melhor e compreender sua relação consigo mesma e com o mundo.
             </p>
 
-            <a href="https://www.instagram.com/psi.carollobo/">Saiba mais sobre Carol →</a>
+            <a href="#contato">Saiba mais sobre Carol →</a>
           </div>
         </article>
 
@@ -223,8 +239,8 @@
 
           <div class="psych-content">
             <h3>Carolina Barbosa</h3>
-            <p class="role">Psicóloga Clínica • CRP/SP 06/229946</p>
-            <p class="approach">Psicologia Analítica (Junguiana)</p>
+            <p class="role">Psicóloga Clínica</p>
+            <p class="approach">Analítica Junguiana</p>
 
             <span class="psych-line"></span>
 
@@ -232,88 +248,44 @@
               A psicoterapia é um caminho de encontro com quem você realmente é. Trabalho com autoconhecimento, equilíbrio e transformação para uma vida mais alinhada e consciente.
             </p>
 
-            <a href="https://www.instagram.com/psi_carolinabarbosa/">Saiba mais sobre Carolina →</a>
+            <a href="#contato">Saiba mais sobre Carolina →</a>
           </div>
         </article>
 
       </div>
-  </div>
-</section>
-
-   <section class="process">
-  <div class="container">
-
-    <h2>Como funciona</h2>
-
-    <div class="process-carousel">
-
-      <div class="process-grid">
-
-        <article class="process-step">
-          <span class="step-number">01</span>
-          <div>
-            <h3>Entre em contato</h3>
-            <p>
-              Fale pelo WhatsApp e tire suas dúvidas sobre o processo,
-              valores e disponibilidade de agenda.
-            </p>
-          </div>
-        </article>
-
-        <span class="process-arrow">→</span>
-
-        <article class="process-step">
-          <span class="step-number">02</span>
-          <div>
-            <h3>Primeiro encontro</h3>
-            <p>
-              Conversamos sobre o que está acontecendo, o que você busca
-              na terapia e como podemos trabalhar juntos.
-            </p>
-          </div>
-        </article>
-
-        <span class="process-arrow">→</span>
-
-        <article class="process-step">
-          <span class="step-number">03</span>
-          <div>
-            <h3>Psicoterapia</h3>
-            <p>
-              Os encontros acontecem em um espaço reservado, confidencial
-              e voltado para você, com possibilidade de atendimento on-line.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="process-controls" aria-label="Navegação das etapas">
-        <button class="process-prev" type="button" aria-label="Etapa anterior">
-          ‹
-        </button>
-
-        <button class="process-next" type="button" aria-label="Próxima etapa">
-          ›
-        </button>
-      </div>
-
     </div>
 
+    <div class="carousel-dots" aria-hidden="true">
+      <span class="active"></span>
+      <span></span>
+    </div>
   </div>
 </section>
 
-    <section class="practical">
+    <section class="process section compact-section">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <div class="process-grid">
+          <article class="process-step"><span class="step-number">01</span><div><h3>Entre em contato</h3><p>Fale pelo WhatsApp e tire suas dúvidas sobre o processo, valores e disponibilidade de agenda.</p></div></article>
+          <span class="process-arrow">→</span>
+          <article class="process-step"><span class="step-number">02</span><div><h3>Primeiro encontro</h3><p>Conversamos sobre o que está acontecendo, o que você busca na terapia e como podemos trabalhar juntos.</p></div></article>
+          <span class="process-arrow">→</span>
+          <article class="process-step"><span class="step-number">03</span><div><h3>Psicoterapia</h3><p>Os encontros acontecem em um espaço reservado, confidencial e voltado para você, com possibilidade de atendimento on-line.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="practical section compact-section">
       <div class="container practical-box">
         <div class="practical-info">
           <p class="eyebrow">INFORMAÇÕES PRÁTICAS</p>
           <h2>Tudo que você precisa saber</h2>
           <dl>
-            <div><dt>Público</dt><dd>Adolescentes e adultos </dd></div>
-            <div><dt>Formato</dt><dd>Individual e casal</dd></div>
+            <div><dt>Público</dt><dd>Adultos</dd></div>
+            <div><dt>Formato</dt><dd>Sessões individuais</dd></div>
             <div><dt>Duração</dt><dd>50 minutos</dd></div>
             <div><dt>Abordagem</dt><dd>Psicologia Analítica</dd></div>
-            <div><dt>Atendimento</dt><dd>Presencial e on-line</dd></div>
+            <div><dt>Atendimento on-line</dt><dd>Disponível</dd></div>
             <div><dt>Ética e sigilo</dt><dd>Código de Ética Profissional</dd></div>
           </dl>
         </div>
@@ -341,7 +313,7 @@
       </div>
     </section>
 
-    <section class="faq" id="duvidas">
+    <section class="faq section" id="duvidas">
       <div class="container faq-grid">
         <div class="faq-intro">
           <p class="eyebrow">DÚVIDAS FREQUENTES</p>
@@ -365,7 +337,7 @@
   <div class="container footer-grid">
 
     <div class="footer-brand">
-      <img src="assets/logo-talassa-footer-2.png" alt="Talassa Clínica de Psicologia">
+      <img src="assets/logo-talassa-footer.png" alt="Talassa Clínica de Psicologia">
 
       <p>
         Psicoterapia para adolescentes, adultos e casais.
@@ -379,7 +351,7 @@
       <h3>Navegação</h3>
 
       <a href="#inicio">Início</a>
-      <a href="#sobre">Demandas</a>
+      <a href="#sobre">Sobre</a>
       <a href="#psicoterapia">Psicoterapia</a>
       <a href="#psicologas">Psicólogas</a>
       <a href="#duvidas">Dúvidas</a>
@@ -413,7 +385,7 @@
         autoconhecimento e saúde emocional.
       </p>
 
-      <a class="instagram-link" href="https://www.instagram.com/talassapsicologia/" target="_blank" rel="noopener">
+      <a class="instagram-link" href="#" target="_blank" rel="noopener">
         <i data-lucide="instagram"></i>
         <span>@talassapsicologia</span>
       </a>
@@ -434,103 +406,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ==================================================
-     MODAL — ESCOLHER PSICÓLOGA
-================================================== -->
-
-<div class="whatsapp-modal" id="whatsappModal" aria-hidden="true">
-  <div class="whatsapp-modal-overlay"></div>
-
-  <div
-    class="whatsapp-modal-box"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="whatsappModalTitle"
-  >
-    <button
-      class="whatsapp-modal-close"
-      type="button"
-      aria-label="Fechar"
-    >
-      ×
-    </button>
-
-    <p class="eyebrow">FALE CONOSCO</p>
-
-    <h2 id="whatsappModalTitle">
-      Com quem você gostaria de conversar?
-    </h2>
-
-    <p class="whatsapp-modal-intro">
-      Escolha uma de nossas psicólogas para iniciar a conversa pelo WhatsApp.
-    </p>
-
-    <div class="whatsapp-options">
-
-      <!-- CAROL -->
-      <a
-        class="whatsapp-option whatsapp-carol"
-        href="#"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="whatsapp-option-photo">
-          <img src="assets/carol-lobo.png" alt="Carol Lobo">
-        </div>
-
-        <div class="whatsapp-option-content">
-          <strong>Carol Lobo</strong>
-
-          <span class="whatsapp-role">
-            Psicóloga Clínica • CRP/SP 06/231320
-          </span>
-
-          <small class="whatsapp-approach">
-            Psicologia Analítica (Junguiana)
-          </small>
-
-          <p class="whatsapp-description">
-            Atendimento para mulheres adultas presencial e on-line.
-          </p>
-
-          <b>Conversar pelo WhatsApp →</b>
-        </div>
-      </a>
-
-      <!-- CAROLINA -->
-      <a
-        class="whatsapp-option whatsapp-carolina"
-        href="#"
-        target="_blank"
-        rel="noopener"
-      >
-        <div class="whatsapp-option-photo">
-          <img src="assets/carolina-barbosa.jpg" alt="Carolina Barbosa">
-        </div>
-
-        <div class="whatsapp-option-content">
-          <strong>Carolina Barbosa</strong>
-
-          <span class="whatsapp-role">
-            Psicóloga Clínica • CRP/SP 06/229946
-          </span>
-
-          <small class="whatsapp-approach">
-            Psicologia Analítica (Junguiana)
-          </small>
-
-          <p class="whatsapp-description">
-            Atendimento para adultos, adolescentes e casais, presencial e on-line.
-          </p>
-
-          <b>Conversar pelo WhatsApp →</b>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="script.js"></script>
