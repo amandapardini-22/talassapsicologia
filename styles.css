@@ -5717,52 +5717,64 @@ p { margin-top: 0; }
   }
 
 
-  /* ---------- TEXTO ---------- */
+ /* ---------- TEXTO ---------- */
 
-  .hero-copy .eyebrow {
-    width: 100%;
+.hero-copy .eyebrow {
+  width: 100%;
 
-    margin: 0 0 8px;
-    padding: 0;
+  margin: 0 0 8px;
+  padding: 0;
 
-    font-size: .45rem;
-    line-height: 1.35;
-    letter-spacing: .18em;
-  }
+  font-size: .45rem;
+  line-height: 1.35;
+  letter-spacing: .18em;
 
-  .hero-copy h1 {
-    width: 100%;
-    max-width: 100%;
+  /* desce o bloco de texto */
+  transform: translateY(10px);
+}
 
-    margin: 0;
-    padding: 0;
+.hero-copy h1 {
+  width: 100%;
+  max-width: 100%;
 
-    font-size: clamp(1.45rem, 3.8vw, 1.8rem);
-    line-height: 1.02;
-  }
+  margin: 0;
+  padding: 0;
 
-  .hero-copy .gold-line {
-    width: 27px;
+  font-size: clamp(1.45rem, 3.8vw, 1.8rem);
+  line-height: 1.02;
 
-    margin: 12px 0 11px;
-  }
+  /* desce junto com o eyebrow */
+  transform: translateY(10px);
+}
 
+.hero-copy .gold-line {
+  width: 27px;
 
-  /* ---------- BOTÃO ---------- */
+  margin: 12px 0 11px;
 
-  .hero-copy .btn {
+  /* acompanha o texto */
+  transform: translateY(10px);
+}
+
+ 
+/* ---------- BOTÃO ---------- */
+
+.hero-copy .btn {
   width: auto;
   min-width: 0;
 
   min-height: 38px;
 
-  /* empurra bastante o botão para baixo */
-  margin: 34px 0 0;
+  /* antes estava 34px — aproxima o botão do texto */
+  margin: 26px 0 0;
 
   padding: 0 14px;
 
   font-size: .65rem;
 }
+
+
+/* ---------- SIGILO ---------- */
 
 .privacy-note {
   width: auto;
