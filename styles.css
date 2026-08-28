@@ -2290,6 +2290,40 @@ p { margin-top: 0; }
   }
 }
 
+/* ==================================================
+   FUNDO DEMANDAS — TABLET E CELULAR EM PÉ
+================================================== */
+
+@media
+  (max-width: 1024px)
+  and (orientation: portrait) {
+
+  .concerns {
+    background-color: #FCF7EF;
+
+    background-image:
+      url("assets/fundo-demandas.jpeg");
+
+    background-repeat: no-repeat;
+
+    /*
+      Mantém a proporção original da imagem.
+      O restante da seção é preenchido pelo bege.
+    */
+    background-size: 100% auto;
+
+    /*
+      Mantém a parte decorativa mais bonita
+      na base da seção.
+    */
+    background-position: center bottom;
+  }
+
+  .concerns::before {
+    background:
+      rgba(var(--rgb-cream), .72);
+  }
+}
 
 /* ==================================================
    HEADER — TABLET DEITADO
