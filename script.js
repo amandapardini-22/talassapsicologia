@@ -378,7 +378,7 @@ function startProcessCarousel() {
 
   processTimer = setInterval(
     nextProcessStep,
-    4500
+    6000
   );
 }
 
