@@ -1758,11 +1758,12 @@ p { margin-top: 0; }
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 30px;
 
-  color: rgba(var(--rgb-white), .40);
+  color: rgba(var(--rgb-white), .60);
 
   font-size: .70rem;
 }
@@ -1774,15 +1775,14 @@ p { margin-top: 0; }
 }
 
 .footer-bottom a {
-  color: rgba(var(--rgb-white), .40);
+  color: rgba(var(--rgb-white), .60);
 
   transition: color .2s ease;
 }
 
 .footer-bottom a:hover {
-  color: rgba(var(--rgb-white), .75);
+  color: rgba(var(--rgb-white), .85);
 }
-
 
 /* ==================================================
    HOVER — LINKS DE CONTATO
