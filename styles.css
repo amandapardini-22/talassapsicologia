@@ -5809,7 +5809,7 @@ p { margin-top: 0; }
 
     margin: 0;
 
-    color: rgba(var(--rgb-white), .40);
+    color: rgba(var(--rgb-white), .60);
 
     font-size: .59rem;
     line-height: 1.5;
