@@ -513,7 +513,7 @@ p { margin-top: 0; }
   position: relative;
   padding: 72px 0 90px;
   overflow: hidden;
-  background: url("assets/fundo-demandas.jpeg") center / cover no-repeat;
+  background: url("assets/fundo-demandas.webp") center / cover no-repeat;
 }
 .concerns::before {
   content: "";
@@ -909,7 +909,7 @@ p { margin-top: 0; }
 .psychologists {
   position: relative;
   padding: 82px 0 76px;
-  background-image: url("assets/fundo-psicologas.jpeg");
+  background-image: url("assets/fundo-psicologas.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1189,7 +1189,7 @@ p { margin-top: 0; }
   overflow:hidden;
   background:
     linear-gradient(rgba(var(--rgb-white), .08),rgba(var(--rgb-white), .08)),
-    url("assets/fundo-demandas.jpeg") center/cover no-repeat;
+    url("assets/fundo-demandas.webp") center/cover no-repeat;
 }
 .practical::before {
   content: "";
@@ -1391,7 +1391,7 @@ p { margin-top: 0; }
   overflow: hidden;
   background:
     linear-gradient(rgba(var(--rgb-white), .06), rgba(var(--rgb-white), .06)),
-    url("assets/fundo-psicologas.jpeg") center / cover no-repeat;
+    url("assets/fundo-psicologas.webp") center / cover no-repeat;
 }
 .faq::before {
   content: "";
@@ -2310,7 +2310,7 @@ p { margin-top: 0; }
     background-color: #FCF7EF;
 
     background-image:
-      url("assets/fundo-demandas.jpeg");
+      url("assets/fundo-demandas.webp");
 
     background-repeat: no-repeat;
 
@@ -3524,7 +3524,7 @@ p { margin-top: 0; }
   .psychologists {
     padding: 82px 0 86px;
 
-    background-image: url("assets/fundo-psicologas.jpeg");
+    background-image: url("assets/fundo-psicologas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -3852,7 +3852,7 @@ p { margin-top: 0; }
   .practical {
     padding: 78px 0 86px;
 
-    background-image: url("assets/fundo-demandas.jpeg");
+    background-image: url("assets/fundo-demandas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -4072,7 +4072,7 @@ p { margin-top: 0; }
     padding-top: 92px;
     padding-bottom: 92px;
 
-    background-image: url("assets/fundo-psicologas.jpeg");
+    background-image: url("assets/fundo-psicologas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -4844,7 +4844,7 @@ p { margin-top: 0; }
   .psychologists {
     padding: 62px 0 68px;
 
-    background-image: url("assets/fundo-psicologas.jpeg");
+    background-image: url("assets/fundo-psicologas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -5161,7 +5161,7 @@ p { margin-top: 0; }
   .practical {
     padding: 48px 0 54px;
 
-    background-image: url("assets/fundo-demandas.jpeg");
+    background-image: url("assets/fundo-demandas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -5276,7 +5276,7 @@ p { margin-top: 0; }
     padding-top: 62px;
     padding-bottom: 68px;
 
-    background-image: url("assets/fundo-psicologas.jpeg");
+    background-image: url("assets/fundo-psicologas.webp");
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
