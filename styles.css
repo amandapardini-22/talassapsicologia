@@ -5998,9 +5998,9 @@ p { margin-top: 0; }
 .brand {
   width: 175px;
   max-width: none;
-
   display: flex;
   align-items: center;
+
 }
 
 .site-header .brand img {
@@ -6047,7 +6047,7 @@ p { margin-top: 0; }
     width: 100%;
     min-height: 100svh;
 
-    padding: 66px 0 14px;
+    padding: 76px 0 14px;
   }
 
   .hero-grid {
