@@ -101,12 +101,23 @@ p { margin-top: 0; }
   align-items: center;
   gap: 30px; 
 }
+/* ===== LOGO HEADER — BASE / DESKTOP ==== */
+.brand {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.brand picture {
+  display: block;
+  width: fit-content;
+}
 .brand img {
-  width: 350px;
-  height: 102px;
+  display: block;
+  width: 195px;
+  height: auto;
   object-fit: contain;
   object-position: left center;
-  margin: 0 10px 10px 0;
+  margin: 0;
 }
 .main-nav {
   display: flex;
@@ -1540,12 +1551,23 @@ p { margin-top: 0; }
   transform: translateX(-32px);
 }
 
+/* ======== LOGO FOOTER — BASE / DESKTOP ======= */
+
+.footer-brand picture {
+  display: block;
+  width: fit-content;
+}
+
 .footer-brand img {
-  width: 700px;
-  height: 200px;
+  display: block;
+
+  width: 330px;
+  height: auto;
+
   object-fit: contain;
   object-position: left center;
-  margin: -38px 0 -28px;
+
+  margin: 0 0 18px;
 }
 
 .footer-brand p {

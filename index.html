@@ -15,8 +15,22 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand" aria-label="Talassa Clínica de Psicologia">
-        <img src="assets/logo-talassa.webp" alt="Talassa Clínica de Psicologia" />
+      <a
+        href="#inicio"
+        class="brand"
+        aria-label="Talassa Clínica de Psicologia"
+      >
+        <picture>
+          <source
+            media="(max-width: 767px), (orientation: landscape) and (max-height: 500px)"
+            srcset="assets/logo-talassa-mobile.webp"
+          >
+          <img
+            src="assets/logo-talassa.webp"
+            alt="Talassa Clínica de Psicologia"
+            decoding="async"
+          >
+        </picture>
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -680,14 +694,20 @@
   <div class="container footer-grid">
 
     <div class="footer-brand">
-      <img
-        src="assets/logo-talassa-footer.webp"
-        alt="Talassa Clínica de Psicologia"
-        width="992"
-        height="456"
-        loading="lazy"
-        decoding="async"
-      >
+      <picture>
+        <source
+          media="(max-width: 767px), (orientation: landscape) and (max-height: 500px)"
+          srcset="assets/logo-talassa-footer-mobile.webp"
+        >
+        <img
+          src="assets/logo-talassa-footer.webp"
+          alt="Talassa Clínica de Psicologia"
+          width="992"
+          height="456"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
 
       <p>
         Psicoterapia para adolescentes, adultos e casais.
