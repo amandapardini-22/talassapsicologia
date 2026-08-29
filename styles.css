@@ -4466,15 +4466,12 @@ p { margin-top: 0; }
 
 .hero {
   width: 100%;
-
-  /* A seção passa a acompanhar o conteúdo,
-     em vez de ocupar obrigatoriamente 100% da tela */
   min-height: auto;
 
   padding:
-  clamp(94px, 26vw, 104px)
-  0
-  clamp(40px, 10vw, 46px);
+    clamp(94px, 26vw, 104px)
+    0
+    clamp(52px, 13vw, 60px);
 }
 
 .hero-grid {
