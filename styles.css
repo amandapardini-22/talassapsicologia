@@ -103,7 +103,7 @@ p { margin-top: 0; }
 }
 .brand img {
   width: 350px;
-  height: auto;
+  height: 102px;
   object-fit: contain;
   object-position: left center;
   margin: 0 10px 10px 0;
@@ -2087,8 +2087,8 @@ p { margin-top: 0; }
   ================================================== */
 
   .brand img {
-    width: 170px;
-    height: 82px;
+    width: 195px;
+    height: 90px;
   }
 
 
@@ -2967,9 +2967,8 @@ p { margin-top: 0; }
 
   .footer-brand {
     transform: none;
-
-    width: 100%;
-    min-width: 0;
+    width: 160px;
+    height: auto;
   }
 
   .footer-grid > .footer-column {
@@ -2982,7 +2981,7 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-brand img {
-    width: 175px;
+    width: 205px;
     height: auto;
 
     object-fit: contain;
@@ -4198,7 +4197,7 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-brand img {
-    width: 190px;
+    width: 205px;
     height: auto;
 
     object-fit: contain;
@@ -5929,41 +5928,68 @@ p { margin-top: 0; }
 ================================================== */
 
 @media
-  (orientation: landscape) and (max-height: 500px) {
+  (orientation: landscape)
+  and (max-height: 500px) {
 
-  /* ---------- HEADER ---------- */
+/* ---------- HEADER ---------- */
 
-  .header-inner {
-    min-height: 58px;
+.header-inner {
+  min-height: 58px;
 
-    grid-template-columns: 100px 1fr auto;
+  grid-template-columns: 1fr auto;
 
-    gap: 12px;
-  }
+  align-items: center;
 
-   .site-header .brand img {
-    transform: scale(1.25);
-    transform-origin: left center;
-  }
+  gap: 12px;
+}
 
-  .brand img {
-    width: 160px;
-    height: 76px;
-  }
 
-  .btn-header {
-    display: none;
-  }
+/* ---------- LOGO ---------- */
 
-  .menu-toggle {
-    display: block;
-    padding: 5px;
-  }
+.brand {
+  width: 175px;
+  max-width: none;
 
-  .menu-toggle span {
-    width: 23px;
-    margin: 4px 0;
-  }
+  display: flex;
+  align-items: center;
+}
+
+.site-header .brand img {
+  width: 175px;
+  max-width: none;
+  height: auto;
+
+  display: block;
+
+  transform: none;
+
+  object-fit: contain;
+  object-position: left center;
+}
+
+
+/* ---------- BOTÃO HEADER ---------- */
+
+.btn-header {
+  display: none;
+}
+
+
+/* ---------- HAMBÚRGUER ---------- */
+
+.menu-toggle {
+  display: block;
+
+  justify-self: end;
+
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 23px;
+
+  margin: 4px 0;
+}
 
 
   /* ---------- HERO ---------- */
@@ -6871,14 +6897,12 @@ p { margin-top: 0; }
   }
 
   .footer-brand img {
-    width: 175px;
+    width: 205px;
     height: auto;
-
     object-fit: contain;
     object-position: left center;
-
     margin: 0 0 11px;
-  }
+}
 
   .footer-brand p {
     max-width: 240px;
