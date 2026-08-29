@@ -91,19 +91,22 @@ p { margin-top: 0; }
 }
 .header-inner {
   min-height: 92px;
+  padding-top: 8px;
+  padding-bottom: 2px;
   display: grid;
   grid-template-columns:
     195px
     1fr
     auto;
   align-items: center;
-  gap: 30px;
+  gap: 30px; 
 }
 .brand img {
   width: 350px;
   height: auto;
   object-fit: contain;
   object-position: left center;
+  margin: 0 14px 14px 0;
 }
 .main-nav {
   display: flex;
@@ -4379,8 +4382,8 @@ p { margin-top: 0; }
   }
 
   .brand img {
-    width: 300px;
-    height: 120px;
+    width: 180px;
+    height: 92px;
   }
 
   .menu-toggle {
