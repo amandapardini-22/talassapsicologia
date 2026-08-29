@@ -92,13 +92,16 @@ p { margin-top: 0; }
 .header-inner {
   min-height: 92px;
   display: grid;
-  grid-template-columns: 220px 1fr auto;
+  grid-template-columns:
+    195px
+    1fr
+    auto;
   align-items: center;
   gap: 30px;
 }
 .brand img {
-  width: 230px;
-  height: 130px;
+  width: 350px;
+  height: auto;
   object-fit: contain;
   object-position: left center;
 }
@@ -224,7 +227,7 @@ p { margin-top: 0; }
 /* HERO — DESKTOP */
 .hero {
   position: relative;
-  padding: 105px 0 0;
+  padding: 115px 0 0;
   overflow: hidden;
   background: linear-gradient(
     125deg,
@@ -1081,9 +1084,13 @@ p { margin-top: 0; }
   padding-top: 80px;
   padding-bottom: 100px;
   overflow: hidden;
-  background: 
-  linear-gradient(rgba(var(--rgb-white), .08),rgba(var(--rgb-white), .08)),
-  url("assets/fundo-bege.png") center / cover no-repeat;
+  background: linear-gradient(
+  145deg,
+  #FAF0E6 0%,
+  #F7EAE1 48%,
+  #F4EAE0 78%,
+  #F0E3D3 100%
+);
 }
 .process::before {
   content: "";
@@ -1499,12 +1506,10 @@ p { margin-top: 0; }
 }
 
 .footer-brand img {
-  width: 350px;
-  height: 250px;
-
+  width: 700px;
+  height: 200px;
   object-fit: contain;
   object-position: left center;
-
   margin: -38px 0 -28px;
 }
 
@@ -4374,8 +4379,8 @@ p { margin-top: 0; }
   }
 
   .brand img {
-    width: 140px;
-    height: 64px;
+    width: 300px;
+    height: 120px;
   }
 
   .menu-toggle {
@@ -5519,13 +5524,13 @@ p { margin-top: 0; }
   }
 
   .footer-brand img {
-    width: 165px;
+    width: 250px;
     height: auto;
 
     object-fit: contain;
     object-position: left center;
 
-    margin: 0 0 12px;
+    margin: 0 0 2px;
   }
 
   .footer-brand p {
