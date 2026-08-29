@@ -91,8 +91,8 @@ p { margin-top: 0; }
 }
 .header-inner {
   min-height: 92px;
-  padding-top: 8px;
-  padding-bottom: 2px;
+  padding-top: 2px;
+  
   display: grid;
   grid-template-columns:
     195px
@@ -106,7 +106,7 @@ p { margin-top: 0; }
   height: auto;
   object-fit: contain;
   object-position: left center;
-  margin: 0 14px 14px 0;
+  margin: 0 10px 10px 0;
 }
 .main-nav {
   display: flex;
