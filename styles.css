@@ -5527,13 +5527,13 @@ p { margin-top: 0; }
   }
 
   .footer-brand img {
-    width: 250px;
+    width: 230px;
     height: auto;
 
     object-fit: contain;
     object-position: left center;
 
-    margin: 0 0 2px;
+    margin: 0 0 14px;
   }
 
   .footer-brand p {
