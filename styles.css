@@ -177,17 +177,24 @@ p { margin-top: 0; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   width: auto;
   min-height: 46px;
+
   margin-left: 34px;
   padding: 0 28px;
+
   background: var(--gold);
-  color: var(--ink-strong);
+  color: var(--navy);
+
   border: 0;
   border-radius: 0;
+
   white-space: nowrap;
+
   font-weight: 600;
   font-size: .88rem;
+
   transition:
     transform .2s ease,
     box-shadow .2s ease,
@@ -207,7 +214,7 @@ p { margin-top: 0; }
 /* Header transparente */
 .site-header:not(.scrolled) .main-nav .btn-header {
   background: var(--gold);
-  color: var(--ink-strong);
+  color: var(--navy);
 }
 
 /* Header depois do scroll */
@@ -2343,9 +2350,7 @@ p { margin-top: 0; }
   .site-header.scrolled .main-nav .btn-header:hover {
     background: var(--teal);
     color: var(--white);
-
     transform: translateY(-2px);
-
     box-shadow:
       0 8px 18px rgba(44, 47, 81, .10);
   }
