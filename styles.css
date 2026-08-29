@@ -393,6 +393,17 @@ p { margin-top: 0; }
   object-position: 55% center;
   filter: brightness(1.02) contrast(.97) saturate(.94);
 }
+.hero-photo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero-photo picture img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
 .hero-photo::after {
   content: "";
   position: absolute;
