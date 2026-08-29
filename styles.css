@@ -915,6 +915,14 @@ p { margin-top: 0; }
   object-fit: cover;
   object-position: 60% 12%;
 }
+.therapy-image picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* Psychologists */
 
 .psychologists {
@@ -1003,7 +1011,20 @@ p { margin-top: 0; }
   border-radius: 0;
   transition: transform .65s ease;
 }
+.psych-image picture {
+  display: block;
 
+  width: 100%;
+  height: 100%;
+}
+.psych-image picture img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
 /* Zoom suave */
 .psych-card:hover .psych-image img {
   transform: scale(1.06);
@@ -1011,7 +1032,7 @@ p { margin-top: 0; }
 
 /* Carol */
 .psych-card:first-child .psych-image img {
-  object-position: center 32%;
+  object-position: center 26%;
 }
 
 /* Carolina */
@@ -1920,11 +1941,17 @@ p { margin-top: 0; }
   object-fit: cover;
   object-position: center;
 }
+.whatsapp-option-photo picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
 
 /* FOTO — CAROL */
 
 .whatsapp-carol .whatsapp-option-photo img {
-  object-position: center 30%;
+  object-position: center 22%;
 }
 
 
@@ -4784,7 +4811,7 @@ p { margin-top: 0; }
     height: 100%;
 
     object-fit: cover;
-    object-position: 60% 16%;
+    object-position: center center;
   }
 
 
@@ -4929,7 +4956,7 @@ p { margin-top: 0; }
   }
 
   .psych-card:first-child .psych-image img {
-    object-position: center 30%;
+    object-position: center 16%;
   }
 
   .psych-card:nth-child(2) .psych-image img {
@@ -5189,7 +5216,6 @@ p { margin-top: 0; }
     */
     background-position: center bottom;
   }
-  }
 
 
   /* CAIXA PRINCIPAL */
@@ -5285,6 +5311,7 @@ p { margin-top: 0; }
   text-align: center;
   font-size: .62rem;
   line-height: 1.45;
+}
 }
 
 /* ==================================================
@@ -5876,7 +5903,7 @@ p { margin-top: 0; }
   /* Carol */
 
   .whatsapp-carol .whatsapp-option-photo img {
-    object-position: center 30%;
+    object-position: center 8%;
   }
 
 
@@ -6516,11 +6543,11 @@ p { margin-top: 0; }
   }
 
   .psych-card:first-child .psych-image img {
-    object-position: center 30%;
+    object-position: center 8%;
   }
 
   .psych-card:nth-child(2) .psych-image img {
-    object-position: center 27%;
+    object-position: center 22%;
   }
 }
 
@@ -7162,7 +7189,7 @@ p { margin-top: 0; }
   /* Carol */
 
   .whatsapp-carol .whatsapp-option-photo img {
-    object-position: center 32%;
+    object-position: center 8%;
   }
 
 
