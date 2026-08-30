@@ -119,14 +119,6 @@ p { margin-top: 0; }
   object-position: left center;
   margin: 0;
 }
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  font-size: .86rem;
-  font-weight: 600;
-}
 .main-nav a {
   position: relative;
   padding: 10px 0;
@@ -210,13 +202,6 @@ p { margin-top: 0; }
 .main-nav .btn-header::after {
   display: none;
 }
-
-/* Header transparente */
-.site-header:not(.scrolled) .main-nav .btn-header {
-  background: var(--gold);
-  color: var(--navy);
-}
-
 /* Header depois do scroll */
 .site-header.scrolled .main-nav .btn-header {
   background: var(--teal);
@@ -429,47 +414,6 @@ p { margin-top: 0; }
   pointer-events: none;
   background: linear-gradient(135deg, rgba(56,127,136,.035), transparent 55%, rgba(var(--rgb-gold), .025));
 }
-.hero-dots {
-  position: absolute;
-  display: flex;
-  z-index: 6;
-  pointer-events: none;
-}
-.hero-dots-top {
-  left: 30px;
-  top: 105px;
-  gap: 7px;
-}
-.hero-dots-top span {
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(187,220,219,.48);
-}
-.hero-dots-top span:nth-child(2) {
-  opacity: .45;
-}
-.hero-dots-bottom {
-  right: 60px;
-  bottom: 70px;
-  flex-direction: column;
-  gap: 5px;
-}
-.hero-dots-bottom span {
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(211,174,107,.70);
-}
-.hero-dots-bottom span:nth-child(2) {
-  opacity: .60;
-}
-.hero-dots-bottom span:nth-child(3) {
-  opacity: .35;
-}
-
 /* INFO SECTION */
 .info-section {
   width: 100%;
@@ -4712,8 +4656,6 @@ p { margin-top: 0; }
   }
 
 
-  /* ---------- EYEBROW ---------- */
-
 .hero-copy .eyebrow {
   order: 1;
 
@@ -4722,11 +4664,6 @@ p { margin-top: 0; }
   padding-inline:
     clamp(18px, 5.8vw, 26px);
 
-  /*
-    Cria um pequeno respiro abaixo do header.
-    Como usamos space-between, isso também
-    compacta levemente os espaços internos.
-  */
   margin:
     clamp(10px, 1.5svh, 15px)
     0
@@ -4741,55 +4678,58 @@ p { margin-top: 0; }
   flex: 0 0 auto;
 }
 
-  /* ---------- TÍTULO ---------- */
 
-  .hero-copy h1 {
-    order: 2;
+/* ---------- TÍTULO ---------- */
 
-    width: 100%;
-    max-width: 100%;
+.hero-copy h1 {
+  order: 2;
 
-    padding-inline:
-      clamp(18px, 5.8vw, 26px);
+  width: 100%;
+  max-width: 100%;
 
-    margin: 0;
+  padding-inline:
+    clamp(18px, 5.8vw, 26px);
 
-    font-size:
-      clamp(
-        1.82rem,
-        min(4.45svh, 9vw),
-        2.55rem
-      );
+  /*
+    Puxa o título para perto do eyebrow.
+  */
+  margin:
+    clamp(-24px, -2.8svh, -16px)
+    0
+    0;
 
-    line-height: 1.03;
-    letter-spacing: -.02em;
+  font-size:
+    clamp(
+      1.82rem,
+      min(4.45svh, 9vw),
+      2.55rem
+    );
 
-    flex: 0 0 auto;
-  }
+  line-height: 1.03;
+  letter-spacing: -.02em;
+
+  flex: 0 0 auto;
+}
 
 
-  /* ---------- LINHA DOURADA ---------- */
+/* ---------- LINHA DOURADA ---------- */
 
-  .hero-copy .gold-line {
-    order: 3;
+.hero-copy .gold-line {
+  order: 3;
 
-    width:
-      clamp(30px, 4svh, 40px);
+  width:
+    clamp(30px, 4svh, 40px);
 
-    height: 1px;
+  height: 1px;
 
-    /*
-      Sem margens verticais grandes.
-      O próprio Hero controla o espaço.
-    */
-    margin:
-      0
-      0
-      0
-      clamp(18px, 5.8vw, 26px);
+  margin:
+    clamp(-8px, -1svh, -4px)
+    0
+    0
+    clamp(18px, 5.8vw, 26px);
 
-    flex: 0 0 auto;
-  }
+  flex: 0 0 auto;
+}
 
 
   /* ---------- ÁREA DA FOTO ---------- */
@@ -4902,7 +4842,7 @@ p { margin-top: 0; }
     flex: 0 0 auto;
   }
 
-  /* ---------- SIGILO ---------- */
+/* ---------- SIGILO ---------- */
 
 .privacy-note {
   order: 6;
@@ -4910,11 +4850,12 @@ p { margin-top: 0; }
   width: 100%;
 
   /*
-    Aproxima a nota do botão,
-    compensando o espaço criado pelo space-between.
+    Aproxima o sigilo do botão.
+    Em celulares altos, puxa um pouco mais;
+    em telas menores, puxa menos.
   */
   margin:
-    clamp(-16px, -1.7svh, -10px)
+    clamp(-34px, -4svh, -18px)
     0
     0;
 
