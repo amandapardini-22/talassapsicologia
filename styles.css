@@ -1983,95 +1983,6 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
-   RESPONSIVO — TABLET
-================================================== */
-
-@media (max-width: 1024px) {
-  .whatsapp-modal-box {
-    width: min(100%, 720px);
-    padding: 36px 30px;
-  }
-
-  .whatsapp-modal-box h2 {
-    font-size: 2.05rem;
-  }
-
-  .whatsapp-option-photo {
-    height: 180px;
-  }
-
-  .whatsapp-option strong {
-    font-size: 1.55rem;
-  }
-}
-
-/* ==================================================
-   RESPONSIVO — CELULAR
-================================================== */
-
-@media (max-width: 767px) {
-  .whatsapp-modal {
-    padding: 18px;
-  }
-
-  .whatsapp-modal-box {
-    width: 100%;
-    max-height: calc(100dvh - 36px);
-    padding: 28px 20px 22px;
-    overflow-y: auto;
-    border-radius: 16px;
-  }
-
-  .whatsapp-modal-box .eyebrow {
-    font-size: .62rem;
-  }
-
-  .whatsapp-modal-box h2 {
-    max-width: 290px;
-    font-size: 1.85rem;
-  }
-
-  .whatsapp-modal-intro {
-    margin-bottom: 20px;
-    font-size: .76rem;
-  }
-
-  .whatsapp-options {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .whatsapp-option-photo {
-    height: 165px;
-  }
-
-  .whatsapp-option-content {
-    padding: 18px 17px 18px;
-  }
-
-  .whatsapp-option strong {
-    font-size: 1.45rem;
-  }
-
-  .whatsapp-role,
-  .whatsapp-approach {
-    font-size: .68rem;
-  }
-
-  .whatsapp-description {
-    font-size: .74rem;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .whatsapp-option b {
-    font-size: .92rem;
-  }
-}
-
-/* ==== HEADER — TABLET E MOBILE até 1024px ===== */
-
-/* ==================================================
    RESPONSIVE
 ================================================== */
 
@@ -2343,7 +2254,7 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
-   HEADER — TABLET DEITADO
+   HEADER — TABLET EM PÉ
    Mais margem lateral e respiro superior
 ================================================== */
 
@@ -2446,13 +2357,20 @@ p { margin-top: 0; }
   }
 }
 
-/* ========= TABLET 768px — 1024px =========== */
+/* ==================================================
+   HERO — TABLET DEITADO
+================================================== */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
 
   .hero {
     width: 100%;
-    min-height: auto;
+
+    height: 100svh;
+    min-height: 0;
 
     padding:
       clamp(92px, 9.5vw, 100px)
@@ -2460,12 +2378,15 @@ p { margin-top: 0; }
       clamp(3px, .5vw, 6px);
 
     display: block;
+
+    overflow: hidden;
   }
 
 
   .hero-grid {
     width: min(calc(100% - 48px), var(--container));
 
+    height: 100%;
     min-height: 0;
 
     display: grid;
@@ -3232,12 +3153,16 @@ p { margin-top: 0; }
 
   .hero {
     width: 100%;
-    min-height: auto;
+
+    height: 100svh;
+    min-height: 0;
 
     padding:
       clamp(118px, 16vw, 132px)
       0
       clamp(38px, 5vw, 48px);
+
+    overflow: hidden;
   }
 
 
@@ -3247,6 +3172,7 @@ p { margin-top: 0; }
 
     width: min(calc(100% - 56px), 760px);
 
+    height: 100%;
     min-height: 0;
 
     gap: 0;
@@ -3329,7 +3255,9 @@ p { margin-top: 0; }
     order: 4;
 
     width: 100%;
+    min-width: 0;
     min-height: 0;
+    height: auto;
 
     padding: 0;
 
@@ -3339,6 +3267,7 @@ p { margin-top: 0; }
       clamp(24px, 3.5vw, 28px);
 
     display: flex;
+    align-items: center;
     justify-content: center;
   }
 
