@@ -4654,46 +4654,65 @@ p { margin-top: 0; }
     height: 2px;
     margin: 5px 0;
   }
+  }
 
+/* ------ HERO — CELULAR EM PÉ ------- */
+ @media
+  (max-width: 767px)
+  and (orientation: portrait) {
 
   /* ---------- HERO ---------- */
 
-.hero {
-  width: 100%;
-  min-height: auto;
+  .hero {
+    width: 100%;
 
-  padding:
-    clamp(94px, 26vw, 104px)
-    0
-    clamp(52px, 13vw, 60px);
-}
+    /* Hero ocupa exatamente a primeira tela */
+    height: 100svh;
+    min-height: 0;
 
-.hero-grid {
-  display: flex;
-  flex-direction: column;
+    padding:
+      clamp(88px, 11.5svh, 108px)
+      0
+      clamp(10px, 1.5svh, 14px);
 
-  width: 100%;
-  max-width: 430px;
-
-  min-height: 0;
-
-  margin: 0 auto;
-
-  gap: 0;
-}
+    overflow: hidden;
+  }
 
 
-/*
-  Permite a ordem:
-  texto → foto → botão
-*/
+  /* ---------- ESTRUTURA ---------- */
 
-.hero-copy {
-  display: contents;
-}
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 440px;
+
+    height: 100%;
+    min-height: 0;
+
+    margin: 0 auto;
+
+    /*
+      ESTA É A PARTE IMPORTANTE:
+
+      O espaço que sobra na tela é distribuído
+      ENTRE os elementos.
+
+      Não fica mais acumulado embaixo.
+    */
+    justify-content: space-between;
+
+    gap: 0;
+  }
 
 
-/* ---------- EYEBROW ---------- */
+  .hero-copy {
+    display: contents;
+  }
+
+
+  /* ---------- EYEBROW ---------- */
 
 .hero-copy .eyebrow {
   order: 1;
@@ -4701,171 +4720,201 @@ p { margin-top: 0; }
   width: 100%;
 
   padding-inline:
-    clamp(18px, 6vw, 24px);
+    clamp(18px, 5.8vw, 26px);
 
+  /*
+    Cria um pequeno respiro abaixo do header.
+    Como usamos space-between, isso também
+    compacta levemente os espaços internos.
+  */
   margin:
-    clamp(8px, 2.5vw, 10px)
+    clamp(10px, 1.5svh, 15px)
     0
-    clamp(12px, 3.5vw, 14px);
+    0;
 
   font-size:
-    clamp(.50rem, 1.45vw, .54rem);
+    clamp(.48rem, 1.15svh, .62rem);
 
-  line-height: 1.45;
+  line-height: 1.4;
   letter-spacing: .20em;
+
+  flex: 0 0 auto;
 }
 
+  /* ---------- TÍTULO ---------- */
 
-/* ---------- TÍTULO ---------- */
+  .hero-copy h1 {
+    order: 2;
 
-.hero-copy h1 {
-  order: 2;
+    width: 100%;
+    max-width: 100%;
 
-  width: 100%;
-  max-width: 100%;
+    padding-inline:
+      clamp(18px, 5.8vw, 26px);
 
-  padding-inline:
-    clamp(18px, 6vw, 24px);
+    margin: 0;
 
-  margin: 0;
+    font-size:
+      clamp(
+        1.82rem,
+        min(4.45svh, 9vw),
+        2.55rem
+      );
 
-  font-size:
-    clamp(1.90rem, 8.7vw, 2.25rem);
+    line-height: 1.03;
+    letter-spacing: -.02em;
 
-  line-height: 1.04;
-  letter-spacing: -.02em;
-}
-
-
-/* ---------- LINHA ---------- */
-
-.hero-copy .gold-line {
-  order: 3;
-
-  width: 34px;
-  height: 1px;
-
-  margin:
-    clamp(18px, 5.5vw, 22px)
-    0
-    clamp(17px, 5vw, 20px)
-    clamp(18px, 6vw, 24px);
-}
+    flex: 0 0 auto;
+  }
 
 
-/* ---------- FOTO ---------- */
+  /* ---------- LINHA DOURADA ---------- */
 
-.hero-visual {
-  order: 4;
+  .hero-copy .gold-line {
+    order: 3;
 
-  width: 100%;
-  min-height: 0;
+    width:
+      clamp(30px, 4svh, 40px);
 
-  display: flex;
-  justify-content: center;
+    height: 1px;
 
-  padding-inline:
-    clamp(6px, 2vw, 8px);
+    /*
+      Sem margens verticais grandes.
+      O próprio Hero controla o espaço.
+    */
+    margin:
+      0
+      0
+      0
+      clamp(18px, 5.8vw, 26px);
 
-  margin:
-    0
-    0
-    clamp(24px, 7vw, 30px);
-}
-
-
-.hero-photo {
-  width: 100%;
-  max-width: 380px;
-
-  /* A altura agora acompanha a largura */
-  height: auto;
-  aspect-ratio: 380 / 235;
-
-  margin: 0 auto;
-
-  border-radius:
-    46% 46% 14% 30% /
-    29% 29% 10% 32%;
-}
+    flex: 0 0 auto;
+  }
 
 
-.hero-photo picture {
-  display: block;
+  /* ---------- ÁREA DA FOTO ---------- */
 
-  width: 100%;
-  height: 100%;
-}
+  .hero-visual {
+    order: 4;
 
+    width: 100%;
+    min-height: 0;
 
-.hero-photo img,
-.hero-photo picture img {
-  display: block;
+    flex: 0 0 auto;
 
-  width: 100%;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  object-fit: cover;
-  object-position: 58% 50%;
-}
+    padding-inline:
+      clamp(6px, 2vw, 8px);
 
-
-/* ---------- FORMAS FOTO ---------- */
-
-.hero-shape-main {
-  /* Agora acompanha proporcionalmente
-     o tamanho da própria foto */
-  width: 92%;
-  height: 109%;
-
-  left: 50%;
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(-3deg);
-}
+    margin: 0;
+  }
 
 
-.hero-shape-secondary {
-  width: 107%;
-  height: 126%;
+  /* ---------- FOTO ---------- */
 
-  left: 52%;
-  top: 48%;
-}
+  .hero-photo {
+    width: calc(100% - 16px);
+    max-width: 410px;
 
+    /*
+      A foto aumenta e diminui
+      conforme a altura do aparelho.
+    */
+    height:
+      clamp(195px, 31svh, 315px);
 
-/* ---------- BOTÃO ---------- */
+    margin: 0 auto;
 
-.hero-copy .btn {
-  order: 5;
+    overflow: hidden;
 
-  width: calc(100% - 24px);
-  max-width: 380px;
-
-  min-height:
-    clamp(50px, 13vw, 52px);
-
-  margin: 0 auto;
-
-  padding-inline:
-    clamp(14px, 4vw, 16px);
-
-  font-size:
-    clamp(.76rem, 2.3vw, .80rem);
-}
+    border-radius:
+      46% 46% 14% 30% /
+      29% 29% 10% 32%;
+  }
 
 
-/* ---------- SIGILO ---------- */
+  .hero-photo picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hero-photo img,
+  .hero-photo picture img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 58% 50%;
+  }
+
+
+  /* ---------- FORMAS DA FOTO ---------- */
+
+  .hero-shape-main {
+    width: 96%;
+    height: 112%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(-3deg);
+  }
+
+
+  .hero-shape-secondary {
+    width: 110%;
+    height: 128%;
+
+    left: 52%;
+    top: 48%;
+  }
+
+
+  /* ---------- BOTÃO ---------- */
+
+  .hero-copy .btn {
+    order: 5;
+
+    width: calc(100% - 24px);
+    max-width: 400px;
+
+    min-height:
+      clamp(46px, 6.2svh, 56px);
+
+    margin: 0 auto;
+
+    padding-inline:
+      clamp(14px, 4vw, 20px);
+
+    font-size:
+      clamp(.71rem, 1.55svh, .86rem);
+
+    flex: 0 0 auto;
+  }
+
+  /* ---------- SIGILO ---------- */
 
 .privacy-note {
   order: 6;
 
   width: 100%;
 
+  /*
+    Aproxima a nota do botão,
+    compensando o espaço criado pelo space-between.
+  */
   margin:
-    clamp(10px, 3vw, 12px)
+    clamp(-16px, -1.7svh, -10px)
     0
     0;
 
@@ -4874,86 +4923,45 @@ p { margin-top: 0; }
   text-align: center;
 
   font-size:
-    clamp(.61rem, 1.9vw, .66rem);
+    clamp(.56rem, 1.2svh, .68rem);
+
+  line-height: 1.4;
+
+  flex: 0 0 auto;
 }
 
+  /* ---------- CÍRCULOS DO FUNDO ---------- */
 
-/* ---------- CÍRCULOS FUNDO ---------- */
+  .hero::before {
+    width:
+      clamp(360px, 118vw, 480px);
 
-.hero::before {
-  width:
-    clamp(360px, 118vw, 460px);
+    height:
+      clamp(360px, 118vw, 480px);
 
-  height:
-    clamp(360px, 118vw, 460px);
+    right:
+      clamp(-290px, -67vw, -215px);
 
-  right:
-    clamp(-280px, -67vw, -215px);
-
-  top:
-    clamp(-150px, -35vw, -115px);
-}
-
-
-.hero::after {
-  width:
-    clamp(230px, 77vw, 300px);
-
-  height:
-    clamp(230px, 77vw, 300px);
-
-  left:
-    clamp(-175px, -44vw, -140px);
-
-  bottom:
-    clamp(-135px, -34vw, -105px);
-}
-}
-
-  /* ==================================================
-   INFO SECTION — CELULAR EM PÉ
-================================================== */
-
-@media (max-width: 767px) and (orientation: portrait) {
-
-  .info-wrap {
-    padding: 42px 0 46px;
+    top:
+      clamp(-160px, -35vw, -115px);
   }
 
-  .info-strip {
-    gap: 32px;
-    max-width: 100%;
-  }
 
-  .info-item {
-    gap: 16px;
-    padding: 0 4px;
-  }
+  .hero::after {
+    width:
+      clamp(230px, 77vw, 315px);
 
-  .info-icon {
-    width: 40px;
-    height: 40px;
+    height:
+      clamp(230px, 77vw, 315px);
 
-    flex: 0 0 40px;
-  }
+    left:
+      clamp(-180px, -44vw, -140px);
 
-  .info-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .info-item strong {
-    margin-bottom: 6px;
-
-    font-size: .90rem;
-    line-height: 1.35;
-  }
-
-  .info-item span {
-    font-size: .76rem;
-    line-height: 1.55;
+    bottom:
+      clamp(-140px, -34vw, -105px);
   }
 }
+
 /* ==================================================
    CONCERNS — CELULAR EM PÉ
 ================================================== */
