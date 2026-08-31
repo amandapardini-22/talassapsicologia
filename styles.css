@@ -721,33 +721,28 @@ p { margin-top: 0; }
   transform: rotate(180deg);
 }
 
-
-/* ==================================================
-   DESCRIÇÃO FECHADA
-================================================== */
-
+/* DESCRIÇÃO FECHADA */
 .concern-description {
-  max-height: 0;
-
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
 
   opacity: 0;
+  overflow: hidden;
 
-  border-top:
-    1px solid transparent;
+  border-top: 1px solid transparent;
 
   transition:
-    max-height .38s ease,
+    grid-template-rows .38s ease,
     opacity .28s ease,
     border-color .28s ease;
 }
 
-
 .concern-description p {
-  margin: 0;
+  min-height: 0;
+  overflow: hidden;
 
-  padding:
-    0 18px;
+  margin: 0;
+  padding: 0 18px;
 
   color: #66737A;
 
@@ -757,23 +752,19 @@ p { margin-top: 0; }
 
   text-align: center;
 
-  transition:
-    padding .38s ease;
+  transition: padding .38s ease;
 }
 
 
-/* ==================================================
-   CARD ABERTO
-================================================== */
-
+/* CARD ABERTO */
 .concern-card.open {
-  border-color:
-    rgba(var(--rgb-gold), .48);
+  border-color: rgba(var(--rgb-gold), .48);
 }
-
 
 .concern-card.open .concern-description {
-  max-height: 190px;
+  grid-template-rows: 1fr;
+
+  max-height: none !important;
 
   opacity: 1;
 
@@ -781,8 +772,9 @@ p { margin-top: 0; }
     rgba(var(--rgb-gold), .14);
 }
 
-
 .concern-card.open .concern-description p {
+  overflow: visible;
+
   padding:
     15px
     18px
@@ -1983,15 +1975,6 @@ p { margin-top: 0; }
 }
 
 /* ==== HEADER — TABLET E MOBILE até 1024px ===== */
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
-
-/* ==================================================
-   HEADER — TABLET E MOBILE ATÉ 1024px
-================================================== */
 
 @media (max-width: 1024px) {
 
@@ -4881,7 +4864,7 @@ p { margin-top: 0; }
   }
 
   .concern-card.open .concern-description {
-    max-height: 210px;
+    max-height: 170px;
   }
 
   .concern-card.open .concern-description p {
