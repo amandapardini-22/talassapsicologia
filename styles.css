@@ -482,6 +482,158 @@ p { margin-top: 0; }
   pointer-events: none;
   background: linear-gradient(135deg, rgba(56,127,136,.035), transparent 55%, rgba(var(--rgb-gold), .025));
 }
+
+/* ======== ANIMAÇÕES — HERO Desktop, tablet e celular ============ */
+
+/*Curva mais suave e elegante que o "ease" padrão.
+  O movimento acontece apenas uma vez ao carregar.*/
+
+@keyframes hero-text-up {
+  from {
+    translate: 0 18px;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes hero-line-reveal {
+  from {
+    opacity: 0;
+    scale: 0 1;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+
+@keyframes hero-photo-reveal {
+  from {
+    scale: .975;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes hero-shape-reveal {
+  from {
+    opacity: .25;
+    scale: .94;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* EYEBROW */
+
+.hero-copy .eyebrow {
+  animation:
+    hero-fade-up
+    .55s
+    cubic-bezier(.22, 1, .36, 1)
+    .05s
+    both;
+}
+
+/* TÍTULO PRINCIPAL
+   Sem opacity para não atrasar o LCP */
+
+.hero-copy h1 {
+  animation:
+    hero-text-up
+    .72s
+    cubic-bezier(.22, 1, .36, 1)
+    .08s
+    both;
+}
+
+/* LINHA DOURADA */
+
+.hero-copy .gold-line {
+  transform-origin: left center;
+
+  animation:
+    hero-line-reveal
+    .55s
+    cubic-bezier(.22, 1, .36, 1)
+    .27s
+    both;
+}
+
+/* BOTÃO */
+
+.hero-copy .btn {
+  animation:
+    hero-fade-up
+    .58s
+    cubic-bezier(.22, 1, .36, 1)
+    .34s
+    both;
+}
+
+/* SIGILO
+   Importante: limitado somente ao Hero */
+
+.hero .privacy-note {
+  animation:
+    hero-fade-up
+    .52s
+    cubic-bezier(.22, 1, .36, 1)
+    .43s
+    both;
+}
+
+/* FOTO
+   Sem opacity para preservar o carregamento visual/LCP */
+
+.hero-photo {
+  animation:
+    hero-photo-reveal
+    .95s
+    cubic-bezier(.22, 1, .36, 1)
+    .08s
+    both;
+}
+
+/* FORMAS DECORATIVAS */
+
+.hero-shape-main {
+  animation:
+    hero-shape-reveal
+    1s
+    cubic-bezier(.22, 1, .36, 1)
+    .12s
+    both;
+}
+.hero-shape-secondary {
+  animation:
+    hero-shape-reveal
+    1.15s
+    cubic-bezier(.22, 1, .36, 1)
+    .20s
+    both;
+}
+
 /* INFO SECTION */
 .info-section {
   width: 100%;
@@ -7488,5 +7640,20 @@ p { margin-top: 0; }
     height: 27px;
 
     font-size: 1.25rem;
+  }
+}
+
+/* =========================================
+   ACESSIBILIDADE — REDUZ MOVIMENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
