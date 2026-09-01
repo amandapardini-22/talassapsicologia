@@ -68,27 +68,29 @@
         <span class="hero-shape-secondary"></span>
 
         <div class="hero-photo">
-          <picture>
+        <picture>
 
           <source
-            media="(max-width: 767px), (orientation: landscape) and (max-height: 500px)"
-            srcset="assets/hero-mobile.png"
-            width="600"
-            height="600"
+            media="(max-width: 767px)"
+            srcset="
+              assets/hero-800.webp"
           >
 
           <img
-            src="assets/hero.png"
+            src="assets/hero-600.webp"
+            srcset="
+              assets/hero-600.webp 1x,
+              assets/hero-1254.webp.png 2x
+            "
             alt="Mulher contemplando o mar"
-            width="800"
-            height="800"
+            width="600"
+            height="600"
             loading="eager"
             fetchpriority="high"
             decoding="async"
           >
-
         </picture>
-        </div>
+      </div>
         </div>
       </div>
 </section>
