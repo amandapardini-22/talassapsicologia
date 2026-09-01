@@ -1677,7 +1677,7 @@ p { margin-top: 0; }
   background: var(--footer-bg);
   color: var(--white);
 
-  padding: 38px 0 26px;
+  padding: 30px 0 20px;
 
   border-top: 1px solid rgba(var(--rgb-white), .04);
 }
@@ -1696,22 +1696,17 @@ p { margin-top: 0; }
     1.15fr
     1.15fr;
 
-  gap: 68px;
+  gap: 48px;
 
   align-items: start;
 }
-
 
 /* ==================================================
    LOGO / MARCA
 ================================================== */
 
 .footer-brand {
-  /*
-    Move a PRIMEIRA COLUNA INTEIRA
-    para a esquerda.
-  */
-  transform: translateX(-32px);
+  transform: translate(-20px, -30px);
 }
 
 /* ======== LOGO FOOTER — BASE / DESKTOP ======= */
@@ -1730,13 +1725,13 @@ p { margin-top: 0; }
   object-fit: contain;
   object-position: left center;
 
-  margin: 0 0 18px;
+  margin: 0;
 }
 
 .footer-brand p {
   max-width: 330px;
 
-  margin: 0 0 0 14px;
+  margin: -38px 0 0 14px;
 
   color: rgba(var(--rgb-white), .55);
 
@@ -1913,7 +1908,7 @@ p { margin-top: 0; }
 ================================================== */
 
 .footer-bottom {
-  margin-top: 58px;
+  margin-top: 24px;
   padding-top: 24px;
 
   border-top: 1px solid rgba(var(--rgb-white), .10);
@@ -3170,7 +3165,9 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-brand img {
-    width: 205px;
+    display: block;
+
+    width: 300px;
     height: auto;
 
     object-fit: contain;
@@ -3180,21 +3177,27 @@ p { margin-top: 0; }
   }
 
   .footer-brand p {
-    max-width: 215px;
+    max-width: 310px;
 
     margin: 0;
 
-    font-size: .69rem;
+    color: rgba(var(--rgb-white), .55);
+
+    font-size: .80rem;
     line-height: 1.7;
   }
 
   .footer-gold-line {
-    width: 24px;
-    height: 1px;
+  display: block;
 
-    margin-top: 15px;
-    margin-left: 0;
-  }
+  width: 30px;
+  height: 1px;
+
+  margin-top: 16px;
+  margin-left: 0;
+
+  background: var(--gold);
+}
 
 
   /* ==================================================
@@ -3299,13 +3302,21 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-bottom {
-    margin-top: 32px;
+    margin-top: 34px;
     padding-top: 16px;
 
-    gap: 18px;
+    border-top: 1px solid rgba(var(--rgb-white), .10);
 
-    font-size: .57rem;
-    line-height: 1.45;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    color: rgba(var(--rgb-white), .60);
+
+    font-size: .70rem;
   }
 
   .footer-bottom > span {
