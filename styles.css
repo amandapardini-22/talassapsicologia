@@ -27,6 +27,74 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
+/* ==== OFFSET PARA NAVEGAÇÃO POR ÂNCORAS ==== */
+
+/* DESKTOP */
+#sobre,
+#psicoterapia,
+#psicologas {
+  scroll-margin-top: 104px;
+}
+
+/* TABLET DEITADO */
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  #sobre,
+  #psicoterapia,
+  #psicologas,
+  #duvidas,
+  #contato {
+    scroll-margin-top: 94px;
+  }
+}
+
+/* TABLET EM PÉ */
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  #sobre,
+  #psicoterapia,
+  #psicologas,
+  #duvidas,
+  #contato {
+    scroll-margin-top: 112px;
+  }
+}
+
+/* CELULAR EM PÉ */
+@media
+  (max-width: 767px)
+  and (orientation: portrait) {
+
+  #sobre,
+  #psicoterapia,
+  #psicologas,
+  #duvidas,
+  #contato {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* CELULAR DEITADO */
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+
+  #sobre,
+  #psicoterapia,
+  #psicologas,
+  #duvidas,
+  #contato {
+    scroll-margin-top: 70px;
+  }
+}
+
 body {
   margin: 0;
   color: var(--ink);
