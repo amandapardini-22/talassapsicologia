@@ -1,77 +1,52 @@
-/* ==================================================
-   MODAL — ESCOLHER PSICÓLOGA
-================================================== */
+/* ==== MODAL — ESCOLHER PSICÓLOGA ====== */
 
 const whatsappModal =
   document.getElementById("whatsappModal");
-
 const whatsappButtons =
   document.querySelectorAll(".js-whatsapp");
-
 const whatsappClose =
   document.querySelector(".whatsapp-modal-close");
-
 const whatsappOverlay =
   document.querySelector(".whatsapp-modal-overlay");
 
-
-/* ==================================================
-   WHATSAPP DAS PSICÓLOGAS
-================================================== */
+/* ===== WHATSAPP DAS PSICÓLOGAS ======== */
 
 const whatsappCarol =
   "551140407979";
-
 const whatsappCarolina =
   "5511913678621";
 
-
-/* ==================================================
-   MENSAGEM INICIAL
-================================================== */
+/* ======== MENSAGEM INICIAL ================== */
 
 const whatsappMessage =
   encodeURIComponent(
     "Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia."
   );
 
-
-/* ==================================================
-   LINKS DAS PSICÓLOGAS
-================================================== */
+/* ======== LINKS DAS PSICÓLOGAS ============ */
 
 const carolLink =
   document.querySelector(".whatsapp-carol");
-
 const carolinaLink =
   document.querySelector(".whatsapp-carolina");
-
 
 if (carolLink) {
   carolLink.href =
     `https://wa.me/${whatsappCarol}?text=${whatsappMessage}`;
 }
 
-
 if (carolinaLink) {
   carolinaLink.href =
     `https://wa.me/${whatsappCarolina}?text=${whatsappMessage}`;
 }
 
-
-/* ==================================================
-   ABRIR MODAL
-================================================== */
+/* ============  ABRIR MODAL ===================== */
 
 whatsappButtons.forEach((button) => {
-
   button.addEventListener("click", (event) => {
-
     event.preventDefault();
 
-
     /* Rastreamento */
-
     window.dataLayer =
       window.dataLayer || [];
 
@@ -80,15 +55,12 @@ whatsappButtons.forEach((button) => {
       location: button.textContent.trim()
     });
 
-
     /* Abre o modal */
-
     if (!whatsappModal) {
       return;
     }
 
     whatsappModal.classList.add("open");
-
     whatsappModal.setAttribute(
       "aria-hidden",
       "false"
@@ -98,19 +70,14 @@ whatsappButtons.forEach((button) => {
 
 });
 
-
-/* ==================================================
-   FECHAR MODAL
-================================================== */
+/* =============== FECHAR MODAL ============== */
 
 function closeWhatsappModal() {
 
   if (!whatsappModal) {
     return;
   }
-
   whatsappModal.classList.remove("open");
-
   whatsappModal.setAttribute(
     "aria-hidden",
     "true"
@@ -118,9 +85,7 @@ function closeWhatsappModal() {
 
 }
 
-
 if (whatsappClose) {
-
   whatsappClose.addEventListener(
     "click",
     closeWhatsappModal
@@ -128,9 +93,7 @@ if (whatsappClose) {
 
 }
 
-
 if (whatsappOverlay) {
-
   whatsappOverlay.addEventListener(
     "click",
     closeWhatsappModal
@@ -138,30 +101,21 @@ if (whatsappOverlay) {
 
 }
 
-
 /* Fecha usando ESC */
-
 document.addEventListener("keydown", (event) => {
-
   if (
     event.key === "Escape" &&
     whatsappModal &&
     whatsappModal.classList.contains("open")
   ) {
-
     closeWhatsappModal();
-
   }
-
 });
-
 
 // ===== HEADER =====
 const header = document.querySelector('.site-header');
-
 function updateHeader() {
   if (!header) return;
-
   header.classList.toggle('scrolled', window.scrollY > 40);
 }
 
@@ -186,13 +140,10 @@ if (menuToggle && nav) {
   });
 }
 
-/* ==================================================
-   CARDS — DEMANDAS
-================================================== */
+/* ============ CARDS — DEMANDAS ================= */
 
 const concernCards =
   document.querySelectorAll(".concern-card");
-
 
 concernCards.forEach((card) => {
 
@@ -207,17 +158,13 @@ concernCards.forEach((card) => {
     return;
   }
 
-
   trigger.addEventListener("click", () => {
-
     const wasOpen =
       card.classList.contains("open");
-
 
     /* Fecha todos os cards */
 
     concernCards.forEach((otherCard) => {
-
       otherCard.classList.remove("open");
 
       const otherTrigger =
@@ -226,14 +173,12 @@ concernCards.forEach((card) => {
       const otherDescription =
         otherCard.querySelector(".concern-description");
 
-
       if (otherTrigger) {
         otherTrigger.setAttribute(
           "aria-expanded",
           "false"
         );
       }
-
 
       if (otherDescription) {
         otherDescription.setAttribute(
@@ -244,18 +189,13 @@ concernCards.forEach((card) => {
 
     });
 
-
     /* Abre o card clicado */
-
     if (!wasOpen) {
-
       card.classList.add("open");
-
       trigger.setAttribute(
         "aria-expanded",
         "true"
       );
-
       description.setAttribute(
         "aria-hidden",
         "false"
@@ -291,9 +231,7 @@ if (window.lucide) {
   window.lucide.createIcons();
 }
 
-/* ==================================================
-   CARROSSEL — COMO FUNCIONA
-================================================== */
+/* ========== CARROSSEL — COMO FUNCIONA ============= */
 
 const processGrid = document.querySelector(".process-grid");
 const processSteps = document.querySelectorAll(".process-step");
@@ -302,7 +240,7 @@ const processPrev = document.querySelector(".process-prev");
 const processNext = document.querySelector(".process-next");
 
 const processPortrait = window.matchMedia(
-  "(max-width: 1024px) and (orientation: portrait)"
+  "(max-width: 1024px)"
 );
 
 const reduceMotion = window.matchMedia(
@@ -313,9 +251,7 @@ let processIndex = 0;
 let processTimer;
 
 
-/* ==================================================
-   IR PARA ETAPA
-================================================== */
+/* ============= IR PARA ETAPA ================ */
 
 function goToProcessStep(index) {
 
@@ -331,11 +267,7 @@ function goToProcessStep(index) {
   });
 }
 
-
-/* ==================================================
-   PRÓXIMA ETAPA
-   01 → 02 → 03 → 01
-================================================== */
+/* ==== PRÓXIMA ETAPA 01 → 02 → 03 → 01 =========== */
 
 function nextProcessStep() {
 
@@ -345,10 +277,7 @@ function nextProcessStep() {
   goToProcessStep(processIndex);
 }
 
-
-/* ==================================================
-   ETAPA ANTERIOR
-================================================== */
+/* ====== ETAPA ANTERIOR ==================== */
 
 function previousProcessStep() {
 
@@ -360,9 +289,7 @@ function previousProcessStep() {
 }
 
 
-/* ==================================================
-   AUTOPLAY
-================================================== */
+/* ========= AUTOPLAY ===================== */
 
 function startProcessCarousel() {
 
@@ -382,18 +309,12 @@ function startProcessCarousel() {
   );
 }
 
-
-/* ==================================================
-   REINICIA O AUTOPLAY
-================================================== */
+/* ========= REINICIA O AUTOPLAY  ============= */
 
 function restartProcessCarousel() {
-
   clearInterval(processTimer);
-
   startProcessCarousel();
 }
-
 
 /* ==================================================
    SETA DIREITA
@@ -408,7 +329,6 @@ if (processNext) {
     restartProcessCarousel();
   });
 }
-
 
 /* ==================================================
    SETA ESQUERDA
@@ -487,10 +407,238 @@ function setupProcessCarousel() {
   startProcessCarousel();
 }
 
-
 setupProcessCarousel();
 
 processPortrait.addEventListener(
   "change",
   setupProcessCarousel
 );
+
+/* ============ FUNÇÃO DE REVEAL ============ */
+
+function revealOnScroll(
+  selector,
+  {
+    y = 18,
+    x = 0,
+    duration = 600,
+    stagger = 70,
+    threshold = 0.15
+  } = {}
+) {
+
+  const elements = [
+    ...document.querySelectorAll(selector)
+  ];
+
+  if (
+    !elements.length ||
+    reduceMotion.matches
+  ) {
+    return;
+  }
+
+  /* ESTADO INICIAL */
+
+  elements.forEach((element) => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+      `translate(${x}px, ${y}px)`;
+
+  });
+
+  /* OBSERVADOR */
+
+  const observer = new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const element = entry.target;
+
+        const index =
+          elements.indexOf(element);
+
+        element.style.willChange =
+          "opacity, transform";
+
+        const animation = element.animate(
+          [
+            {
+              opacity: 0,
+              transform:
+                `translate(${x}px, ${y}px)`
+            },
+
+            {
+              opacity: 1,
+              transform:
+                "translate(0px, 0px)"
+            }
+          ],
+
+          {
+            duration,
+            delay: index * stagger,
+
+            easing:
+              "cubic-bezier(.22, 1, .36, 1)",
+
+            fill: "forwards"
+          }
+
+        );
+
+        animation.onfinish = () => {
+
+          element.style.removeProperty(
+            "opacity"
+          );
+
+          element.style.removeProperty(
+            "transform"
+          );
+
+          element.style.removeProperty(
+            "will-change"
+          );
+
+          animation.cancel();
+
+        };
+
+        observer.unobserve(element);
+
+      });
+
+    },
+
+    {
+      threshold,
+      rootMargin:
+        "0px 0px -8% 0px"
+    }
+
+  );
+
+  elements.forEach((element) => {
+
+    observer.observe(element);
+
+  });
+
+}
+
+/* =============== INFO =============== */
+
+revealOnScroll(".info-item", {
+  y: 18,
+  duration: 550,
+  stagger: 70
+});
+
+/* ============ DEMANDAS ============== */
+
+/* TÍTULO E LINHA DOURADA */
+revealOnScroll(
+  ".concerns h2, .concerns .gold-line.centered",
+  {
+    y: 18,
+    duration: 600,
+    stagger: 100
+  }
+);
+
+/* CARDS */
+revealOnScroll(
+  ".concern-card",
+  {
+    y: 24,
+    duration: 580,
+    stagger: 65,
+    threshold: 0.12
+  }
+);
+
+/* FRASE FINAL */
+revealOnScroll(
+  ".concerns-message",
+  {
+    y: 18,
+    duration: 600,
+    stagger: 0
+  }
+);
+
+/* ============ PSICÓLOGAS  ====================== */
+
+/* TÍTULO E INTRODUÇÃO */
+revealOnScroll(
+  ".psychologists h2, .psychologists .section-intro",
+  {
+    y: 18,
+    duration: 600,
+    stagger: 100
+  }
+);
+
+/* CARDS */
+revealOnScroll(
+  ".psych-card",
+  {
+    y: 26,
+    duration: 650,
+    stagger: 120,
+    threshold: 0.12
+  }
+);
+
+/* ============= DÚVIDAS ==================== */
+
+/* PERGUNTAS */
+revealOnScroll(
+  ".faq-item",
+  {
+    y: 18,
+    duration: 560,
+    stagger: 70,
+    threshold: 0.12
+  }
+);
+
+/* ====== COMO FUNCIONA — SOMENTE DESKTOP ====== */
+
+if (
+  window.matchMedia("(min-width: 1024px)").matches
+) {
+
+  /* TÍTULO */
+  revealOnScroll(
+    ".process h2",
+    {
+      y: 18,
+      duration: 600,
+      stagger: 0,
+      threshold: 0.15
+    }
+  );
+
+  /* ETAPAS + SETAS EM SEQUÊNCIA */
+  revealOnScroll(
+    ".process-step, .process-arrow",
+    {
+      y: 20,
+      duration: 600,
+      stagger: 130,
+      threshold: 0.15
+    }
+  );
+
+}

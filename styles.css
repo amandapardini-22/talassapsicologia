@@ -483,156 +483,6 @@ p { margin-top: 0; }
   background: linear-gradient(135deg, rgba(56,127,136,.035), transparent 55%, rgba(var(--rgb-gold), .025));
 }
 
-/* ======== ANIMAÇÕES — HERO Desktop, tablet e celular ============ */
-
-/*Curva mais suave e elegante que o "ease" padrão.
-  O movimento acontece apenas uma vez ao carregar.*/
-
-@keyframes hero-text-up {
-  from {
-    translate: 0 18px;
-  }
-
-  to {
-    translate: 0 0;
-  }
-}
-
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    translate: 0 14px;
-  }
-
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-@keyframes hero-line-reveal {
-  from {
-    opacity: 0;
-    scale: 0 1;
-  }
-
-  to {
-    opacity: 1;
-    scale: 1 1;
-  }
-}
-
-@keyframes hero-photo-reveal {
-  from {
-    scale: .975;
-  }
-
-  to {
-    scale: 1;
-  }
-}
-
-@keyframes hero-shape-reveal {
-  from {
-    opacity: .25;
-    scale: .94;
-  }
-
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-/* EYEBROW */
-
-.hero-copy .eyebrow {
-  animation:
-    hero-fade-up
-    .55s
-    cubic-bezier(.22, 1, .36, 1)
-    .05s
-    both;
-}
-
-/* TÍTULO PRINCIPAL
-   Sem opacity para não atrasar o LCP */
-
-.hero-copy h1 {
-  animation:
-    hero-text-up
-    .72s
-    cubic-bezier(.22, 1, .36, 1)
-    .08s
-    both;
-}
-
-/* LINHA DOURADA */
-
-.hero-copy .gold-line {
-  transform-origin: left center;
-
-  animation:
-    hero-line-reveal
-    .55s
-    cubic-bezier(.22, 1, .36, 1)
-    .27s
-    both;
-}
-
-/* BOTÃO */
-
-.hero-copy .btn {
-  animation:
-    hero-fade-up
-    .58s
-    cubic-bezier(.22, 1, .36, 1)
-    .34s
-    both;
-}
-
-/* SIGILO
-   Importante: limitado somente ao Hero */
-
-.hero .privacy-note {
-  animation:
-    hero-fade-up
-    .52s
-    cubic-bezier(.22, 1, .36, 1)
-    .43s
-    both;
-}
-
-/* FOTO
-   Sem opacity para preservar o carregamento visual/LCP */
-
-.hero-photo {
-  animation:
-    hero-photo-reveal
-    .95s
-    cubic-bezier(.22, 1, .36, 1)
-    .08s
-    both;
-}
-
-/* FORMAS DECORATIVAS */
-
-.hero-shape-main {
-  animation:
-    hero-shape-reveal
-    1s
-    cubic-bezier(.22, 1, .36, 1)
-    .12s
-    both;
-}
-.hero-shape-secondary {
-  animation:
-    hero-shape-reveal
-    1.15s
-    cubic-bezier(.22, 1, .36, 1)
-    .20s
-    both;
-}
 
 /* INFO SECTION */
 .info-section {
@@ -6965,110 +6815,114 @@ p { margin-top: 0; }
    PROCESS — CELULAR DEITADO
 ================================================== */
 
+.process {
+  padding-top: 42px;
+  padding-bottom: 48px;
+}
+
+.process h2 {
+  font-size: 2rem;
+}
 
 
-  .process {
-    padding-top: 42px;
-    padding-bottom: 48px;
-  }
+/* CARROSSEL */
 
-  .process h2 {
-    font-size: 2rem;
-  }
+.process-grid {
+  display: flex;
 
-  .process-grid {
-    display: grid;
+  width: 100%;
 
-    grid-template-columns:
-      minmax(0, 1fr)
-      26px
-      minmax(0, 1fr)
-      26px
-      minmax(0, 1fr);
+  gap: 0;
 
-    align-items: center;
+  margin-top: 28px;
 
-    gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-    margin-top: 28px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 
-    overflow: visible;
-  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
-  .process-step {
-    display: flex;
-    flex-direction: row;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    min-width: 0;
-
-    padding: 0;
-
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-  }
-
-  .step-number {
-    width: 36px;
-    height: 36px;
-    flex: 0 0 36px;
-
-    font-size: .90rem;
-  }
-
-  .process-step h3 {
-    margin: 0 0 5px;
-
-    font-size: .95rem;
-    line-height: 1.15;
-  }
-
-  .process-step p {
-    margin: 0;
-
-    font-size: .58rem;
-    line-height: 1.45;
-  }
-
-  .process-arrow {
-    display: block;
-
-    font-size: 1.45rem;
-  }
+.process-grid::-webkit-scrollbar {
+  display: none;
+}
 
 
-/* ==================================================
-   PRACTICAL — CELULAR DEITADO
-================================================== */
+/* ETAPA */
+
+.process-step {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  flex: 0 0 100%;
+  min-width: 100%;
+
+  scroll-snap-align: start;
+
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
 
 
+/* NÚMERO */
 
-  .practical {
-    padding: 38px 0 44px;
-  }
+.step-number {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+
+  font-size: .90rem;
+}
 
 
-  /* CAIXA PRINCIPAL */
+/* TÍTULO */
 
-  .practical-box {
-    grid-template-columns: 1fr;
+.process-step h3 {
+  margin: 0 0 5px;
 
-    gap: 16px;
+  font-size: .95rem;
+  line-height: 1.15;
+}
 
-    width: calc(100% - 48px);
-    max-width: 700px;
 
-    margin: 0 auto;
+/* TEXTO */
 
-    padding: 20px 22px;
+.process-step p {
+  margin: 0;
 
-    border-radius: 13px;
-  }
+  font-size: .58rem;
+  line-height: 1.45;
+}
 
+
+/* REMOVE AS SETAS ENTRE AS ETAPAS */
+
+.process-arrow {
+  display: none;
+}
+
+
+/* CONTROLES DO CARROSSEL */
+
+.process-controls {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 14px;
+}
 
   /* =========================
      INFORMAÇÕES
