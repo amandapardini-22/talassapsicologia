@@ -6201,12 +6201,25 @@ p { margin-top: 0; }
 }
 
 
-/* ---------- BOTÃO HEADER ---------- */
+/* ==================================================
+   BOTÃO AGENDAR
+================================================== */
 
-.btn-header {
-  display: none;
+.main-nav .btn-header {
+  display: flex;
+
+  width: 100%;
+
+  min-height: 38px;
+
+  margin-top: 10px;
+  padding: 0 14px;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: .68rem;
 }
-
 
 /* ---------- HAMBÚRGUER ---------- */
 
@@ -6224,6 +6237,55 @@ p { margin-top: 0; }
   margin: 4px 0;
 }
 
+/* ==================================================
+   MENU DROPDOWN — CELULAR DEITADO
+   QUASE TELA INTEIRA
+================================================== */
+
+.main-nav {
+  top: calc(100% + 2px);
+
+  left: 10px;
+  right: 10px;
+
+  width: auto;
+
+  /*
+    Ocupa praticamente todo o espaço
+    restante abaixo do header.
+  */
+  height: calc(100dvh - 68px);
+  max-height: none;
+
+  padding: 12px 18px 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: 0;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   LINKS
+================================================== */
+
+.main-nav > a:not(.btn-header),
+.site-header.scrolled
+.main-nav > a:not(.btn-header) {
+
+  flex: 0 0 auto;
+
+  padding: 8px 4px;
+
+  font-size: .72rem;
+  line-height: 1.25;
+}
 
 /* ---------- HERO ---------- */
 
@@ -7276,6 +7338,7 @@ p { margin-top: 0; }
   .footer-grid > .footer-column:nth-child(4) {
   transform: none;
   }
+
   /* ==================================================
      REMOVE AJUSTES HERDADOS DO DESKTOP
   ================================================== */
