@@ -4,9 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-  "build:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.min.css --style=compressed --no-source-map --quiet-deps",
-  "dev:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.css --style=expanded --no-source-map --watch --quiet-deps"
-},
+    "build:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.min.css --style=compressed --no-source-map --quiet-deps",
+    "dev:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.css --style=expanded --no-source-map --watch --quiet-deps"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amandapardini-22/talassapsicologia.git"
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/amandapardini-22/talassapsicologia#readme",
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "gsap": "^3.15.0"
