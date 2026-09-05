@@ -1244,10 +1244,12 @@ p { margin-top: 0; }
   z-index:2;
 }
 .practical-box{
+  --practical-info-width: 56%;
+  --practical-next-width: 44%;
+  --practical-info-gap: 20.16px;
+  --practical-next-gap: 15.84px;
   /* Caixa com borda: preserva a largura externa e o padding interno existentes. */
   width:min(calc(100% - 40px), var(--container));
-  display:grid;
-  grid-template-columns:1.12fr .88fr;
   gap:36px;
   padding:34px 38px;
   background:rgba(var(--rgb-card), .72);
@@ -1256,6 +1258,20 @@ p { margin-top: 0; }
   box-shadow:0 10px 24px rgba(var(--rgb-navy), .06);
   backdrop-filter:blur(4px);
 }
+/* Mantem a proporcao sobre o espaco disponivel, descontado o gap. */
+@media (min-width: 1025px),
+  (min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
+  (orientation: landscape) and (max-height: 500px) {
+  .practical-box > .practical-info {
+    width: calc(var(--practical-info-width) - var(--practical-info-gap));
+    min-width: 0;
+  }
+  .practical-box > .next-step {
+    width: calc(var(--practical-next-width) - var(--practical-next-gap));
+    min-width: 0;
+  }
+}
+
 .practical h2{
   font-size:2.3rem;
   margin-bottom:24px;
@@ -2693,9 +2709,10 @@ p { margin-top: 0; }
   }
 
   .practical-box {
-    grid-template-columns:
-      minmax(0, 1.18fr)
-      minmax(0, .82fr);
+    --practical-info-width: 59%;
+    --practical-next-width: 41%;
+    --practical-info-gap: 17.7px;
+    --practical-next-gap: 12.3px;
 
     gap: 30px;
 
@@ -3887,8 +3904,6 @@ p { margin-top: 0; }
   }
 
   .practical-box {
-    grid-template-columns: 1fr;
-
     gap: 30px;
 
     max-width: 680px;
@@ -5229,8 +5244,6 @@ p { margin-top: 0; }
   /* CAIXA PRINCIPAL */
 
   .practical-box {
-    grid-template-columns: 1fr;
-
     gap: 20px;
 
     width: calc(100% - 28px);
