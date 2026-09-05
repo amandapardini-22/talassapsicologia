@@ -980,12 +980,15 @@ p { margin-top: 0; }
 /* ========= GRID DOS CARDS ============= */
 
 .psych-track {
-  display: grid;
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  --bs-gutter-x: 26px;
+  --bs-gutter-y: 26px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.psych-track > .row {
+  --bs-gutter-x: inherit;
+  --bs-gutter-y: inherit;
 }
 
 /* =========== CARD =================== */
@@ -1045,12 +1048,12 @@ p { margin-top: 0; }
 }
 
 /* Carol */
-.psych-card:first-child .psych-image img {
+.psych-track > .row > :first-child .psych-image img {
   object-position: center 26%;
 }
 
 /* Carolina */
-.psych-card:nth-child(2) .psych-image img {
+.psych-track > .row > :nth-child(2) .psych-image img {
   object-position: center 28%;
 }
 
@@ -2598,8 +2601,8 @@ p { margin-top: 0; }
   }
 
   .psych-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 24px;
     max-width: 920px;
   }
 
@@ -3598,10 +3601,9 @@ p { margin-top: 0; }
   }
 
   .psych-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 20px;
 
-    width: 100%;
     max-width: 700px;
   }
 
@@ -3649,11 +3651,11 @@ p { margin-top: 0; }
 
   /* Ajusta o enquadramento individual */
 
-  .psych-card:first-child .psych-image img {
+  .psych-track > .row > :first-child .psych-image img {
     object-position: center 30%;
   }
 
-  .psych-card:nth-child(2) .psych-image img {
+  .psych-track > .row > :nth-child(2) .psych-image img {
     object-position: center 27%;
   }
 
@@ -4950,11 +4952,6 @@ p { margin-top: 0; }
   }
 
   .psych-track {
-    grid-template-columns: 1fr;
-
-    gap: 26px;
-
-    width: 100%;
     max-width: 390px;
   }
 
@@ -4998,11 +4995,11 @@ p { margin-top: 0; }
     font-size: 1rem;
   }
 
-  .psych-card:first-child .psych-image img {
+  .psych-track > .row > :first-child .psych-image img {
     object-position: center 16%;
   }
 
-  .psych-card:nth-child(2) .psych-image img {
+  .psych-track > .row > :nth-child(2) .psych-image img {
     object-position: center 27%;
   }
 
@@ -6639,11 +6636,9 @@ p { margin-top: 0; }
   }
 
   .psych-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --bs-gutter-x: 16px;
+    --bs-gutter-y: 16px;
 
-    gap: 16px;
-
-    width: 100%;
     max-width: 760px;
   }
 
@@ -6685,11 +6680,11 @@ p { margin-top: 0; }
     font-size: .78rem;
   }
 
-  .psych-card:first-child .psych-image img {
+  .psych-track > .row > :first-child .psych-image img {
     object-position: center 18%;
   }
 
-  .psych-card:nth-child(2) .psych-image img {
+  .psych-track > .row > :nth-child(2) .psych-image img {
     object-position: center 22%;
   }
 
