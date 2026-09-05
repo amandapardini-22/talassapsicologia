@@ -482,10 +482,8 @@ p { margin-top: 0; }
   z-index: 10;
 }
 .info-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 34px;
-  width: 100%;
+  --bs-gutter-x: 34px;
+  --bs-gutter-y: 34px;
   padding: 0;
   background: transparent;
   border: 0;
@@ -493,8 +491,6 @@ p { margin-top: 0; }
   box-shadow: none;
 }
 .info-item {
-  display: flex;
-  align-items: flex-start;
   gap: 16px;
   padding: 0;
   border: 0;
@@ -503,9 +499,6 @@ p { margin-top: 0; }
   width: 38px;
   height: 38px;
   flex: 0 0 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
   background: rgba(var(--rgb-white), .10);
 }
@@ -534,6 +527,13 @@ p { margin-top: 0; }
   font-size: .78rem;
   font-weight: 400;
   line-height: 1.55;
+}
+
+/* Tablet deitado: quatro itens; telas baixas: dois itens. */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .info-strip > .col-md-6 {
+    width: 25%;
+  }
 }
 
 /* Concerns */
@@ -2283,18 +2283,11 @@ p { margin-top: 0; }
     padding: 52px 0 56px;
   }
   .info-strip {
-    grid-template-columns: 1fr;
-    gap: 38px;
-    width: 100%;
-    max-width: 620px;
-    margin: 0 auto;
+    --bs-gutter-x: 38px;
+    --bs-gutter-y: 38px;
   }
   .info-item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     gap: 20px;
-    width: 100%;
     min-width: 0;
     padding: 0;
   }
@@ -3388,10 +3381,8 @@ p { margin-top: 0; }
   }
 
   .info-strip {
-    grid-template-columns: 1fr;
-    gap: 42px;
-    max-width: 660px;
-    margin: 0 auto;
+    --bs-gutter-x: 42px;
+    --bs-gutter-y: 42px;
   }
 
   .info-item {
@@ -6440,14 +6431,15 @@ p { margin-top: 0; }
   }
 
   .info-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 30px;
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 26px;
+  }
+
+  .info-strip > .col-12 {
+    width: 50%;
   }
 
   .info-item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
 
     gap: 12px;
     padding: 0;
