@@ -23,7 +23,7 @@ $container-padding-x: 40px;
 // Sem novos tetos em xl/xxl: .container mantém o limite definido em lg.
 $container-max-widths: (
   sm: 100%,
-  md: 760px,
+  md: 100%,
   lg: 1220px
 );
 

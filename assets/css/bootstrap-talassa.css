@@ -201,7 +201,7 @@
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
-    max-width: 760px;
+    max-width: 100%;
   }
 }
 @media (min-width: 1025px) {
