@@ -658,14 +658,16 @@ p { margin-top: 0; }
 }
 
 
+@media (hover: hover) and (pointer: fine) {
 .concern-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 
   border-color:
     rgba(var(--rgb-gold), .45);
 
   box-shadow:
     0 12px 24px rgba(var(--rgb-navy), .09);
+}
 }
 
 
@@ -1792,7 +1794,7 @@ p { margin-top: 0; }
 
   background: rgba(var(--rgb-gold), .13);
 
-  color: #DDBB7B !important;
+  color: var(--navy) !important;
 
   font-size: .82rem !important;
   font-weight: 600;
@@ -1802,8 +1804,7 @@ p { margin-top: 0; }
 
 .footer-whatsapp:hover {
   background: rgba(var(--rgb-gold), .22);
-
-  color: #E8C98E !important;
+  color: var(--navy) !important;
 }
 
 
@@ -7525,4 +7526,120 @@ p { margin-top: 0; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+/* Visual finish: interaction styles only; approved geometry is retained. */
+.concern-card {
+  border-color: rgba(56, 127, 136, .30);
+  background: rgba(var(--rgb-card), .84);
+  box-shadow: 0 6px 18px rgba(var(--rgb-navy), .06);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.concern-icon {
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.concern-card.open {
+  border-color: rgba(var(--rgb-gold), .78);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(var(--rgb-navy), .10), 0 0 18px rgba(var(--rgb-gold), .19);
+}
+.concern-card.open .concern-icon {
+  transform: scale(1.06);
+  background: rgba(148, 89, 154, .13);
+  box-shadow: 0 0 0 5px rgba(var(--rgb-gold), .10), 0 0 16px rgba(var(--rgb-gold), .20);
+}
+@media (hover: hover) and (pointer: fine) {
+  .concern-card:hover {
+    transform: translateY(-3px) scale(1.006);
+    border-color: rgba(var(--rgb-gold), .85);
+    box-shadow: 0 14px 30px rgba(var(--rgb-navy), .13), 0 0 0 1px rgba(var(--rgb-gold), .16), 0 0 24px rgba(var(--rgb-gold), .24);
+  }
+  .concern-card:hover .concern-icon {
+    transform: scale(1.06);
+    background: rgba(148, 89, 154, .13);
+    box-shadow: 0 0 0 5px rgba(var(--rgb-gold), .10), 0 0 18px rgba(var(--rgb-gold), .22);
+  }
+}
+/* Inset borders preserve sizes; ::before remains available for the Hero icon. */
+body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp {
+  --cta-glass-bg: linear-gradient(120deg, #E2C482 0%, #D8B570 52%, #CFA661 100%);
+  --cta-glass-hover: linear-gradient(120deg, #E6C989 0%, #DEBD7B 52%, #D5AF6B 100%);
+  --cta-glass-text: #173D51;
+  --cta-glass-border: rgba(166,126,63,.60);
+  --cta-glass-border-active: rgba(166,126,63,.80);
+  position: relative;
+  overflow: hidden;
+  background: var(--cta-glass-bg);
+  color: var(--cta-glass-text);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 0 1px var(--cta-glass-border), inset 0 1px 0 rgba(255,255,255,.45), 0 5px 14px rgba(20,60,80,.12);
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+/* Teal contexts override only the palette; sheen, focus and motion stay shared. */
+body .site-header.scrolled .main-nav .btn.js-whatsapp,
+body .practical .next-step .btn.js-whatsapp {
+  --cta-glass-bg: linear-gradient(120deg, rgba(56,127,136,.96), rgba(45,112,122,.98));
+  --cta-glass-hover: linear-gradient(120deg, rgba(62,137,146,.98), rgba(50,122,132,.98));
+  --cta-glass-text: var(--white);
+  --cta-glass-border: rgba(255,255,255,.16);
+  --cta-glass-border-active: rgba(255,255,255,.38);
+}
+body .hero .hero-copy .btn.js-whatsapp {
+  background: var(--cta-glass-bg);
+  backdrop-filter: none;
+  box-shadow: inset 0 0 0 1px var(--cta-glass-border), inset 0 1px 0 rgba(255,255,255,.55), 0 8px 22px rgba(20,60,80,.22);
+}
+body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: -35% auto -35% 0;
+  width: 32%;
+  height: auto;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.42), transparent);
+  transform: translateX(-180%) skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+}
+@keyframes talassa-button-sheen {
+  0% { transform: translateX(-180%) skewX(-20deg); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(430%) skewX(-20deg); opacity: 0; }
+}
+body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible {
+  outline: 2px solid #387F88;
+  outline-offset: 3px;
+  box-shadow: inset 0 0 0 1px var(--cta-glass-border-active), inset 0 1px 0 rgba(255,255,255,.65), 0 8px 22px rgba(20,60,80,.20);
+}
+body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible::after { animation: talassa-button-sheen .75s ease-out; }
+@media (hover: hover) and (pointer: fine) {
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:hover {
+    transform: translateY(-2px);
+    color: var(--cta-glass-text);
+    background: var(--cta-glass-hover);
+    box-shadow: inset 0 0 0 1px var(--cta-glass-border-active), inset 0 1px 0 rgba(255,255,255,.65), 0 9px 22px rgba(20,60,80,.20);
+  }
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:hover::after { animation: talassa-button-sheen .75s ease-out; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after { animation: none; opacity: 0; }
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:hover, body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible { transform: none; }
+}
+.faq-item { transition: border-color .3s ease; }
+.faq-item button { transition: color .3s ease; }
+.faq-item.open { border-bottom-color: rgba(var(--rgb-gold), .40); }
+.faq-item.open button { color: var(--teal); }
+.faq-item > div p {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .3s ease;
+}
+.faq-item.open > div p { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .concern-card, .concern-icon, body .btn.js-whatsapp,
+  .faq-item, .faq-item button, .faq-item > div, .faq-item > div p { transition: none; }
+  .concern-card:hover, .concern-card.open, .concern-card .concern-icon,
+  body .btn.js-whatsapp:hover, .faq-item > div p { transform: none; }
 }

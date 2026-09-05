@@ -568,14 +568,6 @@ function revealOnScroll(
 
 }
 
-/* =============== INFO =============== */
-
-revealOnScroll(".info-item", {
-  y: 18,
-  duration: 550,
-  stagger: 70
-});
-
 /* ============ DEMANDAS ============== */
 
 /* TÍTULO E LINHA DOURADA */
@@ -635,42 +627,57 @@ revealOnScroll(
 /* ============= DÚVIDAS ==================== */
 
 /* PERGUNTAS */
-revealOnScroll(
-  ".faq-item",
-  {
-    y: 18,
-    duration: 560,
-    stagger: 70,
-    threshold: 0.12
-  }
-);
+
 
 /* ====== COMO FUNCIONA — SOMENTE DESKTOP ====== */
 
-if (
-  window.matchMedia("(min-width: 1024px)").matches
-) {
 
-  /* TÍTULO */
-  revealOnScroll(
-    ".process h2",
-    {
-      y: 18,
-      duration: 600,
-      stagger: 0,
-      threshold: 0.15
+// Progressive section entrances: no CSS-hidden content and no Hero animation.
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+  const played = new Set();
+  const motion = gsap.matchMedia();
+  motion.add({
+    allowed: "(prefers-reduced-motion: no-preference)",
+    desktop: "(min-width: 1025px)",
+    landscape: "(orientation: landscape)",
+    tablet: "(min-width: 768px)",
+    low: "(orientation: landscape) and (max-height: 500px)"
+  }, context => {
+    const { allowed, desktop, landscape, tablet, low } = context.conditions;
+    if (!allowed) return;
+    function entrance(key, trigger) {
+      if (played.has(key) || !document.querySelector(trigger)) return null;
+      return gsap.timeline({
+        defaults: { duration: .5, ease: "power2.out", immediateRender: true },
+        scrollTrigger: { trigger, start: "top 88%", once: true },
+        onStart: () => played.add(key)
+      });
     }
-  );
-
-  /* ETAPAS + SETAS EM SEQUÊNCIA */
-  revealOnScroll(
-    ".process-step, .process-arrow",
-    {
-      y: 20,
-      duration: 600,
-      stagger: 130,
-      threshold: 0.15
+    const info = entrance("info", ".info-section");
+    if (info) {
+      const interval = low ? .16 : (landscape || desktop ? .24 : .19);
+      document.querySelectorAll(".info-item").forEach((item, i) => {
+        info.from(item.querySelector(".info-icon"), { opacity: 0, scale: .78, duration: .35 }, i * interval)
+          .from(item.querySelector(".info-icon + div"), { opacity: 0, y: 18 }, i * interval + .12);
+      });
     }
-  );
-
+    // Mirrors the actual CSS carousel modes; timers and scrolling stay untouched.
+    if (!low && (desktop || (tablet && landscape))) {
+      const process = entrance("process", ".process-grid");
+      if (process) document.querySelectorAll(".process-step").forEach((step, i) => {
+        const at = i * .72;
+        process.from(step.querySelector(".step-number"), { opacity: 0, y: 38, scale: .96, ease: "power3.out" }, at)
+          .from(step.querySelector(":scope > div"), { opacity: 0, y: 38, scale: .96 }, at + .18);
+        const arrow = step.nextElementSibling;
+        if (arrow && arrow.matches(".process-arrow")) process.from(arrow, { opacity: 0, x: -10, duration: .3 }, at + .48);
+      });
+    }
+    const faq = entrance("faq", ".faq-grid");
+    if (faq) {
+      const horizontal = desktop || landscape;
+      faq.from(".faq-intro > *", { opacity: 0, x: horizontal ? -40 : 0, y: horizontal ? 0 : 24, stagger: .1 })
+        .from(".faq-item", { opacity: 0, x: horizontal ? 40 : 0, y: horizontal ? 0 : 28, stagger: .14 }, .35);
+    }
+  });
 }
