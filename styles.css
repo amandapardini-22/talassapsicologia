@@ -1546,18 +1546,29 @@ p { margin-top: 0; }
 ================================================== */
 
 .footer-grid {
-  display: grid;
-
-  grid-template-columns:
-    1.25fr
-    .75fr
-    1.15fr
-    1.15fr;
-
-  gap: 48px;
-
-  align-items: start;
+  --bs-gutter-x: 48px;
+  --bs-gutter-y: 48px;
 }
+
+.footer-grid > .row {
+  --bs-gutter-x: inherit;
+  --bs-gutter-y: inherit;
+}
+
+@media (min-width: 1200px) {
+  .footer-grid > .row > :nth-child(1) { width: 29.069767%; }
+  .footer-grid > .row > :nth-child(2) { width: 17.441860%; }
+  .footer-grid > .row > :nth-child(3) { width: 26.744186%; }
+  .footer-grid > .row > :nth-child(4) { width: 26.744186%; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) {
+  .footer-grid > .row > :nth-child(1) { width: 27.061856%; }
+  .footer-grid > .row > :nth-child(2) { width: 17.525773%; }
+  .footer-grid > .row > :nth-child(3) { width: 30.927835%; }
+  .footer-grid > .row > :nth-child(4) { width: 24.484536%; }
+}
+
 
 /* ==================================================
    LOGO / MARCA
@@ -1614,7 +1625,7 @@ p { margin-top: 0; }
    COLUNAS 2, 3 E 4
 ================================================== */
 
-.footer-grid > .footer-column {
+.footer-grid > .row > div > .footer-column {
   /*
     Desce Navegação, Contato e Acompanhe
     sem alterar a primeira coluna.
@@ -2907,6 +2918,11 @@ p { margin-top: 0; }
     padding: 44px 0 22px;
   }
 
+  .site-footer .container {
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
 
 
   /* ==================================================
@@ -2914,15 +2930,8 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-grid {
-    grid-template-columns:
-      minmax(0, 1.05fr)
-      minmax(0, .68fr)
-      minmax(0, 1.20fr)
-      minmax(0, .95fr);
-
-    gap: 28px;
-
-    align-items: start;
+    --bs-gutter-x: 28px;
+    --bs-gutter-y: 28px;
   }
 
 
@@ -2936,7 +2945,7 @@ p { margin-top: 0; }
     height: auto;
   }
 
-  .footer-grid > .footer-column {
+  .footer-grid > .row > div > .footer-column {
     padding-top: 24px;
   }
 
@@ -4200,6 +4209,11 @@ p { margin-top: 0; }
     padding: 48px 0 24px;
   }
 
+  .site-footer .container {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
 
 
   /* ==================================================
@@ -4207,13 +4221,8 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    column-gap: 48px;
-    row-gap: 20px;
-
-    align-items: start;
+    --bs-gutter-x: 48px;
+    --bs-gutter-y: 20px;
   }
 
 
@@ -4228,11 +4237,11 @@ p { margin-top: 0; }
     min-width: 0;
   }
 
-  .footer-grid > .footer-column {
+  .footer-grid > .row > div > .footer-column {
     padding-top: 0;
   }
 
-  .footer-grid > .footer-column:nth-child(2) {
+  .footer-grid > .row > :nth-child(2) > .footer-column {
   padding-top: 5px;
   }
 
@@ -5551,6 +5560,8 @@ p { margin-top: 0; }
 
   .site-footer .container {
     max-width: 400px; /* 360px de conteudo + gutters do Bootstrap. */
+    padding-inline: clamp(20px, calc((100vw - 300px) / 2), 50px);
+    margin-inline: auto;
   }
 
 
@@ -5559,11 +5570,8 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-
-    align-items: start;
+    --bs-gutter-x: 28px;
+    --bs-gutter-y: 28px;
   }
 
 
@@ -5585,7 +5593,7 @@ p { margin-top: 0; }
     aplicado no desktop
   */
 
-  .footer-grid > .footer-column {
+  .footer-grid > .row > div > .footer-column {
     padding-top: 0;
   }
 
@@ -5659,7 +5667,7 @@ p { margin-top: 0; }
      NAVEGAÇÃO — 2 COLUNAS
   ================================================== */
 
-  .footer-grid > .footer-column:nth-child(2) {
+  .footer-grid > .row > :nth-child(2) > .footer-column {
     display: grid;
 
     grid-template-columns:
@@ -5669,11 +5677,11 @@ p { margin-top: 0; }
     row-gap: 0;
   }
 
-  .footer-grid > .footer-column:nth-child(2) h3 {
+  .footer-grid > .row > :nth-child(2) > .footer-column h3 {
     grid-column: 1 / -1;
   }
 
-  .footer-grid > .footer-column:nth-child(2) > a {
+  .footer-grid > .row > :nth-child(2) > .footer-column > a {
     width: 100%;
 
     margin-bottom: 9px;
@@ -7124,6 +7132,11 @@ p { margin-top: 0; }
     padding: 34px 0 19px;
   }
 
+  .site-footer .container {
+    max-width: 780px;
+    margin-inline: auto;
+  }
+
 
 
   /* ==================================================
@@ -7131,17 +7144,16 @@ p { margin-top: 0; }
   ================================================== */
 
   .footer-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    column-gap: 44px;
-    row-gap: 0;
-
-    align-items: start;
+    --bs-gutter-x: 44px;
+    --bs-gutter-y: 0;
   }
 
-  .footer-grid > .footer-column:nth-child(3),
-  .footer-grid > .footer-column:nth-child(4) {
+  .footer-grid > .row > .col-12 {
+    width: 50%;
+  }
+
+  .footer-grid > .row > :nth-child(3) > .footer-column,
+  .footer-grid > .row > :nth-child(4) > .footer-column {
   transform: none;
   }
 
@@ -7153,7 +7165,7 @@ p { margin-top: 0; }
     transform: none;
   }
 
-  .footer-grid > .footer-column {
+  .footer-grid > .row > div > .footer-column {
     padding-top: 0;
   }
 
