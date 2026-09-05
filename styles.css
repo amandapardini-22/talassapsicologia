@@ -666,7 +666,11 @@ p { margin-top: 0; }
   color: var(--white);
 }
 
-/* HERO — DESKTOP */
+/* ==================================================
+   HERO
+   ================================================== */
+
+/* Base / desktop */
 .hero {
   position: relative;
   padding: 115px 0 0;
@@ -846,6 +850,915 @@ p { margin-top: 0; }
   background: linear-gradient(135deg, rgba(56,127,136,.035), transparent 55%, rgba(var(--rgb-gold), .025));
 }
 
+
+/* Tablet landscape */
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: landscape) {
+
+  .hero {
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+
+    padding:
+      clamp(92px, 9.5vw, 100px)
+      0
+      clamp(3px, .5vw, 6px);
+
+    display: block;
+    overflow: hidden;
+  }
+
+
+  .hero-grid {
+    height: 100%;
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, .43fr)
+      minmax(0, .57fr);
+
+
+    gap:
+      clamp(28px, 4vw, 38px);
+
+    margin: 0 auto;
+  }
+
+
+  /* ---------- TEXTO ---------- */
+
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+
+    padding-left:
+      clamp(12px, 2.5vw, 24px);
+  }
+
+
+  .hero-copy .eyebrow {
+    font-size:
+      clamp(.56rem, .85vw, .62rem);
+  }
+
+
+  .hero-copy h1 {
+    font-size:
+      clamp(2.55rem, 4.5vw, 3.25rem);
+  }
+
+
+  /* ---------- FOTO ---------- */
+
+  .hero-visual {
+    min-width: 0;
+    min-height: 0;
+
+    height: auto;
+
+  }
+
+
+  .hero-photo {
+    width: 100%;
+    max-width: 500px;
+
+    height: auto;
+
+    /*
+      Mantém praticamente a mesma proporção
+      dos antigos 500 × 520.
+    */
+    aspect-ratio: 500 / 520;
+  }
+
+
+  .hero-photo picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hero-photo img,
+  .hero-photo picture img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 62% center;
+  }
+
+
+  /* ---------- FORMAS ---------- */
+
+  .hero-shape-main {
+    width: 88%;
+    height: 96%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(-3deg);
+  }
+
+
+  .hero-shape-secondary {
+    width: 108%;
+    height: 104%;
+
+    left: 53%;
+    top: 48%;
+  }
+}
+
+/* Tablet portrait */
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+  and (orientation: portrait) {
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+
+    padding:
+      clamp(118px, 16vw, 132px)
+      0
+      clamp(38px, 5vw, 48px);
+
+    display: block;
+    overflow: hidden;
+  }
+
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    min-height: 0;
+
+    gap: 0;
+
+    margin: 0 auto;
+  }
+
+
+  /*
+    Mantém a ordem:
+    texto → imagem → botão
+  */
+
+  .hero-copy {
+    display: contents;
+  }
+
+
+  /* ---------- EYEBROW ---------- */
+
+  .hero-copy .eyebrow {
+    order: 1;
+
+    width: 100%;
+
+    margin:
+      clamp(10px, 1.5vw, 12px)
+      0
+      clamp(15px, 2vw, 18px);
+
+    padding-inline: 10px;
+
+    font-size:
+      clamp(.66rem, .95vw, .72rem);
+
+    line-height: 1.5;
+    letter-spacing: .22em;
+  }
+
+
+  /* ---------- TÍTULO ---------- */
+
+  .hero-copy h1 {
+    order: 2;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    padding-inline: 10px;
+
+    font-size:
+      clamp(3rem, 5vw, 3.7rem);
+
+    line-height: 1.03;
+    letter-spacing: -.02em;
+  }
+
+
+  /* ---------- LINHA ---------- */
+
+  .hero-copy .gold-line {
+    order: 3;
+
+    width: 46px;
+    height: 1px;
+
+    margin:
+      clamp(22px, 3vw, 26px)
+      0
+      clamp(20px, 3vw, 24px)
+      10px;
+  }
+
+
+  /* ---------- IMAGEM ---------- */
+
+  .hero-visual {
+    order: 4;
+
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+
+    padding: 0;
+
+    margin:
+      0
+      0
+      clamp(24px, 3.5vw, 28px);
+
+  }
+
+
+  .hero-photo {
+    width: 100%;
+    max-width: 560px;
+
+    /*
+      Mantém exatamente a proporção
+      dos antigos 560 × 420,
+      mas deixa a imagem acompanhar
+      a largura disponível.
+    */
+    height: auto;
+    aspect-ratio: 4 / 3;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius:
+      48% 48% 22% 28% /
+      34% 34% 16% 30%;
+  }
+
+
+  .hero-photo picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hero-photo img,
+  .hero-photo picture img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: 60% 52%;
+
+    border-radius: inherit;
+  }
+
+
+  /* ---------- FORMAS AO REDOR DA IMAGEM ---------- */
+
+  .hero-shape-main {
+    width: 100%;
+    height: 102%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%);
+  }
+
+
+  .hero-shape-secondary {
+    width: 114%;
+    height: 119%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%);
+  }
+
+
+  /* ---------- BOLINHAS ---------- */
+
+
+
+  /* ---------- BOTÃO ---------- */
+
+  .hero-copy .btn {
+    order: 5;
+
+    width: 100%;
+    max-width: 560px;
+
+    min-height:
+      clamp(52px, 7vw, 56px);
+
+    margin: 0 auto;
+
+    padding:
+      0
+      clamp(20px, 3vw, 24px);
+
+    font-size:
+      clamp(.88rem, 1.25vw, .95rem);
+  }
+
+
+  /* ---------- CÍRCULOS DO FUNDO ---------- */
+
+  .hero::before {
+    width:
+      clamp(520px, 78vw, 620px);
+
+    height:
+      clamp(520px, 78vw, 620px);
+
+    right:
+      clamp(-240px, -28vw, -190px);
+
+    top:
+      clamp(-180px, -20vw, -145px);
+  }
+
+
+  .hero::after {
+    width:
+      clamp(290px, 43vw, 340px);
+
+    height:
+      clamp(290px, 43vw, 340px);
+
+    left:
+      clamp(-160px, -19vw, -125px);
+
+    bottom:
+      clamp(-150px, -17vw, -115px);
+  }
+}
+
+/* Mobile portrait */
+@media
+  (max-width: 767px) and (orientation: portrait) {
+
+
+
+
+/* ------ HERO — CELULAR EM PÉ ------- */
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    width: 100%;
+
+    /* Hero ocupa exatamente a primeira tela */
+    height: 100svh;
+    min-height: 0;
+
+    padding:
+      clamp(88px, 11.5svh, 108px)
+      0
+      clamp(10px, 1.5svh, 14px);
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- ESTRUTURA ---------- */
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 480px; /* 440px de conteudo + gutters do Bootstrap. */
+
+    height: 100%;
+    min-height: 0;
+
+    margin: 0 auto;
+
+    /*
+      ESTA É A PARTE IMPORTANTE:
+
+      O espaço que sobra na tela é distribuído
+      ENTRE os elementos.
+
+      Não fica mais acumulado embaixo.
+    */
+    justify-content: space-between;
+
+    gap: 0;
+  }
+
+
+  .hero-copy {
+    display: contents;
+  }
+
+
+.hero-copy .eyebrow {
+  order: 1;
+
+  width: 100%;
+
+  padding-inline:
+    clamp(18px, 5.8vw, 26px);
+
+  margin:
+    clamp(10px, 1.5svh, 15px)
+    0
+    0;
+
+  font-size:
+    clamp(.48rem, 1.15svh, .62rem);
+
+  line-height: 1.4;
+  letter-spacing: .20em;
+
+  flex: 0 0 auto;
+}
+
+
+/* ---------- TÍTULO ---------- */
+
+.hero-copy h1 {
+  order: 2;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding-inline:
+    clamp(18px, 5.8vw, 26px);
+
+  /*
+    Puxa o título para perto do eyebrow.
+  */
+  margin:
+    clamp(-24px, -2.8svh, -16px)
+    0
+    0;
+
+  font-size:
+    clamp(
+      1.82rem,
+      min(4.45svh, 9vw),
+      2.55rem
+    );
+
+  line-height: 1.03;
+  letter-spacing: -.02em;
+
+  flex: 0 0 auto;
+}
+
+
+/* ---------- LINHA DOURADA ---------- */
+
+.hero-copy .gold-line {
+  order: 3;
+
+  width:
+    clamp(30px, 4svh, 40px);
+
+  height: 1px;
+
+  margin:
+    clamp(-8px, -1svh, -4px)
+    0
+    0
+    clamp(18px, 5.8vw, 26px);
+
+  flex: 0 0 auto;
+}
+
+
+  /* ---------- ÁREA DA FOTO ---------- */
+
+  .hero-visual {
+    order: 4;
+
+    min-height: 0;
+
+    flex: 0 0 auto;
+
+
+    padding-inline:
+      clamp(6px, 2vw, 8px);
+
+    margin: 0;
+  }
+
+
+  /* ---------- FOTO ---------- */
+
+  .hero-photo {
+    width: calc(100% - 16px);
+    max-width: 410px;
+
+    /*
+      A foto aumenta e diminui
+      conforme a altura do aparelho.
+    */
+    height:
+      clamp(195px, 31svh, 315px);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius:
+      46% 46% 14% 30% /
+      29% 29% 10% 32%;
+  }
+
+
+  .hero-photo picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hero-photo img,
+  .hero-photo picture img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 58% 50%;
+  }
+
+
+  /* ---------- FORMAS DA FOTO ---------- */
+
+  .hero-shape-main {
+    width: 96%;
+    height: 112%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(-3deg);
+  }
+
+
+  .hero-shape-secondary {
+    width: 110%;
+    height: 128%;
+
+    left: 52%;
+    top: 48%;
+  }
+
+
+  /* ---------- BOTÃO ---------- */
+
+  .hero-copy .btn {
+    order: 5;
+
+    width: calc(100% - 24px);
+    max-width: 400px;
+
+    min-height:
+      clamp(46px, 6.2svh, 56px);
+
+    margin: 0 auto;
+
+    padding-inline:
+      clamp(14px, 4vw, 20px);
+
+    font-size:
+      clamp(.71rem, 1.55svh, .86rem);
+
+    flex: 0 0 auto;
+  }
+
+  /* ---------- CÍRCULOS DO FUNDO ---------- */
+
+  .hero::before {
+    width:
+      clamp(360px, 118vw, 480px);
+
+    height:
+      clamp(360px, 118vw, 480px);
+
+    right:
+      clamp(-290px, -67vw, -215px);
+
+    top:
+      clamp(-160px, -35vw, -115px);
+  }
+
+
+  .hero::after {
+    width:
+      clamp(230px, 77vw, 315px);
+
+    height:
+      clamp(230px, 77vw, 315px);
+
+    left:
+      clamp(-180px, -44vw, -140px);
+
+    bottom:
+      clamp(-140px, -34vw, -105px);
+  }
+}
+
+/* Low-height landscape */
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
+/* ---------- HERO ---------- */
+
+.hero {
+  width: 100%;
+  min-height: auto;
+  padding:
+    clamp(110px, 30vw, 120px)
+    0
+    clamp(52px, 13vw, 60px);
+}
+
+
+.hero-grid {
+  width: 100%;
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .45fr)
+    minmax(0, .55fr);
+
+
+  gap:
+    clamp(14px, 2.5vw, 18px);
+}
+
+
+/* ---------- BLOCO DE TEXTO ---------- */
+
+.hero-copy {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  padding-left:
+    clamp(24px, 5vw, 34px);
+}
+
+
+/* ---------- EYEBROW ---------- */
+
+.hero-copy .eyebrow {
+  width: 100%;
+
+  margin: 0 0
+    clamp(6px, 1.5dvh, 8px);
+
+  padding: 0;
+
+  font-size:
+    clamp(.40rem, 1vw, .45rem);
+
+  line-height: 1.35;
+  letter-spacing: .18em;
+
+  transform:
+    translateY(
+      clamp(5px, 2dvh, 10px)
+    );
+}
+
+
+/* ---------- TÍTULO ---------- */
+
+.hero-copy h1 {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  font-size:
+    clamp(1.35rem, 3.8vw, 1.8rem);
+
+  line-height: 1.02;
+
+  transform:
+    translateY(
+      clamp(5px, 2dvh, 10px)
+    );
+}
+
+
+/* ---------- LINHA ---------- */
+
+.hero-copy .gold-line {
+  width:
+    clamp(24px, 3.5vw, 27px);
+
+  height: 1px;
+
+  margin:
+    clamp(9px, 2dvh, 12px)
+    0
+    clamp(8px, 2dvh, 11px);
+
+  transform:
+    translateY(
+      clamp(5px, 2dvh, 10px)
+    );
+}
+
+
+/* ---------- BOTÃO ---------- */
+
+.hero-copy .btn {
+  width: auto;
+  min-width: 0;
+
+  min-height:
+    clamp(36px, 9dvh, 38px);
+
+  margin:
+    clamp(20px, 5dvh, 26px)
+    0
+    0;
+
+  padding:
+    0
+    clamp(12px, 2vw, 14px);
+
+  font-size:
+    clamp(.60rem, 1.4vw, .65rem);
+}
+
+
+/* ---------- FOTO ---------- */
+
+.hero-visual {
+  min-width: 0;
+  min-height: 0;
+
+  height: auto;
+
+  margin: 0;
+
+  padding:
+    0
+    clamp(6px, 1.5vw, 10px)
+    0
+    0;
+
+
+}
+
+
+.hero-photo {
+  width: 100%;
+  max-width: 340px;
+
+  /*
+    Aqui usamos a ALTURA da tela apenas
+    para dimensionar a foto.
+    Não estamos obrigando o Hero inteiro
+    a ocupar 100% da viewport.
+  */
+  height:
+    clamp(190px, 55dvh, 235px);
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius:
+    48% 48% 22% 28% /
+    34% 34% 16% 30%;
+}
+
+
+.hero-photo picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.hero-photo img,
+.hero-photo picture img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 68% center;
+
+  border-radius: inherit;
+}
+
+
+/* ---------- FORMAS ---------- */
+
+.hero-shape-main {
+  width: 97%;
+  height: 106%;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-3deg);
+}
+
+
+.hero-shape-secondary {
+  width: 113%;
+  height: 121%;
+
+  left: 52%;
+  top: 48%;
+}
+
+
+/* ---------- FUNDO ---------- */
+
+.hero::before {
+  width:
+    clamp(300px, 55vw, 400px);
+
+  height:
+    clamp(300px, 55vw, 400px);
+
+  right:
+    clamp(-210px, -28vw, -150px);
+
+  top:
+    clamp(-205px, -35dvh, -130px);
+}
+
+
+.hero::after {
+  width:
+    clamp(170px, 30vw, 220px);
+
+  height:
+    clamp(170px, 30vw, 220px);
+
+  left:
+    clamp(-130px, -18vw, -95px);
+
+  bottom:
+    clamp(-120px, -25dvh, -80px);
+}
+}
 
 /* INFO SECTION */
 .info-section {
@@ -2515,128 +3428,6 @@ p { margin-top: 0; }
   and (max-width: 1024px)
   and (orientation: landscape) {
 
-  .hero {
-    width: 100%;
-    height: 100svh;
-    min-height: 0;
-
-    padding:
-      clamp(92px, 9.5vw, 100px)
-      0
-      clamp(3px, .5vw, 6px);
-
-    display: block;
-    overflow: hidden;
-  }
-
-
-  .hero-grid {
-    height: 100%;
-    min-height: 0;
-
-    display: grid;
-
-    grid-template-columns:
-      minmax(0, .43fr)
-      minmax(0, .57fr);
-
-
-    gap:
-      clamp(28px, 4vw, 38px);
-
-    margin: 0 auto;
-  }
-
-
-  /* ---------- TEXTO ---------- */
-
-  .hero-copy {
-    width: 100%;
-    min-width: 0;
-
-    padding-left:
-      clamp(12px, 2.5vw, 24px);
-  }
-
-
-  .hero-copy .eyebrow {
-    font-size:
-      clamp(.56rem, .85vw, .62rem);
-  }
-
-
-  .hero-copy h1 {
-    font-size:
-      clamp(2.55rem, 4.5vw, 3.25rem);
-  }
-
-
-  /* ---------- FOTO ---------- */
-
-  .hero-visual {
-    min-width: 0;
-    min-height: 0;
-
-    height: auto;
-
-  }
-
-
-  .hero-photo {
-    width: 100%;
-    max-width: 500px;
-
-    height: auto;
-
-    /*
-      Mantém praticamente a mesma proporção
-      dos antigos 500 × 520.
-    */
-    aspect-ratio: 500 / 520;
-  }
-
-
-  .hero-photo picture {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .hero-photo img,
-  .hero-photo picture img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: 62% center;
-  }
-
-
-  /* ---------- FORMAS ---------- */
-
-  .hero-shape-main {
-    width: 88%;
-    height: 96%;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-      translate(-50%, -50%)
-      rotate(-3deg);
-  }
-
-
-  .hero-shape-secondary {
-    width: 108%;
-    height: 104%;
-
-    left: 53%;
-    top: 48%;
-  }
-
 
 /* ======= CONCERNS — TABLET DEITADO ======= */
 
@@ -3292,219 +4083,6 @@ p { margin-top: 0; }
   and (max-width: 1024px)
   and (orientation: portrait) {
 
-  /* ---------- HERO ---------- */
-
-  .hero {
-    width: 100%;
-    height: 100svh;
-    min-height: 0;
-
-    padding:
-      clamp(118px, 16vw, 132px)
-      0
-      clamp(38px, 5vw, 48px);
-
-    display: block;
-    overflow: hidden;
-  }
-
-
-  .hero-grid {
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    min-height: 0;
-
-    gap: 0;
-
-    margin: 0 auto;
-  }
-
-
-  /*
-    Mantém a ordem:
-    texto → imagem → botão
-  */
-
-  .hero-copy {
-    display: contents;
-  }
-
-
-  /* ---------- EYEBROW ---------- */
-
-  .hero-copy .eyebrow {
-    order: 1;
-
-    width: 100%;
-
-    margin:
-      clamp(10px, 1.5vw, 12px)
-      0
-      clamp(15px, 2vw, 18px);
-
-    padding-inline: 10px;
-
-    font-size:
-      clamp(.66rem, .95vw, .72rem);
-
-    line-height: 1.5;
-    letter-spacing: .22em;
-  }
-
-
-  /* ---------- TÍTULO ---------- */
-
-  .hero-copy h1 {
-    order: 2;
-
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0;
-
-    padding-inline: 10px;
-
-    font-size:
-      clamp(3rem, 5vw, 3.7rem);
-
-    line-height: 1.03;
-    letter-spacing: -.02em;
-  }
-
-
-  /* ---------- LINHA ---------- */
-
-  .hero-copy .gold-line {
-    order: 3;
-
-    width: 46px;
-    height: 1px;
-
-    margin:
-      clamp(22px, 3vw, 26px)
-      0
-      clamp(20px, 3vw, 24px)
-      10px;
-  }
-
-
-  /* ---------- IMAGEM ---------- */
-
-  .hero-visual {
-    order: 4;
-
-    min-width: 0;
-    min-height: 0;
-    height: auto;
-
-    padding: 0;
-
-    margin:
-      0
-      0
-      clamp(24px, 3.5vw, 28px);
-
-  }
-
-
-  .hero-photo {
-    width: 100%;
-    max-width: 560px;
-
-    /*
-      Mantém exatamente a proporção
-      dos antigos 560 × 420,
-      mas deixa a imagem acompanhar
-      a largura disponível.
-    */
-    height: auto;
-    aspect-ratio: 4 / 3;
-
-    margin: 0 auto;
-
-    overflow: hidden;
-
-    border-radius:
-      48% 48% 22% 28% /
-      34% 34% 16% 30%;
-  }
-
-
-  .hero-photo picture {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .hero-photo img,
-  .hero-photo picture img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: 60% 52%;
-
-    border-radius: inherit;
-  }
-
-
-  /* ---------- FORMAS AO REDOR DA IMAGEM ---------- */
-
-  .hero-shape-main {
-    width: 100%;
-    height: 102%;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-      translate(-50%, -50%);
-  }
-
-
-  .hero-shape-secondary {
-    width: 114%;
-    height: 119%;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-      translate(-50%, -50%);
-  }
-
-
-  /* ---------- BOLINHAS ---------- */
-
-
-
-  /* ---------- BOTÃO ---------- */
-
-  .hero-copy .btn {
-    order: 5;
-
-    width: 100%;
-    max-width: 560px;
-
-    min-height:
-      clamp(52px, 7vw, 56px);
-
-    margin: 0 auto;
-
-    padding:
-      0
-      clamp(20px, 3vw, 24px);
-
-    font-size:
-      clamp(.88rem, 1.25vw, .95rem);
-  }
-
 
   /* ---------- NOTA DE SIGILO ---------- */
 
@@ -3524,38 +4102,6 @@ p { margin-top: 0; }
 
     font-size:
       clamp(.72rem, 1vw, .78rem);
-  }
-
-
-  /* ---------- CÍRCULOS DO FUNDO ---------- */
-
-  .hero::before {
-    width:
-      clamp(520px, 78vw, 620px);
-
-    height:
-      clamp(520px, 78vw, 620px);
-
-    right:
-      clamp(-240px, -28vw, -190px);
-
-    top:
-      clamp(-180px, -20vw, -145px);
-  }
-
-
-  .hero::after {
-    width:
-      clamp(290px, 43vw, 340px);
-
-    height:
-      clamp(290px, 43vw, 340px);
-
-    left:
-      clamp(-160px, -19vw, -125px);
-
-    bottom:
-      clamp(-150px, -17vw, -115px);
   }
 
 
@@ -4457,7 +5003,7 @@ p { margin-top: 0; }
     font-size: .72rem;
     line-height: 1.45;
   }
-  
+
 
   /* ==================================================
      CONTATO
@@ -4573,245 +5119,6 @@ p { margin-top: 0; }
 @media
   (max-width: 767px) and (orientation: portrait) {
 
-
-  
-
-/* ------ HERO — CELULAR EM PÉ ------- */
- 
-
-  /* ---------- HERO ---------- */
-
-  .hero {
-    width: 100%;
-
-    /* Hero ocupa exatamente a primeira tela */
-    height: 100svh;
-    min-height: 0;
-
-    padding:
-      clamp(88px, 11.5svh, 108px)
-      0
-      clamp(10px, 1.5svh, 14px);
-
-    overflow: hidden;
-  }
-
-
-  /* ---------- ESTRUTURA ---------- */
-
-  .hero-grid {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    max-width: 480px; /* 440px de conteudo + gutters do Bootstrap. */
-
-    height: 100%;
-    min-height: 0;
-
-    margin: 0 auto;
-
-    /*
-      ESTA É A PARTE IMPORTANTE:
-
-      O espaço que sobra na tela é distribuído
-      ENTRE os elementos.
-
-      Não fica mais acumulado embaixo.
-    */
-    justify-content: space-between;
-
-    gap: 0;
-  }
-
-
-  .hero-copy {
-    display: contents;
-  }
-
-
-.hero-copy .eyebrow {
-  order: 1;
-
-  width: 100%;
-
-  padding-inline:
-    clamp(18px, 5.8vw, 26px);
-
-  margin:
-    clamp(10px, 1.5svh, 15px)
-    0
-    0;
-
-  font-size:
-    clamp(.48rem, 1.15svh, .62rem);
-
-  line-height: 1.4;
-  letter-spacing: .20em;
-
-  flex: 0 0 auto;
-}
-
-
-/* ---------- TÍTULO ---------- */
-
-.hero-copy h1 {
-  order: 2;
-
-  width: 100%;
-  max-width: 100%;
-
-  padding-inline:
-    clamp(18px, 5.8vw, 26px);
-
-  /*
-    Puxa o título para perto do eyebrow.
-  */
-  margin:
-    clamp(-24px, -2.8svh, -16px)
-    0
-    0;
-
-  font-size:
-    clamp(
-      1.82rem,
-      min(4.45svh, 9vw),
-      2.55rem
-    );
-
-  line-height: 1.03;
-  letter-spacing: -.02em;
-
-  flex: 0 0 auto;
-}
-
-
-/* ---------- LINHA DOURADA ---------- */
-
-.hero-copy .gold-line {
-  order: 3;
-
-  width:
-    clamp(30px, 4svh, 40px);
-
-  height: 1px;
-
-  margin:
-    clamp(-8px, -1svh, -4px)
-    0
-    0
-    clamp(18px, 5.8vw, 26px);
-
-  flex: 0 0 auto;
-}
-
-
-  /* ---------- ÁREA DA FOTO ---------- */
-
-  .hero-visual {
-    order: 4;
-
-    min-height: 0;
-
-    flex: 0 0 auto;
-
-
-    padding-inline:
-      clamp(6px, 2vw, 8px);
-
-    margin: 0;
-  }
-
-
-  /* ---------- FOTO ---------- */
-
-  .hero-photo {
-    width: calc(100% - 16px);
-    max-width: 410px;
-
-    /*
-      A foto aumenta e diminui
-      conforme a altura do aparelho.
-    */
-    height:
-      clamp(195px, 31svh, 315px);
-
-    margin: 0 auto;
-
-    overflow: hidden;
-
-    border-radius:
-      46% 46% 14% 30% /
-      29% 29% 10% 32%;
-  }
-
-
-  .hero-photo picture {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .hero-photo img,
-  .hero-photo picture img {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: 58% 50%;
-  }
-
-
-  /* ---------- FORMAS DA FOTO ---------- */
-
-  .hero-shape-main {
-    width: 96%;
-    height: 112%;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-      translate(-50%, -50%)
-      rotate(-3deg);
-  }
-
-
-  .hero-shape-secondary {
-    width: 110%;
-    height: 128%;
-
-    left: 52%;
-    top: 48%;
-  }
-
-
-  /* ---------- BOTÃO ---------- */
-
-  .hero-copy .btn {
-    order: 5;
-
-    width: calc(100% - 24px);
-    max-width: 400px;
-
-    min-height:
-      clamp(46px, 6.2svh, 56px);
-
-    margin: 0 auto;
-
-    padding-inline:
-      clamp(14px, 4vw, 20px);
-
-    font-size:
-      clamp(.71rem, 1.55svh, .86rem);
-
-    flex: 0 0 auto;
-  }
-
 /* ---------- SIGILO ---------- */
 
 .privacy-note {
@@ -4840,37 +5147,6 @@ p { margin-top: 0; }
 
   flex: 0 0 auto;
 }
-
-  /* ---------- CÍRCULOS DO FUNDO ---------- */
-
-  .hero::before {
-    width:
-      clamp(360px, 118vw, 480px);
-
-    height:
-      clamp(360px, 118vw, 480px);
-
-    right:
-      clamp(-290px, -67vw, -215px);
-
-    top:
-      clamp(-160px, -35vw, -115px);
-  }
-
-
-  .hero::after {
-    width:
-      clamp(230px, 77vw, 315px);
-
-    height:
-      clamp(230px, 77vw, 315px);
-
-    left:
-      clamp(-180px, -44vw, -140px);
-
-    bottom:
-      clamp(-140px, -34vw, -105px);
-  }
 
 
 /* ==================================================
@@ -6136,132 +6412,6 @@ p { margin-top: 0; }
 @media
   (orientation: landscape)
   and (max-height: 500px) {
-/* ---------- HERO ---------- */
-
-.hero {
-  width: 100%;
-  min-height: auto;
-  padding:
-    clamp(110px, 30vw, 120px)
-    0
-    clamp(52px, 13vw, 60px);
-}
-
-
-.hero-grid {
-  width: 100%;
-  min-height: 0;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, .45fr)
-    minmax(0, .55fr);
-
-
-  gap:
-    clamp(14px, 2.5vw, 18px);
-}
-
-
-/* ---------- BLOCO DE TEXTO ---------- */
-
-.hero-copy {
-  display: block;
-
-  width: 100%;
-  min-width: 0;
-
-  padding-left:
-    clamp(24px, 5vw, 34px);
-}
-
-
-/* ---------- EYEBROW ---------- */
-
-.hero-copy .eyebrow {
-  width: 100%;
-
-  margin: 0 0
-    clamp(6px, 1.5dvh, 8px);
-
-  padding: 0;
-
-  font-size:
-    clamp(.40rem, 1vw, .45rem);
-
-  line-height: 1.35;
-  letter-spacing: .18em;
-
-  transform:
-    translateY(
-      clamp(5px, 2dvh, 10px)
-    );
-}
-
-
-/* ---------- TÍTULO ---------- */
-
-.hero-copy h1 {
-  width: 100%;
-  max-width: 100%;
-
-  margin: 0;
-  padding: 0;
-
-  font-size:
-    clamp(1.35rem, 3.8vw, 1.8rem);
-
-  line-height: 1.02;
-
-  transform:
-    translateY(
-      clamp(5px, 2dvh, 10px)
-    );
-}
-
-
-/* ---------- LINHA ---------- */
-
-.hero-copy .gold-line {
-  width:
-    clamp(24px, 3.5vw, 27px);
-
-  height: 1px;
-
-  margin:
-    clamp(9px, 2dvh, 12px)
-    0
-    clamp(8px, 2dvh, 11px);
-
-  transform:
-    translateY(
-      clamp(5px, 2dvh, 10px)
-    );
-}
-
-
-/* ---------- BOTÃO ---------- */
-
-.hero-copy .btn {
-  width: auto;
-  min-width: 0;
-
-  min-height:
-    clamp(36px, 9dvh, 38px);
-
-  margin:
-    clamp(20px, 5dvh, 26px)
-    0
-    0;
-
-  padding:
-    0
-    clamp(12px, 2vw, 14px);
-
-  font-size:
-    clamp(.60rem, 1.4vw, .65rem);
-}
 
 
 /* ---------- SIGILO ---------- */
@@ -6280,127 +6430,6 @@ p { margin-top: 0; }
 
   font-size:
     clamp(.49rem, 1.2vw, .54rem);
-}
-
-
-/* ---------- FOTO ---------- */
-
-.hero-visual {
-  min-width: 0;
-  min-height: 0;
-
-  height: auto;
-
-  margin: 0;
-
-  padding:
-    0
-    clamp(6px, 1.5vw, 10px)
-    0
-    0;
-
-
-}
-
-
-.hero-photo {
-  width: 100%;
-  max-width: 340px;
-
-  /*
-    Aqui usamos a ALTURA da tela apenas
-    para dimensionar a foto.
-    Não estamos obrigando o Hero inteiro
-    a ocupar 100% da viewport.
-  */
-  height:
-    clamp(190px, 55dvh, 235px);
-
-  margin: 0;
-
-  overflow: hidden;
-
-  border-radius:
-    48% 48% 22% 28% /
-    34% 34% 16% 30%;
-}
-
-
-.hero-photo picture {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-}
-
-
-.hero-photo img,
-.hero-photo picture img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: 68% center;
-
-  border-radius: inherit;
-}
-
-
-/* ---------- FORMAS ---------- */
-
-.hero-shape-main {
-  width: 97%;
-  height: 106%;
-
-  left: 50%;
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(-3deg);
-}
-
-
-.hero-shape-secondary {
-  width: 113%;
-  height: 121%;
-
-  left: 52%;
-  top: 48%;
-}
-
-
-/* ---------- FUNDO ---------- */
-
-.hero::before {
-  width:
-    clamp(300px, 55vw, 400px);
-
-  height:
-    clamp(300px, 55vw, 400px);
-
-  right:
-    clamp(-210px, -28vw, -150px);
-
-  top:
-    clamp(-205px, -35dvh, -130px);
-}
-
-
-.hero::after {
-  width:
-    clamp(170px, 30vw, 220px);
-
-  height:
-    clamp(170px, 30vw, 220px);
-
-  left:
-    clamp(-130px, -18vw, -95px);
-
-  bottom:
-    clamp(-120px, -25dvh, -80px);
 }
 
 
@@ -6711,7 +6740,9 @@ p { margin-top: 0; }
   .psych-track > .row > :nth-child(2) .psych-image img {
     object-position: center 22%;
   }
-
+  .psych-track > .row > .col-12 {
+    width: 50%;
+  }
 
 /* ==================================================
    PROCESS — CELULAR DEITADO
