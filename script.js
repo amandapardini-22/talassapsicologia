@@ -261,10 +261,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// ===== ÍCONES LUCIDE =====
-if (window.lucide) {
-  window.lucide.createIcons();
-}
 
 /* ========== CARROSSEL — COMO FUNCIONA ============= */
 

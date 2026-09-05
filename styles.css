@@ -500,8 +500,8 @@ p { margin-top: 0; }
 .info-icon svg {
   width: 18px;
   height: 18px;
-  stroke: #D2A95F;
-  stroke-width: 1.6;
+  color: #D2A95F;
+  fill: currentColor;
 }
 .info-item strong,
 .info-item span {
@@ -1684,8 +1684,8 @@ p { margin-top: 0; }
 
   margin-top: 2px;
 
-  stroke: rgba(var(--rgb-white), .60);
-  stroke-width: 1.5;
+  color: rgba(var(--rgb-white), .60);
+  fill: currentColor;
 }
 
 .footer-contact-item span {
@@ -1725,8 +1725,8 @@ p { margin-top: 0; }
   width: 18px;
   height: 18px;
 
-  stroke: rgba(var(--rgb-white), .65);
-  stroke-width: 1.5;
+  color: rgba(var(--rgb-white), .65);
+  fill: currentColor;
 }
 
 .instagram-link span {
@@ -1814,7 +1814,7 @@ p { margin-top: 0; }
 .footer-contact a.footer-contact-item svg {
   transition:
     color .2s ease,
-    stroke .2s ease;
+    fill .2s ease;
 }
 
 .footer-contact a.footer-contact-item:hover span {
@@ -1822,7 +1822,7 @@ p { margin-top: 0; }
 }
 
 .footer-contact a.footer-contact-item:hover svg {
-  stroke: var(--white);
+  color: var(--white);
 }
 
 
@@ -1834,7 +1834,7 @@ p { margin-top: 0; }
 .instagram-link svg {
   transition:
     color .2s ease,
-    stroke .2s ease;
+    fill .2s ease;
 }
 
 .instagram-link:hover span {
@@ -1842,7 +1842,7 @@ p { margin-top: 0; }
 }
 
 .instagram-link:hover svg {
-  stroke: var(--white);
+  color: var(--white);
 }
 
 /* ============= RESPONSIVE =================== */
