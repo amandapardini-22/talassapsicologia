@@ -7643,3 +7643,35 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   .concern-card:hover, .concern-card.open, .concern-card .concern-icon,
   body .btn.js-whatsapp:hover, .faq-item > div p { transform: none; }
 }
+
+/* Touch accents preserve the approved gold/teal palettes and desktop states. */
+@keyframes talassa-button-sheen-auto {
+  0%, 74% { transform: translateX(-180%) skewX(-20deg); opacity: 0; }
+  77% { opacity: 1; }
+  86% { opacity: 1; }
+  90%, 100% { transform: translateX(430%) skewX(-20deg); opacity: 0; }
+}
+@media (hover: none), (pointer: coarse) {
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after {
+    animation: talassa-button-sheen-auto 6s ease-in-out infinite;
+    animation-delay: var(--cta-sheen-delay, 0s);
+  }
+  .site-header { --cta-sheen-delay: -.5s; }
+  .hero { --cta-sheen-delay: -1.8s; }
+  .next-step { --cta-sheen-delay: -3s; }
+  .final-cta { --cta-sheen-delay: -4.2s; }
+  .site-footer { --cta-sheen-delay: -5.1s; }
+  .concern-card:not(.open) {
+    border-color: rgba(56,127,136,.44);
+    box-shadow: 0 8px 22px rgba(var(--rgb-navy),.10), 0 0 18px rgba(56,127,136,.14);
+  }
+  .concern-card:not(.open) .concern-icon {
+    box-shadow: 0 0 0 4px rgba(56,127,136,.05), 0 0 12px rgba(56,127,136,.10);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after {
+    animation: none;
+    opacity: 0;
+  }
+}

@@ -581,15 +581,7 @@ revealOnScroll(
 );
 
 /* CARDS */
-revealOnScroll(
-  ".concern-card",
-  {
-    y: 24,
-    duration: 580,
-    stagger: 65,
-    threshold: 0.12
-  }
-);
+// Card entrances are handled by the GSAP concerns timeline below.
 
 /* FRASE FINAL */
 revealOnScroll(
@@ -656,10 +648,22 @@ if (window.gsap && window.ScrollTrigger) {
     }
     const info = entrance("info", ".info-section");
     if (info) {
-      const interval = low ? .16 : (landscape || desktop ? .24 : .19);
+      const interval = low ? .16 : (landscape || desktop ? .24 : .21);
+      const portrait = !landscape && !desktop;
       document.querySelectorAll(".info-item").forEach((item, i) => {
-        info.from(item.querySelector(".info-icon"), { opacity: 0, scale: .78, duration: .35 }, i * interval)
-          .from(item.querySelector(".info-icon + div"), { opacity: 0, y: 18 }, i * interval + .12);
+        info.from(item.querySelector(".info-icon"), { opacity: 0, scale: portrait ? .73 : .78, duration: .35 }, i * interval)
+          .from(item.querySelector(".info-icon + div"), { opacity: 0, y: portrait ? 22 : 18 }, i * interval + .12);
+      });
+    }
+    const concerns = entrance("concerns", ".concerns-grid");
+    if (concerns) {
+      const interval = low ? .09 : .13;
+      document.querySelectorAll(".concern-card").forEach((card, i) => {
+        const at = i * interval;
+        // Column transform is independent of the card hover/open transform.
+        concerns.from(card.parentElement, { opacity: 0, y: low ? 22 : (landscape || desktop ? 32 : 28), scale: .97, duration: .45, clearProps: "transform,opacity" }, at)
+          .from(card.querySelector(".concern-icon svg"), { opacity: 0, scale: .75, duration: .32, clearProps: "transform,opacity" }, at + .04)
+          .from(card.querySelector(".concern-title"), { opacity: 0, y: 12, duration: .38, clearProps: "transform,opacity" }, at + .13);
       });
     }
     // Mirrors the actual CSS carousel modes; timers and scrolling stay untouched.
@@ -676,8 +680,18 @@ if (window.gsap && window.ScrollTrigger) {
     const faq = entrance("faq", ".faq-grid");
     if (faq) {
       const horizontal = desktop || landscape;
-      faq.from(".faq-intro > *", { opacity: 0, x: horizontal ? -40 : 0, y: horizontal ? 0 : 24, stagger: .1 })
-        .from(".faq-item", { opacity: 0, x: horizontal ? 40 : 0, y: horizontal ? 0 : 28, stagger: .14 }, .35);
+      if (horizontal && !low) {
+        faq.from(".faq-intro > *", { opacity: 0, x: -40, y: 0, stagger: .1 })
+          .from(".faq-item", { opacity: 0, x: 40, y: 0, stagger: .14 }, .35);
+      } else {
+        faq.from(".faq-intro > *", { opacity: 0, y: low ? 16 : 26, stagger: low ? .08 : .12, duration: .45 });
+        document.querySelectorAll(".faq-item").forEach((item, i) => {
+          const at = (low ? .45 : .70) + i * (low ? .10 : .16);
+          faq.from(item, { opacity: 0, y: low ? 14 : 26, duration: .38, clearProps: "transform,opacity" }, at)
+            .from(item.querySelector("button b"), { opacity: 0, scale: .73, duration: .25, clearProps: "transform,opacity" }, at)
+            .from(item.querySelector("button span"), { opacity: 0, y: low ? 12 : 20, duration: .4, clearProps: "transform,opacity" }, at + .10);
+        });
+      }
     }
   });
 }
