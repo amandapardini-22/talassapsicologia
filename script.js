@@ -122,22 +122,57 @@ function updateHeader() {
 window.addEventListener('scroll', updateHeader);
 updateHeader();
 
+
 // ===== MENU MOBILE =====
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
 if (menuToggle && nav) {
+
   menuToggle.addEventListener('click', () => {
+
     const isOpen = nav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      String(isOpen)
+    );
+
+    if (isOpen) {
+
+      /* Sempre abre o menu no primeiro item */
+      nav.scrollTop = 0;
+
+      /*
+        Reforça a posição depois que
+        o navegador renderiza o dropdown.
+      */
+      requestAnimationFrame(() => {
+        nav.scrollTop = 0;
+      });
+    }
+
   });
 
+
   nav.querySelectorAll('a').forEach(link => {
+
     link.addEventListener('click', () => {
+
       nav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      nav.scrollTop = 0;
+
     });
+
   });
+
 }
 
 /* ============ CARDS — DEMANDAS ================= */
