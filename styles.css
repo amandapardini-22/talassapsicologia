@@ -1382,20 +1382,17 @@ p { margin-top: 0; }
   /* ---------- FOTO ---------- */
 
   .hero-photo {
-    width: calc(100% - 2px);
-    max-width: 440px;
+    width: calc(100% + 24px);
+    max-width: 460px;
     height:
-    clamp(210px, 34svh, 335px);
-
-    margin: 0 auto;
-
+      clamp(225px, 36svh, 350px);
+    margin-left: -12px;
+    margin-right: -12px;
     overflow: hidden;
-
     border-radius:
       46% 46% 14% 30% /
       29% 29% 10% 32%;
   }
-
 
   .hero-photo picture {
     display: block;
