@@ -631,6 +631,26 @@ if (window.gsap && window.ScrollTrigger) {
   const motion = gsap.matchMedia();
   motion.add({
     allowed: "(prefers-reduced-motion: no-preference)",
+    mobilePortrait: "(max-width: 767px) and (orientation: portrait)",
+    tabletPortrait: "(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
+  }, context => {
+    const { allowed, mobilePortrait, tabletPortrait } = context.conditions;
+    if (!allowed || (!mobilePortrait && !tabletPortrait) || played.has("therapy-image")) return;
+    const therapyImage = document.querySelector(".therapy-image");
+    if (!therapyImage) return;
+    gsap.from(therapyImage, {
+      x: tabletPortrait ? 120 : 90,
+      opacity: 0,
+      scale: .97,
+      duration: tabletPortrait ? 1.05 : 1,
+      ease: "power3.out",
+      clearProps: "transform,opacity",
+      scrollTrigger: { trigger: therapyImage, start: "top 85%", once: true },
+      onStart: () => played.add("therapy-image")
+    });
+  });
+  motion.add({
+    allowed: "(prefers-reduced-motion: no-preference)",
     desktop: "(min-width: 1025px)",
     landscape: "(orientation: landscape)",
     tablet: "(min-width: 768px)",
