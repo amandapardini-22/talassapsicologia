@@ -606,15 +606,7 @@ revealOnScroll(
 );
 
 /* CARDS */
-revealOnScroll(
-  ".psych-card",
-  {
-    y: 26,
-    duration: 650,
-    stagger: 120,
-    threshold: 0.12
-  }
-);
+// The Bootstrap columns now receive the lateral GSAP entrance.
 
 /* ============= DÚVIDAS ==================== */
 
@@ -664,6 +656,37 @@ if (window.gsap && window.ScrollTrigger) {
         defaults: { duration: .5, ease: "power2.out", immediateRender: true },
         scrollTrigger: { trigger, start: "top 88%", once: true },
         onStart: () => played.add(key)
+      });
+    }
+    // Large cards: animate columns, leaving card hover transforms independent.
+    const lateralDistance = low ? 65 : (desktop ? 100 : (tablet ? 90 : 80));
+    const lateralDuration = low ? .70 : (tablet ? .85 : .80);
+    document.querySelectorAll(".psych-track > .row > .col-12").forEach((column, i) => {
+      const key = "psych-column-" + i;
+      if (played.has(key)) return;
+      gsap.from(column, {
+        x: i === 0 ? -lateralDistance : lateralDistance,
+        opacity: 0,
+        scale: .98,
+        duration: lateralDuration,
+        delay: i * .18,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: { trigger: column, start: "top 85%", once: true },
+        onStart: () => played.add(key)
+      });
+    });
+    const practicalBox = document.querySelector(".practical-box");
+    if (practicalBox && !played.has("practical-box")) {
+      gsap.from(practicalBox, {
+        x: -lateralDistance,
+        opacity: 0,
+        scale: .985,
+        duration: low ? .70 : (desktop ? .90 : (tablet ? .85 : .80)),
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: { trigger: ".practical", start: "top 85%", once: true },
+        onStart: () => played.add("practical-box")
       });
     }
     const info = entrance("info", ".info-section");

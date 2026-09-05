@@ -7675,3 +7675,27 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
     opacity: 0;
   }
 }
+
+/* Practical: gold depth on the card only; the teal CTA remains unchanged. */
+.practical .next-step {
+  border-color: rgba(var(--rgb-gold), .48);
+  box-shadow: 0 8px 24px rgba(var(--rgb-navy), .07), 0 0 18px rgba(var(--rgb-gold), .10);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .practical .next-step:hover {
+    transform: translateY(-3px) scale(1.005);
+    border-color: rgba(var(--rgb-gold), .78);
+    box-shadow: 0 14px 32px rgba(var(--rgb-navy), .12), 0 0 26px rgba(var(--rgb-gold), .22);
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .practical .next-step {
+    border-color: rgba(var(--rgb-gold), .62);
+    box-shadow: 0 10px 26px rgba(var(--rgb-navy), .09), 0 0 22px rgba(var(--rgb-gold), .17);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .practical .next-step { transition: none; }
+  .practical .next-step:hover { transform: none; }
+}
