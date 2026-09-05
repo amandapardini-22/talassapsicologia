@@ -275,7 +275,8 @@ const processPrev = document.querySelector(".process-prev");
 const processNext = document.querySelector(".process-next");
 
 const processPortrait = window.matchMedia(
-  "(max-width: 1024px)"
+  "(max-width: 1024px) and (orientation: portrait), " +
+  "(max-width: 1024px) and (orientation: landscape) and (max-height: 500px)"
 );
 
 const reduceMotion = window.matchMedia(
