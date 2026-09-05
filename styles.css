@@ -261,25 +261,18 @@ p { margin-top: 0; }
 }
 
 /* Botão Agendar conversa do Header */
-
 .main-nav .btn-header {
   width: auto;
   min-height: 46px;
-
   margin-left: 34px;
   padding: 0 28px;
-
   background: var(--gold);
   color: var(--navy);
-
   border: 0;
   border-radius: 0;
-
   white-space: nowrap;
-
   font-weight: 600;
   font-size: .88rem;
-
   transition:
     transform .2s ease,
     box-shadow .2s ease,
@@ -307,10 +300,8 @@ p { margin-top: 0; }
 
   .header-inner {
     min-height: 82px;
-
     gap: 20px;
   }
-
 
   /* ==================================================
      LOGO
@@ -321,7 +312,6 @@ p { margin-top: 0; }
     height: 90px;
   }
 
-
   /* ==================================================
      HAMBÚRGUER
   ================================================== */
@@ -331,15 +321,12 @@ p { margin-top: 0; }
 
     z-index: 80;
   }
-
   .site-header:not(.scrolled) .menu-toggle span {
     background: var(--white);
   }
-
   .site-header.scrolled .menu-toggle span {
     background: var(--ink);
   }
-
 
   /* ==================================================
      MENU DROPDOWN
@@ -347,49 +334,32 @@ p { margin-top: 0; }
 
   .main-nav {
     position: absolute;
-
     top: calc(100% + 6px);
-
     left: 20px;
     right: 20px;
-
     margin-right: 0;
-
     gap: 0;
-
     width: auto;
     max-width: none;
-
     padding: 14px 20px 18px;
-
     box-sizing: border-box;
-
     background: rgba(252, 247, 239, .98);
-
     border: 1px solid rgba(44, 47, 81, .08);
-
     box-shadow:
       0 18px 40px rgba(44, 47, 81, .14);
-
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
     transform: translateY(-8px);
-
     transition:
       opacity .25s ease,
       transform .25s ease,
       visibility .25s ease;
-
     z-index: 75;
-
     /* Impede o menu de ultrapassar a tela */
     max-height: calc(100dvh - 100px);
-
     overflow-y: auto;
   }
-
   .main-nav.open {
     opacity: 1;
     visibility: visible;
@@ -397,7 +367,6 @@ p { margin-top: 0; }
 
     transform: translateY(0);
   }
-
 
   /* ==================================================
      LINKS
@@ -7248,270 +7217,170 @@ p { margin-top: 0; }
     width: 100%;
     min-width: 0;
   }
-
   .footer-column h3 {
     margin: 0 0 11px;
-
     font-size: .53rem;
     letter-spacing: .18em;
   }
-
   .footer-column > a {
     margin-bottom: 7px;
-
     font-size: .62rem;
   }
 
 
-  /* ==================================================
-     CONTATO
-  ================================================== */
-
+  /* ============ CONTATO ============ */
   .footer-contact-item {
     width: 100%;
-
     gap: 7px;
-
     margin-bottom: 8px !important;
   }
-
   .footer-contact-item svg {
     width: 13px;
     height: 13px;
-
     flex: 0 0 13px;
-
     margin-top: 1px;
   }
-
   .footer-contact-item span {
     min-width: 0;
-
     font-size: .60rem;
     line-height: 1.45;
-
     overflow-wrap: anywhere;
   }
 
-
-  /* ==================================================
-     ACOMPANHE
-  ================================================== */
-
+  /* ============== ACOMPANHE =================== */
   .footer-social p {
     max-width: 250px;
-
     margin: 0 0 10px;
-
     font-size: .60rem;
     line-height: 1.55;
   }
-
   .instagram-link {
     gap: 7px;
-
     margin-bottom: 11px !important;
   }
-
   .instagram-link svg {
     width: 14px;
     height: 14px;
   }
-
   .instagram-link span {
     font-size: .62rem;
   }
 
-
-  /* ==================================================
-     BOTÃO WHATSAPP
-  ================================================== */
-
+  /* ============ BOTÃO WHATSAPP =================== */
   .footer-whatsapp {
     width: auto;
-
     min-height: 36px;
-
     padding: 0 13px;
-
     font-size: .58rem !important;
   }
 
-
-  /* ==================================================
-     PARTE INFERIOR
-  ================================================== */
-
+  /* =========== PARTE INFERIOR =============== */
   .footer-bottom {
     margin-top: 26px;
     padding-top: 13px;
-
     gap: 14px;
-
     font-size: .52rem;
   }
-
   .footer-bottom div {
     gap: 15px;
   }
 
-
-/* ==================================================
-   MODAL WHATSAPP — CELULAR DEITADO
-   DUAS PSICÓLOGAS LADO A LADO
-================================================== */
-
-
+/* ==== MODAL WHATSAPP — CELULAR DEITADO — DUAS PSICÓLOGAS LADO A LADO ==== */
 
   .whatsapp-modal {
     padding: 12px 18px;
   }
-
   .whatsapp-modal-box {
     width: min(calc(100% - 24px), 760px);
     max-height: calc(100dvh - 24px);
-
     padding: 18px 24px 20px;
-
     overflow-y: auto;
-
     border-radius: 15px;
   }
 
-
-  /* ==================================================
-     CABEÇALHO MAIS COMPACTO
-  ================================================== */
-
+  /* ====== CABEÇALHO MAIS COMPACTO ========== */
   .whatsapp-modal-box .eyebrow {
     margin-bottom: 5px;
-
     font-size: .48rem;
     letter-spacing: .19em;
   }
-
   .whatsapp-modal-box h2 {
     max-width: 500px;
-
     margin-bottom: 6px;
-
     font-size: 1.45rem;
     line-height: 1.03;
   }
-
   .whatsapp-modal-intro {
     max-width: 520px;
-
     margin-bottom: 12px;
-
     font-size: .58rem;
     line-height: 1.45;
   }
 
-
-  /* ==================================================
-     DUAS PSICÓLOGAS LADO A LADO
-  ================================================== */
-
+  /* ========== DUAS PSICÓLOGAS LADO A LADO ============ */
   .whatsapp-options {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
-
     gap: 14px;
   }
-
   .whatsapp-option {
     min-width: 0;
-
     border-radius: 11px;
   }
-
-
-  /* ==================================================
-     FOTO
-     área um pouco mais alta para reduzir o corte
-  ================================================== */
-
   .whatsapp-option-photo {
     width: 100%;
     height: 165px;
-
     overflow: hidden;
-
     background: #efe8de;
   }
-
   .whatsapp-option-photo img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     margin: 0;
-
     object-fit: cover;
   }
-
-
   /* Carol */
-
   .whatsapp-carol .whatsapp-option-photo img {
     object-position: center 18%;
   }
-
-
   /* Carolina */
-
   .whatsapp-carolina .whatsapp-option-photo img {
     object-position: center 20%;
   }
 
-
-  /* ==================================================
-     CONTEÚDO
-  ================================================== */
-
+  /* ============ CONTEÚDO ================= */
   .whatsapp-option-content {
     padding: 11px 13px 13px;
   }
-
   .whatsapp-option strong {
     margin-bottom: 2px;
-
     font-size: 1.15rem;
     line-height: 1.08;
   }
-
   .whatsapp-role {
     margin-bottom: 2px;
 
     font-size: .52rem;
     line-height: 1.4;
   }
-
   .whatsapp-approach {
     margin-bottom: 7px;
 
     font-size: .52rem;
     line-height: 1.4;
   }
-
   .whatsapp-description {
     margin-bottom: 8px;
 
     font-size: .54rem;
     line-height: 1.45;
   }
-
   .whatsapp-option b {
     font-size: .70rem;
   }
 
-
-  /* ==================================================
-     BOTÃO FECHAR
-  ================================================== */
-
+  /* ======================== BOTÃO FECHAR ======================== */
   .whatsapp-modal-close {
     top: 10px;
     right: 12px;
@@ -7523,9 +7392,7 @@ p { margin-top: 0; }
   }
 }
 
-/* =========================================
-   ACESSIBILIDADE — REDUZ MOVIMENTO
-========================================= */
+/* ===== ACESSIBILIDADE — REDUZ MOVIMENTO ====== */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -7653,7 +7520,6 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   .concern-card:hover, .concern-card.open, .concern-card .concern-icon,
   body .btn.js-whatsapp:hover, .faq-item > div p { transform: none; }
 }
-
 /* Touch accents preserve the approved gold/teal palettes and desktop states. */
 @keyframes talassa-button-sheen-auto {
   0%, 74% { transform: translateX(-180%) skewX(-20deg); opacity: 0; }
