@@ -175,7 +175,11 @@ p { margin-top: 0; }
 .gold-line { display: block; width: 52px; height: 2px; margin: 22px 0 28px; background: var(--gold); }
 .gold-line.centered { margin-left: auto; margin-right: auto; }
 
-/* Header */
+/* ==================================================
+   HEADER
+   ================================================== */
+
+/* Base */
 .site-header {
   position: fixed;
   top: 0;
@@ -295,6 +299,349 @@ p { margin-top: 0; }
 .site-header.scrolled .main-nav .btn-header {
   background: var(--teal);
   color: var(--white);
+}
+
+/* ==== HEADER — TABLET E MOBILE até 1199px ===== */
+
+@media (width < 1200px) {
+
+  .header-inner {
+    min-height: 82px;
+
+    gap: 20px;
+  }
+
+
+  /* ==================================================
+     LOGO
+  ================================================== */
+
+  .brand img {
+    width: 195px;
+    height: 90px;
+  }
+
+
+  /* ==================================================
+     HAMBÚRGUER
+  ================================================== */
+
+  .menu-toggle {
+    position: relative;
+
+    z-index: 80;
+  }
+
+  .site-header:not(.scrolled) .menu-toggle span {
+    background: var(--white);
+  }
+
+  .site-header.scrolled .menu-toggle span {
+    background: var(--ink);
+  }
+
+
+  /* ==================================================
+     MENU DROPDOWN
+  ================================================== */
+
+  .main-nav {
+    position: absolute;
+
+    top: calc(100% + 6px);
+
+    left: 20px;
+    right: 20px;
+
+    margin-right: 0;
+
+    gap: 0;
+
+    width: auto;
+    max-width: none;
+
+    padding: 14px 20px 18px;
+
+    box-sizing: border-box;
+
+    background: rgba(252, 247, 239, .98);
+
+    border: 1px solid rgba(44, 47, 81, .08);
+
+    box-shadow:
+      0 18px 40px rgba(44, 47, 81, .14);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity .25s ease,
+      transform .25s ease,
+      visibility .25s ease;
+
+    z-index: 75;
+
+    /* Impede o menu de ultrapassar a tela */
+    max-height: calc(100dvh - 100px);
+
+    overflow-y: auto;
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+
+  /* ==================================================
+     LINKS
+  ================================================== */
+
+  .main-nav > a:not(.btn-header),
+  .site-header.scrolled .main-nav > a:not(.btn-header) {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 11px 3px;
+
+    box-sizing: border-box;
+
+    color: var(--ink);
+
+    font-size: .82rem;
+
+    border-bottom:
+      1px solid rgba(44, 47, 81, .07);
+  }
+
+  .main-nav > a:not(.btn-header):nth-last-child(2) {
+    border-bottom: 0;
+  }
+
+  .main-nav > a:not(.btn-header)::after {
+    display: none;
+  }
+
+
+  /* ==================================================
+     BOTÃO AGENDAR — DENTRO DO DROPDOWN
+  ================================================== */
+
+  .main-nav .btn-header {
+    position: static;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 48px;
+
+    margin: 16px 0 0;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    white-space: nowrap;
+
+    font-size: .82rem;
+    font-weight: 600;
+
+    transform: none;
+
+    transition:
+      background .25s ease,
+      color .25s ease,
+      transform .25s ease,
+      box-shadow .25s ease;
+  }
+
+
+  /* HEADER NO TOPO */
+
+  .site-header:not(.scrolled) .main-nav .btn-header {
+    background: var(--gold);
+    color: var(--ink-strong);
+  }
+
+
+  /* HEADER APÓS O SCROLL */
+
+  .site-header.scrolled .main-nav .btn-header {
+    background: var(--teal);
+    color: var(--white);
+  }
+
+
+  /* HOVER — NO TOPO */
+
+  .site-header:not(.scrolled) .main-nav .btn-header:hover {
+    background: var(--gold);
+    color: var(--ink-strong);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 8px 18px rgba(44, 47, 81, .10);
+  }
+
+
+  /* HOVER — APÓS O SCROLL */
+
+  .site-header.scrolled .main-nav .btn-header:hover {
+    background: var(--teal);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow:
+      0 8px 18px rgba(44, 47, 81, .10);
+  }
+
+
+  /* Remove linha/efeito adicional do botão */
+
+  .main-nav .btn-header::after {
+    display: none;
+  }
+}
+
+/* Header - mobile portrait */
+@media
+  (max-width: 767px) and (orientation: portrait) {
+
+  /* ---------- HEADER ---------- */
+
+  .header-inner {
+  min-height: 76px;
+  gap: 12px;
+  }
+
+  .brand img {
+    width: 180px;
+    height: 92px;
+  }
+
+  .menu-toggle {
+    padding: 6px;
+  }
+
+  .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+  }
+}
+
+/* Header - low-height landscape */
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
+/* ---------- HEADER ---------- */
+
+.header-inner {
+  min-height: 58px;
+
+  gap: 12px;
+}
+
+/* ---------- LOGO ---------- */
+
+.brand {
+  width: 175px;
+  max-width: none;
+
+}
+
+.site-header .brand img {
+  width: 175px;
+  max-width: none;
+  height: auto;
+
+  display: block;
+
+  transform: none;
+
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ==================================================
+   BOTÃO AGENDAR
+================================================== */
+
+.main-nav .btn-header {
+  width: 100%;
+
+  min-height: 38px;
+
+  margin-top: 10px;
+  padding: 0 14px;
+
+  font-size: .68rem;
+}
+
+/* ---------- HAMBÚRGUER ---------- */
+
+.menu-toggle {
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 23px;
+
+  margin: 4px 0;
+}
+
+/* ==================================================
+   MENU DROPDOWN — CELULAR DEITADO
+   QUASE TELA INTEIRA
+================================================== */
+
+.main-nav {
+  top: calc(100% + 2px);
+
+  left: 10px;
+  right: 10px;
+
+  width: auto;
+
+  /*
+    Ocupa praticamente todo o espaço
+    restante abaixo do header.
+  */
+  height: calc(100dvh - 68px);
+  max-height: none;
+
+  padding: 12px 18px 14px;
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   LINKS
+================================================== */
+
+.main-nav > a:not(.btn-header),
+.site-header.scrolled
+.main-nav > a:not(.btn-header) {
+  flex: 0 0 auto;
+
+  padding: 8px 4px;
+
+  font-size: .72rem;
+  line-height: 1.25;
+}
+
 }
 
 /* Buttons */
@@ -2085,219 +2432,7 @@ p { margin-top: 0; }
   font-weight: 600;
 }
 
-/* ==== HEADER — TABLET E MOBILE até 1199px ===== */
 
-@media (width < 1200px) {
-
-  .header-inner {
-    min-height: 82px;
-
-    gap: 20px;
-  }
-
-
-  /* ==================================================
-     LOGO
-  ================================================== */
-
-  .brand img {
-    width: 195px;
-    height: 90px;
-  }
-
-
-  /* ==================================================
-     HAMBÚRGUER
-  ================================================== */
-
-  .menu-toggle {
-    position: relative;
-
-    z-index: 80;
-  }
-
-  .site-header:not(.scrolled) .menu-toggle span {
-    background: var(--white);
-  }
-
-  .site-header.scrolled .menu-toggle span {
-    background: var(--ink);
-  }
-
-
-  /* ==================================================
-     MENU DROPDOWN
-  ================================================== */
-
-  .main-nav {
-    position: absolute;
-
-    top: calc(100% + 6px);
-
-    left: 20px;
-    right: 20px;
-
-    margin-right: 0;
-
-    gap: 0;
-
-    width: auto;
-    max-width: none;
-
-    padding: 14px 20px 18px;
-
-    box-sizing: border-box;
-
-    background: rgba(252, 247, 239, .98);
-
-    border: 1px solid rgba(44, 47, 81, .08);
-
-    box-shadow:
-      0 18px 40px rgba(44, 47, 81, .14);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: translateY(-8px);
-
-    transition:
-      opacity .25s ease,
-      transform .25s ease,
-      visibility .25s ease;
-
-    z-index: 75;
-
-    /* Impede o menu de ultrapassar a tela */
-    max-height: calc(100dvh - 100px);
-
-    overflow-y: auto;
-  }
-
-  .main-nav.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    transform: translateY(0);
-  }
-
-
-  /* ==================================================
-     LINKS
-  ================================================== */
-
-  .main-nav > a:not(.btn-header),
-  .site-header.scrolled .main-nav > a:not(.btn-header) {
-    display: block;
-
-    width: 100%;
-
-    margin: 0;
-    padding: 11px 3px;
-
-    box-sizing: border-box;
-
-    color: var(--ink);
-
-    font-size: .82rem;
-
-    border-bottom:
-      1px solid rgba(44, 47, 81, .07);
-  }
-
-  .main-nav > a:not(.btn-header):nth-last-child(2) {
-    border-bottom: 0;
-  }
-
-  .main-nav > a:not(.btn-header)::after {
-    display: none;
-  }
-
-
-  /* ==================================================
-     BOTÃO AGENDAR — DENTRO DO DROPDOWN
-  ================================================== */
-
-  .main-nav .btn-header {
-    position: static;
-
-    width: 100%;
-    max-width: 100%;
-
-    min-height: 48px;
-
-    margin: 16px 0 0;
-    padding: 0 20px;
-
-    box-sizing: border-box;
-
-    border: 0;
-    border-radius: 0;
-
-    box-shadow: none;
-
-    white-space: nowrap;
-
-    font-size: .82rem;
-    font-weight: 600;
-
-    transform: none;
-
-    transition:
-      background .25s ease,
-      color .25s ease,
-      transform .25s ease,
-      box-shadow .25s ease;
-  }
-
-
-  /* HEADER NO TOPO */
-
-  .site-header:not(.scrolled) .main-nav .btn-header {
-    background: var(--gold);
-    color: var(--ink-strong);
-  }
-
-
-  /* HEADER APÓS O SCROLL */
-
-  .site-header.scrolled .main-nav .btn-header {
-    background: var(--teal);
-    color: var(--white);
-  }
-
-
-  /* HOVER — NO TOPO */
-
-  .site-header:not(.scrolled) .main-nav .btn-header:hover {
-    background: var(--gold);
-    color: var(--ink-strong);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-      0 8px 18px rgba(44, 47, 81, .10);
-  }
-
-
-  /* HOVER — APÓS O SCROLL */
-
-  .site-header.scrolled .main-nav .btn-header:hover {
-    background: var(--teal);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow:
-      0 8px 18px rgba(44, 47, 81, .10);
-  }
-
-
-  /* Remove linha/efeito adicional do botão */
-
-  .main-nav .btn-header::after {
-    display: none;
-  }
-}
 
 /* ==================================================
    FUNDO DEMANDAS — TABLET E CELULAR EM PÉ
@@ -4438,27 +4573,7 @@ p { margin-top: 0; }
 @media
   (max-width: 767px) and (orientation: portrait) {
 
-  /* ---------- HEADER ---------- */
 
-  .header-inner {
-  min-height: 76px;
-  gap: 12px;
-  }
-
-  .brand img {
-    width: 180px;
-    height: 92px;
-  }
-
-  .menu-toggle {
-    padding: 6px;
-  }
-
-  .menu-toggle span {
-    width: 24px;
-    height: 2px;
-    margin: 5px 0;
-  }
   
 
 /* ------ HERO — CELULAR EM PÉ ------- */
@@ -6016,106 +6131,7 @@ p { margin-top: 0; }
    Usa a altura para diferenciar de tablet.
 ================================================== */
 
-@media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
-/* ---------- HEADER ---------- */
 
-.header-inner {
-  min-height: 58px;
-
-  gap: 12px;
-}
-
-/* ---------- LOGO ---------- */
-
-.brand {
-  width: 175px;
-  max-width: none;
-
-}
-
-.site-header .brand img {
-  width: 175px;
-  max-width: none;
-  height: auto;
-
-  display: block;
-
-  transform: none;
-
-  object-fit: contain;
-  object-position: left center;
-}
-
-/* ==================================================
-   BOTÃO AGENDAR
-================================================== */
-
-.main-nav .btn-header {
-  width: 100%;
-
-  min-height: 38px;
-
-  margin-top: 10px;
-  padding: 0 14px;
-
-  font-size: .68rem;
-}
-
-/* ---------- HAMBÚRGUER ---------- */
-
-.menu-toggle {
-  padding: 5px;
-}
-
-.menu-toggle span {
-  width: 23px;
-
-  margin: 4px 0;
-}
-
-/* ==================================================
-   MENU DROPDOWN — CELULAR DEITADO
-   QUASE TELA INTEIRA
-================================================== */
-
-.main-nav {
-  top: calc(100% + 2px);
-
-  left: 10px;
-  right: 10px;
-
-  width: auto;
-
-  /*
-    Ocupa praticamente todo o espaço
-    restante abaixo do header.
-  */
-  height: calc(100dvh - 68px);
-  max-height: none;
-
-  padding: 12px 18px 14px;
-
-  overflow-y: auto;
-
-  box-sizing: border-box;
-}
-
-/* ==================================================
-   LINKS
-================================================== */
-
-.main-nav > a:not(.btn-header),
-.site-header.scrolled
-.main-nav > a:not(.btn-header) {
-  flex: 0 0 auto;
-
-  padding: 8px 4px;
-
-  font-size: .72rem;
-  line-height: 1.25;
-}
-
-}
 
 @media
   (orientation: landscape)
