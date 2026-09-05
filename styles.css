@@ -926,7 +926,7 @@ p { margin-top: 0; }
 
   .hero-photo {
     width: 100%;
-    max-width: 500px;
+    max-width: 540px;
 
     height: auto;
 
@@ -1104,17 +1104,11 @@ p { margin-top: 0; }
 
 
   .hero-photo {
-    width: 100%;
-    max-width: 560px;
+    width: calc(100% - 4px);
+    max-width: 680px;
 
-    /*
-      Mantém exatamente a proporção
-      dos antigos 560 × 420,
-      mas deixa a imagem acompanhar
-      a largura disponível.
-    */
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
 
     margin: 0 auto;
 
@@ -1124,7 +1118,6 @@ p { margin-top: 0; }
       48% 48% 22% 28% /
       34% 34% 16% 30%;
   }
-
 
   .hero-photo picture {
     display: block;
@@ -1380,7 +1373,7 @@ p { margin-top: 0; }
 
 
     padding-inline:
-      clamp(6px, 2vw, 8px);
+      0;
 
     margin: 0;
   }
@@ -1389,15 +1382,10 @@ p { margin-top: 0; }
   /* ---------- FOTO ---------- */
 
   .hero-photo {
-    width: calc(100% - 16px);
-    max-width: 410px;
-
-    /*
-      A foto aumenta e diminui
-      conforme a altura do aparelho.
-    */
+    width: calc(100% - 2px);
+    max-width: 440px;
     height:
-      clamp(195px, 31svh, 315px);
+    clamp(210px, 34svh, 335px);
 
     margin: 0 auto;
 
@@ -1661,21 +1649,11 @@ p { margin-top: 0; }
 
 .hero-photo {
   width: 100%;
-  max-width: 340px;
-
-  /*
-    Aqui usamos a ALTURA da tela apenas
-    para dimensionar a foto.
-    Não estamos obrigando o Hero inteiro
-    a ocupar 100% da viewport.
-  */
+  max-width: 375px;
   height:
-    clamp(190px, 55dvh, 235px);
-
+    clamp(205px, 62dvh, 255px);
   margin: 0;
-
   overflow: hidden;
-
   border-radius:
     48% 48% 22% 28% /
     34% 34% 16% 30%;
