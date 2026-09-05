@@ -1,0 +1,29 @@
+{
+  "name": "talassa_landing_page_git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandapardini-22/talassapsicologia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/amandapardini-22/talassapsicologia/issues"
+  },
+  "homepage": "https://github.com/amandapardini-22/talassapsicologia#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "sass": "^1.104.0"
+  }
+}
