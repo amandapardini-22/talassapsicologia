@@ -64,19 +64,22 @@
 
         <div class="hero-photo">
         <picture>
-
           <source
             media="(max-width: 767px)"
+            type="image/webp"
             srcset="
-              assets/hero-800.png"
+              assets/hero-480.png 480w,
+              assets/hero-800.png 800w
+            "
+            sizes="100vw"
           >
-
           <img
             src="assets/hero-600.png"
             srcset="
-              assets/hero-600.png 1x,
-              assets/hero-1240.png 2x
+              assets/hero-600.png 600w,
+              assets/hero-1240.png 1240w
             "
+            sizes="(max-width: 767px) 100vw, 600px"
             alt="Mulher contemplando o mar"
             width="600"
             height="600"
