@@ -344,7 +344,6 @@ function startProcessCarousel() {
 /* ========= REINICIA O AUTOPLAY  ============= */
 
 function restartProcessCarousel() {
-  clearInterval(processTimer);
   startProcessCarousel();
 }
 
@@ -608,12 +607,9 @@ revealOnScroll(
 /* CARDS */
 // The Bootstrap columns now receive the lateral GSAP entrance.
 
-/* ============= DÚVIDAS ==================== */
-
-/* PERGUNTAS */
 
 
-/* ====== COMO FUNCIONA — SOMENTE DESKTOP ====== */
+
 
 
 // Progressive section entrances: no CSS-hidden content and no Hero animation.

@@ -206,10 +206,6 @@ p { margin-top: 0; }
 .brand {
   width: fit-content;
 }
-.brand picture {
-  display: block;
-  width: fit-content;
-}
 .brand img {
   display: block;
   width: 195px;
@@ -1431,7 +1427,6 @@ p { margin-top: 0; }
   max-width: 700px;
   line-height: 1.7;
 }
-.final-cta-copy,
 .final-cta-actions {
   position: relative;
   z-index: 2;
@@ -1617,10 +1612,6 @@ p { margin-top: 0; }
 
 /* ======== LOGO FOOTER — BASE / DESKTOP ======= */
 
-.footer-brand picture {
-  display: block;
-  width: fit-content;
-}
 
 .footer-brand img {
   display: block;
@@ -3356,9 +3347,6 @@ p { margin-top: 0; }
 
   /* ---------- BOLINHAS ---------- */
 
-  .hero-dots {
-    display: none;
-  }
 
 
   /* ---------- BOTÃO ---------- */
