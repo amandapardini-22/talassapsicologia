@@ -3,6 +3,30 @@
 /*FUNDAÇÃO DO BOOTSTRAP*/
 
 @import "../node_modules/bootstrap/scss/functions";
+
+// Mobile-first: desktop começa após a faixa atual de tablet/mobile.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1025px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Bootstrap divide este valor entre os dois lados do container.
+// O gutter das rows permanece independente, no padrão do Bootstrap.
+$container-padding-x: 40px;
+
+// Larguras externas, considerando box-sizing: border-box (já usado no site).
+// sm permanece fluido; md oferece 720px úteis; lg em diante, até 1180px.
+// Sem novos tetos em xl/xxl: .container mantém o limite definido em lg.
+$container-max-widths: (
+  sm: 100%,
+  md: 760px,
+  lg: 1220px
+);
+
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 @import "../node_modules/bootstrap/scss/maps";
