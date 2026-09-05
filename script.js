@@ -624,14 +624,18 @@ if (window.gsap && window.ScrollTrigger) {
   motion.add({
     allowed: "(prefers-reduced-motion: no-preference)",
     mobilePortrait: "(max-width: 767px) and (orientation: portrait)",
-    tabletPortrait: "(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
+    tabletPortrait: "(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)",
+    landscape: "(orientation: landscape)",
+    desktop: "(min-width: 1025px)",
+    tablet: "(min-width: 768px)",
+    low: "(orientation: landscape) and (max-height: 500px)"
   }, context => {
-    const { allowed, mobilePortrait, tabletPortrait } = context.conditions;
-    if (!allowed || (!mobilePortrait && !tabletPortrait) || played.has("therapy-image")) return;
+    const { allowed, mobilePortrait, tabletPortrait, landscape, desktop, tablet, low } = context.conditions;
+    if (!allowed || (!mobilePortrait && !tabletPortrait && !landscape) || played.has("therapy-image")) return;
     const therapyImage = document.querySelector(".therapy-image");
     if (!therapyImage) return;
     gsap.from(therapyImage, {
-      x: tabletPortrait ? 120 : 90,
+      x: landscape ? (low ? -65 : (desktop ? -100 : (tablet ? -90 : -80))) : (tabletPortrait ? 120 : 90),
       opacity: 0,
       scale: .97,
       duration: tabletPortrait ? 1.05 : 1,
