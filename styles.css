@@ -160,18 +160,10 @@ p { margin-top: 0; }
   min-height: 92px;
   padding-top: 2px;
   
-  display: grid;
-  grid-template-columns:
-    195px
-    1fr
-    auto;
-  align-items: center;
   gap: 30px; 
 }
 /* ===== LOGO HEADER — BASE / DESKTOP ==== */
 .brand {
-  display: flex;
-  align-items: center;
   width: fit-content;
 }
 .brand picture {
@@ -209,7 +201,6 @@ p { margin-top: 0; }
   width: 100%;
 }
 .menu-toggle {
-  display: none;
   border: 0;
   background: transparent;
   padding: 8px;
@@ -222,9 +213,8 @@ p { margin-top: 0; }
   margin: 5px 0;
 }
 .main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Preserva o gutter da terceira coluna vazia do grid anterior. */
+  margin-right: 30px;
   gap: 28px;
   font-size: .86rem;
   font-weight: 600;
@@ -233,10 +223,6 @@ p { margin-top: 0; }
 /* Botão Agendar conversa do Header */
 
 .main-nav .btn-header {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
   width: auto;
   min-height: 46px;
 
@@ -2040,16 +2026,12 @@ p { margin-top: 0; }
   font-weight: 600;
 }
 
-/* ==== HEADER — TABLET E MOBILE até 1024px ===== */
+/* ==== HEADER — TABLET E MOBILE até 1199px ===== */
 
-@media (max-width: 1024px) {
+@media (width < 1200px) {
 
   .header-inner {
     min-height: 82px;
-
-    grid-template-columns: 1fr auto;
-
-    align-items: center;
 
     gap: 20px;
   }
@@ -2070,13 +2052,9 @@ p { margin-top: 0; }
   ================================================== */
 
   .menu-toggle {
-    display: block;
-
     position: relative;
 
     z-index: 80;
-
-    justify-self: end;
   }
 
   .site-header:not(.scrolled) .menu-toggle span {
@@ -2100,9 +2078,7 @@ p { margin-top: 0; }
     left: 20px;
     right: 20px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    margin-right: 0;
 
     gap: 0;
 
@@ -2187,8 +2163,6 @@ p { margin-top: 0; }
   .main-nav .btn-header {
     position: static;
 
-    display: flex;
-
     width: 100%;
     max-width: 100%;
 
@@ -2198,9 +2172,6 @@ p { margin-top: 0; }
     padding: 0 20px;
 
     box-sizing: border-box;
-
-    align-items: center;
-    justify-content: center;
 
     border: 0;
     border-radius: 0;
@@ -2301,62 +2272,6 @@ p { margin-top: 0; }
   .concerns::before {
     background:
       rgba(var(--rgb-cream), .72);
-  }
-}
-
-/* ==================================================
-   HEADER — TABLET EM PÉ
-   Mais margem lateral e respiro superior
-================================================== */
-
-@media
-  (min-width: 768px)
-  and (max-width: 1024px)
-  and (orientation: portrait) {
-
-
-
-  /* Mais respiro em cima e embaixo */
-
-  .header-inner {
-    min-height: 100px;
-
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-    grid-template-columns: 1fr auto;
-
-    align-items: center;
-
-    gap: 20px;
-
-    box-sizing: border-box;
-  }
-
-
-  /* Logo maior */
-
-  .brand img {
-    width: 195px;
-    height: 90px;
-
-    object-fit: contain;
-    object-position: left center;
-  }
-
-
-  /* Hambúrguer permanece à direita */
-
-  .menu-toggle {
-    justify-self: end;
-  }
-
-
-  /* Dropdown acompanha as margens maiores */
-
-  .main-nav {
-    left: 32px;
-    right: 32px;
   }
 }
 
@@ -4516,8 +4431,6 @@ p { margin-top: 0; }
 
   .header-inner {
   min-height: 76px;
-  grid-template-columns: 1fr auto;
-  align-items: center;
   gap: 12px;
   }
 
@@ -4527,7 +4440,6 @@ p { margin-top: 0; }
   }
 
   .menu-toggle {
-    display: block;
     padding: 6px;
   }
 
@@ -6140,30 +6052,20 @@ p { margin-top: 0; }
    Usa a altura para diferenciar de tablet.
 ================================================== */
 
-@media
-  (orientation: landscape)
-  and (max-height: 500px) {
-
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
 /* ---------- HEADER ---------- */
 
 .header-inner {
   min-height: 58px;
 
-  grid-template-columns: 1fr auto;
-
-  align-items: center;
-
   gap: 12px;
 }
-
 
 /* ---------- LOGO ---------- */
 
 .brand {
   width: 175px;
   max-width: none;
-  display: flex;
-  align-items: center;
 
 }
 
@@ -6180,14 +6082,11 @@ p { margin-top: 0; }
   object-position: left center;
 }
 
-
 /* ==================================================
    BOTÃO AGENDAR
 ================================================== */
 
 .main-nav .btn-header {
-  display: flex;
-
   width: 100%;
 
   min-height: 38px;
@@ -6195,19 +6094,12 @@ p { margin-top: 0; }
   margin-top: 10px;
   padding: 0 14px;
 
-  align-items: center;
-  justify-content: center;
-
   font-size: .68rem;
 }
 
 /* ---------- HAMBÚRGUER ---------- */
 
 .menu-toggle {
-  display: block;
-
-  justify-self: end;
-
   padding: 5px;
 }
 
@@ -6239,14 +6131,7 @@ p { margin-top: 0; }
 
   padding: 12px 18px 14px;
 
-  display: flex;
-  flex-direction: column;
-
-  align-items: stretch;
-
-  gap: 0;
-
-  overflow: hidden;
+  overflow-y: auto;
 
   box-sizing: border-box;
 }
@@ -6258,7 +6143,6 @@ p { margin-top: 0; }
 .main-nav > a:not(.btn-header),
 .site-header.scrolled
 .main-nav > a:not(.btn-header) {
-
   flex: 0 0 auto;
 
   padding: 8px 4px;
@@ -6267,6 +6151,11 @@ p { margin-top: 0; }
   line-height: 1.25;
 }
 
+}
+
+@media
+  (orientation: landscape)
+  and (max-height: 500px) {
 /* ---------- HERO ---------- */
 
 .hero {
