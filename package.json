@@ -4,8 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "build:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.min.css --style=compressed --no-source-map --quiet-deps",
+  "dev:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.css --style=expanded --no-source-map --watch --quiet-deps"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amandapardini-22/talassapsicologia.git"
