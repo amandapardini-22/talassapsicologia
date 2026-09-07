@@ -2340,6 +2340,240 @@ p { margin-top: 0; }
   object-position: 60% 32%;
 }
 
+/* ==================================================
+   THERAPY — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+  .therapy {
+    grid-template-columns: 54% 46%;
+  }
+
+  .therapy-copy-inner {
+    width: min(calc(100% - 54px), 520px);
+    padding: 76px 0 74px;
+  }
+
+  .therapy-copy .eyebrow {
+    font-size: .72rem;
+    letter-spacing: .22em;
+  }
+
+  .therapy-copy h2 {
+    font-size: clamp(2.45rem, 3.4vw, 2.9rem);
+    line-height: 1.07;
+  }
+
+  .therapy-copy p {
+    font-size: .88rem;
+    line-height: 1.7;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 28px;
+    font-size: 1.2rem;
+  }
+
+  .therapy-copy cite {
+    font-size: .70rem;
+  }
+
+  .therapy-image img {
+    object-position: 35% 12%;
+  }
+}
+
+/* ==================================================
+   THERAPY — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+
+  .therapy {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .therapy-image {
+    width: 100%;
+  }
+
+  .therapy-image picture,
+  .therapy-image img {
+    position: static;
+    inset: auto;
+    height: auto;
+  }
+
+  .therapy-image img {
+    object-fit: initial;
+    object-position: initial;
+  }
+
+  .therapy-copy {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .therapy-copy-inner {
+    width: min(calc(100% - 90px), 660px);
+    padding: 72px 0 78px;
+  }
+
+  .therapy-copy .eyebrow {
+    font-size: .76rem;
+    letter-spacing: .24em;
+  }
+
+  .therapy-copy h2 {
+    font-size: clamp(3rem, 5vw, 3.5rem);
+    line-height: 1.06;
+  }
+
+  .therapy-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 32px;
+    padding-left: 22px;
+    font-size: 1.4rem;
+    line-height: 1.45;
+  }
+
+  .therapy-copy cite {
+    margin-top: 9px;
+    font-size: .76rem;
+  }
+}
+
+/* ==================================================
+   THERAPY — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+
+
+  .therapy {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto;
+  }
+
+  .therapy-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .therapy-image img {
+    object-position: center center;
+  }
+
+  .therapy-copy {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .therapy-copy-inner {
+    width: calc(100% - 48px);
+    padding: 48px 0 54px;
+  }
+
+  .therapy-copy .eyebrow {
+    margin-bottom: 14px;
+    font-size: .60rem;
+    letter-spacing: .21em;
+  }
+
+  .therapy-copy h2 {
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+    line-height: 1.05;
+  }
+
+  .therapy-copy p {
+    font-size: .84rem;
+    line-height: 1.7;
+  }
+
+  .therapy-copy p + p {
+    margin-top: 20px;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 26px;
+    padding-left: 16px;
+    font-size: 1.14rem;
+    line-height: 1.4;
+  }
+
+  .therapy-copy cite {
+    margin-top: 8px;
+    font-size: .65rem;
+  }
+}
+
+/* ==================================================
+   THERAPY — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+
+  .therapy {
+    grid-template-columns: minmax(0, .44fr) minmax(0, .56fr);
+  }
+
+  .therapy-image {
+    min-height: 390px;
+    height: 100%;
+  }
+
+  .therapy-image img {
+    object-position: 40% 16%;
+  }
+
+  .therapy-copy-inner {
+    width: calc(100% - 34px);
+    padding: 30px 0 32px;
+  }
+
+  .therapy-copy .eyebrow {
+    margin-bottom: 8px;
+    font-size: .46rem;
+    letter-spacing: .18em;
+  }
+
+  .therapy-copy h2 {
+    margin-bottom: 14px;
+    font-size: 1.55rem;
+    line-height: 1.03;
+  }
+
+  .therapy-copy p {
+    margin-bottom: 10px;
+    font-size: .65rem;
+    line-height: 1.5;
+  }
+
+  .therapy-copy blockquote {
+    margin-top: 14px;
+    padding-left: 10px;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+  .therapy-copy cite {
+    margin-top: 4px;
+    font-size: .52rem;
+  }
+}
+
 /* Psychologists */
 
 .psychologists {
@@ -3552,46 +3786,6 @@ p { margin-top: 0; }
   }
 
 
-/* ==================================================
-   THERAPY — TABLET DEITADO
-================================================== */
-
-  .therapy {
-    grid-template-columns: 54% 46%;
-  }
-
-  .therapy-copy-inner {
-    width: min(calc(100% - 54px), 520px);
-    padding: 76px 0 74px;
-  }
-
-  .therapy-copy .eyebrow {
-    font-size: .72rem;
-    letter-spacing: .22em;
-  }
-
-  .therapy-copy h2 {
-    font-size: clamp(2.45rem, 3.4vw, 2.9rem);
-    line-height: 1.07;
-  }
-
-  .therapy-copy p {
-    font-size: .88rem;
-    line-height: 1.7;
-  }
-
-  .therapy-copy blockquote {
-    margin-top: 28px;
-    font-size: 1.2rem;
-  }
-
-  .therapy-copy cite {
-    font-size: .70rem;
-  }
-
-  .therapy-image img {
-    object-position: 35% 12%;
-  }
 
 /* ==================================================
    PSYCHOLOGISTS — TABLET DEITADO
@@ -4234,70 +4428,6 @@ p { margin-top: 0; }
   }
 
 
-/* ==================================================
-   THERAPY — TABLET EM PÉ
-================================================== */
-
-  .therapy {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .therapy-image {
-    width: 100%;
-  }
-
-  .therapy-image picture {
-    position: static;
-    inset: auto;
-    height: auto;
-  }
-
-  .therapy-image img {
-    position: static;
-    inset: auto;
-    height: auto;
-    object-fit: initial;
-    object-position: initial;
-  }
-
-  .therapy-copy {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-  }
-
-  .therapy-copy-inner {
-    width: min(calc(100% - 90px), 660px);
-    padding: 72px 0 78px;
-  }
-
-  .therapy-copy .eyebrow {
-    font-size: .76rem;
-    letter-spacing: .24em;
-  }
-
-  .therapy-copy h2 {
-    font-size: clamp(3rem, 5vw, 3.5rem);
-    line-height: 1.06;
-  }
-
-  .therapy-copy p {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .therapy-copy blockquote {
-    margin-top: 32px;
-    padding-left: 22px;
-    font-size: 1.4rem;
-    line-height: 1.45;
-  }
-
-  .therapy-copy cite {
-    margin-top: 9px;
-    font-size: .76rem;
-  }
 
 /* ==================================================
    PSYCHOLOGISTS — TABLET EM PÉ
@@ -5268,68 +5398,6 @@ p { margin-top: 0; }
   }
 
 
-/* ==================================================
-   THERAPY — CELULAR EM PÉ
-================================================== */
-
-  .therapy {
-    grid-template-columns: 1fr;
-    grid-template-rows: 300px auto;
-  }
-
-  .therapy-image {
-    width: 100%;
-    height: 300px;
-  }
-
-  .therapy-image img {
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .therapy-copy {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-  }
-
-  .therapy-copy-inner {
-    width: calc(100% - 48px);
-    padding: 48px 0 54px;
-  }
-
-  .therapy-copy .eyebrow {
-    margin-bottom: 14px;
-    font-size: .60rem;
-    letter-spacing: .21em;
-  }
-
-  .therapy-copy h2 {
-    margin-bottom: 24px;
-    font-size: 2.2rem;
-    line-height: 1.05;
-  }
-
-  .therapy-copy p {
-    font-size: .84rem;
-    line-height: 1.7;
-  }
-
-  .therapy-copy p + p {
-    margin-top: 20px;
-  }
-
-  .therapy-copy blockquote {
-    margin-top: 26px;
-    padding-left: 16px;
-    font-size: 1.14rem;
-    line-height: 1.4;
-  }
-
-  .therapy-copy cite {
-    margin-top: 8px;
-    font-size: .65rem;
-  }
 
 /* ==================================================
    PSYCHOLOGISTS — CELULAR EM PÉ
@@ -6535,58 +6603,6 @@ p { margin-top: 0; }
   }
 
 
-/* ==================================================
-   THERAPY — CELULAR DEITADO
-================================================== */
-
-  .therapy {
-    grid-template-columns: minmax(0, .44fr) minmax(0, .56fr);
-  }
-
-  .therapy-image {
-    min-height: 390px;
-    height: 100%;
-  }
-
-  .therapy-image img {
-    object-fit: cover;
-    object-position: 40% 16%;
-  }
-
-  .therapy-copy-inner {
-    width: calc(100% - 34px);
-    padding: 30px 0 32px;
-  }
-
-  .therapy-copy .eyebrow {
-    margin-bottom: 8px;
-    font-size: .46rem;
-    letter-spacing: .18em;
-  }
-
-  .therapy-copy h2 {
-    margin-bottom: 14px;
-    font-size: 1.55rem;
-    line-height: 1.03;
-  }
-
-  .therapy-copy p {
-    margin-bottom: 10px;
-    font-size: .65rem;
-    line-height: 1.5;
-  }
-
-  .therapy-copy blockquote {
-    margin-top: 14px;
-    padding-left: 10px;
-    font-size: .82rem;
-    line-height: 1.35;
-  }
-
-  .therapy-copy cite {
-    margin-top: 4px;
-    font-size: .52rem;
-  }
 
 /* ==================================================
    PSYCHOLOGISTS — CELULAR DEITADO
