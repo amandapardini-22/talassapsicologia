@@ -6627,7 +6627,7 @@ p { margin-top: 0; }
 
 .therapy-image img {
   object-fit: cover;
-  object-position: 60% 16%;
+  object-position: 40% 16%;
 }
 
 .therapy-copy {
