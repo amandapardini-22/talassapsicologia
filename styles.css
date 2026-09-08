@@ -3040,7 +3040,10 @@ p { margin-top: 0; }
   }
 }
 
-/* Process */
+/* ==================================================
+   PROCESS — BASE / DESKTOP
+================================================== */
+
 .process {
   position: relative;
   padding-top: 80px;
@@ -3131,6 +3134,677 @@ p { margin-top: 0; }
 }
 .process-carousel {
   position: relative;
+}
+
+/* ==================================================
+   PROCESS — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .process {
+    padding-top: 88px;
+    padding-bottom: 108px;
+  }
+
+  .process h2 {
+    font-size: 3rem;
+  }
+
+  .process-grid {
+    gap: 20px;
+
+    margin-top: 48px;
+  }
+
+  .process-step {
+    gap: 20px;
+  }
+
+  .step-number {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+
+    font-size: 1.42rem;
+  }
+
+  .process-step h3 {
+    margin-bottom: 9px;
+
+    font-size: 1.45rem;
+  }
+
+  .process-step p {
+    font-size: .86rem;
+    line-height: 1.65;
+  }
+
+  .process-arrow {
+    flex-basis: 54px;
+    font-size: 2.45rem;
+  }
+}
+
+/* ==================================================
+   PROCESS — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  .process {
+    padding-top: 86px;
+    padding-bottom: 96px;
+  }
+
+  .process .container {
+    overflow: visible;
+  }
+
+  .process h2 {
+    font-size: 3rem;
+  }
+
+
+  /* =================================
+     ÁREA DO CARROSSEL
+  ================================= */
+
+  .process-carousel {
+    position: relative;
+
+    width: 100%;
+    max-width: 680px;
+
+    margin: 46px auto 0;
+
+    /*
+      Cria espaço fora do card branco
+      para as setinhas.
+    */
+    padding-inline: 32px;
+
+    overflow: visible;
+  }
+
+
+  /* =================================
+     TRILHO
+  ================================= */
+
+  .process-grid {
+    width: 100%;
+
+    gap: 0;
+
+    margin: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .process-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* Esconde as setas antigas entre 01 → 02 → 03 */
+
+  .process-arrow {
+    display: none;
+  }
+
+
+  /* =================================
+     CARD
+  ================================= */
+
+  .process-step {
+    flex: 0 0 100%;
+
+    min-width: 100%;
+    min-height: 225px;
+
+    padding: 34px 40px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 25px;
+
+    text-align: left;
+
+    scroll-snap-align: start;
+
+    background: rgba(var(--rgb-white), .52);
+
+    border: 1px solid rgba(var(--rgb-gold), .20);
+    border-radius: 18px;
+
+    box-shadow:
+      0 10px 28px rgba(var(--rgb-navy), .06);
+
+    backdrop-filter: blur(4px);
+  }
+
+
+  /* =================================
+     NÚMERO
+  ================================= */
+
+  .step-number {
+    width: 66px;
+    height: 66px;
+
+    flex: 0 0 66px;
+
+    font-size: 1.5rem;
+  }
+
+
+  /* =================================
+     TEXTO
+  ================================= */
+
+  .process-step > div {
+    min-width: 0;
+  }
+
+ .process-step h3 {
+  margin: 0 0 11px;
+
+  font-size: 1.9rem;
+  line-height: 1.15;
+  }
+
+  .process-step p {
+  max-width: 470px;
+
+
+  font-size: 1rem;
+  line-height: 1.72;
+  }
+
+
+  /* =================================
+     SETAS LATERAIS
+  ================================= */
+
+  .process-controls {
+    display: block;
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 5;
+  }
+
+  .process-controls button {
+    position: absolute;
+
+    top: 50%;
+
+    width: 28px;
+    height: 28px;
+
+
+    border: 1px solid rgba(var(--rgb-gold), .24);
+
+    background: rgba(var(--rgb-white), .88);
+
+
+    font-family: Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1;
+
+    box-shadow:
+      0 3px 9px rgba(var(--rgb-navy), .05);
+
+    transform: translateY(-50%);
+
+    pointer-events: auto;
+
+    opacity: .78;
+
+
+    z-index: 6;
+
+    transition:
+      opacity .25s ease,
+      background .25s ease,
+      transform .25s ease;
+  }
+
+  .process-controls button:hover {
+    opacity: 1;
+
+    background: var(--white);
+
+    transform:
+      translateY(-50%)
+      scale(1.05);
+  }
+
+  .process-prev {
+    left: 2px;
+  }
+
+  .process-next {
+    right: 2px;
+  }
+}
+
+/* ==================================================
+   PROCESS — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+
+  .process {
+    padding-top: 58px;
+    padding-bottom: 66px;
+  }
+
+  .process .container {
+    overflow: visible;
+  }
+
+  .process h2 {
+    margin-bottom: 0;
+
+    text-align: center;
+
+    font-size: 2.25rem;
+    line-height: 1.05;
+  }
+
+
+  /* =================================
+     ÁREA DO CARROSSEL
+  ================================= */
+
+  .process-carousel {
+    position: relative;
+
+    width: 100%;
+
+    margin: 32px auto 0;
+
+    /*
+      Espaço para as setas ficarem
+      FORA do card.
+    */
+    padding-inline: 25px;
+
+    overflow: visible;
+  }
+
+
+  /* =================================
+     TRILHO
+  ================================= */
+
+  .process-grid {
+    width: 100%;
+
+    gap: 0;
+
+    margin: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .process-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* Esconde → entre os passos */
+
+  .process-arrow {
+    display: none;
+  }
+
+
+  /* =================================
+     CARD
+  ================================= */
+
+  .process-step {
+    flex: 0 0 100%;
+
+    min-width: 100%;
+    min-height: 195px;
+
+    padding: 27px 24px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 17px;
+
+    text-align: left;
+
+    scroll-snap-align: start;
+
+    background: rgba(var(--rgb-white), .56);
+
+    border: 1px solid rgba(var(--rgb-gold), .22);
+    border-radius: 15px;
+
+    box-shadow:
+      0 7px 18px rgba(var(--rgb-navy), .05);
+
+    backdrop-filter: blur(4px);
+  }
+
+
+  /* =================================
+     NÚMERO
+  ================================= */
+
+  .step-number {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    font-size: 1.24rem;
+  }
+
+
+  /* =================================
+     TEXTO
+  ================================= */
+
+  .process-step > div {
+  min-height: 105px;
+  padding: 18px 15px;
+  gap: 8px;
+}
+
+  .process-step h3 {
+  margin: 0 0 9px;
+
+  font-size: 1.50rem;
+  line-height: 1.15;
+  }
+
+  .process-step p {
+  max-width: none;
+
+  font-size: .79rem;
+  line-height: 1.62;
+  }
+
+
+  /* =================================
+     SETAS LATERAIS
+  ================================= */
+
+  .process-controls {
+    display: block;
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 5;
+  }
+
+  .process-controls button {
+    position: absolute;
+
+    top: 50%;
+
+    width: 24px;
+    height: 24px;
+
+
+    border: 1px solid rgba(var(--rgb-gold), .22);
+
+    background: rgba(var(--rgb-white), .90);
+
+
+    font-family: Arial, sans-serif;
+    font-size: .88rem;
+    line-height: 1;
+
+    box-shadow:
+      0 3px 8px rgba(var(--rgb-navy), .05);
+
+    transform: translateY(-50%);
+
+    pointer-events: auto;
+
+    opacity: .80;
+
+
+    z-index: 6;
+  }
+
+  .process-prev {
+    left: 1px;
+  }
+
+  .process-next {
+    right: 1px;
+  }
+}
+
+/* ==================================================
+   PROCESS — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+.process {
+  padding-top: 42px;
+  padding-bottom: 48px;
+}
+
+.process h2 {
+  font-size: 2rem;
+}
+
+
+/* CARROSSEL */
+
+.process-carousel {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding-inline: 52px;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+.process-grid {
+  width: 100%;
+
+  gap: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.process-grid::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ETAPA */
+
+.process-step {
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 16px;
+
+  flex: 0 0 100%;
+  min-width: 100%;
+  width: 100%;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  box-sizing: border-box;
+
+  padding: 22px 24px;
+
+  background: rgba(var(--rgb-card), .82);
+
+  border:
+    1px solid rgba(var(--rgb-gold), .20);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 10px 26px
+    rgba(var(--rgb-navy), .07);
+}
+
+.process-step > div {
+  min-width: 0;
+}
+
+
+/* NÚMERO */
+
+.step-number {
+  width: 62px;
+  height: 62px;
+
+  flex: 0 0 62px;
+
+  font-size: 1.1rem;
+}
+
+
+/* TÍTULO */
+
+.process-step h3 {
+  margin: 0 0 6px;
+
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+
+/* TEXTO */
+
+.process-step p {
+
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+
+/* REMOVE AS SETAS ENTRE AS ETAPAS */
+
+.process-arrow {
+  display: none;
+}
+
+
+/* CONTROLES DO CARROSSEL */
+
+.process-controls {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+.process-prev,
+.process-next {
+  position: absolute;
+
+  top: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(var(--rgb-gold), .30);
+
+  background:
+    rgba(var(--rgb-card), .94);
+
+  color: var(--teal);
+
+  box-shadow:
+    0 8px 18px
+    rgba(var(--rgb-navy), .08);
+
+  transform: translateY(-50%);
+
+  pointer-events: auto;
+
+  z-index: 4;
+}
+
+.process-prev {
+  left: 3px;
+}
+
+.process-next {
+  right: 3px;
+}
+
+.process-prev:hover,
+.process-next:hover {
+  transform:
+    translateY(-50%)
+    translateY(-1px);
+}
 }
 
 /* Practical */
@@ -4061,54 +4735,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PROCESS — TABLET DEITADO
-================================================== */
-
-
-
-  .process {
-    padding-top: 88px;
-    padding-bottom: 108px;
-  }
-
-  .process h2 {
-    font-size: 3rem;
-  }
-
-  .process-grid {
-    gap: 20px;
-
-    margin-top: 48px;
-  }
-
-  .process-step {
-    gap: 20px;
-  }
-
-  .step-number {
-    width: 58px;
-    height: 58px;
-    flex: 0 0 58px;
-
-    font-size: 1.42rem;
-  }
-
-  .process-step h3 {
-    margin-bottom: 9px;
-
-    font-size: 1.45rem;
-  }
-
-  .process-step p {
-    font-size: .86rem;
-    line-height: 1.65;
-  }
-
-  .process-arrow {
-    flex-basis: 54px;
-    font-size: 2.45rem;
-  }
 
 
 /* ==================================================
@@ -4645,229 +5271,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PROCESS — TABLET EM PÉ
-   CARROSSEL
-================================================== */
-
-
-
-  .process {
-    padding-top: 86px;
-    padding-bottom: 96px;
-  }
-
-  .process .container {
-    overflow: visible;
-  }
-
-  .process h2 {
-    font-size: 3rem;
-  }
-
-
-  /* =================================
-     ÁREA DO CARROSSEL
-  ================================= */
-
-  .process-carousel {
-    position: relative;
-
-    width: 100%;
-    max-width: 680px;
-
-    margin: 46px auto 0;
-
-    /*
-      Cria espaço fora do card branco
-      para as setinhas.
-    */
-    padding-inline: 32px;
-
-    overflow: visible;
-  }
-
-
-  /* =================================
-     TRILHO
-  ================================= */
-
-  .process-grid {
-    width: 100%;
-
-    gap: 0;
-
-    margin: 0;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .process-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  /* Esconde as setas antigas entre 01 → 02 → 03 */
-
-  .process-arrow {
-    display: none;
-  }
-
-
-  /* =================================
-     CARD
-  ================================= */
-
-  .process-step {
-    flex: 0 0 100%;
-
-    min-width: 100%;
-    min-height: 225px;
-
-    padding: 34px 40px;
-
-    flex-direction: row;
-
-    align-items: center;
-
-    gap: 25px;
-
-    text-align: left;
-
-    scroll-snap-align: start;
-
-    background: rgba(var(--rgb-white), .52);
-
-    border: 1px solid rgba(var(--rgb-gold), .20);
-    border-radius: 18px;
-
-    box-shadow:
-      0 10px 28px rgba(var(--rgb-navy), .06);
-
-    backdrop-filter: blur(4px);
-  }
-
-
-  /* =================================
-     NÚMERO
-  ================================= */
-
-  .step-number {
-    width: 66px;
-    height: 66px;
-
-    flex: 0 0 66px;
-
-    font-size: 1.5rem;
-  }
-
-
-  /* =================================
-     TEXTO
-  ================================= */
-
-  .process-step > div {
-    min-width: 0;
-  }
-
- .process-step h3 {
-  margin: 0 0 11px;
-
-  font-size: 1.9rem;
-  line-height: 1.15;
-  }
-
-  .process-step p {
-  max-width: 470px;
-
-  margin: 0;
-
-  font-size: 1rem;
-  line-height: 1.72;
-  }
-
-
-  /* =================================
-     SETAS LATERAIS
-  ================================= */
-
-  .process-controls {
-    display: block;
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 5;
-  }
-
-  .process-controls button {
-    position: absolute;
-
-    top: 50%;
-
-    width: 28px;
-    height: 28px;
-
-    padding: 0;
-
-    border: 1px solid rgba(var(--rgb-gold), .24);
-    border-radius: 50%;
-
-    background: rgba(var(--rgb-white), .88);
-
-    color: var(--teal);
-
-    font-family: Arial, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    line-height: 1;
-
-    box-shadow:
-      0 3px 9px rgba(var(--rgb-navy), .05);
-
-    transform: translateY(-50%);
-
-    pointer-events: auto;
-
-    opacity: .78;
-
-    cursor: pointer;
-
-    z-index: 6;
-
-    transition:
-      opacity .25s ease,
-      background .25s ease,
-      transform .25s ease;
-  }
-
-  .process-controls button:hover {
-    opacity: 1;
-
-    background: var(--white);
-
-    transform:
-      translateY(-50%)
-      scale(1.05);
-  }
-
-  .process-prev {
-    left: 2px;
-  }
-
-  .process-next {
-    right: 2px;
-  }
 
 
 /* ==================================================
@@ -5528,219 +5931,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PROCESS — CELULAR EM PÉ
-   CARROSSEL
-================================================== */
-
-
-
-  .process {
-    padding-top: 58px;
-    padding-bottom: 66px;
-  }
-
-  .process .container {
-    overflow: visible;
-  }
-
-  .process h2 {
-    margin-bottom: 0;
-
-    text-align: center;
-
-    font-size: 2.25rem;
-    line-height: 1.05;
-  }
-
-
-  /* =================================
-     ÁREA DO CARROSSEL
-  ================================= */
-
-  .process-carousel {
-    position: relative;
-
-    width: 100%;
-
-    margin: 32px auto 0;
-
-    /*
-      Espaço para as setas ficarem
-      FORA do card.
-    */
-    padding-inline: 25px;
-
-    overflow: visible;
-  }
-
-
-  /* =================================
-     TRILHO
-  ================================= */
-
-  .process-grid {
-    width: 100%;
-
-    gap: 0;
-
-    margin: 0;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .process-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  /* Esconde → entre os passos */
-
-  .process-arrow {
-    display: none;
-  }
-
-
-  /* =================================
-     CARD
-  ================================= */
-
-  .process-step {
-    flex: 0 0 100%;
-
-    min-width: 100%;
-    min-height: 195px;
-
-    padding: 27px 24px;
-
-    flex-direction: row;
-
-    align-items: center;
-
-    gap: 17px;
-
-    text-align: left;
-
-    scroll-snap-align: start;
-
-    background: rgba(var(--rgb-white), .56);
-
-    border: 1px solid rgba(var(--rgb-gold), .22);
-    border-radius: 15px;
-
-    box-shadow:
-      0 7px 18px rgba(var(--rgb-navy), .05);
-
-    backdrop-filter: blur(4px);
-  }
-
-
-  /* =================================
-     NÚMERO
-  ================================= */
-
-  .step-number {
-    width: 52px;
-    height: 52px;
-
-    flex: 0 0 52px;
-
-    font-size: 1.24rem;
-  }
-
-
-  /* =================================
-     TEXTO
-  ================================= */
-
-  .process-step > div {
-  min-height: 105px;
-  padding: 18px 15px;
-  gap: 8px;
-}
-
-  .process-step h3 {
-  margin: 0 0 9px;
-
-  font-size: 1.50rem;
-  line-height: 1.15;
-  }
-
-  .process-step p {
-  max-width: none;
-  margin: 0;
-
-  font-size: .79rem;
-  line-height: 1.62;
-  }
-
-
-  /* =================================
-     SETAS LATERAIS
-  ================================= */
-
-  .process-controls {
-    display: block;
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 5;
-  }
-
-  .process-controls button {
-    position: absolute;
-
-    top: 50%;
-
-    width: 24px;
-    height: 24px;
-
-    padding: 0;
-
-    border: 1px solid rgba(var(--rgb-gold), .22);
-    border-radius: 50%;
-
-    background: rgba(var(--rgb-white), .90);
-
-    color: var(--teal);
-
-    font-family: Arial, sans-serif;
-    font-size: .88rem;
-    font-weight: 400;
-    line-height: 1;
-
-    box-shadow:
-      0 3px 8px rgba(var(--rgb-navy), .05);
-
-    transform: translateY(-50%);
-
-    pointer-events: auto;
-
-    opacity: .80;
-
-    cursor: pointer;
-
-    z-index: 6;
-  }
-
-  .process-prev {
-    left: 1px;
-  }
-
-  .process-next {
-    right: 1px;
-  }
 
 
 /* ==================================================
@@ -6648,199 +6838,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PROCESS — CELULAR DEITADO
-================================================== */
-
-.process {
-  position: relative;
-  padding-top: 42px;
-  padding-bottom: 48px;
-}
-
-.process h2 {
-  font-size: 2rem;
-}
-
-
-/* CARROSSEL */
-
-.process-carousel {
-  position: relative;
-
-  width: 100%;
-
-  margin-top: 28px;
-
-  padding-inline: 52px;
-
-  box-sizing: border-box;
-
-  overflow: visible;
-}
-
-.process-grid {
-  width: 100%;
-
-  gap: 0;
-
-  margin: 0;
-  padding: 0;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.process-grid::-webkit-scrollbar {
-  display: none;
-}
-
-
-/* ETAPA */
-
-.process-step {
-  flex-direction: row;
-
-  align-items: center;
-
-  gap: 16px;
-
-  flex: 0 0 100%;
-  min-width: 100%;
-  width: 100%;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-
-  box-sizing: border-box;
-
-  padding: 22px 24px;
-
-  background: rgba(var(--rgb-card), .82);
-
-  border:
-    1px solid rgba(var(--rgb-gold), .20);
-
-  border-radius: 26px;
-
-  box-shadow:
-    0 10px 26px
-    rgba(var(--rgb-navy), .07);
-}
-
-.process-step > div {
-  min-width: 0;
-}
-
-
-/* NÚMERO */
-
-.step-number {
-  width: 62px;
-  height: 62px;
-
-  flex: 0 0 62px;
-
-  font-size: 1.1rem;
-}
-
-
-/* TÍTULO */
-
-.process-step h3 {
-  margin: 0 0 6px;
-
-  font-size: 1.45rem;
-  line-height: 1.1;
-}
-
-
-/* TEXTO */
-
-.process-step p {
-  margin: 0;
-
-  font-size: .92rem;
-  line-height: 1.5;
-}
-
-
-/* REMOVE AS SETAS ENTRE AS ETAPAS */
-
-.process-arrow {
-  display: none;
-}
-
-
-/* CONTROLES DO CARROSSEL */
-
-.process-controls {
-  position: absolute;
-
-  inset: 0;
-
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  pointer-events: none;
-
-  z-index: 3;
-}
-
-.process-prev,
-.process-next {
-  position: absolute;
-
-  top: 50%;
-
-  width: 46px;
-  height: 46px;
-
-  padding: 0;
-
-  border-radius: 50%;
-
-  border:
-    1px solid rgba(var(--rgb-gold), .30);
-
-  background:
-    rgba(var(--rgb-card), .94);
-
-  color: var(--teal);
-
-  box-shadow:
-    0 8px 18px
-    rgba(var(--rgb-navy), .08);
-
-  transform: translateY(-50%);
-
-  pointer-events: auto;
-
-  z-index: 4;
-}
-
-.process-prev {
-  left: 3px;
-}
-
-.process-next {
-  right: 3px;
-}
-
-.process-prev:hover,
-.process-next:hover {
-  transform:
-    translateY(-50%)
-    translateY(-1px);
-}
 
   /* =========================
      INFORMAÇÕES
