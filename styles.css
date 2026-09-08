@@ -2574,7 +2574,9 @@ p { margin-top: 0; }
   }
 }
 
-/* Psychologists */
+/* ==================================================
+   PSYCHOLOGISTS — BASE / DESKTOP
+================================================== */
 
 .psychologists {
   position: relative;
@@ -2656,28 +2658,17 @@ p { margin-top: 0; }
   height: 275px;
   overflow: hidden;
 }
+.psych-image picture,
 .psych-image img {
   display: block;
   width: 100%;
   height: 100%;
+}
+.psych-image img {
   object-fit: cover;
   object-position: center;
   border-radius: 0;
   transition: transform .65s ease;
-}
-.psych-image picture {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-}
-.psych-image picture img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
 }
 /* Zoom suave */
 .psych-card:hover .psych-image img {
@@ -2765,6 +2756,288 @@ p { margin-top: 0; }
 .psych-card a:hover {
   color: var(--ink-strong);
   transform: translateX(3px);
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .psychologists {
+    padding: 86px 0 82px;
+  }
+
+  .psychologists h2 {
+    font-size: 3rem;
+  }
+
+  .psych-track {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 24px;
+    max-width: 920px;
+  }
+
+  .psych-image {
+    height: 285px;
+  }
+
+  .psych-content {
+    padding: 23px 24px 26px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .psych-card .role {
+    font-size: .70rem;
+  }
+
+  .psych-card .approach {
+    font-size: .72rem;
+  }
+
+  .psych-line {
+    margin: 14px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 20px;
+    font-size: .74rem;
+  }
+
+  .psych-card a {
+    font-size: 1rem;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+
+  .psychologists {
+    padding: 82px 0 86px;
+
+    background-size: 100% 100%;
+  }
+
+  .psychologists h2 {
+    font-size: 2.9rem;
+  }
+
+  .psychologists .section-intro {
+    max-width: 600px;
+    font-size: .86rem;
+  }
+
+  .psych-track {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 20px;
+
+    max-width: 700px;
+  }
+
+  .psych-image {
+    height: 260px;
+  }
+
+  .psych-content {
+    padding: 22px 20px 24px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.72rem;
+  }
+
+  .psych-card .role {
+    font-size: .67rem;
+  }
+
+  .psych-card .approach {
+    font-size: .69rem;
+  }
+
+  .psych-card .psych-description {
+
+    font-size: .71rem;
+    line-height: 1.6;
+  }
+
+  .psych-card a {
+    font-size: .96rem;
+  }
+
+  /* Ajusta o enquadramento individual */
+
+  .psych-track > .row > :first-child .psych-image img {
+    object-position: center 30%;
+  }
+
+  .psych-track > .row > :nth-child(2) .psych-image img {
+    object-position: center 27%;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+
+  .psychologists {
+    padding: 62px 0 68px;
+    background-image: url("assets/fundo-psicologas-mobile.webp");
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+
+  .psychologists h2 {
+    font-size: 2.35rem;
+    text-align: center;
+  }
+
+  .psychologists .section-intro {
+    max-width: 330px;
+
+    margin: 8px auto 30px;
+
+    font-size: .78rem;
+  }
+
+  .psych-track {
+    max-width: 390px;
+  }
+
+  .psych-card {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .psych-image {
+    height: 280px;
+  }
+
+  .psych-content {
+    padding: 24px 22px 26px;
+  }
+
+  .psych-content h3 {
+    font-size: 1.85rem;
+  }
+
+  .psych-card .role {
+    font-size: .70rem;
+  }
+
+  .psych-card .approach {
+    font-size: .72rem;
+  }
+
+  .psych-line {
+    margin: 14px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 20px;
+
+    font-size: .75rem;
+    line-height: 1.7;
+  }
+
+  .psych-card a {
+    font-size: 1rem;
+  }
+
+  .psych-track > .row > :first-child .psych-image img {
+    object-position: center 16%;
+  }
+
+  .psych-track > .row > :nth-child(2) .psych-image img {
+    object-position: center 27%;
+  }
+}
+
+/* ==================================================
+   PSYCHOLOGISTS — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+  .psychologists {
+    padding: 44px 0 50px;
+  }
+
+  .psychologists h2 {
+    font-size: 2.05rem;
+  }
+
+  .psychologists .section-intro {
+    max-width: 520px;
+
+    margin: 6px auto 24px;
+
+    font-size: .68rem;
+    line-height: 1.5;
+  }
+
+  .psych-track {
+    --bs-gutter-x: 16px;
+    --bs-gutter-y: 16px;
+
+    max-width: 760px;
+  }
+
+  .psych-image {
+    height: 190px;
+  }
+
+  .psych-content {
+    padding: 16px 16px 18px;
+  }
+
+  .psych-content h3 {
+    margin-bottom: 2px;
+    font-size: 1.4rem;
+  }
+
+  .psych-card .role {
+    margin-bottom: 2px;
+    font-size: .56rem;
+  }
+
+  .psych-card .approach {
+    font-size: .58rem;
+  }
+
+  .psych-line {
+    width: 18px;
+    margin: 9px 0;
+  }
+
+  .psych-card .psych-description {
+    margin-bottom: 12px;
+
+    font-size: .57rem;
+    line-height: 1.5;
+  }
+
+  .psych-card a {
+    font-size: .78rem;
+  }
+
+  .psych-track > .row > :first-child .psych-image img {
+    object-position: center 18%;
+  }
+
+  .psych-track > .row > :nth-child(2) .psych-image img {
+    object-position: center 22%;
+  }
+  .psych-track > .row > .col-12 {
+    width: 50%;
+  }
 }
 
 /* Process */
@@ -3787,65 +4060,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PSYCHOLOGISTS — TABLET DEITADO
-================================================== */
-
-
-
-  .psychologists {
-    padding: 86px 0 82px;
-  }
-
-  .psychologists h2 {
-    font-size: 3rem;
-  }
-
-  .psychologists .section-intro {
-    max-width: 650px;
-    margin: 8px auto 34px;
-    font-size: .88rem;
-  }
-
-  .psych-track {
-    --bs-gutter-x: 24px;
-    --bs-gutter-y: 24px;
-    max-width: 920px;
-  }
-
-  .psych-image {
-    height: 285px;
-  }
-
-  .psych-content {
-    padding: 23px 24px 26px;
-  }
-
-  .psych-content h3 {
-    font-size: 1.8rem;
-  }
-
-  .psych-card .role {
-    font-size: .70rem;
-  }
-
-  .psych-card .approach {
-    font-size: .72rem;
-  }
-
-  .psych-line {
-    margin: 14px 0;
-  }
-
-  .psych-card .psych-description {
-    margin-bottom: 20px;
-    font-size: .74rem;
-    line-height: 1.65;
-  }
-
-  .psych-card a {
-    font-size: 1rem;
-  }
 
 /* ==================================================
    PROCESS — TABLET DEITADO
@@ -4429,93 +4643,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PSYCHOLOGISTS — TABLET EM PÉ
-================================================== */
-
-
-
-  .psychologists {
-    padding: 82px 0 86px;
-
-    background-image: url("assets/fundo-psicologas.webp");
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-
-  .psychologists::before {
-    background: rgba(var(--rgb-surface), .78);
-  }
-
-  .psychologists h2 {
-    font-size: 2.9rem;
-  }
-
-  .psychologists .section-intro {
-    max-width: 600px;
-    margin: 8px auto 34px;
-    font-size: .86rem;
-  }
-
-  .psych-track {
-    --bs-gutter-x: 20px;
-    --bs-gutter-y: 20px;
-
-    max-width: 700px;
-  }
-
-  .psych-card {
-    min-width: 0;
-  }
-
-  .psych-image {
-    height: 260px;
-  }
-
-  .psych-content {
-    padding: 22px 20px 24px;
-  }
-
-  .psych-content h3 {
-    font-size: 1.72rem;
-  }
-
-  .psych-card .role {
-    font-size: .67rem;
-    line-height: 1.45;
-  }
-
-  .psych-card .approach {
-    font-size: .69rem;
-    line-height: 1.45;
-  }
-
-  .psych-line {
-    width: 22px;
-    margin: 13px 0;
-  }
-
-  .psych-card .psych-description {
-    margin-bottom: 18px;
-
-    font-size: .71rem;
-    line-height: 1.6;
-  }
-
-  .psych-card a {
-    font-size: .96rem;
-  }
-
-  /* Ajusta o enquadramento individual */
-
-  .psych-track > .row > :first-child .psych-image img {
-    object-position: center 30%;
-  }
-
-  .psych-track > .row > :nth-child(2) .psych-image img {
-    object-position: center 27%;
-  }
 
 
 /* ==================================================
@@ -5399,90 +5526,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PSYCHOLOGISTS — CELULAR EM PÉ
-================================================== */
-
-
-
-  .psychologists {
-    padding: 62px 0 68px;
-    background-image: url("assets/fundo-psicologas-mobile.webp");
-    background-position: center center;
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .psychologists::before {
-    background: rgba(var(--rgb-surface), .78);
-  }
-
-  .psychologists h2 {
-    font-size: 2.35rem;
-    text-align: center;
-  }
-
-  .psychologists .section-intro {
-    max-width: 330px;
-
-    margin: 8px auto 30px;
-
-    font-size: .78rem;
-    line-height: 1.6;
-  }
-
-  .psych-track {
-    max-width: 390px;
-  }
-
-  .psych-card {
-    width: 100%;
-    border-radius: 5px;
-  }
-
-  .psych-image {
-    height: 280px;
-  }
-
-  .psych-content {
-    padding: 24px 22px 26px;
-  }
-
-  .psych-content h3 {
-    font-size: 1.85rem;
-  }
-
-  .psych-card .role {
-    font-size: .70rem;
-  }
-
-  .psych-card .approach {
-    font-size: .72rem;
-  }
-
-  .psych-line {
-    margin: 14px 0;
-  }
-
-  .psych-card .psych-description {
-    margin-bottom: 20px;
-
-    font-size: .75rem;
-    line-height: 1.7;
-  }
-
-  .psych-card a {
-    font-size: 1rem;
-  }
-
-  .psych-track > .row > :first-child .psych-image img {
-    object-position: center 16%;
-  }
-
-  .psych-track > .row > :nth-child(2) .psych-image img {
-    object-position: center 27%;
-  }
 
 
 /* ==================================================
@@ -6604,84 +6647,6 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   PSYCHOLOGISTS — CELULAR DEITADO
-================================================== */
-
-
-
-  .psychologists {
-    padding: 44px 0 50px;
-  }
-
-  .psychologists h2 {
-    font-size: 2.05rem;
-  }
-
-  .psychologists .section-intro {
-    max-width: 520px;
-
-    margin: 6px auto 24px;
-
-    font-size: .68rem;
-    line-height: 1.5;
-  }
-
-  .psych-track {
-    --bs-gutter-x: 16px;
-    --bs-gutter-y: 16px;
-
-    max-width: 760px;
-  }
-
-  .psych-image {
-    height: 190px;
-  }
-
-  .psych-content {
-    padding: 16px 16px 18px;
-  }
-
-  .psych-content h3 {
-    margin-bottom: 2px;
-    font-size: 1.4rem;
-  }
-
-  .psych-card .role {
-    margin-bottom: 2px;
-    font-size: .56rem;
-  }
-
-  .psych-card .approach {
-    font-size: .58rem;
-  }
-
-  .psych-line {
-    width: 18px;
-    margin: 9px 0;
-  }
-
-  .psych-card .psych-description {
-    margin-bottom: 12px;
-
-    font-size: .57rem;
-    line-height: 1.5;
-  }
-
-  .psych-card a {
-    font-size: .78rem;
-  }
-
-  .psych-track > .row > :first-child .psych-image img {
-    object-position: center 18%;
-  }
-
-  .psych-track > .row > :nth-child(2) .psych-image img {
-    object-position: center 22%;
-  }
-  .psych-track > .row > .col-12 {
-    width: 50%;
-  }
 
 /* ==================================================
    PROCESS — CELULAR DEITADO
