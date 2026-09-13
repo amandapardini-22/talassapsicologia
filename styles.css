@@ -87,6 +87,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  min-width: 320px;
   color: var(--ink);
   background: var(--white);
   font-family: var(--font-body);
@@ -99,9 +100,6 @@ body {
   max-width: 100%;
   margin: 0;
   overflow-x: hidden;
-}
-body {
-  min-width: 320px;
 }
 main {
   width: 100%;
@@ -819,41 +817,6 @@ p { margin-top: 0; }
 
 
 
-/* Tablet portrait */
-@media (max-width: 1024px) and (orientation: portrait) {
-
-  .info-wrap {
-    padding: 52px 0 56px;
-  }
-  .info-strip {
-    --bs-gutter-x: 38px;
-    --bs-gutter-y: 38px;
-  }
-  .info-item {
-    gap: 20px;
-    min-width: 0;
-    padding: 0;
-  }
-  .info-icon {
-    width: 44px;
-    height: 44px;
-    flex: 0 0 44px;
-  }
-  .info-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-  .info-item strong {
-    margin: 0 0 7px;
-    font-size: 1rem;
-    line-height: 1.35;
-  }
-  .info-item span {
-    max-width: none;
-    font-size: .82rem;
-    line-height: 1.55;
-  }
-}
 
 
 
@@ -874,17 +837,43 @@ p { margin-top: 0; }
   pointer-events: none;
   z-index: 1;
 }
+/* Portrait até 1024px — Info + Concerns */
 @media
   (max-width: 1024px)
   and (orientation: portrait) {
 
+  .info-wrap {
+    padding: 52px 0 56px;
+  }
+  .info-strip {
+    --bs-gutter-x: 38px;
+    --bs-gutter-y: 38px;
+  }
+  .info-item {
+    gap: 20px;
+    min-width: 0;
+  }
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+  }
+  .info-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .info-item strong {
+    margin: 0 0 7px;
+    font-size: 1rem;
+  }
+  .info-item span {
+    max-width: none;
+    font-size: .82rem;
+  }
+
+
   .concerns {
     background-color: #FCF7EF;
-
-    background-image:
-      url("assets/fundo-demandas.webp");
-
-    background-repeat: no-repeat;
 
     /*
       Mantém a proporção original da imagem.
@@ -899,10 +888,6 @@ p { margin-top: 0; }
     background-position: center bottom;
   }
 
-  .concerns::before {
-    background:
-      rgba(var(--rgb-cream), .72);
-  }
 }
 .concerns-container {
   position: relative;
@@ -956,37 +941,20 @@ p { margin-top: 0; }
 
   overflow: hidden;
 
-  background:
-    rgba(var(--rgb-card), .76);
+  background: rgba(var(--rgb-card), .84);
 
-  border:
-    1px solid rgba(var(--rgb-gold), .25);
+  border: 1px solid rgba(56, 127, 136, .30);
 
   border-radius: 15px;
 
-  box-shadow:
-    0 8px 18px rgba(var(--rgb-navy), .07);
+  box-shadow: 0 6px 18px rgba(var(--rgb-navy), .06);
 
   backdrop-filter: blur(3px);
 
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-.concern-card:hover {
-  transform: translateY(-3px);
-
-  border-color:
-    rgba(var(--rgb-gold), .45);
-
-  box-shadow:
-    0 12px 24px rgba(var(--rgb-navy), .09);
-}
-}
 
 
 /* ==================================================
@@ -1051,6 +1019,8 @@ p { margin-top: 0; }
 
   background:
     rgba(148, 89, 154, .08);
+
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
 
 
@@ -1168,7 +1138,9 @@ p { margin-top: 0; }
 
 /* CARD ABERTO */
 .concern-card.open {
-  border-color: rgba(var(--rgb-gold), .48);
+  border-color: rgba(var(--rgb-gold), .78);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(var(--rgb-navy), .10), 0 0 18px rgba(var(--rgb-gold), .19);
 }
 
 .concern-card.open .concern-description {
@@ -1710,11 +1682,6 @@ p { margin-top: 0; }
   color: rgba(255,255,255,.72);
 }
 
-/* Intervalo do brilho automático em dispositivos de toque. */
-@media (hover: none), (pointer: coarse) {
-  .final-cta { --cta-sheen-delay: -4.2s; }
-}
-
 
 
 
@@ -2144,11 +2111,6 @@ p { margin-top: 0; }
   color: var(--white);
 }
 
-/* Intervalo do brilho automático em dispositivos de toque. */
-@media (hover: none), (pointer: coarse) {
-  .site-footer { --cta-sheen-delay: -5.1s; }
-}
-
 
 
 
@@ -2402,20 +2364,6 @@ p { margin-top: 0; }
   }
 }
 /* Visual finish: interaction styles only; approved geometry is retained. */
-.concern-card {
-  border-color: rgba(56, 127, 136, .30);
-  background: rgba(var(--rgb-card), .84);
-  box-shadow: 0 6px 18px rgba(var(--rgb-navy), .06);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
-.concern-icon {
-  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
-}
-.concern-card.open {
-  border-color: rgba(var(--rgb-gold), .78);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(var(--rgb-navy), .10), 0 0 18px rgba(var(--rgb-gold), .19);
-}
 .concern-card.open .concern-icon {
   transform: scale(1.06);
   background: rgba(148, 89, 154, .13);
@@ -2499,9 +2447,6 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
 @media (prefers-reduced-motion: reduce) {
   body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after { animation: none; opacity: 0; }
   body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:hover, body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible { transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
   .concern-card, .concern-icon, body .btn.js-whatsapp { transition: none; }
   .concern-card:hover, .concern-card.open, .concern-card .concern-icon,
   body .btn.js-whatsapp:hover { transform: none; }
@@ -2520,6 +2465,8 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   }
   .site-header { --cta-sheen-delay: -.5s; }
   .hero { --cta-sheen-delay: -1.8s; }
+  .final-cta { --cta-sheen-delay: -4.2s; }
+  .site-footer { --cta-sheen-delay: -5.1s; }
 
 
 
