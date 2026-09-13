@@ -28,11 +28,11 @@
       >
       </a>
 
-      <button class="menu-toggle d-block d-xl-none" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <button class="menu-toggle d-block d-xl-none" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="main-nav d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center justify-content-center flex-xl-grow-1" aria-label="Navegação principal">
+      <nav id="mainNav" class="main-nav d-flex flex-column flex-xl-row align-items-stretch align-items-xl-center justify-content-center flex-xl-grow-1" aria-label="Navegação principal">
       <a href="#inicio">Início</a>
       <a href="#sobre">Demandas</a>
       <a href="#psicoterapia">Psicoterapia</a>
@@ -88,8 +88,8 @@
       </div>
 </section>
 
-<section class="info-section">
-  <div class="info-wrap" aria-label="Informações do atendimento">
+<section class="info-section" aria-label="Informações do atendimento">
+  <div class="info-wrap">
     <div class="container">
       <div class="info-strip row">
 
@@ -892,6 +892,7 @@
     role="dialog"
     aria-modal="true"
     aria-labelledby="whatsappModalTitle"
+    aria-describedby="whatsappModalDescription"
   >
     <button
       class="whatsapp-modal-close"
@@ -907,7 +908,7 @@
       Com quem você gostaria de conversar?
     </h2>
 
-    <p class="whatsapp-modal-intro">
+    <p class="whatsapp-modal-intro" id="whatsappModalDescription">
       Escolha uma de nossas psicólogas para iniciar a conversa pelo WhatsApp.
     </p>
 
