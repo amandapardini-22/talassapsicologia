@@ -4627,7 +4627,7 @@ p { margin-top: 0; }
 }
 
 /* ==================================================
-   FOOTER
+   FOOTER — BASE / DESKTOP
 ================================================== */
 
 .site-footer {
@@ -4638,7 +4638,6 @@ p { margin-top: 0; }
 
   border-top: 1px solid rgba(var(--rgb-white), .04);
 }
-
 
 /* ==================================================
    GRID PRINCIPAL
@@ -4668,7 +4667,6 @@ p { margin-top: 0; }
   .footer-grid > .row > :nth-child(4) { width: 24.484536%; }
 }
 
-
 /* ==================================================
    LOGO / MARCA
 ================================================== */
@@ -4678,7 +4676,6 @@ p { margin-top: 0; }
 }
 
 /* ======== LOGO FOOTER — BASE / DESKTOP ======= */
-
 
 .footer-brand img {
   display: block;
@@ -4714,7 +4711,6 @@ p { margin-top: 0; }
 
   background: var(--gold);
 }
-
 
 /* ==================================================
    COLUNAS 2, 3 E 4
@@ -4759,7 +4755,6 @@ p { margin-top: 0; }
   color: var(--white);
 }
 
-
 /* ==================================================
    CONTATO
 ================================================== */
@@ -4794,7 +4789,6 @@ p { margin-top: 0; }
   font-size: .82rem;
   line-height: 1.55;
 }
-
 
 /* ==================================================
    REDES SOCIAIS
@@ -4836,7 +4830,6 @@ p { margin-top: 0; }
   font-weight: 600;
 }
 
-
 /* ==================================================
    BOTÃO WHATSAPP
 ================================================== */
@@ -4864,7 +4857,6 @@ p { margin-top: 0; }
   background: rgba(var(--rgb-gold), .22);
   color: var(--navy) !important;
 }
-
 
 /* ==================================================
    PARTE INFERIOR
@@ -4916,14 +4908,10 @@ p { margin-top: 0; }
     fill .2s ease;
 }
 
-.footer-contact a.footer-contact-item:hover span {
-  color: var(--white);
-}
-
+.footer-contact a.footer-contact-item:hover span,
 .footer-contact a.footer-contact-item:hover svg {
   color: var(--white);
 }
-
 
 /* ==================================================
    HOVER — INSTAGRAM
@@ -4936,12 +4924,796 @@ p { margin-top: 0; }
     fill .2s ease;
 }
 
-.instagram-link:hover span {
+.instagram-link:hover span,
+.instagram-link:hover svg {
   color: var(--white);
 }
 
-.instagram-link:hover svg {
-  color: var(--white);
+/* Intervalo do brilho automático em dispositivos de toque. */
+@media (hover: none), (pointer: coarse) {
+  .site-footer { --cta-sheen-delay: -5.1s; }
+}
+
+/* ==================================================
+   FOOTER — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .site-footer {
+    padding: 44px 0 22px;
+  }
+
+  .site-footer .container {
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
+  /* ==================================================
+     GRID — MANTÉM 4 COLUNAS
+  ================================================== */
+
+  .footer-grid {
+    --bs-gutter-x: 28px;
+    --bs-gutter-y: 28px;
+  }
+
+  /* ==================================================
+     REMOVE AJUSTES ESPECÍFICOS DO DESKTOP
+  ================================================== */
+
+  .footer-brand {
+    transform: none;
+    width: 160px;
+    height: auto;
+  }
+
+  .footer-grid > .row > div > .footer-column {
+    padding-top: 24px;
+  }
+
+  /* ==================================================
+     MARCA
+  ================================================== */
+
+  .footer-brand img {
+
+    width: 300px;
+
+    transform: translateY(-14px);
+  }
+
+  .footer-brand p {
+    max-width: 310px;
+
+    margin: -34px 0 0;
+
+    font-size: .80rem;
+    line-height: 1.7;
+  }
+
+  .footer-gold-line {
+
+  margin-top: 16px;
+  margin-left: 0;
+
+}
+
+  /* ==================================================
+     COLUNAS
+  ================================================== */
+
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-column h3 {
+    margin: 0 0 16px;
+
+    font-size: .60rem;
+    letter-spacing: .19em;
+  }
+
+  .footer-column > a {
+    margin-bottom: 8px;
+
+    font-size: .67rem;
+    line-height: 1.45;
+  }
+
+  /* ==================================================
+     CONTATO
+  ================================================== */
+
+  .footer-contact-item {
+    width: 100%;
+
+    gap: 8px;
+
+    margin-bottom: 10px !important;
+  }
+
+  .footer-contact-item svg {
+    width: 14px;
+    height: 14px;
+
+    flex: 0 0 14px;
+
+    margin-top: 1px;
+  }
+
+  .footer-contact-item span {
+    min-width: 0;
+
+    font-size: .66rem;
+    line-height: 1.45;
+
+    overflow-wrap: anywhere;
+  }
+
+  /* ==================================================
+     ACOMPANHE
+  ================================================== */
+
+  .footer-social p {
+    max-width: 205px;
+
+    margin: 0 0 13px;
+
+    font-size: .66rem;
+    line-height: 1.6;
+  }
+
+  .instagram-link {
+    gap: 8px;
+
+    margin-bottom: 14px !important;
+  }
+
+  .instagram-link svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .instagram-link span {
+    font-size: .68rem;
+  }
+
+  /* ==================================================
+     BOTÃO WHATSAPP
+  ================================================== */
+
+  .footer-whatsapp {
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    font-size: .64rem !important;
+  }
+
+  /* ==================================================
+     PARTE INFERIOR
+  ================================================== */
+
+  .footer-bottom {
+    margin-top: 34px;
+    padding-top: 16px;
+
+  }
+
+  .footer-bottom > span {
+    max-width: 480px;
+  }
+
+  .footer-bottom div {
+    gap: 18px;
+  }
+
+  .footer-bottom div a {
+    font-size: .57rem;
+    white-space: nowrap;
+  }
+}
+
+/* ==================================================
+   FOOTER — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .site-footer {
+    padding: 48px 0 24px;
+  }
+
+  .site-footer .container {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  /* ==================================================
+     GRID — MANTÉM 2 x 2
+  ================================================== */
+
+  .footer-grid {
+    --bs-gutter-y: 20px;
+  }
+
+  /* ==================================================
+     REMOVE AJUSTES DO DESKTOP
+  ================================================== */
+
+  .footer-brand {
+    transform: translateY(-48px);
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-grid > .row > div > .footer-column {
+    padding-top: 0;
+  }
+
+  .footer-grid > .row > :nth-child(2) > .footer-column {
+  padding-top: 5px;
+  }
+
+  /* ==================================================
+     MARCA
+  ================================================== */
+
+    .footer-brand img {
+    width: 205px;
+
+  }
+
+  .footer-brand p {
+    max-width: 275px;
+
+    margin: -24px 0 0;
+
+    font-size: .74rem;
+    line-height: 1.72;
+  }
+
+  .footer-gold-line {
+    width: 26px;
+
+    margin-top: 16px;
+    margin-left: 0;
+
+  }
+
+  /* ==================================================
+     COLUNAS
+  ================================================== */
+
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-column h3 {
+    margin: 0 0 16px;
+
+    font-size: .63rem;
+    letter-spacing: .20em;
+  }
+
+  /* ==================================================
+     NAVEGAÇÃO
+  ================================================== */
+
+  .footer-column > a {
+    margin-bottom: 8px;
+
+    font-size: .72rem;
+    line-height: 1.45;
+  }
+
+  /* ==================================================
+     CONTATO
+  ================================================== */
+
+  .footer-contact-item {
+    width: 100%;
+
+    gap: 9px;
+
+    margin-bottom: 10px !important;
+  }
+
+  .footer-contact-item svg {
+    width: 15px;
+    height: 15px;
+
+    flex: 0 0 15px;
+
+    margin-top: 1px;
+  }
+
+  .footer-contact-item span {
+    min-width: 0;
+
+    font-size: .70rem;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+  }
+
+  /* ==================================================
+     ACOMPANHE
+  ================================================== */
+
+  .footer-social p {
+    max-width: 270px;
+
+    margin: 0 0 14px;
+
+    font-size: .70rem;
+    line-height: 1.62;
+  }
+
+  .instagram-link {
+    gap: 8px;
+
+    margin-bottom: 14px !important;
+  }
+
+  .instagram-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .instagram-link span {
+    font-size: .72rem;
+  }
+
+  /* ==================================================
+     BOTÃO WHATSAPP
+  ================================================== */
+
+  .footer-whatsapp {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    font-size: .68rem !important;
+  }
+
+  /* ==================================================
+     PARTE INFERIOR
+  ================================================== */
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 22px;
+    padding-top: 14px;
+
+    font-size: .60rem;
+    line-height: 1.5;
+  }
+
+  .footer-bottom > span {
+    max-width: 420px;
+  }
+
+  .footer-bottom div {
+
+    gap: 20px;
+  }
+
+  .footer-bottom div a {
+    font-size: .60rem;
+    white-space: nowrap;
+  }
+}
+
+/* ==================================================
+   FOOTER — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .site-footer {
+    padding: 16px 0 22px;
+  }
+
+  .site-footer .container {
+    max-width: 400px; /* 360px de conteudo + gutters do Bootstrap. */
+    padding-inline: clamp(20px, calc((100vw - 300px) / 2), 50px);
+    margin-inline: auto;
+  }
+
+  /* ==================================================
+     ESTRUTURA PRINCIPAL
+  ================================================== */
+
+  .footer-grid {
+    --bs-gutter-x: 28px;
+    --bs-gutter-y: 28px;
+  }
+
+  /*
+    IMPORTANTE:
+    remove o deslocamento aplicado no desktop
+  */
+
+  .footer-brand {
+    transform: none;
+    width: 100%;
+    margin-top: -14px;
+  }
+
+  /*
+    IMPORTANTE:
+    remove o padding-top das colunas 2, 3 e 4
+    aplicado no desktop
+  */
+
+  .footer-grid > .row > div > .footer-column {
+    padding-top: 0;
+  }
+
+  /* ==================================================
+     MARCA
+  ================================================== */
+
+    .footer-brand img {
+      width: 230px;
+
+    }
+
+    .footer-brand p {
+      max-width: 290px;
+
+      margin: -27px 0 0;
+
+      font-size: .72rem;
+      line-height: 1.75;
+    }
+
+    .footer-gold-line {
+      width: 26px;
+
+      margin-top: 18px;
+      margin-left: 0;
+
+     }
+
+  /* ==================================================
+     COLUNAS
+  ================================================== */
+
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+
+    padding-top: 0;
+  }
+
+  .footer-column h3 {
+    margin: 0 0 15px;
+
+    font-size: .62rem;
+    letter-spacing: .20em;
+  }
+
+  .footer-column > a {
+    margin-bottom: 9px;
+
+    font-size: .72rem;
+  }
+
+  /* ==================================================
+     NAVEGAÇÃO — 2 COLUNAS
+  ================================================== */
+
+  .footer-grid > .row > :nth-child(2) > .footer-column {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 34px;
+    row-gap: 0;
+  }
+
+  .footer-grid > .row > :nth-child(2) > .footer-column h3 {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid > .row > :nth-child(2) > .footer-column > a {
+    width: 100%;
+
+  }
+
+  /* ==================================================
+     CONTATO
+  ================================================== */
+
+  .footer-contact-item {
+    width: 100%;
+
+    gap: 9px;
+
+    margin-bottom: 11px !important;
+  }
+
+  .footer-contact-item svg {
+    width: 15px;
+    height: 15px;
+
+    flex: 0 0 15px;
+
+    margin-top: 1px;
+  }
+
+  .footer-contact-item span {
+    min-width: 0;
+
+    font-size: .70rem;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+  }
+
+  /* ==================================================
+     ACOMPANHE
+  ================================================== */
+
+  .footer-social p {
+    max-width: 290px;
+
+    margin: 0 0 15px;
+
+    font-size: .70rem;
+    line-height: 1.7;
+  }
+
+  .instagram-link {
+    gap: 9px;
+
+    margin-bottom: 16px !important;
+  }
+
+  .instagram-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .instagram-link span {
+    font-size: .72rem;
+  }
+
+  /* ==================================================
+     BOTÃO WHATSAPP
+  ================================================== */
+
+  .footer-whatsapp {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: .71rem !important;
+
+    text-align: center;
+  }
+
+  /* ==================================================
+     PARTE INFERIOR
+  ================================================== */
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-top: 30px;
+    padding-top: 17px;
+
+    font-size: .59rem;
+    line-height: 1.55;
+  }
+
+  .footer-bottom > span {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  /* ==================================================
+     POLÍTICA + TERMOS
+  ================================================== */
+
+  .footer-bottom div {
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: flex-start !important;
+
+    align-self: flex-start;
+
+    width: max-content !important;
+    max-width: 100%;
+
+    gap: 16px !important;
+  }
+
+  .footer-bottom div a {
+    flex: 0 0 auto;
+
+    margin: 0;
+
+    font-size: .59rem;
+    line-height: 1.5;
+
+    text-align: left !important;
+
+    white-space: nowrap;
+  }
+}
+
+/* ==================================================
+   FOOTER — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .site-footer {
+    padding: 34px 0 19px;
+  }
+
+  .site-footer .container {
+    max-width: 780px;
+    margin-inline: auto;
+  }
+
+  /* ==================================================
+     GRID — MANTÉM 2 x 2
+  ================================================== */
+
+  .footer-grid {
+    --bs-gutter-x: 44px;
+    --bs-gutter-y: 0;
+  }
+
+  .footer-grid > .row > .col-12 {
+    width: 50%;
+  }
+
+  .footer-grid > .row > :nth-child(3) > .footer-column,
+  .footer-grid > .row > :nth-child(4) > .footer-column {
+  transform: none;
+  }
+
+  /* ==================================================
+     REMOVE AJUSTES HERDADOS DO DESKTOP
+  ================================================== */
+
+  .footer-brand {
+    transform: none;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-grid > .row > div > .footer-column {
+    padding-top: 0;
+  }
+
+  /* ==================================================
+     MARCA
+  ================================================== */
+
+  .footer-brand img {
+    width: 205px;
+
+    margin: 0 0 -34px;
+
+    transform: translateY(-48px);
+  }
+
+  .footer-brand p {
+    max-width: 240px;
+
+    margin: 0;
+
+    font-size: .62rem;
+    line-height: 1.65;
+
+    transform: translateY(-24px);
+  }
+
+  .footer-gold-line {
+    width: 22px;
+
+    margin-top: 13px;
+    margin-left: 0;
+
+    transform: translateY(-24px);
+  }
+
+  /* ==================================================
+     COLUNAS
+  ================================================== */
+
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+  }
+  .footer-column h3 {
+    margin: 0 0 11px;
+    font-size: .53rem;
+    letter-spacing: .18em;
+  }
+  .footer-column > a {
+    margin-bottom: 7px;
+    font-size: .62rem;
+  }
+
+  /* ============ CONTATO ============ */
+  .footer-contact-item {
+    width: 100%;
+    gap: 7px;
+    margin-bottom: 8px !important;
+  }
+  .footer-contact-item svg {
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    margin-top: 1px;
+  }
+  .footer-contact-item span {
+    min-width: 0;
+    font-size: .60rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  /* ============== ACOMPANHE =================== */
+  .footer-social p {
+    max-width: 250px;
+    margin: 0 0 10px;
+    font-size: .60rem;
+    line-height: 1.55;
+  }
+  .instagram-link {
+    gap: 7px;
+    margin-bottom: 11px !important;
+  }
+  .instagram-link svg {
+    width: 14px;
+    height: 14px;
+  }
+  .instagram-link span {
+    font-size: .62rem;
+  }
+
+  /* ============ BOTÃO WHATSAPP =================== */
+  .footer-whatsapp {
+    width: auto;
+    min-height: 36px;
+    padding: 0 13px;
+    font-size: .58rem !important;
+  }
+
+  /* =========== PARTE INFERIOR =============== */
+  .footer-bottom {
+    margin-top: 26px;
+    padding-top: 13px;
+    gap: 14px;
+    font-size: .52rem;
+  }
+  .footer-bottom div {
+    gap: 15px;
+  }
 }
 
 /* ============= RESPONSIVE =================== */
@@ -5262,222 +6034,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FOOTER — TABLET DEITADO
-   mantém estrutura de 4 colunas
-================================================== */
 
-
-
-  .site-footer {
-    padding: 44px 0 22px;
-  }
-
-  .site-footer .container {
-    max-width: 960px;
-    margin-inline: auto;
-  }
-
-
-
-  /* ==================================================
-     GRID — MANTÉM 4 COLUNAS
-  ================================================== */
-
-  .footer-grid {
-    --bs-gutter-x: 28px;
-    --bs-gutter-y: 28px;
-  }
-
-
-  /* ==================================================
-     REMOVE AJUSTES ESPECÍFICOS DO DESKTOP
-  ================================================== */
-
-  .footer-brand {
-    transform: none;
-    width: 160px;
-    height: auto;
-  }
-
-  .footer-grid > .row > div > .footer-column {
-    padding-top: 24px;
-  }
-
-
-  /* ==================================================
-     MARCA
-  ================================================== */
-
-  .footer-brand img {
-    display: block;
-
-    width: 300px;
-    height: auto;
-
-    object-fit: contain;
-    object-position: left center;
-
-    margin: 0;
-
-    transform: translateY(-14px);
-  }
-
-  .footer-brand p {
-    max-width: 310px;
-
-    margin: -34px 0 0;
-
-    color: rgba(var(--rgb-white), .55);
-
-    font-size: .80rem;
-    line-height: 1.7;
-  }
-
-  .footer-gold-line {
-  display: block;
-
-  width: 30px;
-  height: 1px;
-
-  margin-top: 16px;
-  margin-left: 0;
-
-  background: var(--gold);
-}
-
-
-  /* ==================================================
-     COLUNAS
-  ================================================== */
-
-  .footer-column {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .footer-column h3 {
-    margin: 0 0 16px;
-
-    font-size: .60rem;
-    letter-spacing: .19em;
-  }
-
-  .footer-column > a {
-    margin-bottom: 8px;
-
-    font-size: .67rem;
-    line-height: 1.45;
-  }
-
-
-  /* ==================================================
-     CONTATO
-  ================================================== */
-
-  .footer-contact-item {
-    width: 100%;
-
-    gap: 8px;
-
-    margin-bottom: 10px !important;
-  }
-
-  .footer-contact-item svg {
-    width: 14px;
-    height: 14px;
-
-    flex: 0 0 14px;
-
-    margin-top: 1px;
-  }
-
-  .footer-contact-item span {
-    min-width: 0;
-
-    font-size: .66rem;
-    line-height: 1.45;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* ==================================================
-     ACOMPANHE
-  ================================================== */
-
-  .footer-social p {
-    max-width: 205px;
-
-    margin: 0 0 13px;
-
-    font-size: .66rem;
-    line-height: 1.6;
-  }
-
-  .instagram-link {
-    gap: 8px;
-
-    margin-bottom: 14px !important;
-  }
-
-  .instagram-link svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .instagram-link span {
-    font-size: .68rem;
-  }
-
-
-  /* ==================================================
-     BOTÃO WHATSAPP
-  ================================================== */
-
-  .footer-whatsapp {
-    min-height: 38px;
-
-    padding: 0 14px;
-
-    font-size: .64rem !important;
-  }
-
-
-  /* ==================================================
-     PARTE INFERIOR
-  ================================================== */
-
-  .footer-bottom {
-    margin-top: 34px;
-    padding-top: 16px;
-
-    border-top: 1px solid rgba(var(--rgb-white), .10);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
-
-    color: rgba(var(--rgb-white), .60);
-
-    font-size: .70rem;
-  }
-
-  .footer-bottom > span {
-    max-width: 480px;
-  }
-
-  .footer-bottom div {
-    gap: 18px;
-  }
-
-  .footer-bottom div a {
-    font-size: .57rem;
-    white-space: nowrap;
-  }
 }
 
 /* ==================================================
@@ -5613,223 +6170,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FOOTER — TABLET EM PÉ
-   mantém estrutura 2 x 2
-================================================== */
 
-
-
-  .site-footer {
-    padding: 48px 0 24px;
-  }
-
-  .site-footer .container {
-    max-width: 700px;
-    margin-inline: auto;
-  }
-
-
-
-  /* ==================================================
-     GRID — MANTÉM 2 x 2
-  ================================================== */
-
-  .footer-grid {
-    --bs-gutter-x: 48px;
-    --bs-gutter-y: 20px;
-  }
-
-
-  /* ==================================================
-     REMOVE AJUSTES DO DESKTOP
-  ================================================== */
-
-  .footer-brand {
-    transform: translateY(-48px);
-
-    width: 100%;
-    min-width: 0;
-  }
-
-  .footer-grid > .row > div > .footer-column {
-    padding-top: 0;
-  }
-
-  .footer-grid > .row > :nth-child(2) > .footer-column {
-  padding-top: 5px;
-  }
-
-  /* ==================================================
-     MARCA
-  ================================================== */
-
-    .footer-brand img {
-    width: 205px;
-    height: auto;
-
-    object-fit: contain;
-    object-position: left center;
-
-    margin: 0;
-  }
-
-  .footer-brand p {
-    max-width: 275px;
-
-    margin: -24px 0 0;
-
-    color: rgba(var(--rgb-white), .55);
-
-    font-size: .74rem;
-    line-height: 1.72;
-  }
-
-  .footer-gold-line {
-    width: 26px;
-    height: 1px;
-
-    margin-top: 16px;
-    margin-left: 0;
-
-    background: var(--gold);
-  }
-
-
-  /* ==================================================
-     COLUNAS
-  ================================================== */
-
-  .footer-column {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .footer-column h3 {
-    margin: 0 0 16px;
-
-    font-size: .63rem;
-    letter-spacing: .20em;
-  }
-
-
-  /* ==================================================
-     NAVEGAÇÃO
-  ================================================== */
-
-  .footer-column > a {
-    margin-bottom: 8px;
-
-    font-size: .72rem;
-    line-height: 1.45;
-  }
-
-
-  /* ==================================================
-     CONTATO
-  ================================================== */
-
-  .footer-contact-item {
-    width: 100%;
-
-    gap: 9px;
-
-    margin-bottom: 10px !important;
-  }
-
-  .footer-contact-item svg {
-    width: 15px;
-    height: 15px;
-
-    flex: 0 0 15px;
-
-    margin-top: 1px;
-  }
-
-  .footer-contact-item span {
-    min-width: 0;
-
-    font-size: .70rem;
-    line-height: 1.5;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* ==================================================
-     ACOMPANHE
-  ================================================== */
-
-  .footer-social p {
-    max-width: 270px;
-
-    margin: 0 0 14px;
-
-    font-size: .70rem;
-    line-height: 1.62;
-  }
-
-  .instagram-link {
-    gap: 8px;
-
-    margin-bottom: 14px !important;
-  }
-
-  .instagram-link svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .instagram-link span {
-    font-size: .72rem;
-  }
-
-
-  /* ==================================================
-     BOTÃO WHATSAPP
-  ================================================== */
-
-  .footer-whatsapp {
-    min-height: 40px;
-
-    padding: 0 15px;
-
-    font-size: .68rem !important;
-  }
-
-
-  /* ==================================================
-     PARTE INFERIOR
-  ================================================== */
-
-  .footer-bottom {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    margin-top: 22px;
-    padding-top: 14px;
-
-    font-size: .60rem;
-    line-height: 1.5;
-  }
-
-  .footer-bottom > span {
-    max-width: 420px;
-  }
-
-  .footer-bottom div {
-    display: flex;
-
-    gap: 20px;
-  }
-
-  .footer-bottom div a {
-    font-size: .60rem;
-    white-space: nowrap;
-  }
 }
 
 /* ==================================================
@@ -5997,286 +6338,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FOOTER — CELULAR EM PÉ
-================================================== */
 
-
-
-  .site-footer {
-    padding: 16px 0 22px;
-  }
-
-  .site-footer .container {
-    max-width: 400px; /* 360px de conteudo + gutters do Bootstrap. */
-    padding-inline: clamp(20px, calc((100vw - 300px) / 2), 50px);
-    margin-inline: auto;
-  }
-
-
-  /* ==================================================
-     ESTRUTURA PRINCIPAL
-  ================================================== */
-
-  .footer-grid {
-    --bs-gutter-x: 28px;
-    --bs-gutter-y: 28px;
-  }
-
-
-  /*
-    IMPORTANTE:
-    remove o deslocamento aplicado no desktop
-  */
-
-  .footer-brand {
-    transform: none;
-    width: 100%;
-    margin-top: -14px;
-  }
-
-
-  /*
-    IMPORTANTE:
-    remove o padding-top das colunas 2, 3 e 4
-    aplicado no desktop
-  */
-
-  .footer-grid > .row > div > .footer-column {
-    padding-top: 0;
-  }
-
-
-  /* ==================================================
-     MARCA
-  ================================================== */
-
-  .footer-brand {
-    width: 100%;
-  }
-
-    .footer-brand img {
-      width: 230px;
-      height: auto;
-
-      object-fit: contain;
-      object-position: left center;
-
-      margin: 0;
-    }
-
-    .footer-brand p {
-      max-width: 290px;
-
-      margin: -27px 0 0;
-
-      color: rgba(var(--rgb-white), .55);
-
-      font-size: .72rem;
-      line-height: 1.75;
-    }
-
-    .footer-gold-line {
-      width: 26px;
-      height: 1px;
-
-      margin-top: 18px;
-      margin-left: 0;
-
-      background: var(--gold);
-     }
-
-
-  /* ==================================================
-     COLUNAS
-  ================================================== */
-
-  .footer-column {
-    width: 100%;
-    min-width: 0;
-
-    padding-top: 0;
-  }
-
-  .footer-column h3 {
-    margin: 0 0 15px;
-
-    font-size: .62rem;
-    letter-spacing: .20em;
-  }
-
-  .footer-column > a {
-    margin-bottom: 9px;
-
-    font-size: .72rem;
-  }
-
-
-  /* ==================================================
-     NAVEGAÇÃO — 2 COLUNAS
-  ================================================== */
-
-  .footer-grid > .row > :nth-child(2) > .footer-column {
-    display: grid;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    column-gap: 34px;
-    row-gap: 0;
-  }
-
-  .footer-grid > .row > :nth-child(2) > .footer-column h3 {
-    grid-column: 1 / -1;
-  }
-
-  .footer-grid > .row > :nth-child(2) > .footer-column > a {
-    width: 100%;
-
-    margin-bottom: 9px;
-
-    font-size: .72rem;
-  }
-
-
-  /* ==================================================
-     CONTATO
-  ================================================== */
-
-  .footer-contact-item {
-    width: 100%;
-
-    gap: 9px;
-
-    margin-bottom: 11px !important;
-  }
-
-  .footer-contact-item svg {
-    width: 15px;
-    height: 15px;
-
-    flex: 0 0 15px;
-
-    margin-top: 1px;
-  }
-
-  .footer-contact-item span {
-    min-width: 0;
-
-    font-size: .70rem;
-    line-height: 1.5;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* ==================================================
-     ACOMPANHE
-  ================================================== */
-
-  .footer-social p {
-    max-width: 290px;
-
-    margin: 0 0 15px;
-
-    font-size: .70rem;
-    line-height: 1.7;
-  }
-
-  .instagram-link {
-    gap: 9px;
-
-    margin-bottom: 16px !important;
-  }
-
-  .instagram-link svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .instagram-link span {
-    font-size: .72rem;
-  }
-
-
-  /* ==================================================
-     BOTÃO WHATSAPP
-  ================================================== */
-
-  .footer-whatsapp {
-    width: 100%;
-
-    min-height: 44px;
-
-    padding: 0 16px;
-
-    display: inline-flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: .71rem !important;
-
-    text-align: center;
-  }
-
-
-  /* ==================================================
-     PARTE INFERIOR
-  ================================================== */
-
-  .footer-bottom {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 13px;
-
-    margin-top: 30px;
-    padding-top: 17px;
-
-    font-size: .59rem;
-    line-height: 1.55;
-  }
-
-  .footer-bottom > span {
-    width: 100%;
-    max-width: 290px;
-  }
-
-
-  /* ==================================================
-     POLÍTICA + TERMOS
-  ================================================== */
-
-  .footer-bottom div {
-    display: inline-flex !important;
-
-    align-items: center;
-    justify-content: flex-start !important;
-
-    align-self: flex-start;
-
-    width: max-content !important;
-    max-width: 100%;
-
-    gap: 16px !important;
-  }
-
-  .footer-bottom div a {
-    flex: 0 0 auto;
-
-    margin: 0;
-
-    color: rgba(var(--rgb-white), .60);
-
-    font-size: .59rem;
-    line-height: 1.5;
-
-    text-align: left !important;
-
-    white-space: nowrap;
-  }
 
 /* ==================================================
    MODAL WHATSAPP — CELULAR EM PÉ
@@ -6600,173 +6662,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FOOTER — CELULAR DEITADO
-   mantém estrutura 2 x 2
-================================================== */
 
-
-
-  .site-footer {
-    padding: 34px 0 19px;
-  }
-
-  .site-footer .container {
-    max-width: 780px;
-    margin-inline: auto;
-  }
-
-
-
-  /* ==================================================
-     GRID — MANTÉM 2 x 2
-  ================================================== */
-
-  .footer-grid {
-    --bs-gutter-x: 44px;
-    --bs-gutter-y: 0;
-  }
-
-  .footer-grid > .row > .col-12 {
-    width: 50%;
-  }
-
-  .footer-grid > .row > :nth-child(3) > .footer-column,
-  .footer-grid > .row > :nth-child(4) > .footer-column {
-  transform: none;
-  }
-
-  /* ==================================================
-     REMOVE AJUSTES HERDADOS DO DESKTOP
-  ================================================== */
-
-  .footer-brand {
-    transform: none;
-  }
-
-  .footer-grid > .row > div > .footer-column {
-    padding-top: 0;
-  }
-
-
-  /* ==================================================
-     MARCA
-  ================================================== */
-
-  .footer-brand {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .footer-brand img {
-    width: 205px;
-    height: auto;
-
-    object-fit: contain;
-    object-position: left center;
-
-    margin: 0 0 -34px;
-
-    transform: translateY(-48px);
-  }
-
-  .footer-brand p {
-    max-width: 240px;
-
-    margin: 0;
-
-    font-size: .62rem;
-    line-height: 1.65;
-
-    transform: translateY(-24px);
-  }
-
-  .footer-gold-line {
-    width: 22px;
-    height: 1px;
-
-    margin-top: 13px;
-    margin-left: 0;
-
-    transform: translateY(-24px);
-  }
-
-
-  /* ==================================================
-     COLUNAS
-  ================================================== */
-
-  .footer-column {
-    width: 100%;
-    min-width: 0;
-  }
-  .footer-column h3 {
-    margin: 0 0 11px;
-    font-size: .53rem;
-    letter-spacing: .18em;
-  }
-  .footer-column > a {
-    margin-bottom: 7px;
-    font-size: .62rem;
-  }
-
-
-  /* ============ CONTATO ============ */
-  .footer-contact-item {
-    width: 100%;
-    gap: 7px;
-    margin-bottom: 8px !important;
-  }
-  .footer-contact-item svg {
-    width: 13px;
-    height: 13px;
-    flex: 0 0 13px;
-    margin-top: 1px;
-  }
-  .footer-contact-item span {
-    min-width: 0;
-    font-size: .60rem;
-    line-height: 1.45;
-    overflow-wrap: anywhere;
-  }
-
-  /* ============== ACOMPANHE =================== */
-  .footer-social p {
-    max-width: 250px;
-    margin: 0 0 10px;
-    font-size: .60rem;
-    line-height: 1.55;
-  }
-  .instagram-link {
-    gap: 7px;
-    margin-bottom: 11px !important;
-  }
-  .instagram-link svg {
-    width: 14px;
-    height: 14px;
-  }
-  .instagram-link span {
-    font-size: .62rem;
-  }
-
-  /* ============ BOTÃO WHATSAPP =================== */
-  .footer-whatsapp {
-    width: auto;
-    min-height: 36px;
-    padding: 0 13px;
-    font-size: .58rem !important;
-  }
-
-  /* =========== PARTE INFERIOR =============== */
-  .footer-bottom {
-    margin-top: 26px;
-    padding-top: 13px;
-    gap: 14px;
-    font-size: .52rem;
-  }
-  .footer-bottom div {
-    gap: 15px;
-  }
 
 /* ==== MODAL WHATSAPP — CELULAR DEITADO — DUAS PSICÓLOGAS LADO A LADO ==== */
 
@@ -7008,7 +6904,7 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   .hero { --cta-sheen-delay: -1.8s; }
 
 
-  .site-footer { --cta-sheen-delay: -5.1s; }
+
   .concern-card:not(.open) {
     border-color: rgba(56,127,136,.44);
     box-shadow: 0 8px 22px rgba(var(--rgb-navy),.10), 0 0 18px rgba(56,127,136,.14);
