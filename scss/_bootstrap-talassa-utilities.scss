@@ -1,0 +1,49 @@
+// Lista explícita das utilities observadas no site. Atualizar e validar ao
+// adicionar uma classe ao HTML. Não redefine propriedades/valores do Bootstrap.
+$talassa-bootstrap-utilities: $utilities;
+
+@function talassa-select-utility($family, $keys) {
+  $utility: map-get($talassa-bootstrap-utilities, $family);
+  @if $utility == null {
+    @error "Família Bootstrap desconhecida: #{$family}";
+  }
+  $available: map-get($utility, values);
+  $selected: ();
+  @each $key in $keys {
+    @if type-of($available) == "map" {
+      @if not map-has-key($available, $key) {
+        @error "Valor Bootstrap desconhecido: #{$family}/#{$key}";
+      }
+      $selected: map-merge($selected, ($key: map-get($available, $key)));
+    } @else {
+      @if not index($available, $key) {
+        @error "Valor Bootstrap desconhecido: #{$family}/#{$key}";
+      }
+      $selected: map-merge($selected, ($key: $key));
+    }
+  }
+  @return map-merge($utility, (values: $selected, responsive: false, print: false));
+}
+
+// Mesma ordem relativa das famílias e dos valores no Bootstrap 5.3.8.
+$talassa-base-utilities: (
+  "display": (block, flex),
+  "width": (100,),
+  "height": (100,),
+  "flex-direction": (column,),
+  "flex-shrink": (shrink-0,),
+  "flex-wrap": (wrap,),
+  "justify-content": (center, between),
+  "align-items": (start, center, stretch)
+);
+$talassa-xl-utilities: (
+  "display": (none,),
+  "flex-direction": (row,),
+  "flex-grow": (grow-1,),
+  "align-items": (center,)
+);
+
+$utilities: ();
+@each $family, $keys in $talassa-base-utilities {
+  $utilities: map-merge($utilities, ($family: talassa-select-utility($family, $keys)));
+}

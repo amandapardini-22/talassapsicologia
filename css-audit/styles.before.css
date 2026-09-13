@@ -1,6 +1,18 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/montserrat-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
-
-
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/montserrat-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Montserrat";
@@ -18,7 +30,13 @@
   font-display: swap;
 }
 
-
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("assets/fonts/cormorant-garamond-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
 
 :root {
   /* Cores principais */
@@ -2405,7 +2423,12 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   pointer-events: none;
   transition: none;
 }
-
+@keyframes talassa-button-sheen {
+  0% { transform: translateX(-180%) skewX(-20deg); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(430%) skewX(-20deg); opacity: 0; }
+}
 body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible {
   outline: 2px solid #387F88;
   outline-offset: 3px;
@@ -2429,7 +2452,12 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   body .btn.js-whatsapp:hover { transform: none; }
 }
 /* Touch accents preserve the approved gold/teal palettes and desktop states. */
-
+@keyframes talassa-button-sheen-auto {
+  0%, 74% { transform: translateX(-180%) skewX(-20deg); opacity: 0; }
+  77% { opacity: 1; }
+  86% { opacity: 1; }
+  90%, 100% { transform: translateX(430%) skewX(-20deg); opacity: 0; }
+}
 @media (hover: none), (pointer: coarse) {
   body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after {
     animation: talassa-button-sheen-auto 6s ease-in-out infinite;

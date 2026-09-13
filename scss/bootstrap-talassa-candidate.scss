@@ -1,0 +1,25 @@
+// Candidato para revisão; não é o entrypoint dos scripts de produção.
+// Compilar: node node_modules/sass/sass.js scss/bootstrap-talassa-candidate.scss assets/css/bootstrap-talassa-candidate.css --style=expanded --no-source-map --quiet-deps
+
+// Opções oficiais: nenhuma classe row-cols-N ou g/gx/gy é usada no site.
+// Não altera $grid-columns, $grid-gutter-width, .row ou .row > *.
+$grid-row-columns: 0;
+$gutters: ();
+
+@import "bootstrap-talassa-foundation";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+
+// Nenhum helper Bootstrap é usado no HTML, CSS próprio ou JavaScript.
+// Os estilos e os valores das utilities vêm do mapa original do Bootstrap.
+@import "bootstrap-talassa-utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// A API responsive:true geraria a matriz inteira de breakpoints.
+// O mesmo gerador oficial é chamado somente para as quatro variantes xl.
+@include media-breakpoint-up(xl) {
+  @each $family, $keys in $talassa-xl-utilities {
+    @include generate-utility(talassa-select-utility($family, $keys), breakpoint-infix(xl));
+  }
+}

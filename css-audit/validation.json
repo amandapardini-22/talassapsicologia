@@ -1,0 +1,552 @@
+{
+  "interaction": {
+    "modalOpen": true,
+    "modalClosed": true,
+    "menu": true,
+    "card": true,
+    "faq": true
+  },
+  "results": [
+    {
+      "width": 1440,
+      "height": 900,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "motion": "reduce",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "motion": "reduce",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "motion": "no-preference",
+      "open": false,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "motion": "no-preference",
+      "open": true,
+      "elements": 398,
+      "differenceCount": 0,
+      "samples": []
+    }
+  ],
+  "retryNote": "Repeated 820x1180/reduce/closed after settling media events, pausing GSAP and forcing layout before awaiting font readiness for each stylesheet; prior results retained."
+}

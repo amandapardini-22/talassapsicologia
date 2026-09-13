@@ -1,0 +1,933 @@
+{
+  "protectedFiles": {
+    "index.html": true,
+    "styles.css": true,
+    "script.js": true,
+    "assets/css/bootstrap-talassa.css": true,
+    "assets/css/bootstrap-talassa.min.css": true,
+    "package.json": true,
+    "package-lock.json": true
+  },
+  "results": [
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "state": "closed",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": false,
+      "scrolled": false
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "state": "open",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": false,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "state": "keyboard",
+      "elements": 399,
+      "differentElements": 0,
+      "samples": [],
+      "removedMatchingSelectors": [],
+      "focusVisible": true,
+      "openMenu": false,
+      "openModal": true,
+      "scrolled": true
+    }
+  ],
+  "screenshots": [
+    {
+      "width": 1440,
+      "height": 900,
+      "fullPage": true,
+      "differentPixels": 0
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "fullPage": true,
+      "differentPixels": 0
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fullPage": true,
+      "differentPixels": 0
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "fullPage": true,
+      "differentPixels": 0
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "fullPage": false,
+      "differentPixels": 0
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "fullPage": false,
+      "differentPixels": 0
+    }
+  ],
+  "interactions": [
+    {
+      "width": 1440,
+      "height": 900,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 767,
+      "height": 1024,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1025,
+      "height": 768,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1199,
+      "height": 820,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 1200,
+      "height": 820,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 900,
+      "height": 500,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "which": "original",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    },
+    {
+      "width": 900,
+      "height": 501,
+      "which": "candidate",
+      "escape": true,
+      "overlay": true,
+      "close": true
+    }
+  ],
+  "errors": []
+}

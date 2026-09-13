@@ -1,0 +1,14 @@
+{
+  "original": {
+    "bytes": 119715,
+    "gzip": 13802,
+    "rules": 1688
+  },
+  "candidate": {
+    "bytes": 18976,
+    "gzip": 3346,
+    "rules": 186
+  },
+  "rawReductionPercent": 84.14902059056926,
+  "gzipReductionPercent": 75.75713664686278
+}
