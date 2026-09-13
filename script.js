@@ -1,107 +1,64 @@
-/* ==== MODAL — ESCOLHER PSICÓLOGA ====== */
+/* ==================================================
+   MODAL — ESCOLHER PSICÓLOGA
+================================================== */
 
-const whatsappModal =
-  document.getElementById("whatsappModal");
-const whatsappButtons =
-  document.querySelectorAll(".js-whatsapp");
-const whatsappClose =
-  document.querySelector(".whatsapp-modal-close");
-const whatsappOverlay =
-  document.querySelector(".whatsapp-modal-overlay");
+const whatsappModal = document.getElementById("whatsappModal");
+const whatsappButtons = document.querySelectorAll(".js-whatsapp");
+const whatsappClose = document.querySelector(".whatsapp-modal-close");
+const whatsappOverlay = document.querySelector(".whatsapp-modal-overlay");
+const carolLink = document.querySelector(".whatsapp-carol");
+const carolinaLink = document.querySelector(".whatsapp-carolina");
 
-/* ===== WHATSAPP DAS PSICÓLOGAS ======== */
+const whatsappCarol = "551140407979";
+const whatsappCarolina = "5511913678621";
+const whatsappMessage = encodeURIComponent(
+  "Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia."
+);
 
-const whatsappCarol =
-  "551140407979";
-const whatsappCarolina =
-  "5511913678621";
-
-/* ======== MENSAGEM INICIAL ================== */
-
-const whatsappMessage =
-  encodeURIComponent(
-    "Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia."
-  );
-
-/* ======== LINKS DAS PSICÓLOGAS ============ */
-
-const carolLink =
-  document.querySelector(".whatsapp-carol");
-const carolinaLink =
-  document.querySelector(".whatsapp-carolina");
-
-if (carolLink) {
-  carolLink.href =
-    `https://wa.me/${whatsappCarol}?text=${whatsappMessage}`;
+function setWhatsappLink(element, phone) {
+  if (!element) return;
+  element.href = `https://wa.me/${phone}?text=${whatsappMessage}`;
 }
 
-if (carolinaLink) {
-  carolinaLink.href =
-    `https://wa.me/${whatsappCarolina}?text=${whatsappMessage}`;
+setWhatsappLink(carolLink, whatsappCarol);
+setWhatsappLink(carolinaLink, whatsappCarolina);
+
+function openWhatsappModal() {
+  if (!whatsappModal) return;
+
+  whatsappModal.classList.add("open");
+  whatsappModal.setAttribute("aria-hidden", "false");
 }
 
-/* ============  ABRIR MODAL ===================== */
+function closeWhatsappModal() {
+  if (!whatsappModal) return;
+
+  whatsappModal.classList.remove("open");
+  whatsappModal.setAttribute("aria-hidden", "true");
+}
 
 whatsappButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    /* Rastreamento */
-    window.dataLayer =
-      window.dataLayer || [];
-
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "whatsapp_click",
       location: button.textContent.trim()
     });
 
-    /* Abre o modal */
-    if (!whatsappModal) {
-      return;
-    }
-
-    whatsappModal.classList.add("open");
-    whatsappModal.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
+    openWhatsappModal();
   });
-
 });
 
-/* =============== FECHAR MODAL ============== */
-
-function closeWhatsappModal() {
-
-  if (!whatsappModal) {
-    return;
-  }
-  whatsappModal.classList.remove("open");
-  whatsappModal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-}
-
 if (whatsappClose) {
-  whatsappClose.addEventListener(
-    "click",
-    closeWhatsappModal
-  );
-
+  whatsappClose.addEventListener("click", closeWhatsappModal);
 }
 
 if (whatsappOverlay) {
-  whatsappOverlay.addEventListener(
-    "click",
-    closeWhatsappModal
-  );
-
+  whatsappOverlay.addEventListener("click", closeWhatsappModal);
 }
 
-/* Fecha usando ESC */
 document.addEventListener("keydown", (event) => {
   if (
     event.key === "Escape" &&
@@ -112,67 +69,53 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// ===== HEADER =====
-const header = document.querySelector('.site-header');
+/* ==================================================
+   HEADER
+================================================== */
+
+const header = document.querySelector(".site-header");
+
 function updateHeader() {
   if (!header) return;
-  header.classList.toggle('scrolled', window.scrollY > 40);
+  header.classList.toggle("scrolled", window.scrollY > 40);
 }
 
-window.addEventListener('scroll', updateHeader);
+window.addEventListener("scroll", updateHeader);
 updateHeader();
 
+/* ==================================================
+   MENU MOBILE
+================================================== */
 
-// ===== MENU MOBILE =====
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
 
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
+function closeMobileMenu() {
+  if (!menuToggle || !nav) return;
+
+  nav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  nav.scrollTop = 0;
+}
 
 if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
 
-  menuToggle.addEventListener('click', () => {
-
-    const isOpen = nav.classList.toggle('open');
-
-    menuToggle.setAttribute(
-      'aria-expanded',
-      String(isOpen)
-    );
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
 
     if (isOpen) {
-
-      /* Sempre abre o menu no primeiro item */
       nav.scrollTop = 0;
 
-      /*
-        Reforça a posição depois que
-        o navegador renderiza o dropdown.
-      */
       requestAnimationFrame(() => {
         nav.scrollTop = 0;
       });
     }
-
   });
 
-
-  nav.querySelectorAll('a').forEach(link => {
-
-    link.addEventListener('click', () => {
-
-      nav.classList.remove('open');
-
-      menuToggle.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-      nav.scrollTop = 0;
-
-    });
-
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
   });
-
 }
 
 /* ============ CARDS — DEMANDAS ================= */
@@ -242,25 +185,51 @@ concernCards.forEach((card) => {
 
 });
 
-// ===== FAQ =====
-document.querySelectorAll('.faq-item').forEach(item => {
-  const button = item.querySelector('button');
+/* ==================================================
+   FAQ
+================================================== */
 
-  if (!button) return;
+const faqItems = document.querySelectorAll(".faq-item");
 
-  button.addEventListener('click', () => {
-    const wasOpen = item.classList.contains('open');
+function setFaqState(item, isOpen) {
+  const button = item.querySelector("button");
+  const answer = item.querySelector(":scope > div");
 
-    document.querySelectorAll('.faq-item.open').forEach(el => {
-      el.classList.remove('open');
+  item.classList.toggle("open", isOpen);
+
+  if (button) {
+    button.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  if (answer) {
+    answer.setAttribute("aria-hidden", String(!isOpen));
+  }
+}
+
+faqItems.forEach((item, index) => {
+  const button = item.querySelector("button");
+  const answer = item.querySelector(":scope > div");
+
+  if (!button || !answer) return;
+
+  const answerId = answer.id || `faq-answer-${index + 1}`;
+  answer.id = answerId;
+  button.setAttribute("aria-controls", answerId);
+
+  setFaqState(item, item.classList.contains("open"));
+
+  button.addEventListener("click", () => {
+    const wasOpen = item.classList.contains("open");
+
+    faqItems.forEach((otherItem) => {
+      setFaqState(otherItem, false);
     });
 
     if (!wasOpen) {
-      item.classList.add('open');
+      setFaqState(item, true);
     }
   });
 });
-
 
 /* ========== CARROSSEL — COMO FUNCIONA ============= */
 
@@ -302,6 +271,7 @@ function goToProcessStep(index) {
 /* ==== PRÓXIMA ETAPA 01 → 02 → 03 → 01 =========== */
 
 function nextProcessStep() {
+  if (!processSteps.length) return;
 
   processIndex =
     (processIndex + 1) % processSteps.length;
@@ -312,6 +282,7 @@ function nextProcessStep() {
 /* ====== ETAPA ANTERIOR ==================== */
 
 function previousProcessStep() {
+  if (!processSteps.length) return;
 
   processIndex =
     (processIndex - 1 + processSteps.length)
