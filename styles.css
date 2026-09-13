@@ -3807,7 +3807,9 @@ p { margin-top: 0; }
 }
 }
 
-/* CTA */
+/* ==================================================
+   FINAL CTA — BASE / DESKTOP
+================================================== */
 
 .final-cta {
   position: relative;
@@ -3817,30 +3819,31 @@ p { margin-top: 0; }
   color: #fff;
 }
 
-/* círculo maior no canto superior direito */
-.final-cta::before {
+.final-cta::before,
+.final-cta::after,
+.final-cta-inner::before {
   content: "";
   position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* círculo maior no canto superior direito */
+.final-cta::before {
   width: 520px;
   height: 520px;
   right: -180px;
   top: -240px;
-  border-radius: 50%;
   background: rgba(255,255,255,.07);
-  z-index: 0;
 }
 
 /* círculo mais escuro no canto inferior esquerdo */
 .final-cta::after {
-  content: "";
-  position: absolute;
   width: 320px;
   height: 320px;
   left: -140px;
   bottom: -170px;
-  border-radius: 50%;
   background: rgba(44,47,81,.10);
-  z-index: 0;
 }
 .final-cta-inner {
   min-height: 255px;
@@ -3854,16 +3857,12 @@ p { margin-top: 0; }
 
 /* círculo interno extra, parecido com o hero */
 .final-cta-inner::before {
-  content: "";
-  position: absolute;
   width: 430px;
   height: 430px;
   right: 120px;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 50%;
   background: rgba(255,255,255,.05);
-  z-index: 0;
 }
 .final-cta h2 {
   color: var(--white);
@@ -3884,8 +3883,6 @@ p { margin-top: 0; }
 .final-cta-actions {
   position: relative;
   z-index: 2;
-}
-.final-cta-actions {
   text-align: center;
 }
 
@@ -3914,7 +3911,6 @@ p { margin-top: 0; }
 }
 .final-cta .btn-gold:hover {
   background: #C5A56F;
-  color: #173D51;
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(44, 47, 81, .16);
 }
@@ -3923,6 +3919,306 @@ p { margin-top: 0; }
   margin-top: 11px;
   font-size: .78rem;
   color: rgba(255,255,255,.72);
+}
+
+/* Intervalo do brilho automático em dispositivos de toque. */
+@media (hover: none), (pointer: coarse) {
+  .final-cta { --cta-sheen-delay: -4.2s; }
+}
+
+/* ==================================================
+   FINAL CTA — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .final-cta-inner {
+    min-height: 230px;
+
+    gap: 42px;
+
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  .final-cta-inner > .col-lg {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .final-cta-actions {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+
+  .final-cta h2 {
+    max-width: 620px;
+    font-size: 2.05rem;
+    line-height: 1.07;
+  }
+
+  .final-cta p {
+    max-width: 590px;
+
+    font-size: .86rem;
+    line-height: 1.65;
+  }
+
+  .final-cta .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: .62rem;
+  }
+
+  .final-cta .btn-gold {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    font-size: .76rem;
+  }
+
+  .final-cta-actions span {
+    margin-top: 9px;
+
+    font-size: .62rem;
+  }
+}
+
+/* ==================================================
+   FINAL CTA — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .final-cta-inner {
+    min-height: 0;
+
+    gap: 30px;
+
+    padding-top: 62px;
+    padding-bottom: 66px;
+  }
+
+  .final-cta h2 {
+    max-width: 570px;
+    font-size: 2.6rem;
+    line-height: 1.04;
+  }
+
+  .final-cta p {
+    max-width: 560px;
+
+    font-size: .94rem;
+  }
+
+  .final-cta .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: .68rem;
+  }
+
+  .final-cta-actions {
+    align-items: flex-start;
+
+    text-align: left;
+  }
+
+  .final-cta .btn-gold {
+    width: auto;
+    min-width: 360px;
+
+    min-height: 52px;
+
+    padding: 0 26px;
+
+    font-size: .82rem;
+  }
+
+  .final-cta-actions span {
+    margin-top: 10px;
+
+    font-size: .68rem;
+  }
+
+  /* Círculos adaptados */
+
+  .final-cta::before {
+    width: 440px;
+    height: 440px;
+
+    right: -210px;
+    top: -160px;
+  }
+
+  .final-cta::after {
+    width: 270px;
+    height: 270px;
+
+    left: -150px;
+    bottom: -130px;
+  }
+
+  .final-cta-inner::before {
+    width: 360px;
+    height: 360px;
+
+    right: -30px;
+    top: 45%;
+  }
+}
+
+/* ==================================================
+   FINAL CTA — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .final-cta-inner {
+    min-height: 0;
+
+    gap: 27px;
+
+    padding-top: 52px;
+    padding-bottom: 56px;
+  }
+
+  .final-cta .eyebrow {
+    margin-bottom: 13px;
+
+    font-size: .58rem;
+    letter-spacing: .21em;
+  }
+
+  .final-cta h2 {
+    max-width: 310px;
+    margin-bottom: 16px;
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .final-cta p {
+    max-width: 320px;
+
+    font-size: .78rem;
+    line-height: 1.65;
+  }
+
+  .final-cta-actions {
+    width: 100%;
+
+    align-items: stretch;
+
+  }
+
+  .final-cta .btn-gold {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 50px;
+
+    padding: 0 15px;
+
+    font-size: .72rem;
+
+    white-space: normal;
+  }
+
+  .final-cta-actions span {
+    margin-top: 10px;
+
+    font-size: .59rem;
+    line-height: 1.45;
+  }
+
+  /* Decoração */
+
+  .final-cta::before {
+    width: 370px;
+    height: 370px;
+
+    right: -220px;
+    top: -120px;
+  }
+
+  .final-cta::after {
+    width: 240px;
+    height: 240px;
+
+    bottom: -110px;
+  }
+
+  .final-cta-inner::before {
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    top: 42%;
+  }
+}
+
+/* ==================================================
+   FINAL CTA — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .final-cta-inner {
+    min-height: 210px;
+
+    gap: 32px;
+
+    padding-top: 32px;
+    padding-bottom: 34px;
+  }
+
+  .final-cta-inner > .col-lg {
+    flex: 1.15 1 0;
+    min-width: 0;
+  }
+
+  .final-cta-actions {
+    flex: .85 1 0;
+    min-width: 220px;
+  }
+
+  .final-cta .eyebrow {
+    margin-bottom: 8px;
+
+    font-size: .48rem;
+    letter-spacing: .19em;
+  }
+
+  .final-cta h2 {
+    max-width: 430px;
+    margin-bottom: 10px;
+    font-size: 1.55rem;
+    line-height: 1.04;
+  }
+
+  .final-cta p {
+    max-width: 420px;
+
+    font-size: .62rem;
+    line-height: 1.5;
+  }
+
+  .final-cta .btn-gold {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 38px;
+
+    padding: 0 12px;
+
+    font-size: .60rem;
+  }
+
+  .final-cta-actions span {
+    margin-top: 7px;
+
+    font-size: .50rem;
+    line-height: 1.4;
+  }
 }
 
 /* FAQ */
@@ -4643,67 +4939,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FINAL CTA — TABLET DEITADO
-================================================== */
 
-
-
-  .final-cta-inner {
-    min-height: 230px;
-
-
-    gap: 42px;
-
-    padding-top: 46px;
-    padding-bottom: 46px;
-  }
-
-  .final-cta-inner > .col-lg {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-  .final-cta-actions {
-    flex: 0 0 300px;
-    width: 300px;
-  }
-
-  .final-cta h2 {
-    max-width: 620px;
-    font-size: 2.05rem;
-    line-height: 1.07;
-  }
-
-  .final-cta p {
-    max-width: 590px;
-
-    font-size: .86rem;
-    line-height: 1.65;
-  }
-
-  .final-cta .eyebrow {
-    margin-bottom: 12px;
-
-    font-size: .62rem;
-  }
-
-  .final-cta .btn-gold {
-    width: 100%;
-    min-width: 0;
-
-    min-height: 48px;
-
-    padding: 0 18px;
-
-    font-size: .76rem;
-  }
-
-  .final-cta-actions span {
-    margin-top: 9px;
-
-    font-size: .62rem;
-  }
 
 
 /* ==================================================
@@ -5108,91 +5344,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FINAL CTA — TABLET EM PÉ
-================================================== */
 
-
-
-  .final-cta-inner {
-    min-height: 0;
-
-
-    gap: 30px;
-
-    padding-top: 62px;
-    padding-bottom: 66px;
-  }
-
-  .final-cta h2 {
-    max-width: 570px;
-    margin-bottom: 18px;
-    font-size: 2.6rem;
-    line-height: 1.04;
-  }
-
-  .final-cta p {
-    max-width: 560px;
-
-    font-size: .94rem;
-    line-height: 1.7;
-  }
-
-  .final-cta .eyebrow {
-    margin-bottom: 14px;
-
-    font-size: .68rem;
-  }
-
-  .final-cta-actions {
-    align-items: flex-start;
-
-    text-align: left;
-  }
-
-  .final-cta .btn-gold {
-    width: auto;
-    min-width: 360px;
-
-    min-height: 52px;
-
-    padding: 0 26px;
-
-    font-size: .82rem;
-  }
-
-  .final-cta-actions span {
-    margin-top: 10px;
-
-    font-size: .68rem;
-  }
-
-
-  /* Círculos adaptados */
-
-  .final-cta::before {
-    width: 440px;
-    height: 440px;
-
-    right: -210px;
-    top: -160px;
-  }
-
-  .final-cta::after {
-    width: 270px;
-    height: 270px;
-
-    left: -150px;
-    bottom: -130px;
-  }
-
-  .final-cta-inner::before {
-    width: 360px;
-    height: 360px;
-
-    right: -30px;
-    top: 45%;
-  }
 
 
 /* ==================================================
@@ -5748,97 +5900,7 @@ p { margin-top: 0; }
   }
 
 
-/* ==================================================
-   FINAL CTA — CELULAR EM PÉ
-================================================== */
 
-
-
-  .final-cta-inner {
-    min-height: 0;
-
-
-    gap: 27px;
-
-    padding-top: 52px;
-    padding-bottom: 56px;
-  }
-
-  .final-cta .eyebrow {
-    margin-bottom: 13px;
-
-    font-size: .58rem;
-    letter-spacing: .21em;
-  }
-
-  .final-cta h2 {
-    max-width: 310px;
-    margin-bottom: 16px;
-    font-size: 2rem;
-    line-height: 1.05;
-  }
-
-  .final-cta p {
-    max-width: 320px;
-
-    font-size: .78rem;
-    line-height: 1.65;
-  }
-
-  .final-cta-actions {
-    width: 100%;
-
-    align-items: stretch;
-
-    text-align: center;
-  }
-
-  .final-cta .btn-gold {
-    width: 100%;
-    min-width: 0;
-
-    min-height: 50px;
-
-    padding: 0 15px;
-
-    font-size: .72rem;
-
-    white-space: normal;
-  }
-
-  .final-cta-actions span {
-    margin-top: 10px;
-
-    font-size: .59rem;
-    line-height: 1.45;
-  }
-
-
-  /* Decoração */
-
-  .final-cta::before {
-    width: 370px;
-    height: 370px;
-
-    right: -220px;
-    top: -120px;
-  }
-
-  .final-cta::after {
-    width: 240px;
-    height: 240px;
-
-    left: -140px;
-    bottom: -110px;
-  }
-
-  .final-cta-inner::before {
-    width: 300px;
-    height: 300px;
-
-    right: -120px;
-    top: 42%;
-  }
 
 /* ==================================================
    FOOTER — CELULAR EM PÉ
@@ -6437,70 +6499,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FINAL CTA — CELULAR DEITADO
-================================================== */
 
-
-
-  .final-cta-inner {
-    min-height: 210px;
-
-
-    gap: 32px;
-
-    padding-top: 32px;
-    padding-bottom: 34px;
-  }
-
-  .final-cta-inner > .col-lg {
-    flex: 1.15 1 0;
-    min-width: 0;
-  }
-
-  .final-cta-actions {
-    flex: .85 1 0;
-    min-width: 220px;
-  }
-
-  .final-cta .eyebrow {
-    margin-bottom: 8px;
-
-    font-size: .48rem;
-    letter-spacing: .19em;
-  }
-
-  .final-cta h2 {
-    max-width: 430px;
-    margin-bottom: 10px;
-    font-size: 1.55rem;
-    line-height: 1.04;
-  }
-
-  .final-cta p {
-    max-width: 420px;
-
-    font-size: .62rem;
-    line-height: 1.5;
-  }
-
-  .final-cta .btn-gold {
-    width: 100%;
-    min-width: 0;
-
-    min-height: 38px;
-
-    padding: 0 12px;
-
-    font-size: .60rem;
-  }
-
-  .final-cta-actions span {
-    margin-top: 7px;
-
-    font-size: .50rem;
-    line-height: 1.4;
-  }
 
 
 /* ==================================================
@@ -6995,7 +6994,7 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   .site-header { --cta-sheen-delay: -.5s; }
   .hero { --cta-sheen-delay: -1.8s; }
 
-  .final-cta { --cta-sheen-delay: -4.2s; }
+
   .site-footer { --cta-sheen-delay: -5.1s; }
   .concern-card:not(.open) {
     border-color: rgba(56,127,136,.44);
