@@ -3807,528 +3807,6 @@ p { margin-top: 0; }
 }
 }
 
-/* ==================================================
-   PRACTICAL — BASE / DESKTOP
-================================================== */
-
-.practical{
-  position:relative;
-  padding:80px 0 90px;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(var(--rgb-white), .08),rgba(var(--rgb-white), .08)),
-    url("assets/fundo-demandas.webp") center/cover no-repeat;
-}
-.practical::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(var(--rgb-cream), .58);
-  pointer-events: none;
-}
-.practical .container{
-  position:relative;
-  z-index:2;
-}
-.practical-box{
-  --practical-info-width: 56%;
-  --practical-next-width: 44%;
-  --practical-info-gap: 20.16px;
-  --practical-next-gap: 15.84px;
-  /* Caixa com borda: preserva a largura externa e o padding interno existentes. */
-  width:min(calc(100% - 40px), var(--container));
-  gap:36px;
-  padding:34px 38px;
-  background:rgba(var(--rgb-card), .72);
-  border:1px solid rgba(var(--rgb-gold), .20);
-  border-radius:18px;
-  box-shadow:0 10px 24px rgba(var(--rgb-navy), .06);
-  backdrop-filter:blur(4px);
-}
-/* Mantem a proporcao sobre o espaco disponivel, descontado o gap. */
-@media (min-width: 1025px),
-  (min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
-  (orientation: landscape) and (max-height: 500px) {
-  .practical-box > .practical-info {
-    width: calc(var(--practical-info-width) - var(--practical-info-gap));
-    min-width: 0;
-  }
-  .practical-box > .next-step {
-    width: calc(var(--practical-next-width) - var(--practical-next-gap));
-    min-width: 0;
-  }
-}
-
-.practical h2{
-  font-size:2.3rem;
-  margin-bottom:24px;
-}
-.practical-info dl{
-  margin:0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0 40px;
-}
-.practical-info dl div{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  padding:10px 0;
-  border-bottom:1px solid rgba(var(--rgb-navy), .08);
-}
-.practical-info dt{
-  color:#798188;
-  font-size:.77rem;
-}
-.practical-info dd{
-  margin:0;
-  font-weight:600;
-  font-size:.78rem;
-  text-align:right;
-}
-.next-step{
-  padding:30px;
-  background:rgba(var(--rgb-white), .52);
-  border:1px solid rgba(var(--rgb-gold), .16);
-  border-radius:14px;
-  backdrop-filter:blur(3px);
-}
-.next-step h2{
-  margin-bottom:14px;
-}
-.next-step > p:not(.eyebrow):not(.privacy-note){
-  color:#68737a;
-  font-size:.85rem;
-}
-.next-step .btn{
-  margin-top:4px;
-}
-.next-step .privacy-note {
-  color: var(--muted);
-}
-
-body .practical .next-step .btn.js-whatsapp {
-  --cta-glass-bg: linear-gradient(120deg, rgba(56,127,136,.96), rgba(45,112,122,.98));
-  --cta-glass-hover: linear-gradient(120deg, rgba(62,137,146,.98), rgba(50,122,132,.98));
-  --cta-glass-text: var(--white);
-  --cta-glass-border: rgba(255,255,255,.16);
-  --cta-glass-border-active: rgba(255,255,255,.38);
-}
-
-/* ==================================================
-   PRACTICAL — TABLET DEITADO
-================================================== */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .practical {
-  padding: 76px 0 82px;
-  }
-
-  .practical-box {
-  --practical-info-width: 59%;
-  --practical-next-width: 41%;
-  --practical-info-gap: 17.7px;
-  --practical-next-gap: 12.3px;
-
-  gap: 30px;
-
-  padding: 34px 34px;
-
-  border-radius: 17px;
-  }
-
-  .practical h2 {
-  font-size: 2.45rem;
-  margin-bottom: 26px;
-  }
-
-  .practical-info dl {
-  grid-template-columns:
-  repeat(2, minmax(0, 1fr));
-
-  gap: 0 34px;
-  }
-
-  .practical-info dl div {
-  gap: 14px;
-  padding: 11px 0;
-  }
-
-  .practical-info dt {
-  font-size: .76rem;
-  }
-
-  .next-step {
-  padding: 28px;
-  }
-
-  .next-step h2 {
-  font-size: 2.15rem;
-  }
-
-  .next-step > p:not(.eyebrow):not(.privacy-note) {
-  font-size: .82rem;
-  line-height: 1.65;
-  }
-
-  .next-step .btn {
-  min-height: 48px;
-  padding: 0 22px;
-  font-size: .80rem;
-  }
-
-  .next-step .privacy-note {
-  margin-top: 10px;
-  font-size: .68rem;
-  text-align: left;
-  }
-}
-
-/* ==================================================
-   PRACTICAL — TABLET EM PÉ
-================================================== */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .practical {
-  padding: 78px 0 86px;
-
-  background-image: url("assets/fundo-demandas.webp");
-  background-size: 100% 100%;
-  }
-
-  .practical-box {
-  gap: 30px;
-
-  max-width: 680px;
-
-  padding: 38px 40px;
-  }
-
-  .practical-info .eyebrow {
-  font-size: .72rem;
-  }
-
-  .practical h2 {
-  font-size: 2.65rem;
-  line-height: 1.05;
-
-  margin-bottom: 30px;
-  }
-
-  .practical-info dl {
-  grid-template-columns:
-  repeat(2, minmax(0, 1fr));
-
-  gap: 0 34px;
-  }
-
-  .practical-info dl div {
-  align-items: flex-start;
-
-  padding: 13px 0;
-  }
-
-  .practical-info dt {
-  font-size: .80rem;
-  line-height: 1.5;
-  }
-
-  .practical-info dd {
-  max-width: 145px;
-
-  font-size: .82rem;
-  line-height: 1.5;
-  }
-
-  /* CTA */
-
-  .next-step {
-  width: 100%;
-
-  padding: 32px 34px;
-  }
-
-  .next-step .eyebrow {
-  font-size: .70rem;
-  }
-
-  .next-step h2 {
-  max-width: 480px;
-
-  font-size: 2.45rem;
-
-  margin-bottom: 16px;
-  }
-
-  .next-step > p:not(.eyebrow):not(.privacy-note) {
-  max-width: 540px;
-
-  font-size: .88rem;
-  line-height: 1.7;
-  }
-
-  .next-step .btn {
-  width: auto;
-
-  min-height: 52px;
-
-  margin-top: 10px;
-  padding: 0 28px;
-
-  font-size: .84rem;
-  }
-
-  .next-step .privacy-note {
-  width: auto;
-
-  margin: 11px 0 0;
-  padding: 0;
-
-  text-align: left;
-
-  font-size: .70rem;
-  }
-}
-
-/* ==================================================
-   PRACTICAL — CELULAR EM PÉ
-================================================== */
-
-@media (max-width: 767px) and (orientation: portrait) {
-  .practical {
-  background-color: #FCF7EF;
-
-  background-image:
-  url("assets/fundo-demandas.webp");
-
-  /*
-  Mantém a proporção original da imagem.
-  O restante da seção é preenchido pelo bege.
-  */
-  background-size: 100% auto;
-
-  /*
-  Mantém a parte decorativa mais bonita
-  na base da seção.
-  */
-  background-position: center bottom;
-  }
-
-  /* CAIXA PRINCIPAL */
-
-  .practical-box {
-  gap: 20px;
-
-  width: calc(100% - 28px);
-  max-width: 350px;
-
-  margin: 0 auto;
-
-  padding: 22px 18px;
-
-  border-radius: 14px;
-  }
-
-  /* ========== INFORMAÇÕES ================ */
-  .practical-info {
-  min-width: 0;
-  }
-  .practical-info .eyebrow {
-  margin-bottom: 13px;
-  font-size: .60rem;
-  letter-spacing: .19em;
-  }
-  .practical h2 {
-  max-width: 280px;
-  margin-bottom: 23px;
-  font-size: 2.08rem;
-  line-height: 1.04;
-  }
-  .practical-info dl {
-  grid-template-columns: 1fr;
-  gap: 0;
-  }
-  .practical-info dl div {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3px;
-  }
-  .practical-info dt {
-  font-size: .68rem;
-  line-height: 1.4;
-  }
-  .practical-info dd {
-  line-height: 1.45;
-  text-align: left;
-  }
-
-  /* =========== PRÓXIMO PASSO ============= */
-  .next-step {
-  width: 100%;
-  padding: 23px 20px 24px;
-  border-radius: 12px;
-  }
-  .next-step .eyebrow {
-  margin-bottom: 12px;
-  font-size: .59rem;
-  letter-spacing: .18em;
-  }
-  .next-step h2 {
-  max-width: 270px;
-  margin-bottom: 13px;
-  font-size: 1.92rem;
-  line-height: 1.05;
-  }
-  .next-step > p:not(.eyebrow):not(.privacy-note) {
-  margin-bottom: 16px;
-  font-size: .75rem;
-  line-height: 1.6;
-  }
-  .next-step .btn {
-  width: 100%;
-  min-height: 46px;
-  margin-top: 2px;
-  padding: 0 14px;
-  font-size: .74rem;
-  }
-  .next-step .privacy-note {
-  width: 100%;
-  margin: 9px 0 0;
-  padding: 0;
-  text-align: center;
-  font-size: .62rem;
-  line-height: 1.45;
-  }
-}
-
-/* ==================================================
-   PRACTICAL — CELULAR DEITADO
-================================================== */
-
-@media (orientation: landscape) and (max-height: 500px) {
-  /* =========================
-  INFORMAÇÕES
-  ========================= */
-
-  .practical-info .eyebrow {
-  margin-bottom: 7px;
-
-  font-size: .46rem;
-  }
-
-  .practical h2 {
-  margin-bottom: 15px;
-
-  font-size: 1.65rem;
-  line-height: 1.05;
-  }
-
-  .practical-info dl {
-  grid-template-columns:
-  repeat(2, minmax(0, 1fr));
-
-  gap: 0 24px;
-  }
-
-  .practical-info dl div {
-  gap: 9px;
-
-  padding: 6px 0;
-  }
-
-  .practical-info dt {
-  font-size: .55rem;
-  }
-
-  .practical-info dd {
-  font-size: .59rem;
-  line-height: 1.35;
-  }
-
-
-  /* =========================
-  PRÓXIMO PASSO
-  ========================= */
-
-  .next-step {
-  padding: 16px 18px;
-  }
-
-  .next-step .eyebrow {
-  margin-bottom: 6px;
-
-  font-size: .45rem;
-  }
-
-  .next-step h2 {
-  max-width: none;
-
-  margin-bottom: 8px;
-
-  font-size: 1.42rem;
-  line-height: 1.04;
-  }
-
-  .next-step > p:not(.eyebrow):not(.privacy-note) {
-  max-width: 540px;
-
-  margin-bottom: 10px;
-
-  font-size: .58rem;
-  line-height: 1.45;
-  }
-
-  .next-step .btn {
-  width: auto;
-
-  min-height: 36px;
-
-  padding: 0 14px;
-
-  font-size: .58rem;
-  }
-
-  .next-step .privacy-note {
-  width: auto;
-
-  margin: 6px 0 0;
-  padding: 0;
-
-  text-align: left;
-
-  font-size: .49rem;
-  }
-}
-
-/* ==================================================
-   PRACTICAL — INTERAÇÃO E MOVIMENTO
-================================================== */
-
-/* Practical: gold depth on the card only; the teal CTA remains unchanged. */
-.practical .next-step {
-  border-color: rgba(var(--rgb-gold), .48);
-  box-shadow: 0 8px 24px rgba(var(--rgb-navy), .07), 0 0 18px rgba(var(--rgb-gold), .10);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .practical .next-step:hover {
-    transform: translateY(-3px) scale(1.005);
-    border-color: rgba(var(--rgb-gold), .78);
-    box-shadow: 0 14px 32px rgba(var(--rgb-navy), .12), 0 0 26px rgba(var(--rgb-gold), .22);
-  }
-}
-@media (hover: none), (pointer: coarse) {
-  .next-step { --cta-sheen-delay: -3s; }
-  .practical .next-step {
-    border-color: rgba(var(--rgb-gold), .62);
-    box-shadow: 0 10px 26px rgba(var(--rgb-navy), .09), 0 0 22px rgba(var(--rgb-gold), .17);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .practical .next-step { transition: none; }
-  .practical .next-step:hover { transform: none; }
-}
-
 /* CTA */
 
 .final-cta {
@@ -5076,7 +4554,7 @@ body .practical .next-step .btn.js-whatsapp {
 /* ======= CONCERNS — TABLET DEITADO ======= */
 
 
- 
+
   .concerns {
     padding: 64px 0 72px;
   }
@@ -6450,7 +5928,7 @@ body .practical .next-step .btn.js-whatsapp {
 
       background: var(--gold);
      }
-     
+
 
   /* ==================================================
      COLUNAS
@@ -7534,4 +7012,527 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   }
 }
 
+/* ==================================================
+   PRACTICAL — BASE / DESKTOP
+================================================== */
 
+.practical{
+  position:relative;
+  padding:80px 0 90px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(var(--rgb-white), .08),rgba(var(--rgb-white), .08)),
+    url("assets/fundo-demandas.webp") center/cover no-repeat;
+}
+.practical::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--rgb-cream), .58);
+  pointer-events: none;
+}
+.practical .container{
+  position:relative;
+  z-index:2;
+}
+.practical-box{
+  --practical-info-width: 56%;
+  --practical-next-width: 44%;
+  --practical-info-gap: 20.16px;
+  --practical-next-gap: 15.84px;
+  /* Caixa com borda: preserva a largura externa e o padding interno existentes. */
+  width:min(calc(100% - 40px), var(--container));
+  gap:36px;
+  padding:34px 38px;
+  background:rgba(var(--rgb-card), .72);
+  border:1px solid rgba(var(--rgb-gold), .20);
+  border-radius:18px;
+  box-shadow:0 10px 24px rgba(var(--rgb-navy), .06);
+  backdrop-filter:blur(4px);
+}
+/* Mantem a proporcao sobre o espaco disponivel, descontado o gap. */
+@media (min-width: 1025px),
+  (min-width: 768px) and (max-width: 1024px) and (orientation: landscape),
+  (orientation: landscape) and (max-height: 500px) {
+  .practical-box > .practical-info {
+    width: calc(var(--practical-info-width) - var(--practical-info-gap));
+    min-width: 0;
+  }
+  .practical-box > .next-step {
+    width: calc(var(--practical-next-width) - var(--practical-next-gap));
+    min-width: 0;
+  }
+}
+
+.practical h2{
+  font-size:2.3rem;
+  margin-bottom:24px;
+}
+.practical-info dl{
+  margin:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 40px;
+}
+.practical-info dl div{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(var(--rgb-navy), .08);
+}
+.practical-info dt{
+  color:#798188;
+  font-size:.77rem;
+}
+.practical-info dd{
+  margin:0;
+  font-weight:600;
+  font-size:.78rem;
+  text-align:right;
+}
+.next-step{
+  padding:30px;
+  background:rgba(var(--rgb-white), .52);
+  border:1px solid rgba(var(--rgb-gold), .16);
+  border-radius:14px;
+  backdrop-filter:blur(3px);
+}
+.next-step h2{
+  margin-bottom:14px;
+}
+.next-step > p:not(.eyebrow):not(.privacy-note){
+  color:#68737a;
+  font-size:.85rem;
+}
+.next-step .btn{
+  margin-top:4px;
+}
+.next-step .privacy-note {
+  color: var(--muted);
+}
+
+body .practical .next-step .btn.js-whatsapp {
+  --cta-glass-bg: linear-gradient(120deg, rgba(56,127,136,.96), rgba(45,112,122,.98));
+  --cta-glass-hover: linear-gradient(120deg, rgba(62,137,146,.98), rgba(50,122,132,.98));
+  --cta-glass-text: var(--white);
+  --cta-glass-border: rgba(255,255,255,.16);
+  --cta-glass-border-active: rgba(255,255,255,.38);
+}
+
+/* ==================================================
+   PRACTICAL — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .practical {
+  padding: 76px 0 82px;
+  }
+
+  .practical-box {
+  --practical-info-width: 59%;
+  --practical-next-width: 41%;
+  --practical-info-gap: 17.7px;
+  --practical-next-gap: 12.3px;
+
+  gap: 30px;
+
+  padding: 34px 34px;
+
+  border-radius: 17px;
+  }
+
+  .practical h2 {
+  font-size: 2.45rem;
+  margin-bottom: 26px;
+  }
+
+  .practical-info dl {
+  grid-template-columns:
+  repeat(2, minmax(0, 1fr));
+
+  gap: 0 34px;
+  }
+
+  .practical-info dl div {
+  gap: 14px;
+  padding: 11px 0;
+  }
+
+  .practical-info dt {
+  font-size: .76rem;
+  }
+
+  .next-step {
+  padding: 28px;
+  }
+
+  .next-step h2 {
+  font-size: 2.15rem;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+  font-size: .82rem;
+  line-height: 1.65;
+  }
+
+  .next-step .btn {
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: .80rem;
+  }
+
+  .next-step .privacy-note {
+  margin-top: 10px;
+  font-size: .68rem;
+  text-align: left;
+  }
+}
+
+/* ==================================================
+   PRACTICAL — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .practical {
+  padding: 78px 0 86px;
+
+  background-image: url("assets/fundo-demandas.webp");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+  .practical-box {
+  gap: 30px;
+
+  max-width: 680px;
+
+  padding: 38px 40px;
+  }
+
+  .practical-info .eyebrow {
+  font-size: .72rem;
+  }
+
+  .practical h2 {
+  font-size: 2.65rem;
+  line-height: 1.05;
+
+  margin-bottom: 30px;
+  }
+
+  .practical-info dl {
+  grid-template-columns:
+  repeat(2, minmax(0, 1fr));
+
+  gap: 0 34px;
+  }
+
+  .practical-info dl div {
+  align-items: flex-start;
+
+  padding: 13px 0;
+  }
+
+  .practical-info dt {
+  font-size: .80rem;
+  line-height: 1.5;
+  }
+
+  .practical-info dd {
+  max-width: 145px;
+
+  font-size: .82rem;
+  line-height: 1.5;
+  }
+
+  /* CTA */
+
+  .next-step {
+  width: 100%;
+
+  padding: 32px 34px;
+  }
+
+  .next-step .eyebrow {
+  font-size: .70rem;
+  }
+
+  .next-step h2 {
+  max-width: 480px;
+
+  font-size: 2.45rem;
+
+  margin-bottom: 16px;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+  max-width: 540px;
+
+  font-size: .88rem;
+  line-height: 1.7;
+  }
+
+  .next-step .btn {
+  width: auto;
+
+  min-height: 52px;
+
+  margin-top: 10px;
+  padding: 0 28px;
+
+  font-size: .84rem;
+  }
+
+  .next-step .privacy-note {
+  width: auto;
+
+  margin: 11px 0 0;
+  padding: 0;
+
+  text-align: left;
+
+  font-size: .70rem;
+  }
+}
+
+/* ==================================================
+   PRACTICAL — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .practical {
+  background-color: #FCF7EF;
+
+  background-image:
+  url("assets/fundo-demandas.webp");
+
+  /*
+  Mantém a proporção original da imagem.
+  O restante da seção é preenchido pelo bege.
+  */
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  /*
+  Mantém a parte decorativa mais bonita
+  na base da seção.
+  */
+  background-position: center bottom;
+  }
+
+  /* CAIXA PRINCIPAL */
+
+  .practical-box {
+  gap: 20px;
+
+  width: calc(100% - 28px);
+  max-width: 350px;
+
+  margin: 0 auto;
+
+  padding: 22px 18px;
+
+  border-radius: 14px;
+  }
+
+  /* ========== INFORMAÇÕES ================ */
+  .practical-info {
+  min-width: 0;
+  }
+  .practical-info .eyebrow {
+  margin-bottom: 13px;
+  font-size: .60rem;
+  letter-spacing: .19em;
+  }
+  .practical h2 {
+  max-width: 280px;
+  margin-bottom: 23px;
+  font-size: 2.08rem;
+  line-height: 1.04;
+  }
+  .practical-info dl {
+  grid-template-columns: 1fr;
+  gap: 0;
+  }
+  .practical-info dl div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  }
+  .practical-info dt {
+  font-size: .68rem;
+  line-height: 1.4;
+  }
+  .practical-info dd {
+  line-height: 1.45;
+  text-align: left;
+  }
+
+  /* =========== PRÓXIMO PASSO ============= */
+  .next-step {
+  width: 100%;
+  padding: 23px 20px 24px;
+  border-radius: 12px;
+  }
+  .next-step .eyebrow {
+  margin-bottom: 12px;
+  font-size: .59rem;
+  letter-spacing: .18em;
+  }
+  .next-step h2 {
+  max-width: 270px;
+  margin-bottom: 13px;
+  font-size: 1.92rem;
+  line-height: 1.05;
+  }
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+  margin-bottom: 16px;
+  font-size: .75rem;
+  line-height: 1.6;
+  }
+  .next-step .btn {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 2px;
+  padding: 0 14px;
+  font-size: .74rem;
+  }
+  .next-step .privacy-note {
+  width: 100%;
+  margin: 9px 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: .62rem;
+  line-height: 1.45;
+  }
+}
+
+/* ==================================================
+   PRACTICAL — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  /* =========================
+  INFORMAÇÕES
+  ========================= */
+
+  .practical-info .eyebrow {
+  margin-bottom: 7px;
+
+  font-size: .46rem;
+  }
+
+  .practical h2 {
+  margin-bottom: 15px;
+
+  font-size: 1.65rem;
+  line-height: 1.05;
+  }
+
+  .practical-info dl {
+  grid-template-columns:
+  repeat(2, minmax(0, 1fr));
+
+  gap: 0 24px;
+  }
+
+  .practical-info dl div {
+  gap: 9px;
+
+  padding: 6px 0;
+  }
+
+  .practical-info dt {
+  font-size: .55rem;
+  }
+
+  .practical-info dd {
+  font-size: .59rem;
+  line-height: 1.35;
+  }
+
+
+  /* =========================
+  PRÓXIMO PASSO
+  ========================= */
+
+  .next-step {
+  padding: 16px 18px;
+  }
+
+  .next-step .eyebrow {
+  margin-bottom: 6px;
+
+  font-size: .45rem;
+  }
+
+  .next-step h2 {
+  max-width: none;
+
+  margin-bottom: 8px;
+
+  font-size: 1.42rem;
+  line-height: 1.04;
+  }
+
+  .next-step > p:not(.eyebrow):not(.privacy-note) {
+  max-width: 540px;
+
+  margin-bottom: 10px;
+
+  font-size: .58rem;
+  line-height: 1.45;
+  }
+
+  .next-step .btn {
+  width: auto;
+
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  font-size: .58rem;
+  }
+
+  .next-step .privacy-note {
+  width: auto;
+
+  margin: 6px 0 0;
+  padding: 0;
+
+  text-align: left;
+
+  font-size: .49rem;
+  }
+}
+
+/* ==================================================
+   PRACTICAL — INTERAÇÃO E MOVIMENTO
+================================================== */
+
+/* Practical: gold depth on the card only; the teal CTA remains unchanged. */
+.practical .next-step {
+  border-color: rgba(var(--rgb-gold), .48);
+  box-shadow: 0 8px 24px rgba(var(--rgb-navy), .07), 0 0 18px rgba(var(--rgb-gold), .10);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .practical .next-step:hover {
+    transform: translateY(-3px) scale(1.005);
+    border-color: rgba(var(--rgb-gold), .78);
+    box-shadow: 0 14px 32px rgba(var(--rgb-navy), .12), 0 0 26px rgba(var(--rgb-gold), .22);
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .next-step { --cta-sheen-delay: -3s; }
+  .practical .next-step {
+    border-color: rgba(var(--rgb-gold), .62);
+    box-shadow: 0 10px 26px rgba(var(--rgb-navy), .09), 0 0 22px rgba(var(--rgb-gold), .17);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .practical .next-step { transition: none; }
+  .practical .next-step:hover { transform: none; }
+}
