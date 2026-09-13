@@ -4221,7 +4221,10 @@ p { margin-top: 0; }
   }
 }
 
-/* FAQ */
+/* ==================================================
+   FAQ — BASE / DESKTOP
+================================================== */
+
 .faq {
   position: relative;
   padding-top: 200px;
@@ -4271,6 +4274,7 @@ p { margin-top: 0; }
 }
 .faq-item {
   border-bottom: 1px solid var(--border);
+  transition: border-color .3s ease;
 }
 .faq-item button {
   width: 100%;
@@ -4285,6 +4289,7 @@ p { margin-top: 0; }
   text-align: left;
   font-family: var(--font-display);
   font-size: 1.35rem;
+  transition: color .3s ease;
 }
 .faq-item button b {
   font-family: var(--font-body);
@@ -4301,12 +4306,324 @@ p { margin-top: 0; }
   margin: 0;
   color: #67767d;
   font-size: .84rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .3s ease;
 }
 .faq-item.open > div {
   max-height: 180px;
 }
 .faq-item.open button b {
   transform: rotate(45deg);
+}
+
+.faq-item.open { border-bottom-color: rgba(var(--rgb-gold), .40); }
+.faq-item.open button { color: var(--teal); }
+.faq-item.open > div p { opacity: 1; transform: translateY(0); }
+
+/* Preserva as preferências de movimento do acordeão. */
+@media (prefers-reduced-motion: reduce) {
+  .faq-item, .faq-item button, .faq-item > div, .faq-item > div p {
+    transition: none;
+  }
+  .faq-item > div p {
+    transform: none;
+  }
+}
+
+/* ==================================================
+   FAQ — TABLET DEITADO
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .faq {
+    padding-top: 120px;
+    padding-bottom: 76px;
+  }
+
+  .faq-grid {
+    gap: 58px;
+  }
+
+  .faq-grid > .faq-intro {
+    flex: .72 1 0;
+    min-width: 0;
+  }
+  .faq-grid > .accordion {
+    flex: 1.28 1 0;
+    min-width: 0;
+  }
+
+  .faq-intro {
+    transform: translateX(20px);
+  }
+
+  .faq-intro h2 {
+    font-size: 2.7rem;
+    line-height: 1.04;
+  }
+
+  .faq-intro > p:last-child {
+    font-size: .78rem;
+    line-height: 1.65;
+  }
+
+  .faq-item button {
+    padding: 17px 0;
+
+    font-size: 1.18rem;
+  }
+
+  .faq-item button b {
+    font-size: .95rem;
+  }
+
+  .faq-item > div p {
+    padding: 0 28px 16px 0;
+
+    font-size: .78rem;
+    line-height: 1.65;
+  }
+}
+
+/* ==================================================
+   FAQ — TABLET EM PÉ
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .faq {
+    padding-top: 92px;
+    padding-bottom: 92px;
+
+    background-image: url("assets/fundo-psicologas.webp");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .faq-grid {
+    gap: 42px;
+  }
+
+  .faq-intro {
+    transform: none;
+  }
+
+  .faq-intro .eyebrow {
+    margin-bottom: 14px;
+
+    font-size: .68rem;
+  }
+
+  .faq-intro h2 {
+    max-width: 560px;
+
+    margin-bottom: 16px;
+
+    line-height: 1.03;
+  }
+
+  .faq-intro > p:last-child {
+    max-width: 480px;
+
+    font-size: .86rem;
+    line-height: 1.7;
+  }
+
+  .accordion {
+    width: 100%;
+  }
+
+  .faq-item button {
+
+    gap: 24px;
+
+    font-size: 1.38rem;
+    line-height: 1.25;
+  }
+
+  .faq-item button b {
+    flex: 0 0 auto;
+
+    font-size: 1rem;
+  }
+
+  .faq-item > div p {
+    padding: 0 38px 19px 0;
+
+    line-height: 1.7;
+  }
+
+  .faq-item.open > div {
+    max-height: 220px;
+  }
+}
+
+/* ==================================================
+   FAQ — CELULAR EM PÉ
+================================================== */
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .faq {
+    padding: 62px 0 68px;
+    background-image: url("assets/fundo-faq-mobile.webp");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .faq-grid {
+
+    gap: 32px;
+
+    max-width: 430px; /* 390px de conteudo + gutters do Bootstrap. */
+  }
+
+  /* INTRO */
+
+  .faq-intro {
+    transform: none;
+
+    width: 100%;
+  }
+
+  .faq-intro .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: .56rem;
+    letter-spacing: .20em;
+  }
+
+  .faq-intro h2 {
+    max-width: 290px;
+
+    margin-bottom: 14px;
+
+    font-size: 2.25rem;
+    line-height: 1.04;
+  }
+
+  .faq-intro > p:last-child {
+    max-width: 300px;
+
+    margin-bottom: 0;
+
+    font-size: .72rem;
+    line-height: 1.6;
+  }
+
+  /* ACORDEÃO */
+
+  .accordion {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .faq-item button {
+
+    padding: 16px 0;
+
+    gap: 16px;
+
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  .faq-item button span {
+    min-width: 0;
+  }
+
+  .faq-item button b {
+    flex: 0 0 auto;
+
+    font-size: .88rem;
+  }
+
+  .faq-item > div p {
+    padding: 0 24px 15px 0;
+
+    font-size: .72rem;
+    line-height: 1.65;
+  }
+
+  .faq-item.open > div {
+    max-height: 240px;
+  }
+}
+
+/* ==================================================
+   FAQ — CELULAR DEITADO
+================================================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .faq {
+    padding-top: 48px;
+    padding-bottom: 52px;
+  }
+
+  .faq-grid {
+    gap: 34px;
+  }
+
+  .faq-grid > .faq-intro {
+    flex: .70 1 0;
+    min-width: 0;
+  }
+  .faq-grid > .accordion {
+    flex: 1.30 1 0;
+    min-width: 0;
+  }
+
+  .faq-intro {
+    transform: none;
+  }
+
+  .faq-intro .eyebrow {
+    margin-bottom: 8px;
+
+    font-size: .45rem;
+  }
+
+  .faq-intro h2 {
+    max-width: 230px;
+
+    margin-bottom: 10px;
+
+    font-size: 1.85rem;
+    line-height: 1.04;
+  }
+
+  .faq-intro > p:last-child {
+    max-width: 220px;
+
+    font-size: .58rem;
+    line-height: 1.5;
+  }
+
+  .faq-item button {
+    padding: 11px 0;
+
+    gap: 12px;
+
+    font-size: .82rem;
+    line-height: 1.25;
+  }
+
+  .faq-item button b {
+    font-size: .70rem;
+  }
+
+  .faq-item > div p {
+    padding: 0 20px 11px 0;
+
+    font-size: .58rem;
+    line-height: 1.5;
+  }
+
+  .faq-item.open > div {
+    max-height: 160px;
+  }
 }
 
 /* ==================================================
@@ -4942,60 +5259,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FAQ — TABLET DEITADO
-================================================== */
 
-
-
-  .faq {
-    padding-top: 120px;
-    padding-bottom: 76px;
-  }
-
-  .faq-grid {
-    gap: 58px;
-  }
-
-  .faq-grid > .faq-intro {
-    flex: .72 1 0;
-    min-width: 0;
-  }
-  .faq-grid > .accordion {
-    flex: 1.28 1 0;
-    min-width: 0;
-  }
-
-  .faq-intro {
-    transform: translateX(20px);
-  }
-
-  .faq-intro h2 {
-    font-size: 2.7rem;
-    line-height: 1.04;
-  }
-
-  .faq-intro > p:last-child {
-    font-size: .78rem;
-    line-height: 1.65;
-  }
-
-  .faq-item button {
-    padding: 17px 0;
-
-    font-size: 1.18rem;
-  }
-
-  .faq-item button b {
-    font-size: .95rem;
-  }
-
-  .faq-item > div p {
-    padding: 0 28px 16px 0;
-
-    font-size: .78rem;
-    line-height: 1.65;
-  }
 
 
 /* ==================================================
@@ -5347,81 +5611,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FAQ — TABLET EM PÉ
-================================================== */
 
-
-
-  .faq {
-    padding-top: 92px;
-    padding-bottom: 92px;
-
-    background-image: url("assets/fundo-psicologas.webp");
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-
-  .faq-grid {
-    gap: 42px;
-  }
-
-  .faq-intro {
-    transform: none;
-  }
-
-  .faq-intro .eyebrow {
-    margin-bottom: 14px;
-
-    font-size: .68rem;
-  }
-
-  .faq-intro h2 {
-    max-width: 560px;
-
-    margin-bottom: 16px;
-
-    font-size: 3rem;
-    line-height: 1.03;
-  }
-
-  .faq-intro > p:last-child {
-    max-width: 480px;
-
-    font-size: .86rem;
-    line-height: 1.7;
-  }
-
-  .accordion {
-    width: 100%;
-  }
-
-  .faq-item button {
-    padding: 20px 0;
-
-    gap: 24px;
-
-    font-size: 1.38rem;
-    line-height: 1.25;
-  }
-
-  .faq-item button b {
-    flex: 0 0 auto;
-
-    font-size: 1rem;
-  }
-
-  .faq-item > div p {
-    padding: 0 38px 19px 0;
-
-    font-size: .84rem;
-    line-height: 1.7;
-  }
-
-  .faq-item.open > div {
-    max-height: 220px;
-  }
 
 /* ==================================================
    FOOTER — TABLET EM PÉ
@@ -5802,102 +5992,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FAQ — CELULAR EM PÉ
-================================================== */
 
-
-
-  .faq {
-    padding: 62px 0 68px;
-    background-image: url("assets/fundo-faq-mobile.webp");
-    background-position: center center;
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .faq-grid {
-
-    gap: 32px;
-
-    max-width: 430px; /* 390px de conteudo + gutters do Bootstrap. */
-  }
-
-
-  /* INTRO */
-
-  .faq-intro {
-    transform: none;
-
-    width: 100%;
-  }
-
-  .faq-intro .eyebrow {
-    margin-bottom: 12px;
-
-    font-size: .56rem;
-    letter-spacing: .20em;
-  }
-
-  .faq-intro h2 {
-    max-width: 290px;
-
-    margin-bottom: 14px;
-
-    font-size: 2.25rem;
-    line-height: 1.04;
-  }
-
-  .faq-intro > p:last-child {
-    max-width: 300px;
-
-    margin-bottom: 0;
-
-    font-size: .72rem;
-    line-height: 1.6;
-  }
-
-
-  /* ACORDEÃO */
-
-  .accordion {
-    width: 100%;
-
-    min-width: 0;
-  }
-
-  .faq-item button {
-    width: 100%;
-
-    padding: 16px 0;
-
-    gap: 16px;
-
-    font-size: 1.08rem;
-    line-height: 1.3;
-  }
-
-  .faq-item button span {
-    min-width: 0;
-  }
-
-  .faq-item button b {
-    flex: 0 0 auto;
-
-    font-size: .88rem;
-  }
-
-  .faq-item > div p {
-    padding: 0 24px 15px 0;
-
-    font-size: .72rem;
-    line-height: 1.65;
-  }
-
-  .faq-item.open > div {
-    max-height: 240px;
-  }
 
 
 
@@ -6502,79 +6597,7 @@ p { margin-top: 0; }
 
 
 
-/* ==================================================
-   FAQ — CELULAR DEITADO
-================================================== */
 
-
-
-  .faq {
-    padding-top: 48px;
-    padding-bottom: 52px;
-  }
-
-  .faq-grid {
-    gap: 34px;
-  }
-
-  .faq-grid > .faq-intro {
-    flex: .70 1 0;
-    min-width: 0;
-  }
-  .faq-grid > .accordion {
-    flex: 1.30 1 0;
-    min-width: 0;
-  }
-
-  .faq-intro {
-    transform: none;
-  }
-
-  .faq-intro .eyebrow {
-    margin-bottom: 8px;
-
-    font-size: .45rem;
-  }
-
-  .faq-intro h2 {
-    max-width: 230px;
-
-    margin-bottom: 10px;
-
-    font-size: 1.85rem;
-    line-height: 1.04;
-  }
-
-  .faq-intro > p:last-child {
-    max-width: 220px;
-
-    font-size: .58rem;
-    line-height: 1.5;
-  }
-
-  .faq-item button {
-    padding: 11px 0;
-
-    gap: 12px;
-
-    font-size: .82rem;
-    line-height: 1.25;
-  }
-
-  .faq-item button b {
-    font-size: .70rem;
-  }
-
-  .faq-item > div p {
-    padding: 0 20px 11px 0;
-
-    font-size: .58rem;
-    line-height: 1.5;
-  }
-
-  .faq-item.open > div {
-    max-height: 160px;
-  }
 
 
 /* ==================================================
@@ -6963,21 +6986,11 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
   body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp::after { animation: none; opacity: 0; }
   body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:hover, body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .btn.js-whatsapp:focus-visible { transform: none; }
 }
-.faq-item { transition: border-color .3s ease; }
-.faq-item button { transition: color .3s ease; }
-.faq-item.open { border-bottom-color: rgba(var(--rgb-gold), .40); }
-.faq-item.open button { color: var(--teal); }
-.faq-item > div p {
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .25s ease, transform .3s ease;
-}
-.faq-item.open > div p { opacity: 1; transform: translateY(0); }
+
 @media (prefers-reduced-motion: reduce) {
-  .concern-card, .concern-icon, body .btn.js-whatsapp,
-  .faq-item, .faq-item button, .faq-item > div, .faq-item > div p { transition: none; }
+  .concern-card, .concern-icon, body .btn.js-whatsapp { transition: none; }
   .concern-card:hover, .concern-card.open, .concern-card .concern-icon,
-  body .btn.js-whatsapp:hover, .faq-item > div p { transform: none; }
+  body .btn.js-whatsapp:hover { transform: none; }
 }
 /* Touch accents preserve the approved gold/teal palettes and desktop states. */
 @keyframes talassa-button-sheen-auto {
