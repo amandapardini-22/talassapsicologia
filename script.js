@@ -1,5 +1,5 @@
 /* ==================================================
-   MODAL — ESCOLHER PSICÓLOGA
+   MODAL — ESCOLHER PSICÓLOGA + TRACKING
 ================================================== */
 
 const whatsappModal = document.getElementById("whatsappModal");
@@ -11,52 +11,157 @@ const carolinaLink = document.querySelector(".whatsapp-carolina");
 
 const whatsappCarol = "551140407979";
 const whatsappCarolina = "5511913678621";
+
 const whatsappMessage = encodeURIComponent(
   "Olá! Vim pelo site da Talassa e gostaria de saber mais sobre a psicoterapia."
 );
 
+/* ==================================================
+   CONTEXTO DO CTA
+================================================== */
+
+let whatsappContext = {
+  cta_id: "unknown",
+  cta_text: "unknown"
+};
+
+let lastWhatsappTrigger = null;
+
+if (whatsappModal) {
+  whatsappModal.inert = true;
+}
+
+/* ==================================================
+   TRACKING / DATALAYER
+================================================== */
+
+function trackEvent(eventName, parameters = {}) {
+  window.dataLayer = window.dataLayer || [];
+
+  window.dataLayer.push({
+    event: eventName,
+    ...parameters
+  });
+}
+
+/* ==================================================
+   LINKS INDIVIDUAIS DO WHATSAPP
+================================================== */
+
 function setWhatsappLink(element, phone) {
   if (!element) return;
-  element.href = `https://wa.me/${phone}?text=${whatsappMessage}`;
+
+  element.href =
+    `https://wa.me/${phone}?text=${whatsappMessage}`;
 }
 
 setWhatsappLink(carolLink, whatsappCarol);
 setWhatsappLink(carolinaLink, whatsappCarolina);
 
+/* ==================================================
+   ABRIR / FECHAR MODAL
+================================================== */
+
 function openWhatsappModal() {
   if (!whatsappModal) return;
 
+  whatsappModal.inert = false;
   whatsappModal.classList.add("open");
   whatsappModal.setAttribute("aria-hidden", "false");
+
+  requestAnimationFrame(() => {
+    if (whatsappClose) {
+      whatsappClose.focus({
+        preventScroll: true
+      });
+    }
+  });
 }
 
 function closeWhatsappModal() {
   if (!whatsappModal) return;
 
+  if (lastWhatsappTrigger) {
+    lastWhatsappTrigger.focus({
+      preventScroll: true
+    });
+  }
+
   whatsappModal.classList.remove("open");
   whatsappModal.setAttribute("aria-hidden", "true");
+  whatsappModal.inert = true;
 }
+
+/* ==================================================
+   CLIQUE NOS CTAs DE WHATSAPP
+================================================== */
 
 whatsappButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "whatsapp_click",
-      location: button.textContent.trim()
-    });
+      lastWhatsappTrigger = button;
+
+    const ctaId =
+      button.dataset.trackingId || "unknown";
+
+    const ctaText =
+      button.textContent
+        .trim()
+        .replace(/\s+/g, " ");
+
+    whatsappContext = {
+      cta_id: ctaId,
+      cta_text: ctaText
+    };
+
+    trackEvent(
+      "whatsapp_modal_open",
+      whatsappContext
+    );
 
     openWhatsappModal();
   });
 });
 
+/* ==================================================
+   ESCOLHA DA PSICÓLOGA
+================================================== */
+
+function trackPsychologistClick(link) {
+  if (!link) return;
+
+  link.addEventListener("click", () => {
+    trackEvent(
+      "whatsapp_psychologist_click",
+      {
+        ...whatsappContext,
+        psychologist:
+          link.dataset.psychologist || "unknown"
+      }
+    );
+  });
+}
+
+trackPsychologistClick(carolLink);
+trackPsychologistClick(carolinaLink);
+
+/* ==================================================
+   FECHAR MODAL
+================================================== */
+
 if (whatsappClose) {
-  whatsappClose.addEventListener("click", closeWhatsappModal);
+  whatsappClose.addEventListener(
+    "click",
+    closeWhatsappModal
+  );
 }
 
 if (whatsappOverlay) {
-  whatsappOverlay.addEventListener("click", closeWhatsappModal);
+  whatsappOverlay.addEventListener(
+    "click",
+    closeWhatsappModal
+  );
 }
 
 document.addEventListener("keydown", (event) => {
