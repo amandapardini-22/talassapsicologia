@@ -1,3 +1,5 @@
+> Registro histórico da etapa concluída. As expressões “atual” e “candidato” abaixo descrevem aquele momento. A promoção foi concluída; hoje o entrypoint oficial contém a configuração aprovada. Artefatos intermediários e ferramentas temporárias foram removidos na limpeza estrutural. Resultados e decisões foram preservados neste relatório.
+
 # Bootstrap Talassa — candidato para revisão
 
 O Bootstrap atual **não foi substituído**. O candidato foi gerado exclusivamente pelo SCSS, sem apagar blocos do CSS compilado, sem PurgeCSS e sem alterar HTML, CSS próprio, Critical CSS inline, JavaScript, imagens ou dependências.
@@ -11,7 +13,7 @@ O Bootstrap atual **não foi substituído**. O candidato foi gerado exclusivamen
 | Gzip local | 13.802 | 3.346 | 10.456 bytes — **75,76%** |
 | Regras de estilo | 1.688 | 186 | 1.502 — **88,98%** |
 
-Contagem de regras pelo CSSOM do Chrome, incluindo regras dentro de media queries e excluindo os wrappers. Uma lista agrupada de seletores conta como uma regra. Gzip calculado com `zlib.gzipSync` do Node, nas mesmas condições para os dois arquivos. Não representa necessariamente os bytes transferidos pelo servidor nem a métrica de CSS ocioso do PageSpeed. Evidência: `metrics.json`.
+Contagem de regras pelo CSSOM do Chrome, incluindo regras dentro de media queries e excluindo os wrappers. Uma lista agrupada de seletores conta como uma regra. Gzip calculado com `zlib.gzipSync` do Node, nas mesmas condições para os dois arquivos. Não representa necessariamente os bytes transferidos pelo servidor nem a métrica de CSS ocioso do PageSpeed. Evidência: um artefato histórico da auditoria (removido na limpeza).
 
 ## Escopo e classes utilizadas
 
@@ -31,7 +33,7 @@ w-100 h-100
 
 O inventário também registra o token `.bi`, dos SVGs inline. O CSS Bootstrap só o estiliza como descendente de `.icon-link`, inexistente no site. Não há regra independente `.bi` necessária no build auditado. Portanto, remover o helper `icon-link` não remove o desenho dos ícones. Nomes como `.btn`, `.btn-primary` e `.accordion` pertencem aqui à implementação própria; os componentes Bootstrap correspondentes não eram importados.
 
-`inventory.json` contém classes do DOM, as 186 regras preservadas e todas as 1.502 regras removidas, com seletores, declarações e contextos. As regras do candidato são textualmente idênticas às correspondentes do original após normalização pelo navegador e mantêm a ordem relativa.
+um artefato histórico da auditoria (removido na limpeza) contém classes do DOM, as 186 regras preservadas e todas as 1.502 regras removidas, com seletores, declarações e contextos. As regras do candidato são textualmente idênticas às correspondentes do original após normalização pelo navegador e mantêm a ordem relativa.
 
 ## Utilities: geração exata
 
@@ -101,9 +103,9 @@ Os estados de foco do CSS próprio permanecem intactos. Remover o helper `.focus
 | helpers | Sim | Não | Nenhum helper utilizado |
 | utilities/api | Sim | Sim | Gera apenas o mapa selecionado no candidato |
 
-`scss/bootstrap-talassa.scss` apenas passou a importar `_bootstrap-talassa-foundation.scss` no lugar do bloco comum de configuração. Essa extração evita duas cópias dos breakpoints e dimensões. **Seu resultado compilado continua byte a byte igual ao `bootstrap-talassa.css` atual**, inclusive comentários e formatação. Os scripts existentes do `package.json` continuam usando esse entrypoint original.
+`scss/bootstrap-talassa.scss` apenas passou a importar `_bootstrap-talassa-foundation.scss` no lugar do bloco comum de configuração. Essa extração evita duas cópias dos breakpoints e dimensões. **Seu resultado compilado continua byte a byte igual ao `bootstrap-talassa.css` atual**, inclusive comentários e formatação. Os scripts existentes do um artefato histórico da auditoria (removido na limpeza) continuam usando esse entrypoint original.
 
-O candidato tem entrypoint separado: `scss/bootstrap-talassa-candidate.scss`, que compartilha a fundação, configura o grid e usa `_bootstrap-talassa-utilities.scss`. Nenhum script de produção foi redirecionado para ele.
+O candidato tem entrypoint separado: a versão temporária aprovada (incorporada ao oficial), que compartilha a fundação, configura o grid e usa `_bootstrap-talassa-utilities.scss`. Nenhum script de produção foi redirecionado para ele.
 
 ## Validação automatizada
 
@@ -111,7 +113,7 @@ Chrome headless, com Bootstrap na mesma posição da cascata e `styles.css`/inli
 
 - **Matriz principal:** 45 cenários, três estados em 15 dimensões: normal/fechado, cards + FAQ + modal abertos com header após scroll, e foco de teclado `:focus-visible` com os estados abertos. **Zero diferenças** nas propriedades computadas.
 - **Screenshots principais:** 15 pares, **zero pixels diferentes**. Quatro pares cobrem a página completa (1440×900, 768×1024, 390×844, 844×390); os outros 11 cobrem a viewport. As páginas completas incluem Hero, demandas, Therapy, psicólogas, processo, informações práticas, FAQ e footer.
-- **Menu mobile:** 24 cenários antes/depois do scroll em 12 dimensões abaixo de 1200px, **zero diferenças** computadas; três pares adicionais de screenshots (768×1024, 390×844 e 844×390), **zero pixels diferentes**. O menu aberto foi confirmado em todos os 24 cenários. Essa matriz é separada porque abrir o modal pelo link do header fecha o menu por comportamento do próprio site. Evidência em `menu-validation.json`.
+- **Menu mobile:** 24 cenários antes/depois do scroll em 12 dimensões abaixo de 1200px, **zero diferenças** computadas; três pares adicionais de screenshots (768×1024, 390×844 e 844×390), **zero pixels diferentes**. O menu aberto foi confirmado em todos os 24 cenários. Essa matriz é separada porque abrir o modal pelo link do header fecha o menu por comportamento do próprio site. Evidência em um artefato histórico da auditoria (removido na limpeza).
 - Comparação de todas as propriedades computadas de **399 elementos** (`html`, `body` e descendentes), incluindo `::before` e `::after`.
 - Nenhum seletor removido encontrou elemento elegível nos estados testados. Nenhuma declaração das 186 regras mantidas foi alterada; sua ordem relativa permaneceu igual à do original.
 - Fechamento do modal por Escape, overlay e botão verificado nas duas versões. O foco de teclado foi acionado e `:focus-visible` confirmado em todas as dimensões.
@@ -121,28 +123,11 @@ Dimensões: 1440×900, 1920×1080, 768×1024, 820×1180, 1024×768, 1180×820, 3
 
 **Limites:** a comparação visual usa movimento reduzido para evitar diferenças por instantes de animação. Imagens lazy são carregadas antecipadamente apenas no navegador de teste. Não simula a cronologia de carregamento em rede lenta, autoplay/arraste completo, hardware touch, todos os estados hover ou outros motores de navegador. As fontes, animações e regras de hover/pointer/reduced-motion do site não foram editadas. Recomenda-se revisão manual com movimento normal, teclado, swipe e navegadores/dispositivos de uso real.
 
-O arquivo `validation-harness-initial.json` documenta uma execução **inválida** do teste, em que alternar links desativados provocava recarregamento assíncrono de CSS. Essa execução não fundamenta aprovação nem reprovação do candidato. A ferramenta corrigida troca o conteúdo sincronicamente na mesma posição da cascata e verifica uma variável Bootstrap sentinela antes de cada captura. Os resultados finais são `validation.json`, `menu-validation.json` e `verification.json`.
+O arquivo um artefato histórico da auditoria (removido na limpeza) documenta uma execução **inválida** do teste, em que alternar links desativados provocava recarregamento assíncrono de CSS. Essa execução não fundamenta aprovação nem reprovação do candidato. A ferramenta corrigida troca o conteúdo sincronicamente na mesma posição da cascata e verifica uma variável Bootstrap sentinela antes de cada captura. Os resultados finais são um artefato histórico da auditoria (removido na limpeza), um artefato histórico da auditoria (removido na limpeza) e um artefato histórico da auditoria (removido na limpeza).
 
-## Como revisar sem modificar o site
+## Manutenção atual
 
-Na raiz do projeto:
-
-```powershell
-node css-audit/bootstrap/build.cjs
-node css-audit/bootstrap/validate.cjs --serve
-```
-
-Abrir a versão atual em `http://127.0.0.1:8766/` e a candidata em `http://127.0.0.1:8766/?bootstrap=candidate`. A prévia muda apenas a resposta HTML em memória do servidor local; `index.html` no disco continua intacto. Encerrar com Ctrl+C.
-
-Para reproduzir a comparação automatizada, encerrar primeiro a prévia e executar, em sequência:
-
-```powershell
-node css-audit/bootstrap/validate.cjs
-node css-audit/bootstrap/validate.cjs --menu
-node css-audit/bootstrap/verify.cjs
-```
-
-O teste usa Chrome instalado e grava evidências neste diretório. Screenshots completos carregam antecipadamente imagens lazy apenas no navegador de teste.
+As ferramentas temporárias foram removidas após a aprovação. Consulte o README.txt na raiz para os builds oficiais.
 
 ## Riscos e decisão
 
@@ -157,7 +142,7 @@ O arquivo atual permanece sem substituição. Não houve commit nem push.
 ## Arquivos desta etapa
 
 - Alterado: `scss/bootstrap-talassa.scss`, apenas para compartilhar a fundação; seu build continua idêntico ao atual.
-- Criados: `scss/_bootstrap-talassa-foundation.scss`, `scss/_bootstrap-talassa-utilities.scss` e `scss/bootstrap-talassa-candidate.scss`.
-- Gerado: `assets/css/bootstrap-talassa-candidate.css`.
+- Criados: `scss/_bootstrap-talassa-foundation.scss`, `scss/_bootstrap-talassa-utilities.scss` e a versão temporária aprovada (incorporada ao oficial).
+- Gerado: a versão temporária aprovada (incorporada ao oficial).
 - Adicionados: relatório, scripts e evidências em `css-audit/bootstrap/`.
-- Intactos nesta etapa: `index.html`/inline, `styles.css`, `script.js`, Bootstrap atual e minificado, imagens, `package.json` e lockfile. A modificação de `styles.css` da primeira etapa e as quatro exclusões de imagens WebP preexistentes no Git continuam como estavam.
+- Intactos nesta etapa: `index.html`/inline, `styles.css`, `script.js`, Bootstrap atual e minificado, imagens, um artefato histórico da auditoria (removido na limpeza) e lockfile. A modificação de `styles.css` da primeira etapa e as quatro exclusões de imagens WebP preexistentes no Git continuam como estavam.

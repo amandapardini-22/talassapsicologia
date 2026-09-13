@@ -1,8 +1,10 @@
+> Registro histórico da etapa concluída. As expressões “atual” e “candidato” abaixo descrevem aquele momento. A promoção foi concluída; hoje o entrypoint oficial contém a configuração aprovada. Artefatos intermediários e ferramentas temporárias foram removidos na limpeza estrutural. Resultados e decisões foram preservados neste relatório.
+
 # Auditoria de CSS — Talassa
 
 ## Relatório anterior à limpeza
 
-Escopo: leitura de `index.html` (incluindo o `<style>`), `styles.css`, `script.js`, CSS Bootstrap carregado e seu SCSS. O inventário completo de classes, IDs e regras com contextos de media queries está em `inventory.json`. O navegador analisou o DOM completo, independentemente da visibilidade, relaxando estados transitórios e pseudo-elementos para procurar seus elementos de origem. Isso é uma triagem conservadora, não cobertura visual nem prova de que cada declaração seja necessária.
+Escopo: leitura de `index.html` (incluindo o `<style>`), `styles.css`, `script.js`, CSS Bootstrap carregado e seu SCSS. O inventário completo de classes, IDs e regras com contextos de media queries está em um artefato histórico da auditoria (removido na limpeza). O navegador analisou o DOM completo, independentemente da visibilidade, relaxando estados transitórios e pseudo-elementos para procurar seus elementos de origem. Isso é uma triagem conservadora, não cobertura visual nem prova de que cada declaração seja necessária.
 
 ### A. CSS certamente não utilizado
 
@@ -32,7 +34,7 @@ Total proposto: 967 bytes (0,944 KiB), cinco blocos, 28 quebras de linha. `style
 
 Também há repetição exata de uma regra de redução de movimento do pseudo-elemento de botões, em contextos de media query equivalentes. Mantida nesta etapa; repetição de texto não é prova geral de sobrescrita inócua. Não foi feita consolidação de propriedades nem eliminação de fallbacks.
 
-A inspeção adicional de declarações dentro de blocos não encontrou propriedades repetidas no mesmo bloco (`repeated-properties.json`). Isso não é uma prova de ausência de sobrescritas entre blocos diferentes. A economia gzip simulada com Node é de apenas 85 bytes (22.540 → 22.455 bytes); o servidor pode usar compressão diferente.
+A inspeção adicional de declarações dentro de blocos não encontrou propriedades repetidas no mesmo bloco (um artefato histórico da auditoria (removido na limpeza)). Isso não é uma prova de ausência de sobrescritas entre blocos diferentes. A economia gzip simulada com Node é de apenas 85 bytes (22.540 → 22.455 bytes); o servidor pode usar compressão diferente.
 
 ### D. CSS que deve ser mantido
 
@@ -62,9 +64,9 @@ Aplicada localmente a proposta de cinco blocos, com economia de 967 bytes. O dif
 
 - Único arquivo de produção alterado: `styles.css` (125.028 → 124.061 bytes).
 - `index.html`, inline, `script.js` e `assets/css/bootstrap-talassa.css`: conteúdo idêntico ao início, confirmado por SHA-256. SCSS e Bootstrap minificado não foram editados.
-- Documentação e ferramentas adicionadas: `audit-css.cjs` e diretório `css-audit/`, com relatório, inventários, proposta, cópia anterior, plano e evidências.
+- Documentação e ferramentas adicionadas: um artefato histórico da auditoria (removido na limpeza) e diretório `css-audit/`, com relatório, inventários, proposta, cópia anterior, plano e evidências.
 - Sintaxe validada com o parser CSS do Sass; estrutura comparada byte a byte: apenas os cinco blocos previstos. `git diff --check` passou.
-- Busca final das três fontes e das duas animações em HTML, JS, CSS próprio e Bootstrap registrada em `final-search.json`. Definições inline e referências externas às animações preservadas. Nenhum estado dinâmico foi removido.
+- Busca final das três fontes e das duas animações em HTML, JS, CSS próprio e Bootstrap registrada em um artefato histórico da auditoria (removido na limpeza). Definições inline e referências externas às animações preservadas. Nenhum estado dinâmico foi removido.
 - Chrome headless: 60 combinações (15 tamanhos × duas preferências de movimento × aberto/fechado), comparando todas as propriedades computadas de 398 elementos e seus `::before`/`::after`. Resultado final: nenhuma diferença. Abertura de modal/menu/card/FAQ e fechamento do modal por Escape também passaram.
 - Um cenário apresentou primeiro movimento do GSAP e depois carregamento de fontes durante a comparação. A repetição com GSAP pausado, eventos de media query estabilizados e layout calculado antes de aguardar as fontes passou. Resultados anteriores e explicação permanecem nos JSONs de validação. Não houve ajuste no site para fazer o teste passar.
 - Limites: não foi feita comparação de screenshots nem simulação automatizada de touch/hover/foco, autoplay completo, rede lenta ou JavaScript desativado. As animações foram estabilizadas na comparação de estilos; a equivalência dos keyframes foi verificada separadamente por conteúdo integral. A lista manual acima continua recomendada.

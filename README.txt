@@ -1,29 +1,27 @@
-TALASSA — teste de Critical CSS
+TALASSA PSICOLOGIA
 
-Arquivos alterados:
-1. index.html
-2. critical.css (novo)
+Site estático. Abra index.html para uma prévia local.
 
-Arquivos que NÃO foram alterados:
-- styles.css
-- assets/css/bootstrap-talassa.css
-- script.js
-- imagens e demais assets
+Estrutura
+- index.html: conteúdo da página e Critical CSS inline no <head>.
+- styles.css: estilos próprios, com carregamento diferido e fallback noscript.
+- script.js: interações e animações da página.
+- assets/: imagens, logos SVG, fontes locais, bibliotecas JS e CSS compilado.
+- assets/css/bootstrap-talassa.css: Bootstrap oficial expandido, carregado pelo HTML.
+- assets/css/bootstrap-talassa.min.css: versão comprimida gerada pelo build, ainda não carregada pelo HTML.
+- scss/bootstrap-talassa.scss: entrypoint oficial com a configuração aprovada.
+- scss/_bootstrap-talassa-foundation.scss: variáveis, breakpoints e dependências.
+- scss/_bootstrap-talassa-utilities.scss: seleção das utilities utilizadas.
+- css-audit/: relatórios históricos de auditoria e promoção.
 
-Mudança no carregamento:
-- Bootstrap continua sendo carregado normalmente no <head>.
-- critical.css continua sendo carregado normalmente no <head> e contém somente os estilos necessários para a primeira tela (base + Header + Hero, incluindo regras responsivas relevantes).
-- styles.css continua intacto, mas passa a ser carregado sem bloquear a primeira renderização usando media="print" + onload.
-- Há fallback <noscript> para styles.css.
+Build do Bootstrap (Node.js e npm necessários)
+1. npm ci — instala as versões registradas no package-lock.json.
+2. npm run build:bootstrap — gera a versão minificada.
+3. npm run dev:bootstrap — gera a versão expandida e acompanha alterações; encerre com Ctrl+C.
 
-Como testar:
-1. Copie critical.css para a raiz do projeto, ao lado de styles.css.
-2. Substitua index.html pela versão deste pacote (ou aplique somente a alteração no <head>).
-3. Abra localmente e teste desktop, tablet em pé, tablet deitado, celular em pé e celular deitado.
-4. Se estiver tudo visualmente igual, faça commit/push e rode o PageSpeed mobile novamente.
+Os dois scripts usam o mesmo entrypoint. Não edite os CSS compilados manualmente.
+Ao adicionar utilities Bootstrap à página, revise a seleção SCSS e valide o resultado visual.
+Sass pode emitir avisos de depreciação; a compilação funciona com as versões do lockfile.
 
-Rollback:
-Se houver qualquer comportamento visual inesperado, volte o <head> para:
-<link rel="stylesheet" href="assets/css/bootstrap-talassa.css" />
-<link rel="stylesheet" href="styles.css" />
-E remova critical.css.
+Fontes e GSAP/ScrollTrigger são servidos de assets/. Os pacotes Fontsource e GSAP
+foram preservados como possíveis fontes de manutenção; não há cópia automática configurada.
