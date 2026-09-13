@@ -1,0 +1,1943 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Política de Privacidade | Talassa Clínica de Psicologia</title>
+
+  <meta
+    name="description"
+    content="Política de Privacidade da Talassa Clínica de Psicologia. Saiba como tratamos dados pessoais, informações de navegação, cookies e contatos realizados pelo site."
+  />
+
+  <meta name="theme-color" content="#FBF7F1" />
+  <meta name="robots" content="index,follow" />
+
+  <link
+    rel="preload"
+    href="assets/fonts/cormorant-garamond-600.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <style>
+  @font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/montserrat-400.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("assets/fonts/montserrat-600.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("assets/fonts/cormorant-garamond-600.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+  }
+
+  :root {
+    --navy: #2C2F51;
+    --teal: #387F88;
+    --gold: #B69769;
+    --purple: #94599A;
+    --cream: #FBF7F1;
+    --white: #FFFFFF;
+    --ink: #173D51;
+    --muted: #68727A;
+    --border: rgba(44, 47, 81, .12);
+    --footer: #182F3A;
+
+    --font-body: "Montserrat", Arial, sans-serif;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+
+    --wide: 1180px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+
+  /* ==================================================
+     HEADER
+  ================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background .35s ease, border-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;
+}
+.site-header.scrolled {
+  background: rgba(236, 228, 208, 0.96);
+  border-bottom: 1px solid rgba(var(--rgb-navy), .06);
+  box-shadow: 0 8px 25px rgba(var(--rgb-navy), .08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.header-inner {
+  min-height: 92px;
+  padding-top: 2px;
+  
+  gap: 30px; 
+}
+
+  .header-inner {
+    width: min(calc(100% - 40px), var(--wide));
+    min-height: 92px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
+  }
+
+  .brand img {
+    width: 190px;
+    height: auto;
+  }
+
+  .back-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 0;
+
+    color: var(--white);
+
+    font-size: .84rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+
+    text-decoration: none;
+
+    transition: color .3s ease;
+  }
+
+  .site-header.scrolled .back-link {
+    color: var(--navy);
+  }
+
+  .back-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width .22s ease;
+  }
+
+  .back-link:hover::after,
+  .back-link:focus-visible::after {
+    width: 100%;
+  }
+
+
+  /* ==================================================
+     PRIMEIRA SEÇÃO
+  ================================================== */
+
+  .privacy-page {
+    background: var(--cream);
+  }
+
+  .privacy-shell {
+    width: min(calc(100% - 64px), var(--wide));
+    margin: 0 auto;
+  }
+
+  .privacy-hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 118px 0 44px;
+
+    background:
+      linear-gradient(
+        125deg,
+        #216772 0%,
+        #2f747d 38%,
+        #387F88 67%,
+        #49949c 100%
+      );
+
+    color: var(--white);
+  }
+
+  .privacy-hero::before,
+  .privacy-hero::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+  }
+
+  .privacy-hero::before {
+    width: 420px;
+    height: 420px;
+
+    top: -140px;
+    right: 12%;
+
+    background: rgba(255, 255, 255, .06);
+  }
+
+  .privacy-hero::after {
+    width: 260px;
+    height: 260px;
+
+    left: -90px;
+    bottom: -120px;
+
+    background: rgba(44, 47, 81, .10);
+  }
+
+  .privacy-hero-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(300px, 365px);
+
+    align-items: center;
+
+    gap: clamp(36px, 5vw, 68px);
+  }
+
+  .privacy-eyebrow {
+    margin: 0 0 10px;
+
+    color: #D7B27A;
+
+    font-size: .70rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    letter-spacing: .19em;
+    text-transform: uppercase;
+  }
+
+  .privacy-title {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--white);
+
+    font-family: var(--font-display);
+
+    font-size:
+      clamp(2.55rem, 3.6vw, 3.45rem);
+
+    font-weight: 600;
+    line-height: 1.02;
+
+    letter-spacing: -.02em;
+  }
+
+  .privacy-line {
+    width: 44px;
+    height: 1px;
+
+    margin: 17px 0;
+
+    background: #D7B27A;
+  }
+
+  .privacy-intro {
+    max-width: 585px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, .92);
+
+    font-size: .90rem;
+    line-height: 1.65;
+  }
+
+  .privacy-update {
+    margin: 13px 0 0;
+
+    color: rgba(255, 255, 255, .70);
+
+    font-size: .73rem;
+  }
+
+
+  /* ==================================================
+     CAIXA — DÚVIDAS SOBRE PRIVACIDADE
+  ================================================== */
+
+  .privacy-highlight {
+    width: 100%;
+    max-width: 365px;
+    justify-self: end;
+
+    padding: 28px 30px 29px;
+
+    background: rgba(255, 252, 247, .96);
+
+    border:
+      1px solid rgba(182, 151, 105, .24);
+
+    border-radius: 18px;
+
+    box-shadow:
+      0 8px 24px rgba(44, 47, 81, .07);
+  }
+
+  .privacy-highlight h2 {
+    max-width: 290px;
+
+    margin: 0 0 13px;
+
+    color: var(--ink);
+
+    font-family: var(--font-display);
+
+    font-size: 2.05rem;
+    font-weight: 600;
+    line-height: 1.05;
+  }
+
+  .privacy-highlight > p {
+    margin: 0 0 18px;
+
+    color: var(--muted);
+
+    font-size: .82rem;
+    line-height: 1.65;
+  }
+
+  .privacy-highlight-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+
+    margin-top: 17px;
+    padding-top: 16px;
+
+    border-top:
+      1px solid rgba(44, 47, 81, .08);
+
+    color: var(--muted);
+
+    font-size: .82rem;
+    line-height: 1.7;
+  }
+
+  .privacy-highlight-links strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .privacy-highlight-links a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .privacy-highlight-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Voltar sempre em azul e em uma linha própria */
+  .privacy-highlight-links .privacy-back-home {
+    display: block;
+    margin-top: 8px;
+    color: var(--teal);
+  }
+
+  .privacy-highlight-links .privacy-back-home:hover {
+    color: var(--teal);
+  }
+
+
+  /* ==================================================
+   CONTEÚDO DA POLÍTICA — ACORDEÃO
+================================================== */
+
+.privacy-content {
+  position: relative;
+
+  padding:
+    82px
+    0
+    88px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, .06),
+      rgba(255, 255, 255, .06)
+    ),
+    url("assets/fundo-psicologas.webp")
+    center / cover no-repeat;
+}
+
+.privacy-content::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(255, 250, 246, .72);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.privacy-content-grid {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    .68fr
+    1.32fr;
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+
+/* ==================================================
+   COLUNA ESQUERDA
+================================================== */
+
+.privacy-content-intro {
+  padding-left: 38px;
+}
+
+.privacy-content-intro h2 {
+  max-width: 340px;
+
+  margin:
+    0
+    0
+    28px;
+
+  color: var(--ink);
+
+  font-family:
+    var(--font-display);
+
+  font-size: 3rem;
+  font-weight: 600;
+
+  line-height: 1.04;
+}
+
+.privacy-content-intro > p:last-child {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #758087;
+
+  font-size: .84rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   ACORDEÃO
+================================================== */
+
+.privacy-accordion {
+  min-width: 0;
+
+  border-top:
+    1px solid var(--border);
+}
+
+.privacy-item {
+  border-bottom:
+    1px solid var(--border);
+
+  transition:
+    border-color .3s ease;
+}
+
+
+/* Botão */
+
+.privacy-item > button {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding:
+    20px
+    0;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color: var(--ink);
+
+  text-align: left;
+
+  font-family:
+    var(--font-display);
+
+  font-size: 1.35rem;
+
+  line-height: 1.3;
+
+  cursor: pointer;
+
+  transition:
+    color .3s ease;
+}
+
+.privacy-item > button span {
+  min-width: 0;
+}
+
+
+/* + */
+
+.privacy-item > button b {
+  flex:
+    0
+    0
+    auto;
+
+  color: var(--ink);
+
+  font-family:
+    var(--font-body);
+
+  font-size: 1.1rem;
+  font-weight: 400;
+
+  line-height: 1;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
+}
+
+
+/* Resposta fechada */
+
+.privacy-item > div {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  overflow: hidden;
+
+  transition:
+    grid-template-rows .35s ease;
+}
+
+.privacy-answer {
+  min-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform:
+    translateY(6px);
+
+  transition:
+    opacity .25s ease,
+    transform .3s ease;
+}
+
+
+/* Texto */
+
+.privacy-answer p {
+  margin:
+    0
+    0
+    14px;
+
+  padding-right: 36px;
+
+  color: #67767D;
+
+  font-size: .84rem;
+
+  line-height: 1.7;
+}
+
+.privacy-answer ul {
+  margin:
+    4px
+    0
+    18px;
+
+  padding:
+    0
+    36px
+    0
+    20px;
+
+  color: #67767D;
+
+  font-size: .84rem;
+
+  line-height: 1.7;
+}
+
+.privacy-answer li + li {
+  margin-top: 5px;
+}
+
+
+/* ==================================================
+   ABERTO
+================================================== */
+
+.privacy-item.open {
+  border-bottom-color:
+    rgba(182, 151, 105, .40);
+}
+
+.privacy-item.open > button {
+  color: var(--teal);
+}
+
+.privacy-item.open > button b {
+  color: var(--teal);
+
+  transform:
+    rotate(45deg);
+}
+
+.privacy-item.open > div {
+  grid-template-rows: 1fr;
+}
+
+.privacy-item.open .privacy-answer {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  padding-bottom: 18px;
+}
+
+
+/* ==================================================
+   NOTA IMPORTANTE
+================================================== */
+
+.privacy-policy-note {
+  margin:
+    6px
+    36px
+    4px
+    0;
+
+  padding:
+    16px
+    18px;
+
+  background:
+    rgba(56, 127, 136, .06);
+
+  border-left:
+    3px solid var(--teal);
+
+  color: #67767D;
+
+  font-size: .80rem;
+
+  line-height: 1.65;
+}
+
+.privacy-policy-note strong {
+  color: var(--ink);
+}
+
+
+/* ==================================================
+   CONTATO
+================================================== */
+
+.privacy-contact-box {
+  margin:
+    6px
+    36px
+    3px
+    0;
+
+  padding:
+    16px
+    18px;
+
+  background:
+    rgba(182, 151, 105, .08);
+
+  border:
+    1px solid
+    rgba(182, 151, 105, .22);
+
+  border-radius: 12px;
+
+  color: #67767D;
+
+  font-size: .82rem;
+
+  line-height: 1.7;
+}
+
+.privacy-contact-box strong {
+  display: block;
+
+  color: var(--ink);
+}
+
+.privacy-contact-box span {
+  display: block;
+}
+
+.privacy-contact-box a {
+  color: var(--purple);
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.privacy-contact-box a:hover {
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px) {
+
+  .privacy-content {
+    padding:
+      68px
+      0
+      72px;
+  }
+
+  .privacy-content-grid {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .privacy-content-intro {
+    padding-left: 0;
+  }
+
+  .privacy-content-intro h2 {
+    max-width: 520px;
+
+    margin-bottom: 16px;
+
+    font-size: 2.65rem;
+  }
+
+  .privacy-content-intro > p:last-child {
+    max-width: 520px;
+  }
+
+  .privacy-item > button {
+    font-size: 1.28rem;
+  }
+}
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 767px) {
+
+  .privacy-content {
+    padding:
+      52px
+      0
+      58px;
+  }
+
+  .privacy-content-grid {
+    grid-template-columns: 1fr;
+
+    gap: 34px;
+  }
+
+  .privacy-content-intro {
+    padding-left: 0;
+  }
+
+  .privacy-content-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: .58rem;
+  }
+
+  .privacy-content-intro h2 {
+    max-width: 290px;
+
+    margin-bottom: 14px;
+
+    font-size: 2.25rem;
+  }
+
+  .privacy-content-intro > p:last-child {
+    max-width: 310px;
+
+    font-size: .72rem;
+    line-height: 1.6;
+  }
+
+  .privacy-item > button {
+    gap: 16px;
+
+    padding:
+      16px
+      0;
+
+    font-size: 1.08rem;
+  }
+
+  .privacy-item > button b {
+    font-size: .88rem;
+  }
+
+  .privacy-answer p,
+  .privacy-answer ul {
+    padding-right: 22px;
+
+    font-size: .72rem;
+    line-height: 1.65;
+  }
+
+  .privacy-policy-note,
+  .privacy-contact-box {
+    margin-right: 22px;
+
+    font-size: .72rem;
+  }
+}
+
+
+  /* ==================================================
+     FOOTER
+  ================================================== */
+
+  .site-footer {
+    background: var(--footer);
+
+    color:
+      rgba(255, 255, 255, .80);
+  }
+
+  .footer-inner {
+    width:
+      min(calc(100% - 40px), var(--wide));
+
+    margin: 0 auto;
+
+    padding: 38px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+  }
+
+  .footer-brand img {
+    width: 185px;
+    height: auto;
+
+    margin-bottom: 10px;
+  }
+
+  .footer-brand p {
+    max-width: 450px;
+
+    margin: 0;
+
+    font-size: .79rem;
+  }
+
+  .footer-link {
+    color:
+      rgba(255, 255, 255, .92);
+
+    font-size: .82rem;
+    font-weight: 600;
+
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+
+  /* ==================================================
+     TABLET
+  ================================================== */
+
+  @media
+    (min-width: 768px)
+    and (max-width: 1024px) {
+
+    .privacy-hero {
+      padding: 112px 0 48px;
+    }
+
+    .privacy-hero-grid {
+      grid-template-columns: 1fr;
+
+      gap: 28px;
+    }
+
+    .privacy-title {
+      font-size:
+        clamp(2.7rem, 5vw, 3.25rem);
+    }
+
+    .privacy-highlight {
+      max-width: 560px;
+    }
+  }
+
+
+  /* ==================================================
+     CELULAR
+  ================================================== */
+
+  @media (max-width: 767px) {
+
+    body {
+      font-size: 15px;
+    }
+
+    .header-inner {
+      width:
+        min(calc(100% - 30px), var(--wide));
+
+      min-height: 76px;
+
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 164px;
+    }
+
+    .back-link {
+      font-size: .73rem;
+
+      white-space: nowrap;
+    }
+
+    .privacy-shell {
+      width:
+        min(calc(100% - 32px), var(--wide));
+    }
+
+    /* PRIMEIRA SEÇÃO — SOMENTE CELULAR */
+    .privacy-hero {
+      padding: 96px 0 34px;
+    }
+
+    .privacy-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+
+    .privacy-hero-copy {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .privacy-title,
+    .privacy-intro {
+      max-width: 100%;
+    }
+
+    .privacy-highlight {
+      width: 100%;
+      max-width: 100%;
+      justify-self: stretch;
+    }
+
+    .privacy-hero::before {
+      width: 300px;
+      height: 300px;
+      top: -115px;
+      right: -145px;
+    }
+
+    .privacy-hero::after {
+      width: 180px;
+      height: 180px;
+      left: -100px;
+      bottom: -105px;
+    }
+
+    /* Fundo específico da seção de conteúdo no celular */
+    .privacy-content {
+      background:
+        linear-gradient(
+          rgba(255, 255, 255, .06),
+          rgba(255, 255, 255, .06)
+        ),
+        url("assets/fundo-faq-mobile.webp")
+        center center / 100% 100%
+        no-repeat;
+    }
+
+    .privacy-eyebrow {
+      margin-bottom: 8px;
+
+      font-size: .58rem;
+    }
+
+    .privacy-title {
+      font-size:
+        clamp(2.15rem, 10vw, 2.8rem);
+    }
+
+    .privacy-line {
+      margin: 13px 0 14px;
+    }
+
+    .privacy-intro {
+      font-size: .80rem;
+      line-height: 1.6;
+    }
+
+    .privacy-update {
+      margin-top: 11px;
+
+      font-size: .65rem;
+    }
+
+    .privacy-highlight {
+      max-width: 100%;
+
+      padding: 23px 20px 24px;
+
+      border-radius: 12px;
+    }
+
+    .privacy-highlight h2 {
+      max-width: 270px;
+
+      margin-bottom: 13px;
+
+      font-size: 1.92rem;
+    }
+
+    .privacy-highlight > p {
+      margin-bottom: 16px;
+
+      font-size: .75rem;
+      line-height: 1.6;
+    }
+
+    .privacy-highlight-links {
+      margin-top: 14px;
+      padding-top: 14px;
+
+      font-size: .74rem;
+    }
+
+    .privacy-content-inner {
+      padding: 52px 0;
+    }
+
+    .privacy-section {
+      padding: 28px 0;
+    }
+
+    .privacy-section-head {
+      grid-template-columns: 1fr;
+
+      gap: 8px;
+
+      margin-bottom: 14px;
+    }
+
+    .privacy-number {
+      padding-top: 0;
+    }
+
+    .privacy-section h2 {
+      font-size: 2.15rem;
+    }
+
+    .privacy-section-body {
+      margin-left: 0;
+    }
+
+    .privacy-section-body p,
+    .privacy-section-body li {
+      font-size: .98rem;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+
+      padding: 32px 0;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+
+    .brand img {
+      width: 148px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      color: var(--white);
+
+      font-size: .66rem;
+      font-weight: 600;
+
+      white-space: nowrap;
+    }
+
+    .site-header.scrolled .back-link {
+      color: var(--navy);
+    }
+
+  }
+</style>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Voltar para a página inicial da Talassa"
+      >
+        <img
+          src="assets/logo-talassa-header.svg"
+          alt="Talassa Clínica de Psicologia"
+          width="844"
+          height="364"
+        />
+      </a>
+
+      <a class="back-link" href="index.html">
+        <span aria-hidden="true">←</span>
+        <span>Voltar ao site</span>
+      </a>
+    </div>
+  </header>
+
+<main class="privacy-page">
+
+  <section class="privacy-hero">
+    <div class="privacy-shell privacy-hero-grid">
+
+      <div class="privacy-hero-copy">
+        <p class="privacy-eyebrow">PRIVACIDADE E PROTEÇÃO DE DADOS</p>
+
+        <h1 class="privacy-title">Política de Privacidade</h1>
+
+        <div class="privacy-line" aria-hidden="true"></div>
+
+        <p class="privacy-intro">
+          Como a Talassa trata e protege informações relacionadas à navegação no site,
+          aos canais de contato e ao uso dos botões de atendimento.
+        </p>
+
+        <p class="privacy-update">
+          Última atualização: 13 de setembro de 2026
+        </p>
+      </div>
+
+      <aside class="privacy-highlight" aria-label="Informações de contato">
+        <h2>Dúvidas sobre privacidade?</h2>
+        <p>
+          Se você tiver dúvidas sobre esta política ou sobre o tratamento de dados
+          pessoais relacionados ao site, entre em contato pelo canal abaixo.
+        </p>
+
+        <div class="privacy-highlight-links">
+
+          <strong>
+            Talassa — Clínica de Psicologia
+          </strong>
+
+          <span>
+
+            <a href="mailto:contato@talassapsicologia.com.br">
+              contato@talassapsicologia.com.br
+            </a>
+          </span>
+          <a
+            class="privacy-back-home"
+            href="index.html#inicio"
+          >
+            ← Voltar para a página principal
+          </a>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="privacy-content">
+
+  <div class="privacy-shell privacy-content-grid">
+
+    <div class="privacy-content-intro">
+
+      <h2>
+        Informações sobre seus dados
+      </h2>
+
+      <p>
+        Consulte abaixo como a Talassa trata informações
+        relacionadas à navegação, contato e privacidade.
+      </p>
+
+    </div>
+
+
+    <div class="privacy-accordion">
+
+
+      <!-- 01 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Sobre esta Política</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Esta Política de Privacidade explica, de forma clara,
+              quais informações podem ser tratadas durante a utilização
+              do site da Talassa — Clínica de Psicologia, para quais
+              finalidades elas podem ser utilizadas e quais são os
+              direitos dos titulares de dados, em conformidade com a
+              Lei Geral de Proteção de Dados Pessoais — LGPD
+              (Lei nº 13.709/2018).
+            </p>
+
+            <p>
+              Esta Política se aplica às informações relacionadas à
+              navegação neste site e aos contatos iniciados a partir dele.
+            </p>
+
+            <div class="privacy-policy-note">
+              <strong>Importante:</strong>
+              informações produzidas no contexto de atendimento psicológico,
+              incluindo conteúdos de sessões e registros clínicos, não
+              integram o funcionamento deste site e estão sujeitas às regras
+              específicas de sigilo profissional aplicáveis à prática da
+              Psicologia.
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Quais dados podem ser tratados</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Durante a utilização do site, poderão ser tratados dados
+              relacionados à navegação, como endereço IP, tipo de dispositivo,
+              navegador utilizado, páginas acessadas, origem do acesso e
+              interações realizadas no site.
+            </p>
+
+            <p>
+              Também poderão ser registradas informações relacionadas à
+              utilização dos botões de contato, como qual botão de WhatsApp
+              foi utilizado e qual profissional foi selecionada para iniciar
+              a conversa.
+            </p>
+
+            <p>
+              Essas informações são utilizadas para compreender o funcionamento
+              do site, melhorar a experiência de navegação e avaliar a
+              efetividade dos canais de contato.
+            </p>
+
+            <p>
+              A Talassa não solicita, por meio deste site, o preenchimento de
+              formulários contendo informações sobre saúde ou histórico
+              psicológico.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Contato pelo WhatsApp</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Ao selecionar uma psicóloga e clicar para iniciar uma conversa
+              pelo WhatsApp, o usuário será direcionado para uma plataforma
+              externa administrada pela Meta/WhatsApp.
+            </p>
+
+            <p>
+              A partir desse momento, o tratamento de dados realizado pela
+              plataforma também estará sujeito aos respectivos termos e
+              políticas de privacidade do WhatsApp.
+            </p>
+
+            <p>
+              As informações que o próprio usuário decidir compartilhar
+              durante a conversa serão utilizadas para atendimento da
+              solicitação, esclarecimento de dúvidas, verificação de
+              disponibilidade e eventual organização do atendimento
+              psicológico.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Finalidades do tratamento de dados</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Os dados relacionados à utilização do site poderão ser
+              utilizados para:
+            </p>
+
+            <ul>
+              <li>permitir o funcionamento adequado e seguro da página;</li>
+              <li>compreender como os visitantes utilizam o site;</li>
+              <li>identificar quais áreas e botões de contato são mais utilizados;</li>
+              <li>possibilitar o direcionamento ao WhatsApp da psicóloga escolhida;</li>
+              <li>avaliar o desempenho de campanhas de divulgação;</li>
+              <li>melhorar conteúdo, navegação e experiência do usuário;</li>
+              <li>prevenir falhas, abusos ou atividades indevidas.</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Cookies e tecnologias de medição</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              O site poderá utilizar cookies e tecnologias semelhantes para
+              funcionamento, análise de desempenho e medição de resultados.
+            </p>
+
+            <p>
+              Quando forem utilizadas ferramentas como Google Analytics,
+              Google Tag Manager ou Google Ads, determinadas informações de
+              navegação poderão ser processadas por esses serviços para
+              geração de métricas e avaliação de campanhas.
+            </p>
+
+            <p>
+              Cookies ou tecnologias não essenciais deverão respeitar as
+              preferências de privacidade informadas pelo usuário.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Compartilhamento de dados</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              A Talassa não comercializa dados pessoais.
+            </p>
+
+            <p>
+              Dados poderão ser processados por fornecedores necessários ao
+              funcionamento dos serviços digitais, como hospedagem,
+              ferramentas de análise, serviços de comunicação e plataformas
+              utilizadas para contato.
+            </p>
+
+            <p>
+              O compartilhamento será limitado ao necessário para a finalidade
+              correspondente e deverá observar as normas aplicáveis de
+              proteção de dados.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Armazenamento e conservação</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              As informações serão mantidas apenas pelo período necessário
+              para cumprir as finalidades para as quais foram coletadas,
+              atender obrigações legais ou regulatórias e resguardar direitos
+              quando aplicável.
+            </p>
+
+            <p>
+              Dados estatísticos poderão ser mantidos de maneira agregada ou
+              anonimizada quando não permitirem a identificação do usuário.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Segurança e confidencialidade</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              São adotadas medidas razoáveis de segurança para proteger as
+              informações contra acesso não autorizado, perda, alteração,
+              divulgação ou utilização indevida.
+            </p>
+
+            <p>
+              Apesar dos cuidados adotados, nenhum sistema conectado à
+              internet pode garantir segurança absoluta.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 09 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Direitos do titular</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Nos termos da LGPD, o titular poderá solicitar, quando
+              aplicável, informações sobre o tratamento de seus dados
+              pessoais, acesso, correção, anonimização, bloqueio ou eliminação
+              de dados tratados de forma inadequada, além dos demais direitos
+              previstos na legislação.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Links externos</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              O site poderá disponibilizar links para plataformas externas,
+              como WhatsApp e Instagram.
+            </p>
+
+            <p>
+              A Talassa não controla as práticas de privacidade desses
+              serviços. Ao acessá-los, recomenda-se consultar suas respectivas
+              políticas de privacidade.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 11 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Alterações nesta Política</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Esta Política poderá ser atualizada sempre que houver alterações
+              no funcionamento do site, nas ferramentas utilizadas ou nas
+              exigências legais aplicáveis.
+            </p>
+
+            <p>
+              A versão mais recente estará sempre disponível nesta página,
+              acompanhada da data da última atualização.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 12 -->
+      <article class="privacy-item">
+
+        <button
+          type="button"
+          aria-expanded="false"
+        >
+          <span>Contato</span>
+          <b aria-hidden="true">+</b>
+        </button>
+
+        <div aria-hidden="true">
+
+          <div class="privacy-answer">
+
+            <p>
+              Dúvidas ou solicitações relacionadas à privacidade e ao
+              tratamento de dados pessoais poderão ser encaminhadas para:
+            </p>
+
+            <div class="privacy-contact-box">
+
+              <strong>
+                Talassa — Clínica de Psicologia
+              </strong>
+
+              <span>
+                E-mail:
+                <a href="mailto:contato@talassapsicologia.com.br">
+                  contato@talassapsicologia.com.br
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img
+          src="assets/logo-talassa-footer.svg"
+          alt="Talassa Clínica de Psicologia"
+          width="2018"
+          height="817"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <p>
+          © 2026 Talassa — Clínica de Psicologia. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <a class="footer-link" href="index.html">
+        Voltar à página inicial
+      </a>
+
+    </div>
+  </footer>
+
+<script>
+  /* ==========================================
+     HEADER
+  ========================================== */
+
+  const header =
+    document.querySelector(".site-header");
+
+  function updateHeader() {
+    if (!header) return;
+
+    header.classList.toggle(
+      "scrolled",
+      window.scrollY > 40
+    );
+  }
+
+  updateHeader();
+
+  window.addEventListener(
+    "scroll",
+    updateHeader,
+    { passive: true }
+  );
+
+
+  /* ==========================================
+     POLÍTICA — ACORDEÃO
+  ========================================== */
+
+  const privacyItems =
+    document.querySelectorAll(
+      ".privacy-item"
+    );
+
+  function setPrivacyState(
+    item,
+    isOpen
+  ) {
+
+    const button =
+      item.querySelector(
+        ":scope > button"
+      );
+
+    const answer =
+      item.querySelector(
+        ":scope > div"
+      );
+
+    item.classList.toggle(
+      "open",
+      isOpen
+    );
+
+    if (button) {
+      button.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+    }
+
+    if (answer) {
+      answer.setAttribute(
+        "aria-hidden",
+        String(!isOpen)
+      );
+    }
+  }
+
+
+  privacyItems.forEach(
+    (item, index) => {
+
+      const button =
+        item.querySelector(
+          ":scope > button"
+        );
+
+      const answer =
+        item.querySelector(
+          ":scope > div"
+        );
+
+      if (!button || !answer) return;
+
+
+      const answerId =
+        `privacy-answer-${index + 1}`;
+
+      answer.id =
+        answerId;
+
+      button.setAttribute(
+        "aria-controls",
+        answerId
+      );
+
+
+      setPrivacyState(
+        item,
+        false
+      );
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const wasOpen =
+            item.classList.contains(
+              "open"
+            );
+
+
+          privacyItems.forEach(
+            (otherItem) => {
+              setPrivacyState(
+                otherItem,
+                false
+              );
+            }
+          );
+
+
+          if (!wasOpen) {
+            setPrivacyState(
+              item,
+              true
+            );
+          }
+
+        }
+      );
+
+    }
+  );
+</script>
+
+</body>
+</html>
