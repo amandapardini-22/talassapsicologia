@@ -1,0 +1,159 @@
+{
+  "metrics": [
+    {
+      "original": "styles.css",
+      "minified": "styles.min.css",
+      "originalBytes": 124061,
+      "minifiedBytes": 78012,
+      "originalGzip": 22455,
+      "minifiedGzip": 15054,
+      "rawReduction": 37.118030646214365,
+      "gzipReduction": 32.95925183700735,
+      "sha256": "0fd3683a17e2eff6d7fb2925c8340af9409f29ba40935c1ce9863229b585f86c"
+    },
+    {
+      "original": "script.js",
+      "minified": "script.min.js",
+      "originalBytes": 18005,
+      "minifiedBytes": 12259,
+      "originalGzip": 4782,
+      "minifiedGzip": 3515,
+      "rawReduction": 31.91335740072202,
+      "gzipReduction": 26.49519029694688,
+      "sha256": "9ce47c670f1280e0a995d79d7e63ed447f069b627a0cd4219de23b151073bd0e"
+    },
+    {
+      "original": "assets/css/bootstrap-talassa.css",
+      "minified": "assets/css/bootstrap-talassa.min.css",
+      "originalBytes": 18976,
+      "minifiedBytes": 15457,
+      "originalGzip": 3346,
+      "minifiedGzip": 3183,
+      "rawReduction": 18.544477234401345,
+      "gzipReduction": 4.871488344291697,
+      "sha256": "5906ef5a36ef510c3c042a137230752830e7298dc30309137c8fc191924e564e"
+    }
+  ],
+  "gzipSaved": 8831,
+  "existingDependencyVersionsPreserved": true,
+  "cssUrlsIdentical": true,
+  "localReferencesExist": true,
+  "baselineFiles": {
+    "index.html": {
+      "bytes": 68178,
+      "hash": "58778c78690d086bc9fbc3e74fd2713698acd930d0de2ddaac596d10c4e0373c"
+    },
+    "styles.css": {
+      "bytes": 124061,
+      "hash": "eda9dbf77bc4c83a00776685214fdd5c65856cb9202a80c682bd98df52eb7c1a"
+    },
+    "script.js": {
+      "bytes": 18005,
+      "hash": "160142f72671822949df0c7701f6e9b11c7319094f3569c3b611e1db322fa2a8"
+    },
+    "package.json": {
+      "bytes": 989,
+      "hash": "50b6d7f569d04a4d30360349390b90ee560182dbe341b6b80c9c4eda9b6aa803"
+    },
+    "package-lock.json": {
+      "bytes": 16087,
+      "hash": "88cf4d84b4f2ef477ab0956cb6e334635d28724a16a44a2486b60240158ee1a0"
+    },
+    "README.txt": {
+      "bytes": 1604,
+      "hash": "81203770aabdf64c2ee5bd555cee3ff9dab5698f1ae789fd8a3c9b928b4f87f4"
+    },
+    "scss/bootstrap-talassa.scss": {
+      "bytes": 1011,
+      "hash": "0b7f0d4344751624ec3735dc048d486936a012c70d08182a9381721fcc58077f"
+    },
+    "scss/_bootstrap-talassa-foundation.scss": {
+      "bytes": 757,
+      "hash": "4fb7b5a6877e2976a557a19810f9d93becdefca31d7dcd4609f2e61aa6c47881"
+    },
+    "scss/_bootstrap-talassa-utilities.scss": {
+      "bytes": 1620,
+      "hash": "661ff17aa821daccc1c13d0e4b1b48df7119f91b74f52a4c021b8f0ead6e5e9a"
+    },
+    "assets/carol-lobo.avif": {
+      "bytes": 9406,
+      "hash": "c71371754235679071aab58689605885d3767a62686c58e463841dbcb64e35e5"
+    },
+    "assets/carolina-barbosa.avif": {
+      "bytes": 8350,
+      "hash": "d6376d5b2b422c3a3fa533021bffefcfe918eacda19007a6518ca8a2fbcfd771"
+    },
+    "assets/css/bootstrap-talassa.css": {
+      "bytes": 18976,
+      "hash": "54bf4b2540d1cd6f66c93f3806c5187b9c29518d78b166a84220a5e9ee711f0e"
+    },
+    "assets/css/bootstrap-talassa.min.css": {
+      "bytes": 15457,
+      "hash": "5906ef5a36ef510c3c042a137230752830e7298dc30309137c8fc191924e564e"
+    },
+    "assets/fonts/cormorant-garamond-500.woff2": {
+      "bytes": 23312,
+      "hash": "8197bf53615ddc8c423f444c7f0eec63b7fa0ba093fcfbec60dfdd28429b0fc8"
+    },
+    "assets/fonts/cormorant-garamond-600.woff2": {
+      "bytes": 23396,
+      "hash": "ae062b6d5ae308e7edf61b28b07b9984bbb6e961b1f34d9b2c2f4389c33f21ea"
+    },
+    "assets/fonts/montserrat-400.woff2": {
+      "bytes": 18780,
+      "hash": "e66bcd2761ab6924b25ce70dafe10e57a39193c4fea1516730bd9cb5240af6c8"
+    },
+    "assets/fonts/montserrat-600.woff2": {
+      "bytes": 18688,
+      "hash": "d857325c360f7128b347ca924c1974967aaa886ba47dad22e4042d6c38b26a83"
+    },
+    "assets/fonts/montserrat-700.woff2": {
+      "bytes": 18824,
+      "hash": "f9d9e65b15372cebcafc3acd1e664a564c5c4b23278de4d5760de9a13c530371"
+    },
+    "assets/fundo-demandas.webp": {
+      "bytes": 68996,
+      "hash": "805cd945183423659aa5222f0383331f3b2c566a18c25a409aaa882becb99920"
+    },
+    "assets/fundo-faq-mobile.webp": {
+      "bytes": 22338,
+      "hash": "3c8beb25c2e138598ab3d7a87628cd09ec7664483afca3311cb6935602383eba"
+    },
+    "assets/fundo-psicologas-mobile.webp": {
+      "bytes": 24204,
+      "hash": "dac48003a0aa4da3e6580fa234304c7152bc7e75bb241158247308c23d4ff92f"
+    },
+    "assets/fundo-psicologas.webp": {
+      "bytes": 73922,
+      "hash": "dfc25f5b662ef70c00480da4e21c6796ad4413a58343c418bb705e62b42940b1"
+    },
+    "assets/hero-1240.avif": {
+      "bytes": 81408,
+      "hash": "9ab17acb0a2ab0e692a9e3097846f7c23b85c4b2949177443896584019bfa212"
+    },
+    "assets/hero-800.avif": {
+      "bytes": 45829,
+      "hash": "498d9975107ff66dbfa1f659630dce7b74ae944cf34156b5bdd90b062cb79900"
+    },
+    "assets/js/gsap.min.js": {
+      "bytes": 72927,
+      "hash": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
+    },
+    "assets/js/ScrollTrigger.min.js": {
+      "bytes": 44575,
+      "hash": "b0b14d67b55b0c43c756ac0b106cfcb09d0879945f6ead64451065b0672916a2"
+    },
+    "assets/logo-talassa-footer.svg": {
+      "bytes": 634902,
+      "hash": "5f56ec730910de982348e995305ac073923d38590b7d4db80641012f6089ff9d"
+    },
+    "assets/logo-talassa-header.svg": {
+      "bytes": 898321,
+      "hash": "3cbbe16ea57431aa5d3aef4cfed1da68d420685b65f2415567c23bac09525a9c"
+    },
+    "assets/psicoterapia-900.avif": {
+      "bytes": 24602,
+      "hash": "cfc48f806b7c504972dbfff0336203c903c5889bfd7a8863bd8b989a09986f38"
+    }
+  }
+}

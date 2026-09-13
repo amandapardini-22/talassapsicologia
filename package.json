@@ -5,7 +5,12 @@
   "main": "script.js",
   "scripts": {
     "build:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.min.css --style=compressed --no-source-map --quiet-deps",
-    "dev:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.css --style=expanded --no-source-map --watch --quiet-deps"
+    "dev:bootstrap": "sass scss/bootstrap-talassa.scss assets/css/bootstrap-talassa.css --style=expanded --no-source-map --watch --quiet-deps",
+    "build:css": "node scripts/build-css.cjs",
+    "build:js": "node scripts/build-js.cjs",
+    "build:prod": "npm run build:bootstrap && npm run build:css && npm run build:js",
+    "preview:prod": "node scripts/preview-prod.cjs",
+    "test:prod": "node scripts/validate-prod.cjs"
   },
   "repository": {
     "type": "git",
@@ -26,6 +31,8 @@
     "gsap": "^3.15.0"
   },
   "devDependencies": {
-    "sass": "^1.104.0"
+    "clean-css": "5.3.3",
+    "sass": "^1.104.0",
+    "terser": "5.51.2"
   }
 }

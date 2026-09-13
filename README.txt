@@ -25,3 +25,16 @@ Sass pode emitir avisos de depreciação; a compilação funciona com as versõe
 
 Fontes e GSAP/ScrollTrigger são servidos de assets/. Os pacotes Fontsource e GSAP
 foram preservados como possíveis fontes de manutenção; não há cópia automática configurada.
+
+Candidatos minificados (aguardando promoção)
+- npm run build:css — gera styles.min.css com clean-css no nível 0 e o parser CSS do Sass, sem rebase ou inline de imports; preserva valores das custom properties e confere equivalência canônica.
+- npm run build:js — gera script.min.js com Terser, sem compress ou mangling.
+- npm run build:prod — executa os builds de Bootstrap, CSS próprio e JavaScript.
+- npm run preview:prod — abre um servidor local; use os endereços exibidos para comparar original e candidato.
+- npm run test:prod — compara as duas versões no Chrome e grava docs/production-validation.json.
+
+O teste procura Chrome no caminho padrão do Windows; CHROME_PATH permite indicar outro executável.
+Screenshots e o perfil isolado do navegador ficam em uma pasta temporária informada pelo teste.
+A prévia troca três caminhos somente na resposta HTTP (CSS próprio também no fallback noscript).
+index.html, Critical CSS inline, styles.css e script.js permanecem legíveis e intactos.
+Os builds não promovem candidatos nem minificam o HTML. Não edite os arquivos .min manualmente.
