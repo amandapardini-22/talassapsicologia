@@ -1,19 +1,33 @@
 # ============================================
-# TALASSA — PRODUÇÃO
-# Cache, compressão e entrega de arquivos
+# TALASSA - PRODUCAO
+# Cache, compressao e entrega de arquivos
 # ============================================
 
-# Evita listagem de diretórios
+# Evita listagem de diretorios
 Options -Indexes
 
-# Página inicial
+# Pagina inicial
 DirectoryIndex index.html
 
 # Garante MIME correto para AVIF
 AddType image/avif .avif
 
+
 # --------------------------------------------
-# COMPRESSÃO
+# DOMINIO CANONICO
+# www -> sem www
+# HTTPS sera forçado pela Hostinger/SSL
+# --------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{HTTP_HOST} ^www\.talassapsicologia\.com\.br$ [NC]
+    RewriteRule ^ https://talassapsicologia.com.br%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+
+# --------------------------------------------
+# COMPRESSAO
 # --------------------------------------------
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html
@@ -26,16 +40,13 @@ AddType image/avif .avif
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
+
 # --------------------------------------------
-# EXPIRAÇÃO DE CACHE
+# EXPIRACAO DE CACHE
 #
-# Nesta primeira versão de produção:
-# - HTML: sempre revalida
-# - CSS/JS: 1 dia, pois os nomes ainda não têm versionamento
-# - imagens/fontes: 30 dias
-#
-# Depois que adotarmos versionamento de arquivos, podemos
-# aumentar CSS/JS e assets estáticos para 1 ano.
+# HTML: sempre revalida
+# CSS/JS: 1 dia, pois os nomes ainda nao tem versionamento
+# imagens/fontes: 30 dias
 # --------------------------------------------
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -62,13 +73,14 @@ AddType image/avif .avif
     ExpiresByType font/woff "access plus 30 days"
 </IfModule>
 
+
 # --------------------------------------------
 # CACHE-CONTROL
 # --------------------------------------------
 <IfModule mod_headers.c>
 
-    # O HTML deve sempre verificar se existe uma versão nova
-    <FilesMatch "\.(html?)$">
+    # HTML, sitemap e robots devem sempre verificar versao nova
+    <FilesMatch "\.(html?|xml|txt)$">
         Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
 

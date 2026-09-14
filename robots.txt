@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://talassapsicologia.com.br/sitemap.xml
