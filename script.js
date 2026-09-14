@@ -62,6 +62,20 @@ setWhatsappLink(carolinaLink, whatsappCarolina);
    ABRIR / FECHAR MODAL
 ================================================== */
 
+function whatsappFocusableElements() {
+  return [...whatsappModal.querySelectorAll(
+    'a[href], button, input, select, textarea, [tabindex], [contenteditable="true"]'
+  )].filter(element => element.tabIndex >= 0 && !element.matches(':disabled') &&
+    !element.closest('[inert]') && element.getClientRects().length &&
+    getComputedStyle(element).visibility === 'visible');
+}
+
+function focusWhatsappModal() {
+  const target = whatsappFocusableElements()[0] || whatsappModal;
+  if (target === whatsappModal) whatsappModal.tabIndex = -1;
+  target.focus({ preventScroll: true });
+}
+
 function openWhatsappModal() {
   if (!whatsappModal) return;
 
@@ -69,25 +83,21 @@ function openWhatsappModal() {
   whatsappModal.classList.add("open");
   whatsappModal.setAttribute("aria-hidden", "false");
 
-  requestAnimationFrame(() => {
-    if (whatsappClose) {
-      whatsappClose.focus({
-        preventScroll: true
-      });
-    }
-  });
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    if (whatsappModal.classList.contains("open")) focusWhatsappModal();
+  }));
 }
 
 function closeWhatsappModal() {
   if (!whatsappModal) return;
 
+  whatsappModal.classList.remove("open");
   if (lastWhatsappTrigger) {
     lastWhatsappTrigger.focus({
       preventScroll: true
     });
   }
 
-  whatsappModal.classList.remove("open");
   whatsappModal.setAttribute("aria-hidden", "true");
   whatsappModal.inert = true;
 }
@@ -165,6 +175,18 @@ if (whatsappOverlay) {
 }
 
 document.addEventListener("keydown", (event) => {
+  if (!whatsappModal || !whatsappModal.classList.contains("open")) return;
+  if (event.key === "Tab") {
+    const elements = whatsappFocusableElements();
+    const index = elements.indexOf(document.activeElement);
+    if (!elements.length || index === -1 ||
+        (event.shiftKey ? index === 0 : index === elements.length - 1)) {
+      event.preventDefault();
+      const target = event.shiftKey ? elements[elements.length - 1] : elements[0];
+      if (target) target.focus({ preventScroll: true });
+      else focusWhatsappModal();
+    }
+  }
   if (
     event.key === "Escape" &&
     whatsappModal &&
@@ -172,6 +194,11 @@ document.addEventListener("keydown", (event) => {
   ) {
     closeWhatsappModal();
   }
+});
+
+document.addEventListener("focusin", (event) => {
+  if (whatsappModal && whatsappModal.classList.contains("open") &&
+      !whatsappModal.contains(event.target)) focusWhatsappModal();
 });
 
 /* ==================================================
