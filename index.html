@@ -1578,18 +1578,19 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
         <picture>
           <source
             media="(max-width: 767px)"
-            srcset="assets/hero-800.avif"
+            srcset="assets/hero-620.avif"
           >
+
           <img
-            src="assets/hero-800.avif"
+            src="assets/hero-620.avif"
             srcset="
-              assets/hero-800.avif 800w,
+              assets/hero-620.avif 620w,
               assets/hero-1240.avif 1240w
             "
-            sizes="800px"
+            sizes="620px"
             alt="Mulher contemplando o mar"
-            width="800"
-            height="800"
+            width="620"
+            height="620"
             loading="eager"
             fetchpriority="high"
           >
@@ -2063,22 +2064,31 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
       </div>
 
       <div class="therapy-image">
-         <picture>
-
-          <source
-            media="(max-width: 1024px)"
-            srcset="assets/psicoterapia-900.avif"
-          >
-
+        <picture>
           <img
             src="assets/psicoterapia-900.avif"
+
+            srcset="
+              assets/psicoterapia-720.avif 720w,
+              assets/psicoterapia-900.avif 900w,
+              assets/psicoterapia-1240.avif 1240w,
+              assets/psicoterapia-1422.avif 1422w
+            "
+
+            sizes="
+              (orientation: landscape) and (max-height: 500px) 44vw,
+              (max-width: 767px) 100vw,
+              (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) 100vw,
+              (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) 54vw,
+              55vw
+            "
+
             alt="Mulher sentada em ambiente acolhedor"
             width="900"
             height="700"
             loading="lazy"
             decoding="async"
           >
-
         </picture>
       </div>
     </section>
