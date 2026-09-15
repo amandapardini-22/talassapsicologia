@@ -1575,27 +1575,33 @@ body :is(.site-header .main-nav, .hero, .next-step, .final-cta, .site-footer) .b
         <span class="hero-shape-secondary"></span>
 
         <div class="hero-photo">
-        <picture>
-          <source
-            media="(max-width: 767px)"
-            srcset="assets/hero-620.avif"
-          >
+          <picture>
+            <source
+              media="(max-width: 767px), (orientation: landscape) and (max-height: 500px)"
+              srcset="assets/hero-560.avif"
+            >
 
-          <img
-            src="assets/hero-620.avif"
-            srcset="
-              assets/hero-620.avif 620w,
-              assets/hero-1240.avif 1240w
-            "
-            sizes="620px"
-            alt="Mulher contemplando o mar"
-            width="620"
-            height="620"
-            loading="eager"
-            fetchpriority="high"
-          >
-        </picture>
-      </div>
+            <img
+              src="assets/hero-620.avif"
+              srcset="
+                assets/hero-620.avif 620w,
+                assets/hero-800.avif 800w,
+                assets/hero-1240.avif 1240w
+              "
+              sizes="
+                (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) 680px,
+                (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) 540px,
+                620px
+              "
+              alt="Mulher contemplando o mar"
+              width="620"
+              height="620"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </picture>
+        </div>
         </div>
       </div>
 </section>
